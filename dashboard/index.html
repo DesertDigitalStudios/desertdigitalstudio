@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel's Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --panel2: #1e293b;
+      --border: #30363d;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --amber: #f59e0b;
+      --amber-dim: rgba(245,158,11,0.12);
+      --amber-hover: rgba(245,158,11,0.2);
+      --red: #ef4444;
+      --yellow: #eab308;
+      --green: #22c55e;
+      --blue: #3b82f6;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto auto;
+      gap: 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Panel base */
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .panel-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    /* ── ROW 1: Clock + Stats ── */
+    #panel-clock { grid-column: 1; grid-row: 1; }
+    #panel-stats { grid-column: 2; grid-row: 1; }
+
+    /* ── ROW 2: Checklist (full width) ── */
+    #panel-checklist { grid-column: 1 / -1; grid-row: 2; }
+
+    /* ── ROW 3: Lead Tracker (full width) ── */
+    #panel-leads { grid-column: 1 / -1; grid-row: 3; }
+
+    /* ── ROW 4: Quick Links + Notes ── */
+    #panel-links { grid-column: 1; grid-row: 4; }
+    #panel-notes { grid-column: 2; grid-row: 4; }
+
+    /* ── CLOCK ── */
+    .command-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+
+    #clock-display {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 68px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    #clock-date {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 8px;
+      font-weight: 400;
+    }
+
+    #clock-weather {
+      font-size: 14px;
+      color: var(--text);
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── STATS ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .goal-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--amber);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    /* ── CHECKLIST ── */
+    .checklist-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .checklist-progress-text {
+      font-size: 12px;
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .checklist-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+
+    .checklist-item:hover { border-color: var(--amber); background: var(--amber-dim); }
+
+    .checklist-item.done {
+      opacity: 0.6;
+      border-color: var(--green);
+      background: rgba(34,197,94,0.06);
+    }
+
+    .checklist-item.done .item-text { text-decoration: line-through; color: var(--muted); }
+
+    .check-box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .checklist-item.done .check-box {
+      border-color: var(--green);
+      background: var(--green);
+    }
+
+    .check-mark {
+      display: none;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .checklist-item.done .check-mark { display: block; }
+
+    .item-num {
+      font-size: 11px;
+      color: var(--amber);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .item-text {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .checklist-progress-bar { margin-top: 4px; }
+
+    /* ── LEAD TRACKER ── */
+    .lead-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+    }
+
+    .lead-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 12px 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lead-table td {
+      padding: 10px 12px;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+      vertical-align: middle;
+    }
+
+    .lead-table tr:last-child td { border-bottom: none; }
+    .lead-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* Score cell */
+    .score-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 100px;
+    }
+
+    .score-mini-bar {
+      flex: 1;
+      height: 5px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .score-mini-fill { height: 100%; border-radius: 999px; }
+    .score-mini-fill.red { background: var(--red); }
+    .score-mini-fill.yellow { background: var(--yellow); }
+    .score-mini-fill.green { background: var(--green); }
+
+    .score-num { font-size: 12px; font-weight: 600; min-width: 24px; }
+
+    .badge-nosite {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(239,68,68,0.15);
+      color: var(--red);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Status badges */
+    .status-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+      user-select: none;
+    }
+    .status-badge:hover { opacity: 0.8; }
+    .status-new      { background: rgba(148,163,184,0.15); color: var(--muted); border: 1px solid rgba(148,163,184,0.3); }
+    .status-contacted{ background: rgba(59,130,246,0.15);  color: var(--blue);  border: 1px solid rgba(59,130,246,0.3); }
+    .status-proposal { background: rgba(245,158,11,0.15);  color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+    .status-client   { background: rgba(34,197,94,0.15);   color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+
+    /* Notes inline */
+    .note-input {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      width: 100%;
+      outline: none;
+      padding: 2px 0;
+    }
+    .note-input:focus { color: var(--text); border-bottom: 1px solid var(--amber); }
+    .note-input::placeholder { color: #3d4753; }
+
+    /* Add lead form */
+    .add-lead-form {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .add-lead-form input, .add-lead-form select {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      padding: 8px 12px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .add-lead-form input:focus, .add-lead-form select:focus { border-color: var(--amber); }
+    .add-lead-form input::placeholder { color: #3d4753; }
+
+    .btn-add {
+      background: var(--amber);
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn-add:hover { opacity: 0.85; }
+
+    /* ── QUICK LINKS ── */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .link-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 10px 14px;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+      text-align: center;
+    }
+    .link-pill:hover {
+      border-color: var(--amber);
+      background: var(--amber-hover);
+      color: var(--amber);
+    }
+
+    /* ── NOTES ── */
+    .notes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .autosave-indicator {
+      font-size: 11px;
+      color: var(--green);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .autosave-indicator.show { opacity: 1; }
+
+    #notes-area {
+      width: 100%;
+      min-height: 140px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 12px;
+      outline: none;
+      resize: vertical;
+      transition: border-color 0.15s;
+    }
+    #notes-area:focus { border-color: var(--amber); }
+    #notes-area::placeholder { color: #3d4753; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #3d4753;
+      padding-bottom: 8px;
+    }
+
+    /* ── DELETE ROW BUTTON ── */
+    .btn-del {
+      background: none;
+      border: none;
+      color: #3d4753;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: color 0.15s;
+    }
+    .btn-del:hover { color: var(--red); }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<div class="grid">
+
+  <!-- ══════════════════════════════════════════
+       PANEL 1 — CLOCK + WEATHER
+  ══════════════════════════════════════════ -->
+  <div class="panel" id="panel-clock">
+    <div class="command-label">Gabriel's Command Center</div>
+    <div id="clock-display">00:00:00</div>
+    <div id="clock-date">Loading…</div>
+    <div id="clock-weather">⏳ Fetching weather…</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       PANEL 2 — SYSTEM STATS
+  ══════════════════════════════════════════ -->
+  <div class="panel" id="panel-stats">
+    <div class="panel-title">Business Overview</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total Leads</div>
+        <div class="stat-value" id="stat-leads">5</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Active Clients</div>
+        <div class="stat-value" id="stat-clients">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Revenue MTD</div>
+        <div class="stat-value" id="stat-revenue">$0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Monthly Goal</div>
+        <div class="stat-value">$2,000</div>
+      </div>
+    </div>
+    <div class="goal-label">
+      <span>Goal Progress</span>
+      <span id="goal-pct">0%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="goal-bar" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       PANEL 3 — BUSINESS LAUNCH CHECKLIST
+  ══════════════════════════════════════════ -->
+  <div class="panel" id="panel-checklist">
+    <div class="checklist-header">
+      <div class="panel-title" style="margin-bottom:0">Business Launch Checklist</div>
+      <div class="checklist-progress-text" id="checklist-progress-text">0 / 10 complete</div>
+    </div>
+
+    <div class="checklist-items" id="checklist-items"></div>
+
+    <div class="progress-bar checklist-progress-bar">
+      <div class="progress-fill" id="checklist-bar" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       PANEL 4 — LEAD TRACKER
+  ══════════════════════════════════════════ -->
+  <div class="panel" id="panel-leads">
+    <div class="panel-title">Lead Tracker</div>
+    <table class="lead-table">
+      <thead>
+        <tr>
+          <th>Business</th>
+          <th>City</th>
+          <th>Score</th>
+          <th>Status</th>
+          <th>Notes</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="lead-tbody"></tbody>
+    </table>
+
+    <div class="add-lead-form" id="add-lead-form">
+      <input type="text" id="new-biz"    placeholder="Business name" style="flex:2;min-width:140px" />
+      <input type="text" id="new-city"   placeholder="City"          style="flex:1;min-width:90px"  />
+      <input type="text" id="new-score"  placeholder="Score or 'No Site'" style="flex:1;min-width:120px" />
+      <button class="btn-add" onclick="addLead()">+ Add Lead</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       PANEL 5 — QUICK LINKS
+  ══════════════════════════════════════════ -->
+  <div class="panel" id="panel-links">
+    <div class="panel-title">Quick Links</div>
+    <div class="links-grid">
+      <a class="link-pill" href="https://www.yelp.com/search?find_desc=&find_loc=Benson%2C+AZ" target="_blank">⭐ Yelp Benson</a>
+      <a class="link-pill" href="https://www.google.com/maps/search/businesses/@31.9678,-110.2929,13z" target="_blank">📍 Google Maps</a>
+      <a class="link-pill" href="https://discord.com" target="_blank">💬 Discord</a>
+      <a class="link-pill" href="https://github.com" target="_blank">🐙 GitHub</a>
+      <a class="link-pill" href="https://www.namecheap.com" target="_blank">🌐 Namecheap</a>
+      <a class="link-pill" href="https://vercel.com" target="_blank">▲ Vercel</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       PANEL 6 — NOTES / SCRATCHPAD
+  ══════════════════════════════════════════ -->
+  <div class="panel" id="panel-notes">
+    <div class="notes-header">
+      <div class="panel-title" style="margin-bottom:0">Notes / Scratchpad</div>
+      <span class="autosave-indicator" id="autosave-badge">✓ Saved</span>
+    </div>
+    <textarea id="notes-area" placeholder="Jot something down…"></textarea>
+  </div>
+
+</div>
+
+<footer>Powered by Koa 🌊</footer>
+
+<script>
+// ─────────────────────────────────────────────
+//  CLOCK
+// ─────────────────────────────────────────────
+function updateClock() {
+  const now = new Date();
+  const hh = String(now.getHours()).padStart(2,'0');
+  const mm = String(now.getMinutes()).padStart(2,'0');
+  const ss = String(now.getSeconds()).padStart(2,'0');
+  document.getElementById('clock-display').textContent = `${hh}:${mm}:${ss}`;
+
+  const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const d = days[now.getDay()];
+  const m = months[now.getMonth()];
+  document.getElementById('clock-date').textContent = `${d}, ${m} ${now.getDate()}, ${now.getFullYear()}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ─────────────────────────────────────────────
+//  WEATHER
+// ─────────────────────────────────────────────
+async function fetchWeather() {
+  try {
+    const r = await fetch('https://wttr.in/Benson,AZ?format=j1');
+    const j = await r.json();
+    const cur = j.current_condition[0];
+    const tempF = cur.temp_F;
+    const desc  = cur.weatherDesc[0].value;
+    const icons = { 'Sunny':'☀️','Clear':'☀️','Partly cloudy':'⛅','Partly Cloudy':'⛅','Cloudy':'☁️','Overcast':'☁️','Mist':'🌫️','Fog':'🌫️','Light rain':'🌦️','Rain':'🌧️','Heavy rain':'🌧️','Thunderstorm':'⛈️','Snow':'❄️','Blizzard':'❄️','Blowing snow':'❄️' };
+    const icon = icons[desc] || '🌡️';
+    document.getElementById('clock-weather').innerHTML = `${icon} ${tempF}°F &nbsp;·&nbsp; ${desc} &nbsp;·&nbsp; Benson, AZ`;
+  } catch(e) {
+    document.getElementById('clock-weather').textContent = '🌡️ Weather unavailable';
+  }
+}
+fetchWeather();
+
+// ─────────────────────────────────────────────
+//  CHECKLIST
+// ─────────────────────────────────────────────
+const CHECKLIST_KEY = 'koa_checklist_v1';
+const checklistItems = [
+  'Decide on a business name',
+  'Buy a domain name (Namecheap ~$12)',
+  'Create a GitHub account (free)',
+  'Create a Vercel account (free)',
+  'Build your portfolio/business website (ask Koa)',
+  'Set up a Google Business Profile',
+  'List 10 local businesses to target in Benson/Sierra Vista',
+  'Run site audits on your target list',
+  'Walk into your first 3 businesses with your pitch',
+  'Land your first paid client 🎉'
+];
+
+function loadChecklist() {
+  const saved = JSON.parse(localStorage.getItem(CHECKLIST_KEY) || '{}');
+  return saved;
+}
+
+function saveChecklist(state) {
+  localStorage.setItem(CHECKLIST_KEY, JSON.stringify(state));
+}
+
+function renderChecklist() {
+  const state = loadChecklist();
+  const container = document.getElementById('checklist-items');
+  container.innerHTML = '';
+
+  let done = 0;
+  checklistItems.forEach((text, i) => {
+    const checked = !!state[i];
+    if (checked) done++;
+    const div = document.createElement('div');
+    div.className = 'checklist-item' + (checked ? ' done' : '');
+    div.innerHTML = `
+      <div class="check-box"><span class="check-mark">✓</span></div>
+      <span class="item-num">${String(i+1).padStart(2,'0')}</span>
+      <span class="item-text">${text}</span>
+    `;
+    div.addEventListener('click', () => {
+      const s = loadChecklist();
+      s[i] = !s[i];
+      saveChecklist(s);
+      renderChecklist();
+    });
+    container.appendChild(div);
+  });
+
+  const pct = Math.round((done / checklistItems.length) * 100);
+  document.getElementById('checklist-progress-text').textContent = `${done} / ${checklistItems.length} complete`;
+  document.getElementById('checklist-bar').style.width = pct + '%';
+}
+renderChecklist();
+
+// ─────────────────────────────────────────────
+//  LEAD TRACKER
+// ─────────────────────────────────────────────
+const LEADS_KEY = 'koa_leads_v1';
+const STATUS_CYCLE = ['New','Contacted','Proposal','Client'];
+const STATUS_CLASS  = { 'New':'status-new', 'Contacted':'status-contacted', 'Proposal':'status-proposal', 'Client':'status-client' };
+
+const DEFAULT_LEADS = [
+  { biz:'Benson City Grille',      city:'Benson',       score:'nosite', status:'New', notes:'No website at all — call (520) 586-2525' },
+  { biz:'Get Lit Books',           city:'Sierra Vista', score:64,       status:'New', notes:'Running on Google Sites — easy upgrade pitch' },
+  { biz:'Baker\'s Dozen Donuts',   city:'Sierra Vista', score:68,       status:'New', notes:'No contact info on site — (520) 459-7162' },
+  { biz:'Farmhouse Restaurant',    city:'Benson',       score:71,       status:'New', notes:'Missing H1, social links, copyright' },
+  { biz:'The Horseshoe',           city:'Benson',       score:72,       status:'New', notes:'No meta description, missing H1' },
+  { biz:'Angelika\'s German Imports', city:'Sierra Vista', score:77,    status:'New', notes:'Copyright stuck at 2014 — (520) 458-5150' },
+  { biz:'Urbano Bar & Bistro',     city:'Sierra Vista', score:79,       status:'New', notes:'No meta description, phone missing — (520) 732-8886' },
+  { biz:'Mescal Bar & Grill',      city:'Benson',       score:79,       status:'New', notes:'Only Facebook as website' },
+  { biz:'Gypsy Sips Café',         city:'Sierra Vista', score:81,       status:'New', notes:'Missing H1, outdated copyright — (520) 224-7303' },
+  { biz:'Horseshoe Cafe & Bakery', city:'Benson',       score:89,       status:'New', notes:'Mostly solid — copyright 2021' },
+];
+
+function loadLeads() {
+  const saved = localStorage.getItem(LEADS_KEY);
+  if (saved) return JSON.parse(saved);
+  localStorage.setItem(LEADS_KEY, JSON.stringify(DEFAULT_LEADS));
+  return DEFAULT_LEADS;
+}
+
+function saveLeads(leads) {
+  localStorage.setItem(LEADS_KEY, JSON.stringify(leads));
+}
+
+function scoreBar(score) {
+  if (score === 'nosite') {
+    return `<span class="badge-nosite">🔥 No Site</span>`;
+  }
+  const n = Number(score);
+  const cls = n <= 50 ? 'red' : n <= 75 ? 'yellow' : 'green';
+  return `
+    <div class="score-bar-wrap">
+      <div class="score-mini-bar"><div class="score-mini-fill ${cls}" style="width:${n}%"></div></div>
+      <span class="score-num" style="color:var(--${cls})">${n}</span>
+    </div>`;
+}
+
+function renderLeads() {
+  const leads = loadLeads();
+  const tbody = document.getElementById('lead-tbody');
+  tbody.innerHTML = '';
+
+  leads.forEach((lead, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight:500">${escHtml(lead.biz)}</td>
+      <td style="color:var(--muted)">${escHtml(lead.city)}</td>
+      <td>${scoreBar(lead.score)}</td>
+      <td><span class="status-badge ${STATUS_CLASS[lead.status] || 'status-new'}" data-idx="${i}">${lead.status}</span></td>
+      <td><input class="note-input" data-idx="${i}" value="${escHtml(lead.notes)}" placeholder="Add note…" /></td>
+      <td><button class="btn-del" data-idx="${i}" title="Delete">✕</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Status cycle
+  tbody.querySelectorAll('.status-badge').forEach(el => {
+    el.addEventListener('click', () => {
+      const leads2 = loadLeads();
+      const idx = +el.dataset.idx;
+      const cur = STATUS_CYCLE.indexOf(leads2[idx].status);
+      leads2[idx].status = STATUS_CYCLE[(cur + 1) % STATUS_CYCLE.length];
+      saveLeads(leads2);
+      renderLeads();
+      updateStats();
+    });
+  });
+
+  // Inline notes
+  tbody.querySelectorAll('.note-input').forEach(el => {
+    el.addEventListener('blur', () => {
+      const leads2 = loadLeads();
+      leads2[+el.dataset.idx].notes = el.value;
+      saveLeads(leads2);
+    });
+  });
+
+  // Delete
+  tbody.querySelectorAll('.btn-del').forEach(el => {
+    el.addEventListener('click', () => {
+      const leads2 = loadLeads();
+      leads2.splice(+el.dataset.idx, 1);
+      saveLeads(leads2);
+      renderLeads();
+      updateStats();
+    });
+  });
+
+  updateStats();
+}
+
+function addLead() {
+  const biz   = document.getElementById('new-biz').value.trim();
+  const city  = document.getElementById('new-city').value.trim() || 'Benson';
+  const scoreRaw = document.getElementById('new-score').value.trim();
+  if (!biz) return;
+  const score = /no\s*site/i.test(scoreRaw) ? 'nosite' : (parseInt(scoreRaw,10) || 0);
+  const leads = loadLeads();
+  leads.push({ biz, city, score, status:'New', notes:'' });
+  saveLeads(leads);
+  document.getElementById('new-biz').value = '';
+  document.getElementById('new-city').value = '';
+  document.getElementById('new-score').value = '';
+  renderLeads();
+}
+
+// Allow Enter key to add lead
+document.getElementById('new-score').addEventListener('keydown', e => { if (e.key === 'Enter') addLead(); });
+
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+renderLeads();
+
+// ─────────────────────────────────────────────
+//  STATS
+// ─────────────────────────────────────────────
+const MONTHLY_GOAL = 2000;
+
+function updateStats() {
+  const leads = loadLeads();
+  document.getElementById('stat-leads').textContent = leads.length;
+  const clients = leads.filter(l => l.status === 'Client').length;
+  document.getElementById('stat-clients').textContent = clients;
+  // Revenue: $500 per client as a rough placeholder
+  const rev = clients * 500;
+  document.getElementById('stat-revenue').textContent = '$' + rev.toLocaleString();
+  const pct = Math.min(100, Math.round((rev / MONTHLY_GOAL) * 100));
+  document.getElementById('goal-pct').textContent = pct + '%';
+  document.getElementById('goal-bar').style.width = pct + '%';
+}
+updateStats();
+
+// ─────────────────────────────────────────────
+//  NOTES
+// ─────────────────────────────────────────────
+const NOTES_KEY = 'koa_notes_v1';
+const notesArea = document.getElementById('notes-area');
+const autosaveBadge = document.getElementById('autosave-badge');
+let notesTimer = null;
+
+notesArea.value = localStorage.getItem(NOTES_KEY) || '';
+
+notesArea.addEventListener('input', () => {
+  clearTimeout(notesTimer);
+  autosaveBadge.classList.remove('show');
+  notesTimer = setTimeout(() => {
+    localStorage.setItem(NOTES_KEY, notesArea.value);
+    autosaveBadge.classList.add('show');
+    setTimeout(() => autosaveBadge.classList.remove('show'), 2000);
+  }, 700);
+});
+</script>
+</body>
+</html>
