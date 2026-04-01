@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "city": "Sierra Vista, AZ",
+    "category": "Local Businesses",
+    "auditDate": "March 28, 2026",
+    "totalFound": 5,
+    "generatedBy": "site-auditor",
+    "version": "1.0.0"
+  },
+  "summary": {
+    "totalFound": 5,
+    "audited": 5,
+    "withWebsites": 5,
+    "withoutWebsites": 0,
+    "averageScore": 74
+  },
+  "businesses": [
+    {
+      "rank": 1,
+      "name": "Get Lit Books",
+      "website": "https://www.getlitbooks.com",
+      "phone": null,
+      "city": "Sierra Vista, AZ",
+      "leadTemperature": "🔥 Lukewarm",
+      "score": 64,
+      "grade": "C",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"Get Lit. Books Sierra Vista\""
+        },
+        "metaDescription": {
+          "pass": false,
+          "score": 0,
+          "max": 8,
+          "detail": "No meta description — hurts Google ranking"
+        },
+        "h1Present": {
+          "pass": false,
+          "score": 0,
+          "max": 7,
+          "detail": "No H1 heading found"
+        },
+        "imageAltTags": {
+          "pass": false,
+          "score": 0,
+          "max": 7,
+          "detail": "8/8 images missing alt tags"
+        },
+        "contactInfo": {
+          "pass": true,
+          "score": 15,
+          "max": 15,
+          "detail": "Contact info found: phone, email, address"
+        },
+        "socialMedia": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Social links: facebook, instagram"
+        },
+        "copyrightYear": {
+          "pass": false,
+          "score": 2,
+          "max": 5,
+          "detail": "No copyright year found in footer"
+        },
+        "pageSpeed": {
+          "pass": false,
+          "score": 5,
+          "max": 12,
+          "detail": "Slow load: 3.0s — hurts conversions"
+        },
+        "clearCTA": {
+          "pass": true,
+          "score": 6,
+          "max": 10,
+          "detail": "CTA elements: CTA button, CTA text"
+        }
+      },
+      "failedChecks": [
+        "Meta Description",
+        "H1 Heading",
+        "Image Alt Tags",
+        "Copyright Up-to-Date",
+        "Page Load Speed"
+      ],
+      "loadTimeMs": 3022
+    },
+    {
+      "rank": 2,
+      "name": "Baker's Dozen Donuts & Coffee",
+      "website": "https://www.bakersdozendonut.com",
+      "phone": "(520) 459-7162",
+      "city": "Sierra Vista, AZ",
+      "leadTemperature": "🌤️ Decent",
+      "score": 68,
+      "grade": "C",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"Baker's Dozen Donuts &amp; Coffee\""
+        },
+        "metaDescription": {
+          "pass": false,
+          "score": 4,
+          "max": 8,
+          "detail": "Meta description too short (40 chars): \"Baker’s dozen donuts &amp; coffee, Baker\""
+        },
+        "h1Present": {
+          "pass": false,
+          "score": 0,
+          "max": 7,
+          "detail": "No H1 heading found"
+        },
+        "imageAltTags": {
+          "pass": true,
+          "score": 7,
+          "max": 7,
+          "detail": "All 1 images have alt tags"
+        },
+        "contactInfo": {
+          "pass": false,
+          "score": 0,
+          "max": 15,
+          "detail": "No contact info found — customers can't reach them!"
+        },
+        "socialMedia": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Social links: facebook, youtube"
+        },
+        "copyrightYear": {
+          "pass": false,
+          "score": 2,
+          "max": 5,
+          "detail": "No copyright year found in footer"
+        },
+        "pageSpeed": {
+          "pass": true,
+          "score": 9,
+          "max": 12,
+          "detail": "Moderate load: 2.3s"
+        },
+        "clearCTA": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "CTA elements: contact form, CTA button, CTA text"
+        }
+      },
+      "failedChecks": [
+        "Meta Description",
+        "H1 Heading",
+        "Contact Info",
+        "Copyright Up-to-Date"
+      ],
+      "loadTimeMs": 2327
+    },
+    {
+      "rank": 3,
+      "name": "Angelika's German Imports",
+      "website": "https://angelikasgermanimports.com",
+      "phone": "(520) 458-5150",
+      "city": "Sierra Vista, AZ",
+      "leadTemperature": "🌤️ Decent",
+      "score": 77,
+      "grade": "B",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"Authentic German Deli and Restaurant | Delicious German Food\""
+        },
+        "metaDescription": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Meta description present (137 chars)"
+        },
+        "h1Present": {
+          "pass": true,
+          "score": 7,
+          "max": 7,
+          "detail": "H1 found: \"German Market, Deli and Restaurant\n1630 East Fry Blvd, Sierr…\""
+        },
+        "imageAltTags": {
+          "pass": false,
+          "score": 0,
+          "max": 7,
+          "detail": "25/26 images missing alt tags"
+        },
+        "contactInfo": {
+          "pass": true,
+          "score": 15,
+          "max": 15,
+          "detail": "Contact info found: phone, email, address"
+        },
+        "socialMedia": {
+          "pass": false,
+          "score": 0,
+          "max": 8,
+          "detail": "No social media links found"
+        },
+        "copyrightYear": {
+          "pass": false,
+          "score": 0,
+          "max": 5,
+          "detail": "Copyright © 2014 — 12 years outdated! Looks abandoned"
+        },
+        "pageSpeed": {
+          "pass": true,
+          "score": 9,
+          "max": 12,
+          "detail": "Moderate load: 2.3s"
+        },
+        "clearCTA": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "CTA elements: contact form, CTA button, CTA text"
+        }
+      },
+      "failedChecks": [
+        "Image Alt Tags",
+        "Social Media Links",
+        "Copyright Up-to-Date"
+      ],
+      "loadTimeMs": 2269
+    },
+    {
+      "rank": 4,
+      "name": "Urbano Bar & Bistro",
+      "website": "https://www.urbanobarbistro.com",
+      "phone": "(520) 732-8886",
+      "city": "Sierra Vista, AZ",
+      "leadTemperature": "🌤️ Decent",
+      "score": 79,
+      "grade": "B",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"Urbano Bar &amp; Bistro\""
+        },
+        "metaDescription": {
+          "pass": false,
+          "score": 0,
+          "max": 8,
+          "detail": "No meta description — hurts Google ranking"
+        },
+        "h1Present": {
+          "pass": true,
+          "score": 7,
+          "max": 7,
+          "detail": "H1 found: \"Restaurant\""
+        },
+        "imageAltTags": {
+          "pass": true,
+          "score": 7,
+          "max": 7,
+          "detail": "All 40 images have alt tags"
+        },
+        "contactInfo": {
+          "pass": true,
+          "score": 9,
+          "max": 15,
+          "detail": "Contact info found: email, address"
+        },
+        "socialMedia": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Social links: facebook, instagram, twitter"
+        },
+        "copyrightYear": {
+          "pass": true,
+          "score": 5,
+          "max": 5,
+          "detail": "Copyright © 2026 — up to date"
+        },
+        "pageSpeed": {
+          "pass": true,
+          "score": 9,
+          "max": 12,
+          "detail": "Moderate load: 2.8s"
+        },
+        "clearCTA": {
+          "pass": true,
+          "score": 6,
+          "max": 10,
+          "detail": "CTA elements: CTA button, CTA text"
+        }
+      },
+      "failedChecks": [
+        "Meta Description"
+      ],
+      "loadTimeMs": 2835
+    },
+    {
+      "rank": 5,
+      "name": "Gypsy Sips Café",
+      "website": "https://www.gypsysipscafe.com",
+      "phone": "(520) 224-7303",
+      "city": "Sierra Vista, AZ",
+      "leadTemperature": "✅ Well Built",
+      "score": 81,
+      "grade": "B",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"Gypsy | Gypsy Sips Cafe | United States\""
+        },
+        "metaDescription": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Meta description present (62 chars)"
+        },
+        "h1Present": {
+          "pass": false,
+          "score": 0,
+          "max": 7,
+          "detail": "No H1 heading found"
+        },
+        "imageAltTags": {
+          "pass": true,
+          "score": 7,
+          "max": 7,
+          "detail": "All 7 images have alt tags"
+        },
+        "contactInfo": {
+          "pass": true,
+          "score": 11,
+          "max": 15,
+          "detail": "Contact info found: phone, address"
+        },
+        "socialMedia": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Social links: facebook, instagram, twitter"
+        },
+        "copyrightYear": {
+          "pass": false,
+          "score": 0,
+          "max": 5,
+          "detail": "Copyright © 2023 — 3 years outdated! Looks abandoned"
+        },
+        "pageSpeed": {
+          "pass": true,
+          "score": 9,
+          "max": 12,
+          "detail": "Moderate load: 2.2s"
+        },
+        "clearCTA": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "CTA elements: contact form, CTA button, CTA text"
+        }
+      },
+      "failedChecks": [
+        "H1 Heading",
+        "Copyright Up-to-Date"
+      ],
+      "loadTimeMs": 2230
+    }
+  ]
+}

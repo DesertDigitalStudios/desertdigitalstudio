@@ -1,0 +1,334 @@
+[
+  {
+    "name": "Big Nose Kate's Saloon",
+    "url": "https://bignosekatestombstone.com",
+    "phone": "(520) 457-3107",
+    "finalUrl": "https://bignosekatestombstone.com/",
+    "title": "Home - Big Nose Kate's Saloon",
+    "loadTime": 1527,
+    "score": 67,
+    "checks": {
+      "ssl": {
+        "score": 10,
+        "max": 10,
+        "pass": true,
+        "detail": "Site uses HTTPS"
+      },
+      "mobile": {
+        "score": 10,
+        "max": 10,
+        "pass": true,
+        "detail": "Viewport meta tag found"
+      },
+      "title": {
+        "score": 8,
+        "max": 8,
+        "pass": true,
+        "detail": "Good title: \"Home - Big Nose Kate's Saloon\""
+      },
+      "metaDesc": {
+        "score": 0,
+        "max": 8,
+        "pass": false,
+        "detail": "No meta description — hurts Google ranking"
+      },
+      "h1": {
+        "score": 0,
+        "max": 7,
+        "pass": false,
+        "detail": "No H1 heading found"
+      },
+      "alt": {
+        "score": 7,
+        "max": 7,
+        "pass": true,
+        "detail": "0/32 images missing alt tags"
+      },
+      "contact": {
+        "score": 7,
+        "max": 15,
+        "pass": true,
+        "detail": "Contact info found: partial"
+      },
+      "social": {
+        "score": 8,
+        "max": 8,
+        "pass": true,
+        "detail": "Social links: facebook, instagram, tiktok"
+      },
+      "copyright": {
+        "score": 2,
+        "max": 5,
+        "pass": false,
+        "detail": "No copyright year found in footer"
+      },
+      "load": {
+        "score": 9,
+        "max": 12,
+        "pass": true,
+        "detail": "Moderate load: 1.5s"
+      },
+      "cta": {
+        "score": 6,
+        "max": 10,
+        "pass": true,
+        "detail": "CTA elements: CTA button, CTA text"
+      }
+    }
+  },
+  {
+    "name": "Crazy Annie's Bordello & Saloon",
+    "url": "https://www.crazyannies.com",
+    "phone": "(520) 457-3847",
+    "finalUrl": "https://www.crazyannies.com/",
+    "title": "Tombstone Arizona Bed and Breakfast - Crazy Annie's Bordello and Saloon",
+    "loadTime": 839,
+    "score": 66,
+    "checks": {
+      "ssl": {
+        "score": 10,
+        "max": 10,
+        "pass": true,
+        "detail": "Site uses HTTPS"
+      },
+      "mobile": {
+        "score": 0,
+        "max": 10,
+        "pass": false,
+        "detail": "No viewport meta — not mobile friendly"
+      },
+      "title": {
+        "score": 8,
+        "max": 8,
+        "pass": true,
+        "detail": "Good title: \"Tombstone Arizona Bed and Breakfast - Crazy Annie's Bordello and Saloon\""
+      },
+      "metaDesc": {
+        "score": 8,
+        "max": 8,
+        "pass": true,
+        "detail": "Meta description present (11 chars)"
+      },
+      "h1": {
+        "score": 7,
+        "max": 7,
+        "pass": true,
+        "detail": "H1 found: \"Step back into the 1880's at Crazy Annie's Bordello\""
+      },
+      "alt": {
+        "score": 5,
+        "max": 7,
+        "pass": true,
+        "detail": "3/14 images missing alt tags"
+      },
+      "contact": {
+        "score": 11,
+        "max": 15,
+        "pass": true,
+        "detail": "Contact info found: phone, address"
+      },
+      "social": {
+        "score": 0,
+        "max": 8,
+        "pass": false,
+        "detail": "No social media links found"
+      },
+      "copyright": {
+        "score": 2,
+        "max": 5,
+        "pass": false,
+        "detail": "No copyright year found in footer"
+      },
+      "load": {
+        "score": 12,
+        "max": 12,
+        "pass": true,
+        "detail": "Fast load: 0.8s"
+      },
+      "cta": {
+        "score": 3,
+        "max": 10,
+        "pass": false,
+        "detail": "CTA elements: CTA text"
+      }
+    }
+  },
+  {
+    "name": "Dick's Diner",
+    "url": "https://dicksdogs.square.site",
+    "phone": "(520) 763-4054",
+    "finalUrl": "https://dicksdogs.square.site/",
+    "title": "",
+    "loadTime": 1346,
+    "score": 55,
+    "checks": {
+      "ssl": {
+        "score": 10,
+        "max": 10,
+        "pass": true,
+        "detail": "Site uses HTTPS"
+      },
+      "mobile": {
+        "score": 10,
+        "max": 10,
+        "pass": true,
+        "detail": "Viewport meta tag found"
+      },
+      "title": {
+        "score": 0,
+        "max": 8,
+        "pass": false,
+        "detail": "No page title found"
+      },
+      "metaDesc": {
+        "score": 0,
+        "max": 8,
+        "pass": false,
+        "detail": "No meta description — hurts Google ranking"
+      },
+      "h1": {
+        "score": 0,
+        "max": 7,
+        "pass": false,
+        "detail": "No H1 heading found"
+      },
+      "alt": {
+        "score": 7,
+        "max": 7,
+        "pass": true,
+        "detail": "No images found"
+      },
+      "contact": {
+        "score": 11,
+        "max": 15,
+        "pass": true,
+        "detail": "Contact info found: phone, address"
+      },
+      "social": {
+        "score": 0,
+        "max": 8,
+        "pass": false,
+        "detail": "No social media links found"
+      },
+      "copyright": {
+        "score": 2,
+        "max": 5,
+        "pass": false,
+        "detail": "No copyright year found in footer"
+      },
+      "load": {
+        "score": 12,
+        "max": 12,
+        "pass": true,
+        "detail": "Fast load: 1.3s"
+      },
+      "cta": {
+        "score": 3,
+        "max": 10,
+        "pass": false,
+        "detail": "CTA elements: CTA text"
+      }
+    }
+  },
+  {
+    "name": "Hotel Tombstone",
+    "url": "https://www.hoteltombstone.com",
+    "phone": "(520) 457-2405",
+    "finalUrl": "https://hoteltombstone.com/",
+    "title": "Hotel Tombstone, Best Place to Stay in Tombstone AZ",
+    "loadTime": 2627,
+    "score": 85,
+    "checks": {
+      "ssl": {
+        "score": 10,
+        "max": 10,
+        "pass": true,
+        "detail": "Site uses HTTPS"
+      },
+      "mobile": {
+        "score": 10,
+        "max": 10,
+        "pass": true,
+        "detail": "Viewport meta tag found"
+      },
+      "title": {
+        "score": 8,
+        "max": 8,
+        "pass": true,
+        "detail": "Good title: \"Hotel Tombstone, Best Place to Stay in Tombstone AZ\""
+      },
+      "metaDesc": {
+        "score": 8,
+        "max": 8,
+        "pass": true,
+        "detail": "Meta description present (121 chars)"
+      },
+      "h1": {
+        "score": 7,
+        "max": 7,
+        "pass": true,
+        "detail": "H1 found: \"Welcome to Hotel Tombstone\""
+      },
+      "alt": {
+        "score": 7,
+        "max": 7,
+        "pass": true,
+        "detail": "0/10 images missing alt tags"
+      },
+      "contact": {
+        "score": 7,
+        "max": 15,
+        "pass": true,
+        "detail": "Contact info found: partial"
+      },
+      "social": {
+        "score": 8,
+        "max": 8,
+        "pass": true,
+        "detail": "Social links: facebook"
+      },
+      "copyright": {
+        "score": 5,
+        "max": 5,
+        "pass": true,
+        "detail": "Copyright © 2026 — current"
+      },
+      "load": {
+        "score": 9,
+        "max": 12,
+        "pass": true,
+        "detail": "Moderate load: 2.6s"
+      },
+      "cta": {
+        "score": 6,
+        "max": 10,
+        "pass": true,
+        "detail": "CTA elements: CTA button, CTA text"
+      }
+    }
+  },
+  {
+    "name": "Doc Holliday's Saloon",
+    "url": null,
+    "phone": "(N/A)",
+    "noSite": true
+  },
+  {
+    "name": "Johnny Ringo's Bar",
+    "url": null,
+    "phone": "(N/A)",
+    "noSite": true
+  },
+  {
+    "name": "Cowboy Coffee Bar",
+    "url": null,
+    "phone": "(N/A)",
+    "noSite": true
+  },
+  {
+    "name": "Mom & Pops Sandwiches",
+    "url": null,
+    "phone": "(N/A)",
+    "noSite": true
+  }
+]

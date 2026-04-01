@@ -1,0 +1,32 @@
+[
+  {
+    "name": "The Horseshoe",
+    "website": "https://thehorseshoebenson.com",
+    "phone": "(520) 586-2872",
+    "source": "manual"
+  },
+  {
+    "name": "Horseshoe Cafe & Bakery",
+    "website": "https://horseshoecafe-bakery.com",
+    "phone": "(520) 586-2872",
+    "source": "manual"
+  },
+  {
+    "name": "Farmhouse Restaurant",
+    "website": "https://farmhouseaz.top",
+    "phone": "(520) 586-4326",
+    "source": "manual"
+  },
+  {
+    "name": "Mescal Bar and Grill",
+    "website": "https://mescalbar.com",
+    "phone": null,
+    "source": "manual"
+  },
+  {
+    "name": "Benson City Grille",
+    "website": null,
+    "phone": "(520) 586-2525",
+    "source": "manual"
+  }
+]

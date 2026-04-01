@@ -1,0 +1,15 @@
+{
+  "name": "site-auditor",
+  "version": "1.0.0",
+  "description": "Local business website auditor — find hot leads for web dev sales",
+  "main": "audit.js",
+  "type": "commonjs",
+  "scripts": {
+    "audit": "node audit.js",
+    "sample": "node audit.js --city \"Benson, AZ\" --category \"restaurants\" --limit 5 --output sample-output"
+  },
+  "author": "Koa (built for Gabriel)",
+  "license": "MIT",
+  "dependencies": {},
+  "notes": "Uses Playwright from ../browser/node_modules/playwright — no separate install needed"
+}

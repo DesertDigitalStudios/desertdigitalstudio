@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- White background -->
+  <rect width="200" height="200" fill="#ffffff"/>
+
+  <!-- Outer amber ring accent -->
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.35"/>
+  <!-- Inner thin ring -->
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#f59e0b" stroke-width="0.75" opacity="0.15"/>
+
+  <!-- DDS text monogram - bold geometric sans -->
+  <!-- D in dark navy -->
+  <text x="28" y="128" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#1a1a2e">D</text>
+  <!-- D in amber -->
+  <text x="80" y="128" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#f59e0b">D</text>
+  <!-- S in dark navy -->
+  <text x="132" y="128" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#1a1a2e">S</text>
+
+  <!-- Bottom thin amber line accent -->
+  <rect x="28" y="140" width="144" height="2" rx="1" fill="#f59e0b" opacity="0.5"/>
+</svg>

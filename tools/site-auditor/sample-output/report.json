@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "city": "Benson, AZ",
+    "category": "restaurants",
+    "auditDate": "3/27/2026, 4:44:28 AM",
+    "totalFound": 5,
+    "generatedBy": "site-auditor",
+    "version": "1.0.0"
+  },
+  "summary": {
+    "totalFound": 5,
+    "audited": 5,
+    "withWebsites": 4,
+    "withoutWebsites": 1,
+    "averageScore": 78
+  },
+  "businesses": [
+    {
+      "rank": 1,
+      "name": "Benson City Grille",
+      "website": null,
+      "phone": "(520) 586-2525",
+      "city": "Benson, AZ",
+      "leadTemperature": "🔥🔥🔥 HOT LEAD (no site)",
+      "score": 0,
+      "grade": "F",
+      "error": "No website found",
+      "checks": {},
+      "failedChecks": [],
+      "loadTimeMs": null
+    },
+    {
+      "rank": 2,
+      "name": "Farmhouse Restaurant",
+      "website": "https://farmhouseaz.top/",
+      "phone": "(520) 586-4326",
+      "city": "Benson, AZ",
+      "leadTemperature": "🌤️ Decent",
+      "score": 71,
+      "grade": "B",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"Farmhouse Restaurant | Benson,AZ | Menu,Photos,Reviews\""
+        },
+        "metaDescription": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Meta description present (263 chars)"
+        },
+        "h1Present": {
+          "pass": false,
+          "score": 0,
+          "max": 7,
+          "detail": "No H1 heading found"
+        },
+        "imageAltTags": {
+          "pass": true,
+          "score": 7,
+          "max": 7,
+          "detail": "1/39 images missing alt tags"
+        },
+        "contactInfo": {
+          "pass": true,
+          "score": 11,
+          "max": 15,
+          "detail": "Contact info found: phone, address"
+        },
+        "socialMedia": {
+          "pass": false,
+          "score": 0,
+          "max": 8,
+          "detail": "No social media links found"
+        },
+        "copyrightYear": {
+          "pass": false,
+          "score": 2,
+          "max": 5,
+          "detail": "No copyright year found in footer"
+        },
+        "pageSpeed": {
+          "pass": true,
+          "score": 9,
+          "max": 12,
+          "detail": "Moderate load: 2.9s"
+        },
+        "clearCTA": {
+          "pass": true,
+          "score": 6,
+          "max": 10,
+          "detail": "CTA elements: CTA button, CTA text"
+        }
+      },
+      "failedChecks": [
+        "H1 Heading",
+        "Social Media Links",
+        "Copyright Up-to-Date"
+      ],
+      "loadTimeMs": 2897
+    },
+    {
+      "rank": 3,
+      "name": "The Horseshoe",
+      "website": "https://thehorseshoebenson.com/",
+      "phone": "(520) 586-2872",
+      "city": "Benson, AZ",
+      "leadTemperature": "🌤️ Decent",
+      "score": 72,
+      "grade": "B",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"The Horseshoe in Benson - The Horseshoe\""
+        },
+        "metaDescription": {
+          "pass": false,
+          "score": 0,
+          "max": 8,
+          "detail": "No meta description — hurts Google ranking"
+        },
+        "h1Present": {
+          "pass": false,
+          "score": 0,
+          "max": 7,
+          "detail": "No H1 heading found"
+        },
+        "imageAltTags": {
+          "pass": true,
+          "score": 7,
+          "max": 7,
+          "detail": "All 7 images have alt tags"
+        },
+        "contactInfo": {
+          "pass": true,
+          "score": 11,
+          "max": 15,
+          "detail": "Contact info found: phone, address"
+        },
+        "socialMedia": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Social links: facebook, instagram"
+        },
+        "copyrightYear": {
+          "pass": true,
+          "score": 3,
+          "max": 5,
+          "detail": "Copyright © 2025 — slightly outdated (1 year old)"
+        },
+        "pageSpeed": {
+          "pass": true,
+          "score": 12,
+          "max": 12,
+          "detail": "Fast load: 0.7s"
+        },
+        "clearCTA": {
+          "pass": false,
+          "score": 3,
+          "max": 10,
+          "detail": "CTA elements: CTA button"
+        }
+      },
+      "failedChecks": [
+        "Meta Description",
+        "H1 Heading",
+        "Clear CTA (Button/Form)"
+      ],
+      "loadTimeMs": 705
+    },
+    {
+      "rank": 4,
+      "name": "Mescal Bar and Grill",
+      "website": "https://www.facebook.com/mescalbarandgrille/",
+      "phone": null,
+      "city": "Benson, AZ",
+      "leadTemperature": "🌤️ Decent",
+      "score": 79,
+      "grade": "B",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"Mescal Bar and Grill | Benson AZ | Facebook\""
+        },
+        "metaDescription": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Meta description present (99 chars)"
+        },
+        "h1Present": {
+          "pass": false,
+          "score": 0,
+          "max": 7,
+          "detail": "No H1 heading found"
+        },
+        "imageAltTags": {
+          "pass": true,
+          "score": 6,
+          "max": 7,
+          "detail": "2/23 images missing alt tags"
+        },
+        "contactInfo": {
+          "pass": true,
+          "score": 11,
+          "max": 15,
+          "detail": "Contact info found: phone, address"
+        },
+        "socialMedia": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Social links: facebook"
+        },
+        "copyrightYear": {
+          "pass": false,
+          "score": 2,
+          "max": 5,
+          "detail": "No copyright year found in footer"
+        },
+        "pageSpeed": {
+          "pass": true,
+          "score": 12,
+          "max": 12,
+          "detail": "Fast load: 1.1s"
+        },
+        "clearCTA": {
+          "pass": false,
+          "score": 4,
+          "max": 10,
+          "detail": "CTA elements: contact form"
+        }
+      },
+      "failedChecks": [
+        "H1 Heading",
+        "Copyright Up-to-Date",
+        "Clear CTA (Button/Form)"
+      ],
+      "loadTimeMs": 1147
+    },
+    {
+      "rank": 5,
+      "name": "Horseshoe Cafe & Bakery",
+      "website": "https://horseshoecafe-bakery.com/",
+      "phone": "(520) 586-2872",
+      "city": "Benson, AZ",
+      "leadTemperature": "✅ Well Built",
+      "score": 89,
+      "grade": "A",
+      "error": null,
+      "checks": {
+        "ssl": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Site uses HTTPS"
+        },
+        "mobileResponsive": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "Viewport meta tag found"
+        },
+        "pageTitle": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Good title: \"Horseshoe Cafe &amp; Bakery\""
+        },
+        "metaDescription": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Meta description present (175 chars)"
+        },
+        "h1Present": {
+          "pass": true,
+          "score": 7,
+          "max": 7,
+          "detail": "H1 found: \"Welcome to Horseshoe Cafe &amp; Bakery\""
+        },
+        "imageAltTags": {
+          "pass": true,
+          "score": 5,
+          "max": 7,
+          "detail": "1/3 images missing alt tags"
+        },
+        "contactInfo": {
+          "pass": true,
+          "score": 11,
+          "max": 15,
+          "detail": "Contact info found: phone, address"
+        },
+        "socialMedia": {
+          "pass": true,
+          "score": 8,
+          "max": 8,
+          "detail": "Social links: facebook, instagram, twitter, yelp"
+        },
+        "copyrightYear": {
+          "pass": false,
+          "score": 0,
+          "max": 5,
+          "detail": "Copyright © 2021 — 5 years outdated! Looks abandoned"
+        },
+        "pageSpeed": {
+          "pass": true,
+          "score": 12,
+          "max": 12,
+          "detail": "Fast load: 0.8s"
+        },
+        "clearCTA": {
+          "pass": true,
+          "score": 10,
+          "max": 10,
+          "detail": "CTA elements: contact form, CTA button, CTA text"
+        }
+      },
+      "failedChecks": [
+        "Copyright Up-to-Date"
+      ],
+      "loadTimeMs": 774
+    }
+  ]
+}

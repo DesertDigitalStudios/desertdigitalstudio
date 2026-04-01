@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# Local app / secrets / agent state
+.openclaw/
+.webui_secret_key
+*.log
+*.tmp
+*.temp
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build / cache / screenshots
+*.sqlite
+*.db
+*.pid
+*.seed
+*.out
+*.tsbuildinfo
+coverage/
+.tmp/
+tmp/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS/editor noise
+.vscode/
+.idea/

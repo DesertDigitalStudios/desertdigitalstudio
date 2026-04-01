@@ -1,0 +1,13 @@
+[
+  { "biz": "Benson City Grille",       "city": "Benson",       "score": "nosite", "status": "New",  "notes": "No website at all — call (520) 586-2525" },
+  { "biz": "Get Lit Books",            "city": "Sierra Vista", "score": 64,       "status": "New",  "notes": "Running on Google Sites — easy upgrade pitch" },
+  { "biz": "Baker's Dozen Donuts",     "city": "Sierra Vista", "score": 68,       "status": "New",  "notes": "No contact info on site — (520) 459-7162" },
+  { "biz": "Farmhouse Restaurant",     "city": "Benson",       "score": 71,       "status": "New",  "notes": "Missing H1, social links, copyright" },
+  { "biz": "The Horseshoe",            "city": "Benson",       "score": 72,       "status": "New",  "notes": "No meta description, missing H1" },
+  { "biz": "Can-Can Old Time Photos",  "city": "Tombstone",    "score": 73,       "status": "Contacted",  "notes": "Family-owned. Spoke with daughter; dad runs site. Broken HTTPS, outdated splash-page UX, weak mobile/tourist conversion." },
+  { "biz": "Angelika's German Imports","city": "Sierra Vista", "score": 77,       "status": "New",  "notes": "Copyright stuck at 2014 — (520) 458-5150" },
+  { "biz": "Urbano Bar & Bistro",      "city": "Sierra Vista", "score": 79,       "status": "New",  "notes": "No meta description, phone missing — (520) 732-8886" },
+  { "biz": "Mescal Bar & Grill",       "city": "Benson",       "score": 79,       "status": "New",  "notes": "Only Facebook as website" },
+  { "biz": "Gypsy Sips Café",          "city": "Sierra Vista", "score": 81,       "status": "New",  "notes": "Missing H1, outdated copyright — (520) 224-7303" },
+  { "biz": "Horseshoe Cafe & Bakery",  "city": "Benson",       "score": 89,       "status": "New",  "notes": "Mostly solid — copyright 2021" }
+]

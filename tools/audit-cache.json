@@ -1,0 +1,4 @@
+{
+  "_note": "Cache for site audit results. Key = URL, value = audit result + timestamp. Entries expire after 7 days.",
+  "_version": 1
+}

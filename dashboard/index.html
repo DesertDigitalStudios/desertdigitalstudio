@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabriel's Command Center</title>
+  <title>Desert Digital Studio — Command Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -11,21 +11,21 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d1117;
-      --panel: #161b22;
-      --panel2: #1e293b;
-      --border: #30363d;
-      --text: #f1f5f9;
-      --muted: #94a3b8;
-      --amber: #f59e0b;
-      --amber-dim: rgba(245,158,11,0.12);
-      --amber-hover: rgba(245,158,11,0.2);
-      --red: #ef4444;
-      --yellow: #eab308;
-      --green: #22c55e;
-      --blue: #3b82f6;
-      --radius: 12px;
-      --shadow: 0 1px 3px rgba(0,0,0,0.4);
+      --bg:         #0d1117;
+      --panel:      #161b22;
+      --panel2:     #1e293b;
+      --border:     #30363d;
+      --text:       #f1f5f9;
+      --muted:      #94a3b8;
+      --amber:      #f59e0b;
+      --amber-dim:  rgba(245,158,11,0.12);
+      --amber-hover:rgba(245,158,11,0.2);
+      --red:        #ef4444;
+      --yellow:     #eab308;
+      --green:      #22c55e;
+      --blue:       #3b82f6;
+      --radius:     12px;
+      --shadow:     0 1px 3px rgba(0,0,0,0.4);
     }
 
     body {
@@ -33,20 +33,56 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding: 20px;
     }
 
-    /* ── GRID ── */
-    .grid {
+    /* ── HEADER STRIP ── */
+    .header-strip {
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .header-brand {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    #clock-display {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+    #clock-date  { font-size: 12px; color: var(--muted); white-space: nowrap; }
+    #clock-weather { font-size: 12px; color: var(--text); white-space: nowrap; }
+    .header-spacer { flex: 1; }
+    .header-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+    }
+    .header-stat-val { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1; }
+    .header-stat-lbl { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .header-sep { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+
+    /* ── MAIN GRID ── */
+    .main-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto auto auto;
       gap: 16px;
-      max-width: 1400px;
+      max-width: 1440px;
       margin: 0 auto;
+      padding: 20px 20px 32px;
     }
 
-    /* Panel base */
     .panel {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -54,7 +90,6 @@
       box-shadow: var(--shadow);
       padding: 24px;
     }
-
     .panel-title {
       font-size: 11px;
       font-weight: 600;
@@ -63,315 +98,69 @@
       color: var(--muted);
       margin-bottom: 16px;
     }
-
-    /* ── ROW 1: Clock + Stats ── */
-    #panel-clock { grid-column: 1; grid-row: 1; }
-    #panel-stats { grid-column: 2; grid-row: 1; }
-
-    /* ── ROW 2: Checklist (full width) ── */
-    #panel-checklist { grid-column: 1 / -1; grid-row: 2; }
-
-    /* ── ROW 3: Lead Tracker (full width) ── */
-    #panel-leads { grid-column: 1 / -1; grid-row: 3; }
-
-    /* ── ROW 4: Quick Links + Notes ── */
-    #panel-links { grid-column: 1; grid-row: 4; }
-    #panel-notes { grid-column: 2; grid-row: 4; }
-
-    /* ── CLOCK ── */
-    .command-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 12px;
-    }
-
-    #clock-display {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 68px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1;
-      letter-spacing: -2px;
-    }
-
-    #clock-date {
-      font-size: 15px;
-      color: var(--muted);
-      margin-top: 8px;
-      font-weight: 400;
-    }
-
-    #clock-weather {
-      font-size: 14px;
-      color: var(--text);
-      margin-top: 6px;
+    .panel-header {
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .panel-header .panel-title { margin-bottom: 0; }
+
+    /* span full grid width */
+    .full-width { grid-column: 1 / -1; }
+
+    /* ── QUICK ACTIONS ── */
+    #panel-actions { grid-column: 1 / -1; }
+    .actions-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .action-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 18px;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .action-pill:hover {
+      border-color: var(--amber);
+      background: var(--amber-dim);
+      color: var(--amber);
     }
 
-    /* ── STATS ── */
+    /* ── REVENUE TRACKER ── */
     .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-bottom: 16px;
     }
-
     .stat-card {
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 16px;
+      padding: 14px 16px;
     }
+    .stat-label { font-size: 11px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+    .stat-value { font-size: 26px; font-weight: 700; color: var(--text); line-height: 1; }
 
-    .stat-label {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 6px;
-    }
+    .goal-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; display: flex; justify-content: space-between; }
+    .progress-bar { height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--amber); border-radius: 999px; transition: width 0.4s ease; }
 
-    .stat-value {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1;
-    }
-
-    .goal-label {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 6px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .progress-bar {
-      height: 6px;
-      background: var(--border);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--amber);
-      border-radius: 999px;
-      transition: width 0.4s ease;
-    }
-
-    /* ── CHECKLIST ── */
-    .checklist-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .checklist-progress-text {
-      font-size: 12px;
-      color: var(--amber);
-      font-weight: 600;
-    }
-
-    .checklist-items {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .checklist-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 10px 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: border-color 0.15s, background 0.15s;
-      user-select: none;
-    }
-
-    .checklist-item:hover { border-color: var(--amber); background: var(--amber-dim); }
-
-    .checklist-item.done {
-      opacity: 0.6;
-      border-color: var(--green);
-      background: rgba(34,197,94,0.06);
-    }
-
-    .checklist-item.done .item-text { text-decoration: line-through; color: var(--muted); }
-
-    .check-box {
-      width: 18px;
-      height: 18px;
-      border: 2px solid var(--border);
-      border-radius: 4px;
-      flex-shrink: 0;
-      margin-top: 1px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.15s, background 0.15s;
-    }
-
-    .checklist-item.done .check-box {
-      border-color: var(--green);
-      background: var(--green);
-    }
-
-    .check-mark {
-      display: none;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .checklist-item.done .check-mark { display: block; }
-
-    .item-num {
-      font-size: 11px;
-      color: var(--amber);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .item-text {
-      font-size: 13px;
-      color: var(--text);
-      line-height: 1.4;
-    }
-
-    .checklist-progress-bar { margin-top: 4px; }
-
-    /* ── LEAD TRACKER ── */
-    .lead-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 16px;
-    }
-
-    .lead-table th {
-      text-align: left;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 0 12px 10px 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .lead-table td {
-      padding: 10px 12px;
-      font-size: 13px;
-      border-bottom: 1px solid rgba(48,54,61,0.5);
-      vertical-align: middle;
-    }
-
-    .lead-table tr:last-child td { border-bottom: none; }
-    .lead-table tr:hover td { background: rgba(255,255,255,0.02); }
-
-    /* Score cell */
-    .score-bar-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      min-width: 100px;
-    }
-
-    .score-mini-bar {
-      flex: 1;
-      height: 5px;
-      background: var(--border);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .score-mini-fill { height: 100%; border-radius: 999px; }
-    .score-mini-fill.red { background: var(--red); }
-    .score-mini-fill.yellow { background: var(--yellow); }
-    .score-mini-fill.green { background: var(--green); }
-
-    .score-num { font-size: 12px; font-weight: 600; min-width: 24px; }
-
-    .badge-nosite {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(239,68,68,0.15);
-      color: var(--red);
-      border: 1px solid rgba(239,68,68,0.3);
-      border-radius: 999px;
-      padding: 2px 8px;
-      font-size: 11px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    /* Status badges */
-    .status-badge {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: opacity 0.15s;
-      user-select: none;
-    }
-    .status-badge:hover { opacity: 0.8; }
-    .status-new      { background: rgba(148,163,184,0.15); color: var(--muted); border: 1px solid rgba(148,163,184,0.3); }
-    .status-contacted{ background: rgba(59,130,246,0.15);  color: var(--blue);  border: 1px solid rgba(59,130,246,0.3); }
-    .status-proposal { background: rgba(245,158,11,0.15);  color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
-    .status-client   { background: rgba(34,197,94,0.15);   color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
-
-    /* Notes inline */
-    .note-input {
-      background: transparent;
-      border: none;
-      color: var(--muted);
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      width: 100%;
-      outline: none;
-      padding: 2px 0;
-    }
-    .note-input:focus { color: var(--text); border-bottom: 1px solid var(--amber); }
-    .note-input::placeholder { color: #3d4753; }
-
-    /* Add lead form */
-    .add-lead-form {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .add-lead-form input, .add-lead-form select {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      padding: 8px 12px;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-    .add-lead-form input:focus, .add-lead-form select:focus { border-color: var(--amber); }
-    .add-lead-form input::placeholder { color: #3d4753; }
-
-    .btn-add {
+    .btn-log {
+      margin-top: 14px;
       background: var(--amber);
       color: #000;
       font-family: 'Inter', sans-serif;
@@ -382,96 +171,264 @@
       padding: 8px 16px;
       cursor: pointer;
       transition: opacity 0.15s;
+      width: 100%;
     }
-    .btn-add:hover { opacity: 0.85; }
+    .btn-log:hover { opacity: 0.85; }
 
-    /* ── QUICK LINKS ── */
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .link-pill {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 10px 14px;
-      text-decoration: none;
-      transition: border-color 0.15s, background 0.15s, color 0.15s;
-      text-align: center;
-    }
-    .link-pill:hover {
-      border-color: var(--amber);
-      background: var(--amber-hover);
-      color: var(--amber);
-    }
-
-    /* ── NOTES ── */
-    .notes-header {
+    .payment-list { margin-top: 14px; }
+    .payment-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+      font-size: 12px;
     }
+    .payment-item:last-child { border-bottom: none; }
+    .payment-client { color: var(--text); font-weight: 500; }
+    .payment-amount { color: var(--green); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+    .payment-date { color: var(--muted); font-size: 11px; }
 
-    .autosave-indicator {
-      font-size: 11px;
-      color: var(--green);
-      opacity: 0;
-      transition: opacity 0.3s;
+    /* ── MODAL ── */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
     }
-    .autosave-indicator.show { opacity: 1; }
-
-    #notes-area {
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      width: 360px;
+      max-width: 95vw;
+    }
+    .modal-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+    .modal-field { margin-bottom: 14px; }
+    .modal-field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .modal-field input {
       width: 100%;
-      min-height: 140px;
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 8px;
       color: var(--text);
       font-family: 'Inter', sans-serif;
       font-size: 13px;
-      line-height: 1.6;
-      padding: 12px;
+      padding: 9px 12px;
       outline: none;
-      resize: vertical;
+    }
+    .modal-field input:focus { border-color: var(--amber); }
+    .modal-btns { display: flex; gap: 10px; margin-top: 20px; }
+    .btn-modal-cancel {
+      flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      color: var(--muted); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      padding: 9px; cursor: pointer; transition: border-color 0.15s;
+    }
+    .btn-modal-cancel:hover { border-color: var(--text); color: var(--text); }
+    .btn-modal-save {
+      flex: 1; background: var(--amber); border: none; border-radius: 8px;
+      color: #000; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+      padding: 9px; cursor: pointer; transition: opacity 0.15s;
+    }
+    .btn-modal-save:hover { opacity: 0.85; }
+
+    /* ── TODAY'S FOCUS ── */
+    .focus-slots { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+    .focus-slot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .focus-slot.done-slot { opacity: 0.6; border-color: var(--green); background: rgba(34,197,94,0.06); }
+    .focus-check {
+      width: 20px; height: 20px; flex-shrink: 0;
+      border: 2px solid var(--border); border-radius: 5px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s; background: transparent;
+    }
+    .focus-slot.done-slot .focus-check { background: var(--green); border-color: var(--green); }
+    .focus-check-mark { display: none; color: #fff; font-size: 11px; font-weight: 700; }
+    .focus-slot.done-slot .focus-check-mark { display: block; }
+    .focus-num { font-size: 13px; font-weight: 700; color: var(--amber); flex-shrink: 0; }
+    .focus-input {
+      flex: 1; background: transparent; border: none; color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: 13px; outline: none;
+      min-width: 0;
+    }
+    .focus-input::placeholder { color: #3d4753; }
+    .focus-slot.done-slot .focus-input { text-decoration: line-through; color: var(--muted); }
+
+    /* ── KANBAN ── */
+    .kanban {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .kanban-col { }
+    .kanban-col-header {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+    .kanban-col-header.col-new      { color: var(--muted);  border-color: var(--muted); }
+    .kanban-col-header.col-contacted{ color: var(--blue);   border-color: var(--blue); }
+    .kanban-col-header.col-proposal { color: var(--amber);  border-color: var(--amber); }
+    .kanban-col-header.col-client   { color: var(--green);  border-color: var(--green); }
+    .kanban-cards { display: flex; flex-direction: column; gap: 8px; min-height: 60px; }
+    .lead-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+      user-select: none;
+    }
+    .lead-card:hover { border-color: var(--amber); transform: translateY(-1px); }
+    .lead-card-biz { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .lead-card-city { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+    .lead-card-foot { display: flex; align-items: center; justify-content: space-between; }
+    .score-badge {
+      font-size: 11px; font-weight: 700; padding: 2px 8px;
+      border-radius: 999px; white-space: nowrap;
+    }
+    .score-badge.red    { background: rgba(239,68,68,0.15);  color: var(--red);   border: 1px solid rgba(239,68,68,0.3); }
+    .score-badge.yellow { background: rgba(234,179,8,0.15);  color: var(--yellow);border: 1px solid rgba(234,179,8,0.3); }
+    .score-badge.green  { background: rgba(34,197,94,0.15);  color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+    .score-badge.nosite { background: rgba(239,68,68,0.15);  color: var(--red);   border: 1px solid rgba(239,68,68,0.3); }
+    .btn-del-card {
+      background: none; border: none; color: #3d4753;
+      cursor: pointer; font-size: 12px; padding: 2px 4px;
+      border-radius: 4px; transition: color 0.15s;
+    }
+    .btn-del-card:hover { color: var(--red); }
+
+    .add-lead-form {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px;
+      padding-top: 14px; border-top: 1px solid var(--border);
+    }
+    .add-lead-form input, .add-lead-form select {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text); font-family: 'Inter', sans-serif; font-size: 13px;
+      padding: 8px 12px; outline: none; transition: border-color 0.15s;
+    }
+    .add-lead-form input:focus { border-color: var(--amber); }
+    .add-lead-form input::placeholder { color: #3d4753; }
+    .btn-add {
+      background: var(--amber); color: #000; font-family: 'Inter', sans-serif;
+      font-size: 13px; font-weight: 600; border: none; border-radius: 8px;
+      padding: 8px 16px; cursor: pointer; transition: opacity 0.15s;
+    }
+    .btn-add:hover { opacity: 0.85; }
+
+    /* ── EMAIL FEED ── */
+    .email-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+    .email-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
       transition: border-color 0.15s;
+    }
+    .email-card.inquiry { border-left: 3px solid var(--amber); }
+    .email-card.reply   { border-left: 3px solid var(--blue); }
+    .email-card.general { border-left: 3px solid var(--border); }
+    .email-card.replied-done { opacity: 0.5; }
+    .email-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 5px; }
+    .email-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+    .email-meta { flex: 1; min-width: 0; }
+    .email-subject { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .email-from   { font-size: 11px; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .email-date   { font-size: 10px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+    .email-body   { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.5; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .email-foot   { display: flex; justify-content: flex-end; margin-top: 8px; }
+    .btn-replied {
+      background: none; border: 1px solid var(--border); border-radius: 999px;
+      color: var(--muted); font-family: 'Inter', sans-serif; font-size: 11px;
+      font-weight: 500; padding: 3px 12px; cursor: pointer; transition: all 0.15s;
+    }
+    .btn-replied:hover { border-color: var(--green); color: var(--green); }
+    .btn-replied.done { background: rgba(34,197,94,0.1); border-color: var(--green); color: var(--green); }
+    .email-refresh-row { display: flex; align-items: center; gap: 10px; }
+    .email-status { font-size: 11px; color: var(--muted); }
+    .btn-refresh {
+      background: none; border: 1px solid var(--border); border-radius: 8px;
+      color: var(--muted); font-family: 'Inter', sans-serif; font-size: 11px;
+      padding: 4px 10px; cursor: pointer; transition: all 0.15s;
+    }
+    .btn-refresh:hover { border-color: var(--amber); color: var(--amber); }
+
+    /* ── CHECKLIST ── */
+    .checklist-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .checklist-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 12px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+    .checklist-item:hover { border-color: var(--amber); background: var(--amber-dim); }
+    .checklist-item.done { opacity: 0.6; border-color: var(--green); background: rgba(34,197,94,0.06); }
+    .checklist-item.done .item-text { text-decoration: line-through; color: var(--muted); }
+    .check-box {
+      width: 18px; height: 18px; border: 2px solid var(--border); border-radius: 4px;
+      flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .checklist-item.done .check-box { border-color: var(--green); background: var(--green); }
+    .check-mark { display: none; color: #fff; font-size: 11px; font-weight: 700; }
+    .checklist-item.done .check-mark { display: block; }
+    .item-num { font-size: 11px; color: var(--amber); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .item-text { font-size: 13px; color: var(--text); line-height: 1.4; }
+    .checklist-progress-text { font-size: 12px; color: var(--amber); font-weight: 600; }
+
+    /* ── NOTES ── */
+    .notes-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .autosave-indicator { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+    .autosave-indicator.show { opacity: 1; }
+    #notes-area {
+      width: 100%; min-height: 120px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-family: 'Inter', sans-serif; font-size: 13px;
+      line-height: 1.6; padding: 12px; outline: none; resize: vertical; transition: border-color 0.15s;
     }
     #notes-area:focus { border-color: var(--amber); }
     #notes-area::placeholder { color: #3d4753; }
 
-    /* ── FOOTER ── */
-    footer {
+    /* ── LINKS ── */
+    .links-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .link-pill {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 999px;
+      color: var(--text); font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+      padding: 10px 14px; text-decoration: none; transition: border-color 0.15s, background 0.15s, color 0.15s;
       text-align: center;
-      margin-top: 20px;
-      font-size: 12px;
-      color: #3d4753;
-      padding-bottom: 8px;
     }
+    .link-pill:hover { border-color: var(--amber); background: var(--amber-hover); color: var(--amber); }
 
-    /* ── DELETE ROW BUTTON ── */
-    .btn-del {
-      background: none;
-      border: none;
-      color: #3d4753;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 2px 4px;
-      border-radius: 4px;
-      transition: color 0.15s;
-    }
+    /* ── DELETE BUTTON ── */
+    .btn-del { background: none; border: none; color: #3d4753; cursor: pointer; font-size: 14px; padding: 2px 4px; border-radius: 4px; transition: color 0.15s; }
     .btn-del:hover { color: var(--red); }
 
-    /* Scrollbars */
+    footer { text-align: center; margin-top: 4px; font-size: 12px; color: #3d4753; padding-bottom: 16px; }
+
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
@@ -479,127 +436,204 @@
 </head>
 <body>
 
-<div class="grid">
-
-  <!-- ══════════════════════════════════════════
-       PANEL 1 — CLOCK + WEATHER
-  ══════════════════════════════════════════ -->
-  <div class="panel" id="panel-clock">
-    <div class="command-label">Gabriel's Command Center</div>
-    <div id="clock-display">00:00:00</div>
+<!-- ══════════════════════════════════════════
+     HEADER STRIP
+══════════════════════════════════════════ -->
+<div class="header-strip">
+  <div class="header-brand">🏜️ Desert Digital Studio</div>
+  <div class="header-sep"></div>
+  <div id="clock-display">00:00:00</div>
+  <div style="display:flex;flex-direction:column;gap:2px">
     <div id="clock-date">Loading…</div>
-    <div id="clock-weather">⏳ Fetching weather…</div>
+    <div id="clock-weather">⏳ Weather…</div>
   </div>
-
-  <!-- ══════════════════════════════════════════
-       PANEL 2 — SYSTEM STATS
-  ══════════════════════════════════════════ -->
-  <div class="panel" id="panel-stats">
-    <div class="panel-title">Business Overview</div>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Total Leads</div>
-        <div class="stat-value" id="stat-leads">5</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Active Clients</div>
-        <div class="stat-value" id="stat-clients">0</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Revenue MTD</div>
-        <div class="stat-value" id="stat-revenue">$0</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Monthly Goal</div>
-        <div class="stat-value">$2,000</div>
-      </div>
-    </div>
-    <div class="goal-label">
-      <span>Goal Progress</span>
-      <span id="goal-pct">0%</span>
-    </div>
-    <div class="progress-bar">
-      <div class="progress-fill" id="goal-bar" style="width:0%"></div>
-    </div>
+  <div class="header-spacer"></div>
+  <div class="header-stat">
+    <div class="header-stat-val" id="hdr-leads">–</div>
+    <div class="header-stat-lbl">Leads</div>
   </div>
-
-  <!-- ══════════════════════════════════════════
-       PANEL 3 — BUSINESS LAUNCH CHECKLIST
-  ══════════════════════════════════════════ -->
-  <div class="panel" id="panel-checklist">
-    <div class="checklist-header">
-      <div class="panel-title" style="margin-bottom:0">Business Launch Checklist</div>
-      <div class="checklist-progress-text" id="checklist-progress-text">0 / 10 complete</div>
-    </div>
-
-    <div class="checklist-items" id="checklist-items"></div>
-
-    <div class="progress-bar checklist-progress-bar">
-      <div class="progress-fill" id="checklist-bar" style="width:0%"></div>
-    </div>
+  <div class="header-sep"></div>
+  <div class="header-stat">
+    <div class="header-stat-val" id="hdr-clients">–</div>
+    <div class="header-stat-lbl">Clients</div>
   </div>
+  <div class="header-sep"></div>
+  <div class="header-stat">
+    <div class="header-stat-val" id="hdr-revenue">$0</div>
+    <div class="header-stat-lbl">Revenue MTD</div>
+  </div>
+  <div class="header-sep"></div>
+  <div class="header-stat">
+    <div class="header-stat-val" id="hdr-emails">–</div>
+    <div class="header-stat-lbl">New Emails</div>
+  </div>
+</div>
 
-  <!-- ══════════════════════════════════════════
-       PANEL 4 — LEAD TRACKER
-  ══════════════════════════════════════════ -->
-  <div class="panel" id="panel-leads">
-    <div class="panel-title">Lead Tracker</div>
-    <table class="lead-table">
-      <thead>
-        <tr>
-          <th>Business</th>
-          <th>City</th>
-          <th>Score</th>
-          <th>Status</th>
-          <th>Notes</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="lead-tbody"></tbody>
-    </table>
+<!-- ══════════════════════════════════════════
+     QUICK ACTIONS
+══════════════════════════════════════════ -->
+<div class="main-grid">
 
-    <div class="add-lead-form" id="add-lead-form">
-      <input type="text" id="new-biz"    placeholder="Business name" style="flex:2;min-width:140px" />
-      <input type="text" id="new-city"   placeholder="City"          style="flex:1;min-width:90px"  />
-      <input type="text" id="new-score"  placeholder="Score or 'No Site'" style="flex:1;min-width:120px" />
-      <button class="btn-add" onclick="addLead()">+ Add Lead</button>
+<div class="panel full-width" id="panel-actions">
+  <div class="panel-title" style="margin-bottom:12px">Quick Actions</div>
+  <div class="actions-row">
+    <a class="action-pill" href="https://www.waveapps.com/dashboard" target="_blank">📄 Wave Invoice</a>
+    <a class="action-pill" href="https://mail.zoho.com" target="_blank">📧 Business Email</a>
+    <a class="action-pill" href="https://www.desertdigitalstudio.com" target="_blank">🌐 My Website</a>
+    <a class="action-pill" href="https://business.google.com" target="_blank">📍 Google Business</a>
+    <a class="action-pill" href="file:///Users/gabrielmaciel/.openclaw/workspace/tools/site-auditor/" target="_blank">📊 Run Audit</a>
+    <a class="action-pill" href="https://github.com/DesertDigitalStudios" target="_blank">💼 GitHub</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     REVENUE TRACKER
+══════════════════════════════════════════ -->
+<div class="panel" id="panel-stats">
+  <div class="panel-header">
+    <div class="panel-title">Revenue Tracker</div>
+    <button class="btn-add" onclick="openPaymentModal()" style="font-size:12px;padding:6px 12px">+ Log Payment</button>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-label">Revenue MTD</div>
+      <div class="stat-value" id="stat-revenue">$0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Monthly Goal</div>
+      <div class="stat-value">$2,000</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Leads</div>
+      <div class="stat-value" id="stat-leads">–</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Active Clients</div>
+      <div class="stat-value" id="stat-clients">–</div>
     </div>
   </div>
+  <div class="goal-label">
+    <span>Goal Progress</span>
+    <span id="goal-pct">0%</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" id="goal-bar" style="width:0%"></div>
+  </div>
+  <div class="payment-list" id="payment-list"></div>
+</div>
 
-  <!-- ══════════════════════════════════════════
-       PANEL 5 — QUICK LINKS
-  ══════════════════════════════════════════ -->
-  <div class="panel" id="panel-links">
-    <div class="panel-title">Quick Links</div>
+<!-- ══════════════════════════════════════════
+     TODAY'S FOCUS
+══════════════════════════════════════════ -->
+<div class="panel" id="panel-focus">
+  <div class="panel-header">
+    <div class="panel-title">Today's Focus — Top 3</div>
+    <span id="focus-date-lbl" style="font-size:11px;color:var(--muted)"></span>
+  </div>
+  <div class="focus-slots" id="focus-slots"></div>
+  <div style="font-size:11px;color:var(--muted);margin-top:4px">Resets daily. Click checkbox to complete.</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     EMAIL FEED
+══════════════════════════════════════════ -->
+<div class="panel" id="panel-email">
+  <div class="panel-header">
+    <div class="panel-title">Email Feed</div>
+    <div class="email-refresh-row">
+      <span class="email-status" id="email-status">Loading…</span>
+      <button class="btn-refresh" onclick="loadEmails()">↻ Refresh</button>
+    </div>
+  </div>
+  <div class="email-list" id="email-list">
+    <div style="color:var(--muted);font-size:13px;padding:12px 0">Loading emails…</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     KANBAN LEAD PIPELINE
+══════════════════════════════════════════ -->
+<div class="panel full-width" id="panel-leads">
+  <div class="panel-header">
+    <div class="panel-title">Lead Pipeline</div>
+    <span id="lead-summary" style="font-size:11px;color:var(--muted)"></span>
+  </div>
+  <div class="kanban" id="kanban-board"></div>
+  <div class="add-lead-form">
+    <input type="text" id="new-biz"   placeholder="Business name" style="flex:2;min-width:140px" />
+    <input type="text" id="new-city"  placeholder="City"          style="flex:1;min-width:90px"  />
+    <input type="text" id="new-score" placeholder="Score or 'No Site'" style="flex:1;min-width:120px" />
+    <button class="btn-add" onclick="addLead()">+ Add Lead</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHECKLIST + NOTES (side by side)
+══════════════════════════════════════════ -->
+<div class="panel" id="panel-checklist">
+  <div class="panel-header">
+    <div class="panel-title">Launch Checklist</div>
+    <div class="checklist-progress-text" id="checklist-progress-text">0 / 10</div>
+  </div>
+  <div class="checklist-items" id="checklist-items"></div>
+  <div class="progress-bar">
+    <div class="progress-fill" id="checklist-bar" style="width:0%"></div>
+  </div>
+</div>
+
+<div class="panel" id="panel-notes">
+  <div class="notes-header">
+    <div class="panel-title" style="margin-bottom:0">Notes / Scratchpad</div>
+    <span class="autosave-indicator" id="autosave-badge">✓ Saved</span>
+  </div>
+  <textarea id="notes-area" placeholder="Jot something down…"></textarea>
+
+  <div style="margin-top:16px">
+    <div class="panel-title" style="margin-bottom:10px">Useful Links</div>
     <div class="links-grid">
       <a class="link-pill" href="https://www.yelp.com/search?find_desc=&find_loc=Benson%2C+AZ" target="_blank">⭐ Yelp Benson</a>
       <a class="link-pill" href="https://www.google.com/maps/search/businesses/@31.9678,-110.2929,13z" target="_blank">📍 Google Maps</a>
       <a class="link-pill" href="https://discord.com" target="_blank">💬 Discord</a>
-      <a class="link-pill" href="https://github.com" target="_blank">🐙 GitHub</a>
       <a class="link-pill" href="https://www.namecheap.com" target="_blank">🌐 Namecheap</a>
       <a class="link-pill" href="https://vercel.com" target="_blank">▲ Vercel</a>
+      <a class="link-pill" href="https://github.com" target="_blank">🐙 GitHub</a>
     </div>
   </div>
-
-  <!-- ══════════════════════════════════════════
-       PANEL 6 — NOTES / SCRATCHPAD
-  ══════════════════════════════════════════ -->
-  <div class="panel" id="panel-notes">
-    <div class="notes-header">
-      <div class="panel-title" style="margin-bottom:0">Notes / Scratchpad</div>
-      <span class="autosave-indicator" id="autosave-badge">✓ Saved</span>
-    </div>
-    <textarea id="notes-area" placeholder="Jot something down…"></textarea>
-  </div>
-
 </div>
 
-<footer>Powered by Koa 🌊</footer>
+</div><!-- /main-grid -->
+
+<!-- ══════════════════════════════════════════
+     PAYMENT MODAL
+══════════════════════════════════════════ -->
+<div class="modal-backdrop" id="payment-modal">
+  <div class="modal">
+    <div class="modal-title">💰 Log Payment</div>
+    <div class="modal-field">
+      <label>Client Name</label>
+      <input type="text" id="pay-client" placeholder="e.g. Benson City Grille" />
+    </div>
+    <div class="modal-field">
+      <label>Amount ($)</label>
+      <input type="number" id="pay-amount" placeholder="500" min="0" />
+    </div>
+    <div class="modal-field">
+      <label>Date</label>
+      <input type="date" id="pay-date" />
+    </div>
+    <div class="modal-btns">
+      <button class="btn-modal-cancel" onclick="closePaymentModal()">Cancel</button>
+      <button class="btn-modal-save" onclick="savePayment()">Save Payment</button>
+    </div>
+  </div>
+</div>
+
+<footer>Powered by Koa 🌊 · Desert Digital Studio</footer>
 
 <script>
-// ─────────────────────────────────────────────
+// ═══════════════════════════════════════════
 //  CLOCK
-// ─────────────────────────────────────────────
+// ═══════════════════════════════════════════
 function updateClock() {
   const now = new Date();
   const hh = String(now.getHours()).padStart(2,'0');
@@ -608,17 +642,17 @@ function updateClock() {
   document.getElementById('clock-display').textContent = `${hh}:${mm}:${ss}`;
 
   const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const d = days[now.getDay()];
   const m = months[now.getMonth()];
-  document.getElementById('clock-date').textContent = `${d}, ${m} ${now.getDate()}, ${now.getFullYear()}`;
+  document.getElementById('clock-date').textContent = `${d}, ${m} ${now.getDate()} ${now.getFullYear()}`;
 }
 setInterval(updateClock, 1000);
 updateClock();
 
-// ─────────────────────────────────────────────
+// ═══════════════════════════════════════════
 //  WEATHER
-// ─────────────────────────────────────────────
+// ═══════════════════════════════════════════
 async function fetchWeather() {
   try {
     const r = await fetch('https://wttr.in/Benson,AZ?format=j1');
@@ -626,46 +660,401 @@ async function fetchWeather() {
     const cur = j.current_condition[0];
     const tempF = cur.temp_F;
     const desc  = cur.weatherDesc[0].value;
-    const icons = { 'Sunny':'☀️','Clear':'☀️','Partly cloudy':'⛅','Partly Cloudy':'⛅','Cloudy':'☁️','Overcast':'☁️','Mist':'🌫️','Fog':'🌫️','Light rain':'🌦️','Rain':'🌧️','Heavy rain':'🌧️','Thunderstorm':'⛈️','Snow':'❄️','Blizzard':'❄️','Blowing snow':'❄️' };
+    const icons = { 'Sunny':'☀️','Clear':'☀️','Partly cloudy':'⛅','Partly Cloudy':'⛅',
+      'Cloudy':'☁️','Overcast':'☁️','Mist':'🌫️','Fog':'🌫️','Light rain':'🌦️',
+      'Rain':'🌧️','Heavy rain':'🌧️','Thunderstorm':'⛈️','Snow':'❄️' };
     const icon = icons[desc] || '🌡️';
-    document.getElementById('clock-weather').innerHTML = `${icon} ${tempF}°F &nbsp;·&nbsp; ${desc} &nbsp;·&nbsp; Benson, AZ`;
+    document.getElementById('clock-weather').innerHTML = `${icon} ${tempF}°F · ${desc} · Benson AZ`;
   } catch(e) {
     document.getElementById('clock-weather').textContent = '🌡️ Weather unavailable';
   }
 }
 fetchWeather();
 
-// ─────────────────────────────────────────────
+// ═══════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+// ═══════════════════════════════════════════
+//  REVENUE / PAYMENTS
+// ═══════════════════════════════════════════
+const PAYMENTS_KEY = 'koa_payments_v1';
+const MONTHLY_GOAL = 2000;
+
+function loadPayments() {
+  return JSON.parse(localStorage.getItem(PAYMENTS_KEY) || '[]');
+}
+function savePaymentsData(p) {
+  localStorage.setItem(PAYMENTS_KEY, JSON.stringify(p));
+}
+
+function getRevenueMTD() {
+  const now = new Date();
+  const ym = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
+  return loadPayments()
+    .filter(p => p.date && p.date.startsWith(ym))
+    .reduce((s, p) => s + (parseFloat(p.amount) || 0), 0);
+}
+
+function renderPayments() {
+  const rev = getRevenueMTD();
+  document.getElementById('stat-revenue').textContent = '$' + rev.toLocaleString();
+  document.getElementById('hdr-revenue').textContent  = '$' + rev.toLocaleString();
+  const pct = Math.min(100, Math.round((rev / MONTHLY_GOAL) * 100));
+  document.getElementById('goal-pct').textContent = pct + '%';
+  document.getElementById('goal-bar').style.width = pct + '%';
+
+  const list = loadPayments().slice(-5).reverse();
+  const el = document.getElementById('payment-list');
+  if (!list.length) { el.innerHTML = '<div style="font-size:12px;color:var(--muted);margin-top:10px">No payments logged yet.</div>'; return; }
+  el.innerHTML = list.map(p => `
+    <div class="payment-item">
+      <span class="payment-client">${escHtml(p.client)}</span>
+      <span class="payment-date">${escHtml(p.date)}</span>
+      <span class="payment-amount">+$${parseFloat(p.amount).toLocaleString()}</span>
+    </div>
+  `).join('');
+}
+
+function openPaymentModal() {
+  document.getElementById('pay-client').value = '';
+  document.getElementById('pay-amount').value = '';
+  document.getElementById('pay-date').value = todayStr();
+  document.getElementById('payment-modal').classList.add('open');
+  setTimeout(() => document.getElementById('pay-client').focus(), 50);
+}
+function closePaymentModal() {
+  document.getElementById('payment-modal').classList.remove('open');
+}
+function savePayment() {
+  const client = document.getElementById('pay-client').value.trim();
+  const amount = parseFloat(document.getElementById('pay-amount').value);
+  const date   = document.getElementById('pay-date').value;
+  if (!client || isNaN(amount) || amount <= 0) return;
+  const payments = loadPayments();
+  payments.push({ client, amount, date });
+  savePaymentsData(payments);
+  closePaymentModal();
+  renderPayments();
+}
+document.getElementById('payment-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('payment-modal')) closePaymentModal();
+});
+
+// ═══════════════════════════════════════════
+//  TODAY'S FOCUS
+// ═══════════════════════════════════════════
+const FOCUS_KEY = 'koa_focus_v1';
+
+function loadFocus() {
+  const saved = JSON.parse(localStorage.getItem(FOCUS_KEY) || '{}');
+  const today = todayStr();
+  if (saved.date !== today) {
+    return { date: today, slots: ['','',''], done: [false,false,false] };
+  }
+  return saved;
+}
+function saveFocus(f) {
+  localStorage.setItem(FOCUS_KEY, JSON.stringify(f));
+}
+
+function renderFocus() {
+  const f = loadFocus();
+  document.getElementById('focus-date-lbl').textContent = f.date;
+  const container = document.getElementById('focus-slots');
+  container.innerHTML = '';
+  [0,1,2].forEach(i => {
+    const done = f.done[i];
+    const div = document.createElement('div');
+    div.className = 'focus-slot' + (done ? ' done-slot' : '');
+    div.innerHTML = `
+      <div class="focus-check" data-i="${i}">
+        <span class="focus-check-mark">✓</span>
+      </div>
+      <span class="focus-num">${i+1}</span>
+      <input class="focus-input" data-i="${i}" placeholder="Click to type a task…" value="${escHtml(f.slots[i])}" ${done ? 'readonly' : ''} />
+    `;
+    div.querySelector('.focus-check').addEventListener('click', () => {
+      const f2 = loadFocus();
+      f2.done[i] = !f2.done[i];
+      saveFocus(f2);
+      renderFocus();
+    });
+    div.querySelector('.focus-input').addEventListener('input', e => {
+      const f2 = loadFocus();
+      f2.slots[i] = e.target.value;
+      saveFocus(f2);
+    });
+    container.appendChild(div);
+  });
+}
+renderFocus();
+
+// ═══════════════════════════════════════════
+//  EMAIL FEED
+// ═══════════════════════════════════════════
+const REPLIED_KEY = 'koa_replied_v1';
+const INQUIRY_KW  = /website|quote|price|interested|hire|project|design|build|cost|service/i;
+const REPLY_KW    = /^re:/i;
+
+function getEmailIcon(email) {
+  const txt = (email.subject || '') + ' ' + (email.body || '');
+  if (INQUIRY_KW.test(txt)) return '🔥';
+  if (REPLY_KW.test(email.subject || '')) return '💬';
+  return '📬';
+}
+function getEmailClass(email) {
+  const txt = (email.subject || '') + ' ' + (email.body || '');
+  if (INQUIRY_KW.test(txt)) return 'inquiry';
+  if (REPLY_KW.test(email.subject || '')) return 'reply';
+  return 'general';
+}
+function formatEmailDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  const now = new Date();
+  const diff = (now - d) / 1000;
+  if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+  return d.toLocaleDateString();
+}
+
+async function loadEmails() {
+  const el = document.getElementById('email-list');
+  const statusEl = document.getElementById('email-status');
+  statusEl.textContent = 'Refreshing…';
+  try {
+    const r = await fetch('http://localhost:3737/emails?_=' + Date.now());
+    const emails = await r.json();
+    const replied = JSON.parse(localStorage.getItem(REPLIED_KEY) || '{}');
+
+    // Update header count
+    const unreplied = emails.filter(e => {
+      const key = (e.from || '') + '|' + (e.date || '');
+      return !replied[key];
+    }).length;
+    document.getElementById('hdr-emails').textContent = unreplied;
+
+    if (!emails.length) {
+      el.innerHTML = '<div style="color:var(--muted);font-size:13px;padding:12px 0">No emails found.</div>';
+      statusEl.textContent = 'Empty';
+      return;
+    }
+
+    el.innerHTML = emails.slice(0, 5).map(email => {
+      const key = (email.from || '') + '|' + (email.date || '');
+      const isReplied = !!replied[key];
+      const icon  = getEmailIcon(email);
+      const cls   = getEmailClass(email);
+      const body  = (email.body || '').slice(0, 100);
+      return `
+        <div class="email-card ${cls}${isReplied ? ' replied-done' : ''}" data-key="${escHtml(key)}">
+          <div class="email-top">
+            <span class="email-icon">${icon}</span>
+            <div class="email-meta">
+              <div class="email-subject">${escHtml(email.subject || '(no subject)')}</div>
+              <div class="email-from">${escHtml(email.from || '')}</div>
+            </div>
+            <span class="email-date">${formatEmailDate(email.date)}</span>
+          </div>
+          <div class="email-body">${escHtml(body)}</div>
+          <div class="email-foot">
+            <button class="btn-replied${isReplied ? ' done' : ''}" data-key="${escHtml(key)}">
+              ${isReplied ? '✓ Replied' : 'Mark Replied'}
+            </button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    el.querySelectorAll('.btn-replied').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const key = btn.dataset.key;
+        const replied2 = JSON.parse(localStorage.getItem(REPLIED_KEY) || '{}');
+        replied2[key] = !replied2[key];
+        localStorage.setItem(REPLIED_KEY, JSON.stringify(replied2));
+        loadEmails();
+      });
+    });
+
+    statusEl.textContent = `${emails.length} email${emails.length !== 1 ? 's' : ''} · ${new Date().toLocaleTimeString()}`;
+  } catch(e) {
+    el.innerHTML = '<div style="color:var(--muted);font-size:13px;padding:12px 0">⚠️ Server offline — run: node server.js in dashboard folder</div>';
+    statusEl.textContent = 'Offline';
+    document.getElementById('hdr-emails').textContent = '?';
+  }
+}
+loadEmails();
+setInterval(loadEmails, 60000);
+
+// ═══════════════════════════════════════════
+//  KANBAN LEADS
+// ═══════════════════════════════════════════
+const LEADS_KEY = 'koa_leads_v1';
+const STATUS_CYCLE = ['New','Contacted','Proposal','Client'];
+
+const DEFAULT_LEADS = [
+  { biz:'Benson City Grille',          city:'Benson',       score:'nosite', status:'New', notes:'No website — call (520) 586-2525' },
+  { biz:"Baker's Dozen Donuts",        city:'Sierra Vista', score:68,       status:'New', notes:'No contact info on site — (520) 459-7162' },
+  { biz:'Farmhouse Restaurant',        city:'Benson',       score:71,       status:'New', notes:'Fake site running ads — (520) 586-4326' },
+  { biz:'The Horseshoe',               city:'Benson',       score:72,       status:'Contacted', notes:'Email sent 3/28 — TheHorseshoe@yahoo.com' },
+  { biz:"Angelika's German Imports",   city:'Sierra Vista', score:77,       status:'New', notes:'Copyright stuck at 2014 — (520) 458-5150' },
+  { biz:'Urbano Bar & Bistro',         city:'Sierra Vista', score:79,       status:'New', notes:'No meta description, phone missing — (520) 732-8886' },
+  { biz:'Mescal Bar & Grill',          city:'Benson',       score:79,       status:'New', notes:'Only Facebook as website' },
+  { biz:'Gypsy Sips Café',             city:'Sierra Vista', score:81,       status:'Contacted', notes:'Email sent 3/28 — gypsygips@gmail.com' },
+  { biz:'Horseshoe Cafe & Bakery',     city:'Benson',       score:89,       status:'New', notes:'Mostly solid — copyright 2021' },
+  { biz:"Doc Holliday's Saloon",       city:'Tombstone',    score:'nosite', status:'New', notes:'No website — Facebook only — (520) 457-2247' },
+  { biz:"Johnny Ringo's Bar",          city:'Tombstone',    score:'nosite', status:'New', notes:'No website — Facebook only — (520) 457-3961' },
+  { biz:'Cowboy Coffee Bar',           city:'Tombstone',    score:'nosite', status:'New', notes:'No website — Facebook only — (520) 940-1240' },
+  { biz:"Mom & Pops Sandwiches",       city:'Tombstone',    score:'nosite', status:'New', notes:'No website at all — (520) 457-8770' },
+  { biz:"Dick's Diner",                city:'Tombstone',    score:55,       status:'New', notes:'Square site — no title, meta, H1 — (520) 763-4054' },
+  { biz:"Crazy Annie's Saloon",        city:'Tombstone',    score:66,       status:'New', notes:'NOT mobile responsive! No socials — (520) 457-3847' },
+  { biz:"Big Nose Kate's Saloon",      city:'Tombstone',    score:67,       status:'New', notes:'No meta desc, no H1 — (520) 457-3107' },
+];
+
+function loadLeads() {
+  const saved = localStorage.getItem(LEADS_KEY);
+  if (saved) return JSON.parse(saved);
+  localStorage.setItem(LEADS_KEY, JSON.stringify(DEFAULT_LEADS));
+  return DEFAULT_LEADS;
+}
+function saveLeads(leads) {
+  localStorage.setItem(LEADS_KEY, JSON.stringify(leads));
+}
+
+function scoreLabel(score) {
+  if (score === 'nosite') return { text:'🔥 No Site', cls:'nosite' };
+  const n = Number(score);
+  if (n <= 50) return { text: n, cls:'red' };
+  if (n <= 75) return { text: n, cls:'yellow' };
+  return { text: n, cls:'green' };
+}
+
+function renderKanban() {
+  const leads = loadLeads();
+  const board = document.getElementById('kanban-board');
+
+  const cols = {
+    'New':       { label:'New',       cls:'col-new',       leads:[] },
+    'Contacted': { label:'Contacted', cls:'col-contacted', leads:[] },
+    'Proposal':  { label:'Proposal',  cls:'col-proposal',  leads:[] },
+    'Client':    { label:'Client',    cls:'col-client',    leads:[] },
+  };
+
+  leads.forEach((lead, i) => {
+    const status = cols[lead.status] ? lead.status : 'New';
+    cols[status].leads.push({ ...lead, _idx: i });
+  });
+
+  board.innerHTML = '';
+  Object.values(cols).forEach(col => {
+    const colEl = document.createElement('div');
+    colEl.className = 'kanban-col';
+    colEl.innerHTML = `
+      <div class="kanban-col-header ${col.cls}">${col.label} <span style="font-weight:400;opacity:0.6">(${col.leads.length})</span></div>
+      <div class="kanban-cards" data-col="${col.label}"></div>
+    `;
+    const cardsEl = colEl.querySelector('.kanban-cards');
+
+    col.leads.forEach(lead => {
+      const sl = scoreLabel(lead.score);
+      const card = document.createElement('div');
+      card.className = 'lead-card';
+      card.title = lead.notes || '';
+      card.innerHTML = `
+        <div class="lead-card-biz">${escHtml(lead.biz)}</div>
+        <div class="lead-card-city">${escHtml(lead.city)}</div>
+        <div class="lead-card-foot">
+          <span class="score-badge ${sl.cls}">${sl.text}</span>
+          <button class="btn-del-card" data-idx="${lead._idx}" title="Delete">✕</button>
+        </div>
+      `;
+      card.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-del-card')) return;
+        const leads2 = loadLeads();
+        const cur = STATUS_CYCLE.indexOf(leads2[lead._idx].status);
+        leads2[lead._idx].status = STATUS_CYCLE[(cur + 1) % STATUS_CYCLE.length];
+        saveLeads(leads2);
+        renderKanban();
+        updateStats();
+      });
+      card.querySelector('.btn-del-card').addEventListener('click', e => {
+        e.stopPropagation();
+        const leads2 = loadLeads();
+        leads2.splice(lead._idx, 1);
+        saveLeads(leads2);
+        renderKanban();
+        updateStats();
+      });
+      cardsEl.appendChild(card);
+    });
+
+    board.appendChild(colEl);
+  });
+
+  // Lead summary
+  const clients = leads.filter(l => l.status === 'Client').length;
+  document.getElementById('lead-summary').textContent = `${leads.length} total · ${clients} client${clients !== 1 ? 's' : ''}`;
+}
+
+function addLead() {
+  const biz   = document.getElementById('new-biz').value.trim();
+  const city  = document.getElementById('new-city').value.trim() || 'Benson';
+  const scoreRaw = document.getElementById('new-score').value.trim();
+  if (!biz) return;
+  const score = /no\s*site/i.test(scoreRaw) ? 'nosite' : (parseInt(scoreRaw,10) || 0);
+  const leads = loadLeads();
+  leads.push({ biz, city, score, status:'New', notes:'' });
+  saveLeads(leads);
+  document.getElementById('new-biz').value  = '';
+  document.getElementById('new-city').value = '';
+  document.getElementById('new-score').value = '';
+  renderKanban();
+  updateStats();
+}
+document.getElementById('new-score').addEventListener('keydown', e => { if (e.key === 'Enter') addLead(); });
+
+// ═══════════════════════════════════════════
+//  STATS
+// ═══════════════════════════════════════════
+function updateStats() {
+  const leads   = loadLeads();
+  const clients = leads.filter(l => l.status === 'Client').length;
+  document.getElementById('stat-leads').textContent   = leads.length;
+  document.getElementById('stat-clients').textContent = clients;
+  document.getElementById('hdr-leads').textContent    = leads.length;
+  document.getElementById('hdr-clients').textContent  = clients;
+  renderPayments();
+}
+
+// ═══════════════════════════════════════════
 //  CHECKLIST
-// ─────────────────────────────────────────────
+// ═══════════════════════════════════════════
 const CHECKLIST_KEY = 'koa_checklist_v1';
 const checklistItems = [
   'Decide on a business name',
   'Buy a domain name (Namecheap ~$12)',
   'Create a GitHub account (free)',
   'Create a Vercel account (free)',
-  'Build your portfolio/business website (ask Koa)',
+  'Build your portfolio/business website',
   'Set up a Google Business Profile',
-  'List 10 local businesses to target in Benson/Sierra Vista',
+  'List 10 local businesses to target',
   'Run site audits on your target list',
-  'Walk into your first 3 businesses with your pitch',
+  'Walk into your first 3 businesses with pitch',
   'Land your first paid client 🎉'
 ];
-
-function loadChecklist() {
-  const saved = JSON.parse(localStorage.getItem(CHECKLIST_KEY) || '{}');
-  return saved;
-}
-
-function saveChecklist(state) {
-  localStorage.setItem(CHECKLIST_KEY, JSON.stringify(state));
-}
-
 function renderChecklist() {
-  const state = loadChecklist();
+  const state = JSON.parse(localStorage.getItem(CHECKLIST_KEY) || '{}');
   const container = document.getElementById('checklist-items');
   container.innerHTML = '';
-
   let done = 0;
   checklistItems.forEach((text, i) => {
     const checked = !!state[i];
@@ -678,180 +1067,43 @@ function renderChecklist() {
       <span class="item-text">${text}</span>
     `;
     div.addEventListener('click', () => {
-      const s = loadChecklist();
+      const s = JSON.parse(localStorage.getItem(CHECKLIST_KEY) || '{}');
       s[i] = !s[i];
-      saveChecklist(s);
+      localStorage.setItem(CHECKLIST_KEY, JSON.stringify(s));
       renderChecklist();
     });
     container.appendChild(div);
   });
-
   const pct = Math.round((done / checklistItems.length) * 100);
-  document.getElementById('checklist-progress-text').textContent = `${done} / ${checklistItems.length} complete`;
+  document.getElementById('checklist-progress-text').textContent = `${done} / ${checklistItems.length}`;
   document.getElementById('checklist-bar').style.width = pct + '%';
 }
 renderChecklist();
 
-// ─────────────────────────────────────────────
-//  LEAD TRACKER
-// ─────────────────────────────────────────────
-const LEADS_KEY = 'koa_leads_v1';
-const STATUS_CYCLE = ['New','Contacted','Proposal','Client'];
-const STATUS_CLASS  = { 'New':'status-new', 'Contacted':'status-contacted', 'Proposal':'status-proposal', 'Client':'status-client' };
-
-const DEFAULT_LEADS = [
-  { biz:'Benson City Grille',      city:'Benson',       score:'nosite', status:'New', notes:'No website at all — call (520) 586-2525' },
-  { biz:'Get Lit Books',           city:'Sierra Vista', score:64,       status:'New', notes:'Running on Google Sites — easy upgrade pitch' },
-  { biz:'Baker\'s Dozen Donuts',   city:'Sierra Vista', score:68,       status:'New', notes:'No contact info on site — (520) 459-7162' },
-  { biz:'Farmhouse Restaurant',    city:'Benson',       score:71,       status:'New', notes:'Missing H1, social links, copyright' },
-  { biz:'The Horseshoe',           city:'Benson',       score:72,       status:'New', notes:'No meta description, missing H1' },
-  { biz:'Angelika\'s German Imports', city:'Sierra Vista', score:77,    status:'New', notes:'Copyright stuck at 2014 — (520) 458-5150' },
-  { biz:'Urbano Bar & Bistro',     city:'Sierra Vista', score:79,       status:'New', notes:'No meta description, phone missing — (520) 732-8886' },
-  { biz:'Mescal Bar & Grill',      city:'Benson',       score:79,       status:'New', notes:'Only Facebook as website' },
-  { biz:'Gypsy Sips Café',         city:'Sierra Vista', score:81,       status:'New', notes:'Missing H1, outdated copyright — (520) 224-7303' },
-  { biz:'Horseshoe Cafe & Bakery', city:'Benson',       score:89,       status:'New', notes:'Mostly solid — copyright 2021' },
-];
-
-function loadLeads() {
-  const saved = localStorage.getItem(LEADS_KEY);
-  if (saved) return JSON.parse(saved);
-  localStorage.setItem(LEADS_KEY, JSON.stringify(DEFAULT_LEADS));
-  return DEFAULT_LEADS;
-}
-
-function saveLeads(leads) {
-  localStorage.setItem(LEADS_KEY, JSON.stringify(leads));
-}
-
-function scoreBar(score) {
-  if (score === 'nosite') {
-    return `<span class="badge-nosite">🔥 No Site</span>`;
-  }
-  const n = Number(score);
-  const cls = n <= 50 ? 'red' : n <= 75 ? 'yellow' : 'green';
-  return `
-    <div class="score-bar-wrap">
-      <div class="score-mini-bar"><div class="score-mini-fill ${cls}" style="width:${n}%"></div></div>
-      <span class="score-num" style="color:var(--${cls})">${n}</span>
-    </div>`;
-}
-
-function renderLeads() {
-  const leads = loadLeads();
-  const tbody = document.getElementById('lead-tbody');
-  tbody.innerHTML = '';
-
-  leads.forEach((lead, i) => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td style="font-weight:500">${escHtml(lead.biz)}</td>
-      <td style="color:var(--muted)">${escHtml(lead.city)}</td>
-      <td>${scoreBar(lead.score)}</td>
-      <td><span class="status-badge ${STATUS_CLASS[lead.status] || 'status-new'}" data-idx="${i}">${lead.status}</span></td>
-      <td><input class="note-input" data-idx="${i}" value="${escHtml(lead.notes)}" placeholder="Add note…" /></td>
-      <td><button class="btn-del" data-idx="${i}" title="Delete">✕</button></td>
-    `;
-    tbody.appendChild(tr);
-  });
-
-  // Status cycle
-  tbody.querySelectorAll('.status-badge').forEach(el => {
-    el.addEventListener('click', () => {
-      const leads2 = loadLeads();
-      const idx = +el.dataset.idx;
-      const cur = STATUS_CYCLE.indexOf(leads2[idx].status);
-      leads2[idx].status = STATUS_CYCLE[(cur + 1) % STATUS_CYCLE.length];
-      saveLeads(leads2);
-      renderLeads();
-      updateStats();
-    });
-  });
-
-  // Inline notes
-  tbody.querySelectorAll('.note-input').forEach(el => {
-    el.addEventListener('blur', () => {
-      const leads2 = loadLeads();
-      leads2[+el.dataset.idx].notes = el.value;
-      saveLeads(leads2);
-    });
-  });
-
-  // Delete
-  tbody.querySelectorAll('.btn-del').forEach(el => {
-    el.addEventListener('click', () => {
-      const leads2 = loadLeads();
-      leads2.splice(+el.dataset.idx, 1);
-      saveLeads(leads2);
-      renderLeads();
-      updateStats();
-    });
-  });
-
-  updateStats();
-}
-
-function addLead() {
-  const biz   = document.getElementById('new-biz').value.trim();
-  const city  = document.getElementById('new-city').value.trim() || 'Benson';
-  const scoreRaw = document.getElementById('new-score').value.trim();
-  if (!biz) return;
-  const score = /no\s*site/i.test(scoreRaw) ? 'nosite' : (parseInt(scoreRaw,10) || 0);
-  const leads = loadLeads();
-  leads.push({ biz, city, score, status:'New', notes:'' });
-  saveLeads(leads);
-  document.getElementById('new-biz').value = '';
-  document.getElementById('new-city').value = '';
-  document.getElementById('new-score').value = '';
-  renderLeads();
-}
-
-// Allow Enter key to add lead
-document.getElementById('new-score').addEventListener('keydown', e => { if (e.key === 'Enter') addLead(); });
-
-function escHtml(str) {
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-renderLeads();
-
-// ─────────────────────────────────────────────
-//  STATS
-// ─────────────────────────────────────────────
-const MONTHLY_GOAL = 2000;
-
-function updateStats() {
-  const leads = loadLeads();
-  document.getElementById('stat-leads').textContent = leads.length;
-  const clients = leads.filter(l => l.status === 'Client').length;
-  document.getElementById('stat-clients').textContent = clients;
-  // Revenue: $500 per client as a rough placeholder
-  const rev = clients * 500;
-  document.getElementById('stat-revenue').textContent = '$' + rev.toLocaleString();
-  const pct = Math.min(100, Math.round((rev / MONTHLY_GOAL) * 100));
-  document.getElementById('goal-pct').textContent = pct + '%';
-  document.getElementById('goal-bar').style.width = pct + '%';
-}
-updateStats();
-
-// ─────────────────────────────────────────────
+// ═══════════════════════════════════════════
 //  NOTES
-// ─────────────────────────────────────────────
+// ═══════════════════════════════════════════
 const NOTES_KEY = 'koa_notes_v1';
 const notesArea = document.getElementById('notes-area');
-const autosaveBadge = document.getElementById('autosave-badge');
-let notesTimer = null;
-
 notesArea.value = localStorage.getItem(NOTES_KEY) || '';
-
+let notesTimer = null;
 notesArea.addEventListener('input', () => {
   clearTimeout(notesTimer);
-  autosaveBadge.classList.remove('show');
+  document.getElementById('autosave-badge').classList.remove('show');
   notesTimer = setTimeout(() => {
     localStorage.setItem(NOTES_KEY, notesArea.value);
-    autosaveBadge.classList.add('show');
-    setTimeout(() => autosaveBadge.classList.remove('show'), 2000);
+    const badge = document.getElementById('autosave-badge');
+    badge.classList.add('show');
+    setTimeout(() => badge.classList.remove('show'), 2000);
   }, 700);
 });
+
+// ═══════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════
+renderKanban();
+updateStats();
+renderPayments();
 </script>
 </body>
 </html>

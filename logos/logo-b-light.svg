@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <!-- Light background -->
+  <rect width="600" height="200" fill="#ffffff"/>
+
+  <!-- Amber accent line above text -->
+  <rect x="40" y="68" width="520" height="2" rx="1" fill="#f59e0b" opacity="0.8"/>
+
+  <!-- DESERT DIGITAL wordmark -->
+  <text x="40" y="115" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#1a1a2e" letter-spacing="3">DESERT</text>
+  <text x="270" y="115" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#f59e0b" letter-spacing="3">DIGITAL</text>
+
+  <!-- Thin amber line separator -->
+  <rect x="40" y="125" width="520" height="1.5" rx="1" fill="#f59e0b" opacity="0.4"/>
+
+  <!-- STUDIO with letter spacing -->
+  <text x="44" y="152" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#d97706" letter-spacing="10">STUDIO</text>
+
+  <!-- Small diamond accent after STUDIO -->
+  <polygon points="198,143 204,148 198,153 192,148" fill="#f59e0b" opacity="0.8"/>
+</svg>
