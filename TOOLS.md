@@ -38,6 +38,15 @@ Things like:
 - Default speaker: Kitchen HomePod
 ```
 
+## GitHub
+
+- **Org:** DesertDigitalStudios
+- **Repo:** desertdigitalstudio (Vercel-connected, auto-deploys on push)
+- **Remote URL:** https://github.com/DesertDigitalStudios/desertdigitalstudio.git
+- **Token:** [removed from repo; store locally outside git]
+- **Token name:** desktop-push
+- **To deploy:** clone to /tmp/dds-deploy, copy portfolio files, commit and push to main
+
 ## Local AI Routing
 
 - **Primary chat model in OpenClaw:** `openai-codex/gpt-5.4`
