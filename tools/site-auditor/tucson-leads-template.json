@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Example Business",
+    "website": "https://example.com",
+    "phone": "(520) 555-0100",
+    "email": "hello@example.com",
+    "city": "Tucson",
+    "category": "restaurant",
+    "reviewScore": 4.6,
+    "reviewCount": 128,
+    "notes": "Good reviews, outdated site, public email available"
+  }
+]
