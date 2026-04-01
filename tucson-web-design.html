@@ -43,10 +43,12 @@
     a { color: inherit; text-decoration: none; }
     header { position: sticky; top: 0; z-index: 100; background: rgba(13,17,23,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
     nav { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-size: 1rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+    .logo { font-size: 1rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-text { white-space: nowrap; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a { color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
+    @media (max-width: 640px) { .nav-links { gap: 16px; } .logo-text { display: none; } }
     .hero { padding: 80px 24px; text-align: center; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(245,158,11,0.07) 0%, transparent 70%); }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); color: var(--accent); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; margin-bottom: 24px; }
     h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
@@ -94,7 +96,7 @@
         <rect x="71" y="72" width="51" height="18" rx="9" fill="#f59e0b"/>
         <rect x="77" y="20" width="7" height="7" rx="2" fill="#f59e0b"/>
       </svg>
-      Desert Digital Studio
+      <span class="logo-text">Desert Digital Studio</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
