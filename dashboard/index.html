@@ -757,7 +757,11 @@ function loadFocus() {
   const saved = JSON.parse(localStorage.getItem(FOCUS_KEY) || '{}');
   const today = todayStr();
   if (saved.date !== today) {
-    return { date: today, slots: ['','',''], done: [false,false,false] };
+    return { date: today, slots: [
+      'Review the highest-worth Tucson + Sierra Vista leads and cut weak-fit businesses',
+      'Create or refine outreach drafts only for businesses with public email + real website problems',
+      'Turn the strongest audits into cleaner client-facing sales assets and push for the next paying client'
+    ], done: [false,false,false] };
   }
   return saved;
 }
