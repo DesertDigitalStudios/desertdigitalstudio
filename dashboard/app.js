@@ -1,16 +1,23 @@
 const state = {
   crm: null,
   emails: [],
-  selectedLeadId: null
+  onboarding: null,
+  selectedLeadId: null,
+  selectedOnboardingLeadId: null
 };
-
-const stageField = document.getElementById('lead-stage');
-const proposalLeadField = document.getElementById('proposal-lead');
-const proposalPackageField = document.getElementById('proposal-package');
 
 function $(id) {
   return document.getElementById(id);
 }
+
+const stageField = $('lead-stage');
+const proposalLeadField = $('proposal-lead');
+const proposalPackageField = $('proposal-package');
+const auditLeadField = $('audit-lead');
+const auditPackageField = $('audit-package');
+const onboardingLeadField = $('onboarding-lead');
+const onboardingStatusField = $('onboarding-status');
+const onboardingPackageField = $('onboarding-package');
 
 function showToast(message) {
   const toast = $('toast');
@@ -60,12 +67,73 @@ function esc(value) {
     .replace(/"/g, '&quot;');
 }
 
+function parseList(value) {
+  return String(value || '')
+    .split(/\n|,/)
+    .map(item => item.trim())
+    .filter(Boolean);
+}
+
+function blankOnboardingState() {
+  return {
+    updatedAt: new Date().toISOString(),
+    stages: ['Intake', 'Assets requested', 'Build prep', 'In progress', 'Launch prep', 'Launched'],
+    clients: []
+  };
+}
+
 function leadById(id) {
   return (state.crm?.leads || []).find(lead => lead.id === id);
 }
 
+function onboardingByLeadId(leadId) {
+  return (state.onboarding?.clients || []).find(client => client.leadId === leadId || client.id === leadId);
+}
+
 function sortedLeads() {
   return [...(state.crm?.leads || [])].sort((a, b) => b.outreachScore - a.outreachScore);
+}
+
+function countChecklistDone(client) {
+  return Object.values(client?.checklist || {}).filter(Boolean).length;
+}
+
+function defaultOnboardingRecord(lead) {
+  return {
+    id: lead?.id || '',
+    leadId: lead?.id || '',
+    businessName: lead?.businessName || '',
+    website: lead?.website || '',
+    contactName: '',
+    contactEmail: lead?.publicEmail || '',
+    contactPhone: lead?.phone || '',
+    status: 'Intake',
+    kickoffDate: new Date().toISOString().slice(0, 10),
+    launchTargetDate: '',
+    packageId: lead?.proposal?.packageId || lead?.recommendedPackage || 'refresh',
+    price: lead?.proposal?.price || lead?.estimatedValue || 0,
+    goals: '',
+    priorityPages: [],
+    requestedFeatures: [],
+    notes: '',
+    checklist: {
+      brandAssets: false,
+      photos: false,
+      copy: false,
+      domainAccess: false,
+      hostingAccess: false,
+      analytics: false,
+      googleBusiness: false,
+      launchApproval: false
+    },
+    packet: {
+      status: 'Not generated',
+      lastGeneratedAt: null,
+      htmlPath: null,
+      pdfPath: null,
+      jsonPath: null
+    }
+  };
 }
 
 function renderSummary() {
@@ -73,6 +141,8 @@ function renderSummary() {
   const prime = leads.filter(lead => lead.outreachTier === 'prime').length;
   const reachable = leads.filter(lead => lead.publicEmail).length;
   const proposals = leads.filter(lead => lead.proposal?.status === 'Drafted').length;
+  const audits = leads.filter(lead => lead.auditReport?.pdfPath).length;
+  const onboarded = state.onboarding?.clients?.length || 0;
   const won = leads.filter(lead => lead.stage === 'Won').length;
   const pipelineValue = leads
     .filter(lead => !['Parked', 'Won'].includes(lead.stage))
@@ -82,8 +152,10 @@ function renderSummary() {
     ['Total leads', leads.length, 'All records currently in the CRM'],
     ['Prime leads', prime, 'Best use of outreach time right now'],
     ['Reachable by email', reachable, 'Public email captured from notes or audits'],
-    ['Proposals drafted', proposals, 'Generated from the built-in proposal system'],
-    ['Pipeline value', formatMoney(pipelineValue), `${won} won lead${won === 1 ? '' : 's'} so far`]
+    ['Proposals drafted', proposals, 'Generated from the proposal builder'],
+    ['Client audits', audits, 'Client-facing PDF audits created'],
+    ['Onboarding records', onboarded, `${won} won lead${won === 1 ? '' : 's'} so far`],
+    ['Pipeline value', formatMoney(pipelineValue), 'Open deal value still in motion']
   ].map(([label, value, note]) => `
     <div class="summary-card">
       <div class="summary-label">${esc(label)}</div>
@@ -92,7 +164,7 @@ function renderSummary() {
     </div>
   `).join('');
 
-  $('updated-at').textContent = formatDate(state.crm?.updatedAt);
+  $('updated-at').textContent = formatDate(state.crm?.updatedAt || state.onboarding?.updatedAt);
 }
 
 function renderLeadTable() {
@@ -130,6 +202,7 @@ function renderLeadTable() {
   body.querySelectorAll('.score-row').forEach(row => {
     row.addEventListener('click', () => {
       state.selectedLeadId = row.dataset.leadId;
+      if (!state.selectedOnboardingLeadId) state.selectedOnboardingLeadId = row.dataset.leadId;
       renderAll();
     });
   });
@@ -161,6 +234,11 @@ function renderPipeline() {
         </div>
         <div class="pipeline-meta">${esc(lead.city || '—')} · ${esc(lead.publicEmail || lead.phone || 'Need contact')}</div>
         <div class="muted">${esc(lead.nextAction || 'No next action set')}</div>
+        <div class="pipeline-stamps">
+          ${lead.proposal?.status === 'Drafted' ? '<span class="mini-chip">Proposal</span>' : ''}
+          ${lead.auditReport?.status === 'Generated' ? '<span class="mini-chip">Audit</span>' : ''}
+          ${onboardingByLeadId(lead.id) ? '<span class="mini-chip">Onboarding</span>' : ''}
+        </div>
         <div class="pipeline-actions">
           <button data-dir="-1" ${index === 0 ? 'disabled' : ''}>←</button>
           <button data-dir="1" ${index === stages.length - 1 ? 'disabled' : ''}>→</button>
@@ -186,14 +264,24 @@ function renderPipeline() {
       }
 
       state.selectedLeadId = card.dataset.cardId;
+      state.selectedOnboardingLeadId = card.dataset.cardId;
       renderAll();
     });
   });
 }
 
 function fillStageOptions() {
-  const options = (state.crm?.stages || []).map(stage => `<option value="${esc(stage)}">${esc(stage)}</option>`).join('');
-  stageField.innerHTML = options;
+  stageField.innerHTML = (state.crm?.stages || [])
+    .map(stage => `<option value="${esc(stage)}">${esc(stage)}</option>`)
+    .join('');
+}
+
+function fillPackageOptions(select, selectedValue) {
+  select.innerHTML = (state.crm?.packages || []).map(pkg => `
+    <option value="${esc(pkg.id)}">${esc(pkg.name)} · ${formatMoney(pkg.price)}</option>
+  `).join('');
+
+  if (selectedValue) select.value = selectedValue;
 }
 
 function fillProposalOptions() {
@@ -201,13 +289,42 @@ function fillProposalOptions() {
     <option value="${esc(lead.id)}">${esc(lead.businessName)} · ${esc(lead.outreachTier)} · ${lead.outreachScore}</option>
   `).join('');
 
-  proposalPackageField.innerHTML = (state.crm?.packages || []).map(pkg => `
-    <option value="${esc(pkg.id)}">${esc(pkg.name)} · ${formatMoney(pkg.price)}</option>
-  `).join('');
+  fillPackageOptions(proposalPackageField);
 
   if (state.selectedLeadId) {
     proposalLeadField.value = state.selectedLeadId;
     syncProposalFormToLead();
+  }
+}
+
+function fillAuditOptions() {
+  auditLeadField.innerHTML = sortedLeads().map(lead => `
+    <option value="${esc(lead.id)}">${esc(lead.businessName)} · ${esc(lead.auditScore || 0)}/100 audit</option>
+  `).join('');
+
+  fillPackageOptions(auditPackageField);
+
+  if (state.selectedLeadId) {
+    auditLeadField.value = state.selectedLeadId;
+    syncAuditFormToLead();
+  }
+}
+
+function fillOnboardingOptions() {
+  onboardingLeadField.innerHTML = sortedLeads().map(lead => `
+    <option value="${esc(lead.id)}">${esc(lead.businessName)} · ${esc(lead.stage || 'Scored')}</option>
+  `).join('');
+
+  fillPackageOptions(onboardingPackageField);
+
+  onboardingStatusField.innerHTML = (state.onboarding?.stages || blankOnboardingState().stages)
+    .map(stage => `<option value="${esc(stage)}">${esc(stage)}</option>`)
+    .join('');
+
+  const preferredLeadId = state.selectedOnboardingLeadId || state.selectedLeadId || sortedLeads()[0]?.id || '';
+  if (preferredLeadId) {
+    onboardingLeadField.value = preferredLeadId;
+    state.selectedOnboardingLeadId = preferredLeadId;
   }
 }
 
@@ -262,13 +379,126 @@ function syncProposalFormToLead() {
   $('proposal-price').value = lead.proposal?.price || lead.estimatedValue || 0;
 }
 
-async function saveCRM(successMessage = 'CRM saved') {
-  state.crm = await api('/api/crm', {
-    method: 'POST',
-    body: JSON.stringify(state.crm)
-  });
-  showToast(successMessage);
-  renderAll();
+function syncAuditFormToLead() {
+  const lead = leadById(auditLeadField.value);
+  if (!lead) return;
+  auditPackageField.value = lead.auditReport?.packageId || lead.proposal?.packageId || lead.recommendedPackage || 'refresh';
+  $('audit-price').value = lead.auditReport?.price || lead.proposal?.price || lead.estimatedValue || 0;
+}
+
+function renderAuditResult() {
+  const lead = leadById(auditLeadField.value || state.selectedLeadId);
+  if (!lead?.auditReport?.pdfPath) {
+    $('audit-result').innerHTML = 'No client-facing audit generated yet.';
+    $('audit-result').classList.add('muted');
+    return;
+  }
+
+  $('audit-result').classList.remove('muted');
+  $('audit-result').innerHTML = `
+    <strong>Latest audit:</strong><br>
+    Generated ${esc(formatDate(lead.auditReport.lastGeneratedAt))}<br>
+    HTML: <code>${esc(lead.auditReport.htmlPath || '—')}</code><br>
+    PDF: <code>${esc(lead.auditReport.pdfPath || '—')}</code>
+  `;
+}
+
+function renderOnboardingForm() {
+  const leadId = onboardingLeadField.value || state.selectedOnboardingLeadId || state.selectedLeadId;
+  const lead = leadById(leadId);
+
+  if (!lead) {
+    $('onboarding-empty').classList.remove('hidden');
+    $('onboarding-form').classList.add('hidden');
+    $('onboarding-result').innerHTML = 'No onboarding packet generated yet.';
+    return;
+  }
+
+  $('onboarding-empty').classList.add('hidden');
+  $('onboarding-form').classList.remove('hidden');
+  const client = onboardingByLeadId(lead.id) || defaultOnboardingRecord(lead);
+
+  $('onboarding-id').value = client.id || lead.id;
+  $('onboarding-business').value = client.businessName || lead.businessName || '';
+  onboardingStatusField.value = client.status || 'Intake';
+  $('onboarding-contact-name').value = client.contactName || '';
+  $('onboarding-contact-email').value = client.contactEmail || '';
+  $('onboarding-contact-phone').value = client.contactPhone || '';
+  $('onboarding-website').value = client.website || lead.website || '';
+  onboardingPackageField.value = client.packageId || lead.proposal?.packageId || lead.recommendedPackage || 'refresh';
+  $('onboarding-price').value = client.price || lead.proposal?.price || lead.estimatedValue || 0;
+  $('onboarding-kickoff').value = client.kickoffDate ? String(client.kickoffDate).slice(0, 10) : '';
+  $('onboarding-launch-target').value = client.launchTargetDate ? String(client.launchTargetDate).slice(0, 10) : '';
+  $('onboarding-goals').value = client.goals || '';
+  $('onboarding-pages').value = (client.priorityPages || []).join('\n');
+  $('onboarding-features').value = (client.requestedFeatures || []).join('\n');
+  $('onboarding-notes').value = client.notes || '';
+
+  $('check-brandAssets').checked = !!client.checklist?.brandAssets;
+  $('check-photos').checked = !!client.checklist?.photos;
+  $('check-copy').checked = !!client.checklist?.copy;
+  $('check-domainAccess').checked = !!client.checklist?.domainAccess;
+  $('check-hostingAccess').checked = !!client.checklist?.hostingAccess;
+  $('check-analytics').checked = !!client.checklist?.analytics;
+  $('check-googleBusiness').checked = !!client.checklist?.googleBusiness;
+  $('check-launchApproval').checked = !!client.checklist?.launchApproval;
+
+  renderOnboardingResult(client);
+}
+
+function collectOnboardingForm() {
+  const lead = leadById(onboardingLeadField.value);
+  return {
+    id: $('onboarding-id').value || lead?.id,
+    leadId: lead?.id,
+    businessName: $('onboarding-business').value || lead?.businessName || '',
+    website: $('onboarding-website').value.trim(),
+    contactName: $('onboarding-contact-name').value.trim(),
+    contactEmail: $('onboarding-contact-email').value.trim(),
+    contactPhone: $('onboarding-contact-phone').value.trim(),
+    status: onboardingStatusField.value,
+    kickoffDate: $('onboarding-kickoff').value || null,
+    launchTargetDate: $('onboarding-launch-target').value || null,
+    packageId: onboardingPackageField.value,
+    price: Number($('onboarding-price').value || 0),
+    goals: $('onboarding-goals').value.trim(),
+    priorityPages: parseList($('onboarding-pages').value),
+    requestedFeatures: parseList($('onboarding-features').value),
+    notes: $('onboarding-notes').value.trim(),
+    checklist: {
+      brandAssets: $('check-brandAssets').checked,
+      photos: $('check-photos').checked,
+      copy: $('check-copy').checked,
+      domainAccess: $('check-domainAccess').checked,
+      hostingAccess: $('check-hostingAccess').checked,
+      analytics: $('check-analytics').checked,
+      googleBusiness: $('check-googleBusiness').checked,
+      launchApproval: $('check-launchApproval').checked
+    },
+    packet: {
+      ...(onboardingByLeadId(lead?.id)?.packet || {})
+    }
+  };
+}
+
+function renderOnboardingResult(client = onboardingByLeadId(onboardingLeadField.value || state.selectedOnboardingLeadId)) {
+  if (!client?.packet?.pdfPath) {
+    const checklistDone = client ? countChecklistDone(client) : 0;
+    $('onboarding-result').classList.add('muted');
+    $('onboarding-result').innerHTML = client
+      ? `Checklist progress: ${checklistDone}/8 complete. No onboarding packet generated yet.`
+      : 'No onboarding packet generated yet.';
+    return;
+  }
+
+  $('onboarding-result').classList.remove('muted');
+  $('onboarding-result').innerHTML = `
+    <strong>Onboarding packet:</strong><br>
+    Checklist progress: ${countChecklistDone(client)}/8 complete<br>
+    Generated ${esc(formatDate(client.packet.lastGeneratedAt))}<br>
+    HTML: <code>${esc(client.packet.htmlPath || '—')}</code><br>
+    PDF: <code>${esc(client.packet.pdfPath || '—')}</code>
+  `;
 }
 
 function renderEmails() {
@@ -296,17 +526,77 @@ function renderAll() {
   renderPipeline();
   renderLeadForm();
   fillProposalOptions();
+  fillAuditOptions();
+  fillOnboardingOptions();
+  renderAuditResult();
+  renderOnboardingForm();
   renderEmails();
+}
+
+async function saveCRM(successMessage = 'CRM saved') {
+  state.crm = await api('/api/crm', {
+    method: 'POST',
+    body: JSON.stringify(state.crm)
+  });
+  showToast(successMessage);
+  renderAll();
+}
+
+async function saveOnboardingState(successMessage = 'Onboarding saved') {
+  state.onboarding = await api('/api/onboarding', {
+    method: 'POST',
+    body: JSON.stringify(state.onboarding || blankOnboardingState())
+  });
+  showToast(successMessage);
+  renderAll();
+}
+
+function upsertOnboardingClient(client) {
+  state.onboarding = state.onboarding || blankOnboardingState();
+  const clients = [...(state.onboarding.clients || [])];
+  const index = clients.findIndex(item => item.id === client.id || item.leadId === client.leadId);
+  if (index >= 0) {
+    clients[index] = {
+      ...clients[index],
+      ...client,
+      checklist: {
+        ...(clients[index].checklist || {}),
+        ...(client.checklist || {})
+      },
+      packet: {
+        ...(clients[index].packet || {}),
+        ...(client.packet || {})
+      }
+    };
+  } else {
+    clients.push(client);
+  }
+
+  state.onboarding.clients = clients;
+  state.onboarding.updatedAt = new Date().toISOString();
 }
 
 async function loadData() {
   try {
     $('api-status').textContent = 'online';
-    state.crm = await api('/api/crm');
-    state.emails = await api('/emails').catch(() => []);
+    const [crm, emails, onboarding] = await Promise.all([
+      api('/api/crm'),
+      api('/emails').catch(() => []),
+      api('/api/onboarding').catch(() => blankOnboardingState())
+    ]);
+
+    state.crm = crm;
+    state.emails = emails;
+    state.onboarding = onboarding;
+
     if (!state.selectedLeadId && state.crm.leads?.length) {
       state.selectedLeadId = sortedLeads()[0]?.id || null;
     }
+
+    if (!state.selectedOnboardingLeadId && state.selectedLeadId) {
+      state.selectedOnboardingLeadId = state.selectedLeadId;
+    }
+
     renderAll();
   } catch (error) {
     $('api-status').textContent = 'offline';
@@ -342,6 +632,10 @@ $('lead-form').addEventListener('submit', async (event) => {
     proposal: {
       ...(lead.proposal || {}),
       price: updatedLead.estimatedValue || lead.proposal?.price || 0
+    },
+    auditReport: {
+      ...(lead.auditReport || {}),
+      price: updatedLead.estimatedValue || lead.auditReport?.price || lead.proposal?.price || 0
     }
   } : lead);
   await saveCRM('Lead saved');
@@ -349,7 +643,12 @@ $('lead-form').addEventListener('submit', async (event) => {
 
 $('lead-prev-stage').addEventListener('click', () => moveLeadStage($('lead-id').value, -1));
 $('lead-next-stage').addEventListener('click', () => moveLeadStage($('lead-id').value, 1));
-proposalLeadField.addEventListener('change', syncProposalFormToLead);
+
+proposalLeadField.addEventListener('change', () => {
+  state.selectedLeadId = proposalLeadField.value;
+  syncProposalFormToLead();
+  renderAll();
+});
 proposalPackageField.addEventListener('change', () => {
   const pkg = (state.crm.packages || []).find(item => item.id === proposalPackageField.value);
   if (pkg && !$('proposal-price').value) $('proposal-price').value = pkg.price;
@@ -372,6 +671,79 @@ $('proposal-form').addEventListener('submit', async (event) => {
   `;
   await loadData();
   showToast('Proposal generated');
+});
+
+auditLeadField.addEventListener('change', () => {
+  state.selectedLeadId = auditLeadField.value;
+  syncAuditFormToLead();
+  renderAll();
+});
+auditPackageField.addEventListener('change', () => {
+  const pkg = (state.crm.packages || []).find(item => item.id === auditPackageField.value);
+  if (pkg && !$('audit-price').value) $('audit-price').value = pkg.price;
+});
+
+$('audit-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const leadId = auditLeadField.value;
+  const packageId = auditPackageField.value;
+  const price = Number($('audit-price').value || 0);
+  const introNote = $('audit-intro').value.trim();
+  const focusNote = $('audit-focus').value.trim();
+  const payload = await api('/api/audits/generate', {
+    method: 'POST',
+    body: JSON.stringify({ leadId, packageId, price, introNote, focusNote })
+  });
+  state.crm = payload.crm;
+  $('audit-result').innerHTML = `
+    <strong>Generated:</strong><br>
+    HTML: <code>${esc(payload.result.htmlPath)}</code><br>
+    PDF: <code>${esc(payload.result.pdfPath)}</code>
+  `;
+  showToast('Client audit generated');
+  renderAll();
+});
+
+onboardingLeadField.addEventListener('change', () => {
+  state.selectedOnboardingLeadId = onboardingLeadField.value;
+  renderOnboardingForm();
+});
+onboardingPackageField.addEventListener('change', () => {
+  const pkg = (state.crm.packages || []).find(item => item.id === onboardingPackageField.value);
+  if (pkg && !$('onboarding-price').value) $('onboarding-price').value = pkg.price;
+});
+
+$('onboarding-seed-btn').addEventListener('click', async () => {
+  const leadId = onboardingLeadField.value;
+  const payload = await api('/api/onboarding/seed-from-lead', {
+    method: 'POST',
+    body: JSON.stringify({ leadId })
+  });
+  state.onboarding = payload.onboarding;
+  state.selectedOnboardingLeadId = leadId;
+  showToast('Onboarding started from lead');
+  renderAll();
+});
+
+$('onboarding-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const client = collectOnboardingForm();
+  upsertOnboardingClient(client);
+  await saveOnboardingState('Onboarding saved');
+});
+
+$('onboarding-packet-btn').addEventListener('click', async () => {
+  const client = collectOnboardingForm();
+  upsertOnboardingClient(client);
+  const leadId = onboardingLeadField.value;
+  const payload = await api('/api/onboarding/generate-packet', {
+    method: 'POST',
+    body: JSON.stringify({ leadId, client })
+  });
+  state.onboarding = payload.onboarding;
+  state.selectedOnboardingLeadId = leadId;
+  showToast('Onboarding packet generated');
+  renderAll();
 });
 
 loadData();

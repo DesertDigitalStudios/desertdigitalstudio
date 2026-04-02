@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desert Digital Studio — Lead Engine</title>
+  <title>Desert Digital Studio — Growth Stack</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
     <header class="topbar">
       <div>
         <div class="eyebrow">Desert Digital Studio</div>
-        <h1>Lead scoring, CRM, and proposal builder</h1>
-        <p class="subcopy">Working-first internal system for prioritizing reachable businesses with real website pain.</p>
+        <h1>Lead engine, CRM, proposals, client audits, and onboarding</h1>
+        <p class="subcopy">Working-first internal system for finding reachable local businesses, pitching them well, and moving new clients into clean delivery.</p>
       </div>
       <div class="topbar-actions">
         <div class="meta-chip">API <span id="api-status">connecting…</span></div>
@@ -65,7 +65,7 @@
       <div class="panel-head">
         <div>
           <div class="panel-title">CRM pipeline</div>
-          <p class="panel-subtitle">Move leads through the pipeline without losing next actions, notes, or proposal state.</p>
+          <p class="panel-subtitle">Move leads through the pipeline without losing next actions, notes, proposal state, or audit history.</p>
         </div>
       </div>
       <div class="pipeline-board" id="pipeline-board"></div>
@@ -167,6 +167,135 @@
           </div>
         </form>
         <div id="proposal-result" class="result-box muted">No proposal generated yet.</div>
+      </section>
+    </div>
+
+    <div class="two-col">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Client-facing audit generator</div>
+            <p class="panel-subtitle">Turns the stored audit + CRM context into a polished client-ready PDF you can share after outreach or discovery.</p>
+          </div>
+        </div>
+        <form id="audit-form" class="form-grid">
+          <label class="full-span">
+            <span>Lead</span>
+            <select id="audit-lead"></select>
+          </label>
+          <label>
+            <span>Recommended package</span>
+            <select id="audit-package"></select>
+          </label>
+          <label>
+            <span>Reference price</span>
+            <input id="audit-price" type="number" min="0" />
+          </label>
+          <label class="full-span">
+            <span>Intro note</span>
+            <textarea id="audit-intro" rows="4" placeholder="Optional opening note for this business"></textarea>
+          </label>
+          <label class="full-span">
+            <span>Focus note</span>
+            <textarea id="audit-focus" rows="4" placeholder="Optional angle to emphasize in the report"></textarea>
+          </label>
+          <div class="full-span form-actions">
+            <button type="submit" class="btn">Generate client audit</button>
+          </div>
+        </form>
+        <div id="audit-result" class="result-box muted">No client-facing audit generated yet.</div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Client onboarding system</div>
+            <p class="panel-subtitle">Save intake details, track missing assets, and generate a welcome / onboarding packet once a lead turns into a client.</p>
+          </div>
+        </div>
+        <div id="onboarding-empty" class="empty-state hidden">Pick a lead to start onboarding.</div>
+        <form id="onboarding-form" class="form-grid">
+          <input type="hidden" id="onboarding-id" />
+          <label class="full-span">
+            <span>Lead / client</span>
+            <select id="onboarding-lead"></select>
+          </label>
+          <label>
+            <span>Business</span>
+            <input id="onboarding-business" type="text" disabled />
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="onboarding-status"></select>
+          </label>
+          <label>
+            <span>Contact name</span>
+            <input id="onboarding-contact-name" type="text" />
+          </label>
+          <label>
+            <span>Contact email</span>
+            <input id="onboarding-contact-email" type="email" />
+          </label>
+          <label>
+            <span>Contact phone</span>
+            <input id="onboarding-contact-phone" type="text" />
+          </label>
+          <label>
+            <span>Website</span>
+            <input id="onboarding-website" type="text" />
+          </label>
+          <label>
+            <span>Package</span>
+            <select id="onboarding-package"></select>
+          </label>
+          <label>
+            <span>Price</span>
+            <input id="onboarding-price" type="number" min="0" />
+          </label>
+          <label>
+            <span>Kickoff date</span>
+            <input id="onboarding-kickoff" type="date" />
+          </label>
+          <label>
+            <span>Target launch date</span>
+            <input id="onboarding-launch-target" type="date" />
+          </label>
+          <label class="full-span">
+            <span>Goals</span>
+            <textarea id="onboarding-goals" rows="4" placeholder="What should this project improve for the client?"></textarea>
+          </label>
+          <label class="full-span">
+            <span>Priority pages / sections</span>
+            <textarea id="onboarding-pages" rows="3" placeholder="One per line or comma-separated"></textarea>
+          </label>
+          <label class="full-span">
+            <span>Requested features</span>
+            <textarea id="onboarding-features" rows="3" placeholder="One per line or comma-separated"></textarea>
+          </label>
+          <label class="full-span">
+            <span>Internal notes</span>
+            <textarea id="onboarding-notes" rows="4" placeholder="Anything important to remember before kickoff"></textarea>
+          </label>
+          <div class="full-span">
+            <div class="checklist-title">Client checklist</div>
+            <div class="checklist-grid">
+              <label class="check-item"><input id="check-brandAssets" type="checkbox" /> <span>Logo / brand assets</span></label>
+              <label class="check-item"><input id="check-photos" type="checkbox" /> <span>Photos / visuals</span></label>
+              <label class="check-item"><input id="check-copy" type="checkbox" /> <span>Approved copy</span></label>
+              <label class="check-item"><input id="check-domainAccess" type="checkbox" /> <span>Domain access</span></label>
+              <label class="check-item"><input id="check-hostingAccess" type="checkbox" /> <span>Hosting access</span></label>
+              <label class="check-item"><input id="check-analytics" type="checkbox" /> <span>Analytics / tracking</span></label>
+              <label class="check-item"><input id="check-googleBusiness" type="checkbox" /> <span>Google Business details</span></label>
+              <label class="check-item"><input id="check-launchApproval" type="checkbox" /> <span>Final launch approval</span></label>
+            </div>
+          </div>
+          <div class="full-span form-actions">
+            <button type="button" class="btn btn-ghost" id="onboarding-seed-btn">Start from lead</button>
+            <button type="submit" class="btn">Save onboarding</button>
+            <button type="button" class="btn btn-ghost" id="onboarding-packet-btn">Generate welcome packet</button>
+          </div>
+        </form>
+        <div id="onboarding-result" class="result-box muted">No onboarding packet generated yet.</div>
       </section>
     </div>
 

@@ -22,6 +22,8 @@ node_modules/
 coverage/
 .tmp/
 tmp/
+audits/generated/
+onboarding/generated/
 
 # Python
 __pycache__/
