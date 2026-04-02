@@ -16,6 +16,7 @@ const { chromium } = require(playwrightPath);
 
 const { scoreWebsite } = require('./scorer');
 const { generateMarkdownReport, generateJSONReport } = require('./reporter');
+const { buildLeadProfile } = require('./lead-intelligence');
 
 // --- CLI Args ---
 function parseArgs() {
@@ -394,6 +395,7 @@ async function main() {
       }
       
       let result;
+      let pageData = null;
       if (website) {
         // Normalize URL
         if (!website.startsWith('http')) {
@@ -401,7 +403,7 @@ async function main() {
         }
         
         process.stdout.write(`  → Auditing ${website}... `);
-        const pageData = await auditWebsite(browser, website, opts.timeout, opts.verbose);
+        pageData = await auditWebsite(browser, website, opts.timeout, opts.verbose);
         loadTimeMs = pageData.loadTimeMs;
         
         if (pageData.error) {
@@ -416,14 +418,28 @@ async function main() {
         result = scoreWebsite({ url: null, html: null, error: 'No website found' });
       }
       
+      const leadProfile = buildLeadProfile({
+        business: {
+          name: biz.name,
+          city: opts.city,
+          website,
+          phone: biz.phone || null,
+          score: result.percentage,
+          error: result.error || null
+        },
+        result,
+        pageData
+      });
+
       auditedBusinesses.push({
         rank: count,
         name: biz.name,
         website: website || null,
-        phone: biz.phone || null,
+        phone: leadProfile.primaryPhone || biz.phone || null,
         city: opts.city,
         loadTimeMs,
-        result
+        result,
+        leadProfile
       });
     }
     

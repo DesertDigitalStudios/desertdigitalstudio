@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-04-02T11:31:53.951Z",
+  "lead": {
+    "id": "gypsy-sips-caf-sierra-vista",
+    "businessName": "Gypsy Sips Café",
+    "city": "Sierra Vista",
+    "website": null,
+    "hasWebsite": true,
+    "publicEmail": "gypsygips@gmail.com",
+    "publicEmails": [
+      "gypsygips@gmail.com"
+    ],
+    "phone": "(520) 224-7303",
+    "phones": [
+      "(520) 224-7303"
+    ],
+    "platform": "custom",
+    "outreachScore": 48,
+    "outreachTier": "watch",
+    "shouldPursue": false,
+    "stage": "Contacted",
+    "auditScore": 81,
+    "siteHealth": null,
+    "leadTemperature": null,
+    "topIssues": [
+      "H1 Heading",
+      "Copyright Up-to-Date"
+    ],
+    "priorityReasons": [
+      "Public email found: gypsygips@gmail.com",
+      "Has at least one conversion or trust issue"
+    ],
+    "cautions": [],
+    "recommendedPackage": "refresh",
+    "estimatedValue": 900,
+    "quickPitch": "I spotted h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+    "nextAction": "Call or walk in with the audit and ask who handles the website.",
+    "lastTouch": null,
+    "followUpOn": null,
+    "notes": "Missing H1, outdated copyright — (520) 224-7303",
+    "proposal": {
+      "status": "Not started",
+      "lastGeneratedAt": null,
+      "htmlPath": null,
+      "pdfPath": null,
+      "packageId": "refresh",
+      "price": 900
+    },
+    "sourceReport": "legacy-dashboard",
+    "importedAt": "2026-04-02T11:31:51.709Z"
+  },
+  "package": {
+    "id": "refresh",
+    "name": "Website Refresh",
+    "price": 900,
+    "timeline": "4–6 business days",
+    "headline": "A tighter, more trustworthy site that converts better without overcomplicating the build.",
+    "deliverables": [
+      "Homepage redesign or full-site refresh",
+      "Fix the most visible trust + conversion issues",
+      "Mobile cleanup and stronger calls to action",
+      "Updated content structure, contact flow, and SEO basics",
+      "Launch support and cleanup pass"
+    ]
+  },
+  "price": 900,
+  "focusNote": "Lead with real public email and obvious trust / clarity improvements.",
+  "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/proposals/generated/gypsy-sips-caf-2026-04-02.html",
+  "pdfPath": "/Users/gabrielmaciel/Desktop/Audit reports/gypsy-sips-caf-2026-04-02.pdf"
+}

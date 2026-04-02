@@ -1,0 +1,566 @@
+{
+  "updatedAt": "2026-04-02T11:31:54.229Z",
+  "packages": [
+    {
+      "id": "launch-pad",
+      "name": "Launch Pad Website",
+      "price": 1200,
+      "timeline": "5–7 business days",
+      "headline": "A clean first website that makes the business look real, reachable, and current."
+    },
+    {
+      "id": "refresh",
+      "name": "Website Refresh",
+      "price": 900,
+      "timeline": "4–6 business days",
+      "headline": "A tighter, more trustworthy site that converts better without overcomplicating the build."
+    },
+    {
+      "id": "tune-up",
+      "name": "Quick Wins Tune-Up",
+      "price": 500,
+      "timeline": "2–3 business days",
+      "headline": "A short project focused on the highest-impact fixes instead of a full rebuild."
+    }
+  ],
+  "stages": [
+    "Scored",
+    "Research",
+    "Contacted",
+    "Qualified",
+    "Proposal",
+    "Won",
+    "Parked"
+  ],
+  "metrics": {
+    "monthlyRevenueGoal": 2000,
+    "payments": []
+  },
+  "leads": [
+    {
+      "id": "gypsy-sips-caf-sierra-vista",
+      "businessName": "Gypsy Sips Café",
+      "city": "Sierra Vista",
+      "website": null,
+      "hasWebsite": true,
+      "publicEmail": "gypsygips@gmail.com",
+      "publicEmails": [
+        "gypsygips@gmail.com"
+      ],
+      "phone": "(520) 224-7303",
+      "phones": [
+        "(520) 224-7303"
+      ],
+      "platform": "custom",
+      "outreachScore": 82,
+      "outreachTier": "prime",
+      "shouldPursue": true,
+      "stage": "Proposal",
+      "auditScore": 81,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [
+        "H1 Heading",
+        "Copyright Up-to-Date"
+      ],
+      "priorityReasons": [
+        "No usable website — easiest value conversation",
+        "Public email found: gypsygips@gmail.com",
+        "Has at least one conversion or trust issue"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Call or walk in with the audit and ask who handles the website.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Missing H1, outdated copyright — (520) 224-7303",
+      "proposal": {
+        "status": "Drafted",
+        "lastGeneratedAt": "2026-04-02T11:31:54.229Z",
+        "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/proposals/generated/gypsy-sips-caf-2026-04-02.html",
+        "pdfPath": "/Users/gabrielmaciel/Desktop/Audit reports/gypsy-sips-caf-2026-04-02.pdf",
+        "packageId": "refresh",
+        "price": 900,
+        "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/proposals/generated/gypsy-sips-caf-2026-04-02.json"
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "urbano-bar-and-bistro-sierra-vista",
+      "businessName": "Urbano Bar & Bistro",
+      "city": "Sierra Vista",
+      "website": null,
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": "(520) 732-8886",
+      "phones": [
+        "(520) 732-8886"
+      ],
+      "platform": "custom",
+      "outreachScore": 56,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 79,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [
+        "Meta Description",
+        "Contact Info"
+      ],
+      "priorityReasons": [
+        "No usable website — easiest value conversation",
+        "Has at least one conversion or trust issue"
+      ],
+      "cautions": [
+        "No public email found"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, contact info issues that make the site harder to trust and use.",
+      "nextAction": "Call or walk in with the audit and ask who handles the website.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "No meta description, phone missing — (520) 732-8886",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "the-horseshoe-benson",
+      "businessName": "The Horseshoe",
+      "city": "Benson",
+      "website": "https://thehorseshoebenson.com/",
+      "hasWebsite": true,
+      "publicEmail": "thehorseshoe@yahoo.com",
+      "publicEmails": [
+        "thehorseshoe@yahoo.com"
+      ],
+      "phone": "(520) 586-2872",
+      "phones": [
+        "(520) 586-2872"
+      ],
+      "platform": "custom",
+      "outreachScore": 52,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Contacted",
+      "auditScore": 72,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [
+        "Meta Description",
+        "H1 Heading",
+        "Clear CTA (Button/Form)"
+      ],
+      "priorityReasons": [
+        "Public email found: thehorseshoe@yahoo.com",
+        "Has at least one conversion or trust issue"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, h1 heading issues that make the site harder to trust and use.",
+      "nextAction": "Research contact details before spending more time here.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "No meta description, missing H1",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "baker-s-dozen-donuts-sierra-vista",
+      "businessName": "Baker's Dozen Donuts",
+      "city": "Sierra Vista",
+      "website": null,
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": "(520) 459-7162",
+      "phones": [
+        "(520) 459-7162"
+      ],
+      "platform": "custom",
+      "outreachScore": 50,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 68,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [
+        "Contact Info"
+      ],
+      "priorityReasons": [
+        "No usable website — easiest value conversation",
+        "Has at least one conversion or trust issue"
+      ],
+      "cautions": [
+        "No public email found"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted contact info issues that make the site harder to trust and use.",
+      "nextAction": "Call or walk in with the audit and ask who handles the website.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "No contact info on site — (520) 459-7162",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "benson-city-grille-benson",
+      "businessName": "Benson City Grille",
+      "city": "Benson",
+      "website": null,
+      "hasWebsite": false,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": "(520) 586-2525",
+      "phones": [
+        "(520) 586-2525"
+      ],
+      "platform": "custom",
+      "outreachScore": 42,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 0,
+      "siteHealth": "F",
+      "leadTemperature": "🔥🔥🔥 HOT LEAD (no site)",
+      "topIssues": [
+        "No Website"
+      ],
+      "priorityReasons": [
+        "No usable website — easiest value conversation"
+      ],
+      "cautions": [
+        "No public email found"
+      ],
+      "recommendedPackage": "launch-pad",
+      "estimatedValue": 1200,
+      "quickPitch": "You have no real website, so customers are forced to rely on Facebook, listings, or word of mouth.",
+      "nextAction": "Call or walk in with the audit and ask who handles the website.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "No website at all — call (520) 586-2525",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "launch-pad",
+        "price": 1200
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "angelika-s-german-imports-sierra-vista",
+      "businessName": "Angelika's German Imports",
+      "city": "Sierra Vista",
+      "website": null,
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": "(520) 458-5150",
+      "phones": [
+        "(520) 458-5150"
+      ],
+      "platform": "custom",
+      "outreachScore": 42,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 77,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [
+        "Copyright Up-to-Date"
+      ],
+      "priorityReasons": [
+        "No usable website — easiest value conversation"
+      ],
+      "cautions": [
+        "No public email found"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Call or walk in with the audit and ask who handles the website.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Copyright stuck at 2014 — (520) 458-5150",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "get-lit-books-sierra-vista",
+      "businessName": "Get Lit Books",
+      "city": "Sierra Vista",
+      "website": null,
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": null,
+      "phones": [],
+      "platform": "custom",
+      "outreachScore": 32,
+      "outreachTier": "skip",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 64,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [],
+      "priorityReasons": [
+        "No usable website — easiest value conversation"
+      ],
+      "cautions": [
+        "No public email found",
+        "No phone captured"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "There are a few easy wins here, but this one is lower urgency.",
+      "nextAction": "Research contact details before spending more time here.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Running on Google Sites — easy upgrade pitch",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "can-can-old-time-photos-tombstone",
+      "businessName": "Can-Can Old Time Photos",
+      "city": "Tombstone",
+      "website": null,
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": null,
+      "phones": [],
+      "platform": "custom",
+      "outreachScore": 32,
+      "outreachTier": "skip",
+      "shouldPursue": false,
+      "stage": "Contacted",
+      "auditScore": 73,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [],
+      "priorityReasons": [
+        "No usable website — easiest value conversation"
+      ],
+      "cautions": [
+        "No public email found",
+        "No phone captured"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "There are a few easy wins here, but this one is lower urgency.",
+      "nextAction": "Research contact details before spending more time here.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Family-owned. Spoke with daughter; dad runs site. Broken HTTPS, outdated splash-page UX, weak mobile/tourist conversion.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "farmhouse-restaurant-benson",
+      "businessName": "Farmhouse Restaurant",
+      "city": "Benson",
+      "website": "https://farmhouseaz.top/",
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": "(520) 586-4326",
+      "phones": [
+        "(520) 586-4326"
+      ],
+      "platform": "custom",
+      "outreachScore": 26,
+      "outreachTier": "skip",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 71,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [
+        "H1 Heading",
+        "Social Media Links",
+        "Copyright Up-to-Date"
+      ],
+      "priorityReasons": [
+        "Has at least one conversion or trust issue"
+      ],
+      "cautions": [
+        "No public email found"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Research contact details before spending more time here.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Missing H1, social links, copyright",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "mescal-bar-and-grill-benson",
+      "businessName": "Mescal Bar & Grill",
+      "city": "Benson",
+      "website": "https://www.facebook.com/mescalbarandgrille/",
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": null,
+      "phones": [],
+      "platform": "facebook",
+      "outreachScore": 23,
+      "outreachTier": "skip",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 79,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [
+        "H1 Heading",
+        "Copyright Up-to-Date",
+        "Clear CTA (Button/Form)"
+      ],
+      "priorityReasons": [
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [
+        "No public email found",
+        "No phone captured"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted platform / website quality issues that make the site harder to trust and use.",
+      "nextAction": "Research contact details before spending more time here.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Only Facebook as website",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "horseshoe-cafe-and-bakery-benson",
+      "businessName": "Horseshoe Cafe & Bakery",
+      "city": "Benson",
+      "website": "https://horseshoecafe-bakery.com/",
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": "(520) 586-2872",
+      "phones": [
+        "(520) 586-2872"
+      ],
+      "platform": "custom",
+      "outreachScore": 0,
+      "outreachTier": "skip",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 89,
+      "siteHealth": null,
+      "leadTemperature": null,
+      "topIssues": [
+        "Copyright Up-to-Date"
+      ],
+      "priorityReasons": [],
+      "cautions": [
+        "Site is already pretty polished — lower priority",
+        "No public email found",
+        "Not enough pain to justify cold outreach right now"
+      ],
+      "recommendedPackage": "tune-up",
+      "estimatedValue": 500,
+      "quickPitch": "I spotted copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Research contact details before spending more time here.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Mostly solid — copyright 2021",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "tune-up",
+        "price": 500
+      },
+      "sourceReport": "legacy-dashboard",
+      "importedAt": "2026-04-02T11:31:51.709Z"
+    }
+  ]
+}

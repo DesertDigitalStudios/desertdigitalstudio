@@ -22,7 +22,7 @@ function formatCheckRow(key, check, meta) {
 }
 
 function generateBusinessSection(business, index) {
-  const { name, website, city, phone, result } = business;
+  const { name, website, city, phone, result, leadProfile = {} } = business;
   const rank = index + 1;
   
   if (!website || result.error) {
@@ -31,6 +31,8 @@ function generateBusinessSection(business, index) {
 **No Website / Unreachable** ${result.error ? `(${result.error})` : ''}
 - 📍 ${city || 'Unknown location'}
 ${phone ? `- 📞 ${phone}` : ''}
+${leadProfile.publicEmail ? `- 📧 ${leadProfile.publicEmail}` : ''}
+${leadProfile.outreachScore ? `- 🎯 Outreach Worthiness: ${leadProfile.outreachScore}/100 (${leadProfile.outreachTier})` : ''}
 > **This is a PERFECT lead** — they have no web presence at all!
 
 ---`;
@@ -54,12 +56,18 @@ ${phone ? `- 📞 ${phone}` : ''}
 - 🌐 ${website}
 ${city ? `- 📍 ${city}` : ''}
 ${phone ? `- 📞 ${phone}` : ''}
+${leadProfile.publicEmail ? `- 📧 ${leadProfile.publicEmail}` : ''}
+${leadProfile.outreachScore ? `- 🎯 Outreach Worthiness: ${leadProfile.outreachScore}/100 (${leadProfile.outreachTier})` : ''}
 
 ### Audit Results
 | Check | Pass? | Score | Detail |
 |-------|-------|-------|--------|
 ${checkRows}
 
+${leadProfile.priorityReasons?.length ? `### Why This Is Worth Outreach
+${leadProfile.priorityReasons.map(reason => `- ${reason}`).join('\n')}
+
+` : ''}
 ### Issues to Fix (Your Sales Pitch)
 ${failedList}
 
@@ -139,7 +147,7 @@ function generateJSONReport(businesses, meta) {
     meta: {
       ...meta,
       generatedBy: 'site-auditor',
-      version: '1.0.0'
+      version: '1.1.0'
     },
     summary: {
       totalFound: meta.totalFound,
@@ -162,6 +170,18 @@ function generateJSONReport(businesses, meta) {
       score: b.result.percentage,
       grade: b.result.grade,
       error: b.result.error || null,
+      publicEmail: b.leadProfile?.publicEmail || null,
+      publicEmails: b.leadProfile?.publicEmails || [],
+      outreachScore: b.leadProfile?.outreachScore || 0,
+      outreachTier: b.leadProfile?.outreachTier || 'skip',
+      shouldPursue: !!b.leadProfile?.shouldPursue,
+      recommendedPackage: b.leadProfile?.recommendedPackage || null,
+      estimatedValue: b.leadProfile?.estimatedValue || null,
+      priorityReasons: b.leadProfile?.priorityReasons || [],
+      cautions: b.leadProfile?.cautions || [],
+      nextAction: b.leadProfile?.nextAction || null,
+      quickPitch: b.leadProfile?.quickPitch || null,
+      platform: b.leadProfile?.platform || null,
       checks: b.result.checks ? Object.fromEntries(
         Object.entries(b.result.checks).map(([k, v]) => [k, {
           pass: v.pass,
@@ -171,7 +191,8 @@ function generateJSONReport(businesses, meta) {
         }])
       ) : {},
       failedChecks: b.result.failedChecks || [],
-      loadTimeMs: b.loadTimeMs || null
+      loadTimeMs: b.loadTimeMs || null,
+      leadProfile: b.leadProfile || null
     }))
   };
 }

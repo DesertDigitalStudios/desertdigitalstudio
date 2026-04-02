@@ -11,7 +11,8 @@ Find local businesses with bad websites — your hottest sales leads.
 1. **Searches** for local businesses in your target city + category
 2. **Audits** each website across 11 quality checks
 3. **Ranks them worst-to-best** — worst = hottest lead = easiest pitch
-4. **Outputs** a readable markdown report + JSON data
+4. **Captures** public email when it appears on-site
+5. **Outputs** a readable markdown report + JSON data, including outreach-worthiness scoring
 
 ## Quick Start
 
@@ -63,7 +64,7 @@ No website at all? **Instant hot lead!**
 | File | Description |
 |------|-------------|
 | `report.md` | Human-readable ranked report with pitch notes |
-| `report.json` | Machine-readable data for further processing |
+| `report.json` | Machine-readable data for further processing, CRM import, and proposal generation |
 
 ## Scoring System (0–100)
 
