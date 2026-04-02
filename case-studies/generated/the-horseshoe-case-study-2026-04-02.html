@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Horseshoe — Case Study</title>
+  <style>
+    @page { size: Letter; margin: 0.5in; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: #111827;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page { min-height: 10in; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .topbar { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:18px; }
+    .brand img { width:220px; height:auto; }
+    .meta { text-align:right; font-size:12px; color:#4b5563; line-height:1.55; }
+    .eyebrow { font-size:12px; text-transform:uppercase; letter-spacing:0.24em; color:#b45309; font-weight:800; margin-top:10px; }
+    h1 { font-size:34px; line-height:1.03; margin:10px 0 12px; letter-spacing:-0.03em; }
+    .lede { font-size:15px; line-height:1.58; color:#374151; max-width:760px; }
+    .draft { margin:18px 0; padding:12px 14px; border-radius:14px; background:#fff7ed; border:1px solid #fed7aa; color:#9a3412; font-size:13px; line-height:1.55; }
+    .band { margin:20px 0; padding:16px 18px; border:1px solid #e5e7eb; border-radius:16px; background:#f9fafb; }
+    .summary-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+    .summary-card, .card, .metric-card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:16px; }
+    .label, .metric-label { font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:#6b7280; font-weight:800; margin-bottom:6px; }
+    .value { font-size:18px; line-height:1.3; font-weight:800; }
+    .sub { font-size:12px; color:#6b7280; margin-top:6px; line-height:1.45; }
+    h2 { font-size:15px; text-transform:uppercase; letter-spacing:0.22em; margin:24px 0 12px; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .card strong { display:block; margin-bottom:8px; font-size:15px; }
+    .card p { margin:0; color:#374151; font-size:13px; line-height:1.55; }
+    .metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .metric-values { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:10px 0; }
+    .metric-values span { display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#6b7280; margin-bottom:6px; }
+    .metric-values strong { font-size:18px; }
+    .metric-change { font-size:12px; color:#b45309; font-weight:700; }
+    ul { margin:0; padding-left:18px; }
+    li { margin:0 0 8px; font-size:13px; line-height:1.5; }
+    blockquote { margin:0; font-size:18px; line-height:1.5; color:#111827; }
+    .quote-byline { margin-top:10px; font-size:12px; color:#6b7280; }
+    .footer { margin-top:26px; text-align:center; font-size:12px; color:#6b7280; }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="topbar">
+      <div class="brand"><img src="file:///Users/gabrielmaciel/.openclaw/workspace/logos/logo-a-dark.png" alt="Desert Digital Studio logo"></div>
+      <div class="meta">
+        Desert Digital Studio<br>
+        Before / After Case Study<br>
+        April 2, 2026
+      </div>
+    </div>
+
+    <div class="eyebrow">Case Study</div>
+    <h1>The Horseshoe</h1>
+    <p class="lede">The Horseshoe: from friction-heavy website to a cleaner customer path</p>
+    <div class="draft"><strong>Draft notice:</strong> this case study was generated from internal CRM/project notes. Replace any placeholder or projected results with final client-approved numbers before publishing it publicly.</div>
+
+    <div class="band">
+      <div class="summary-grid">
+        <div class="summary-card"><div class="label">Project type</div><div class="value">Website refresh</div><div class="sub">Local business</div></div>
+        <div class="summary-card"><div class="label">Location</div><div class="value">Benson</div><div class="sub">https://thehorseshoebenson.com/</div></div>
+        <div class="summary-card"><div class="label">Before score</div><div class="value">72</div><div class="sub">Saved from CRM / draft notes</div></div>
+        <div class="summary-card"><div class="label">After score</div><div class="value">90</div><div class="sub">Replace with final result if needed</div></div>
+      </div>
+    </div>
+
+    <h2>The challenge</h2>
+    <div class="grid2">
+      <div class="card">
+        <strong>Starting point</strong>
+        <p>The starting point was a weaker-than-it-should-be website presence with issues around meta description, h1 heading, clear cta (button/form).</p>
+      </div>
+      <div class="card">
+        <strong>Main friction points</strong>
+        <ul>
+          <li>Meta Description</li><li>H1 Heading</li><li>Clear CTA (Button/Form)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>What DDS changed</h2>
+    <div class="grid2">
+      <div class="card">
+        <strong>Approach</strong>
+        <p>DDS tightened the structure, messaging, contact flow, and trust signals so the site feels easier to use and easier to trust.</p>
+      </div>
+      <div class="card">
+        <strong>Deliverables</strong>
+        <ul>
+          <li>Homepage refresh</li><li>Mobile cleanup</li><li>Clear contact / CTA path</li><li>SEO basics and metadata pass</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="topbar">
+      <div class="brand"><img src="file:///Users/gabrielmaciel/.openclaw/workspace/logos/logo-a-dark.png" alt="Desert Digital Studio logo"></div>
+      <div class="meta">Clear story. Real improvements. Easy outreach proof.</div>
+    </div>
+
+    <h2>Before / after snapshot</h2>
+    <div class="grid2">
+      <div class="card">
+        <strong>Before</strong>
+        <p>Saved CRM issues: Meta Description, H1 Heading, Clear CTA (Button/Form)</p>
+      </div>
+      <div class="card">
+        <strong>After</strong>
+        <p>Replace with real after-launch notes, screenshots, and measurable improvement.</p>
+      </div>
+    </div>
+
+    <h2>Key improvement metrics</h2>
+    <div class="metrics">
+      
+    <div class="metric-card">
+      <div class="metric-label">Website audit score</div>
+      <div class="metric-values">
+        <div><span class="muted">Before</span><strong>72</strong></div>
+        <div><span class="muted">After</span><strong>90</strong></div>
+      </div>
+      <div class="metric-change">+18</div>
+    </div>
+  
+    <div class="metric-card">
+      <div class="metric-label">Customer trust</div>
+      <div class="metric-values">
+        <div><span class="muted">Before</span><strong>Inconsistent</strong></div>
+        <div><span class="muted">After</span><strong>Clear + modern</strong></div>
+      </div>
+      <div class="metric-change">Better first impression</div>
+    </div>
+  
+    <div class="metric-card">
+      <div class="metric-label">Mobile path</div>
+      <div class="metric-values">
+        <div><span class="muted">Before</span><strong>Friction</strong></div>
+        <div><span class="muted">After</span><strong>Fast call / map / contact path</strong></div>
+      </div>
+      <div class="metric-change">Cleaner conversions</div>
+    </div>
+  
+    </div>
+
+    <h2>Wins worth talking about</h2>
+    <div class="card">
+      <ul>
+        <li>Cleaner first impression</li><li>Stronger mobile contact flow</li><li>More obvious calls to action</li>
+      </ul>
+      <p style="margin-top:12px;">Draft outcome placeholder: replace this with the real result after launch, review, or client feedback.</p>
+    </div>
+
+    <h2>Client quote</h2>
+    <div class="card">
+      <blockquote>“Add the client quote here once the project is complete.”</blockquote>
+      <div class="quote-byline">The Horseshoe team</div>
+    </div>
+
+    <div class="footer">Desert Digital Studio · desertdigitalstudio.com</div>
+  </section>
+</body>
+</html>

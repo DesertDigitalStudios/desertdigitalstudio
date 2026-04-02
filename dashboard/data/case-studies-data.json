@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-04-02T12:40:03.922Z",
+  "statuses": [
+    "Draft",
+    "Review",
+    "Published"
+  ],
+  "studies": [
+    {
+      "id": "the-horseshoe-benson-case-study",
+      "leadId": "the-horseshoe-benson",
+      "businessName": "The Horseshoe",
+      "city": "Benson",
+      "website": "https://thehorseshoebenson.com/",
+      "status": "Draft",
+      "headline": "The Horseshoe: from friction-heavy website to a cleaner customer path",
+      "industry": "Local business",
+      "projectType": "Website refresh",
+      "summary": "I spotted meta description, h1 heading issues that make the site harder to trust and use.",
+      "challenge": "The starting point was a weaker-than-it-should-be website presence with issues around meta description, h1 heading, clear cta (button/form).",
+      "solution": "DDS tightened the structure, messaging, contact flow, and trust signals so the site feels easier to use and easier to trust.",
+      "outcome": "Draft outcome placeholder: replace this with the real result after launch, review, or client feedback.",
+      "challengePoints": [
+        "Meta Description",
+        "H1 Heading",
+        "Clear CTA (Button/Form)"
+      ],
+      "deliverables": [
+        "Homepage refresh",
+        "Mobile cleanup",
+        "Clear contact / CTA path",
+        "SEO basics and metadata pass"
+      ],
+      "wins": [
+        "Cleaner first impression",
+        "Stronger mobile contact flow",
+        "More obvious calls to action"
+      ],
+      "metrics": [
+        {
+          "label": "Website audit score",
+          "before": 72,
+          "after": 90,
+          "change": "+18"
+        },
+        {
+          "label": "Customer trust",
+          "before": "Inconsistent",
+          "after": "Clear + modern",
+          "change": "Better first impression"
+        },
+        {
+          "label": "Mobile path",
+          "before": "Friction",
+          "after": "Fast call / map / contact path",
+          "change": "Cleaner conversions"
+        }
+      ],
+      "testimonial": "Add the client quote here once the project is complete.",
+      "quoteAttribution": "The Horseshoe team",
+      "before": {
+        "label": "Before",
+        "score": 72,
+        "notes": "Saved CRM issues: Meta Description, H1 Heading, Clear CTA (Button/Form)",
+        "screenshotPath": ""
+      },
+      "after": {
+        "label": "After",
+        "score": 90,
+        "notes": "Replace with real after-launch notes, screenshots, and measurable improvement.",
+        "screenshotPath": ""
+      },
+      "generated": {
+        "status": "Generated",
+        "lastGeneratedAt": "2026-04-02T12:40:03.922Z",
+        "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/case-studies/generated/the-horseshoe-case-study-2026-04-02.html",
+        "pdfPath": "/Users/gabrielmaciel/Desktop/Audit reports/the-horseshoe-case-study-2026-04-02.pdf",
+        "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/case-studies/generated/the-horseshoe-case-study-2026-04-02.json"
+      },
+      "createdAt": "2026-04-02T12:40:03.214Z",
+      "updatedAt": "2026-04-02T12:40:03.922Z"
+    }
+  ]
+}

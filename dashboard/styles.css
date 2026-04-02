@@ -411,6 +411,55 @@ code {
   border-radius: 14px;
 }
 
+.callout-card {
+  background: rgba(12, 20, 36, 0.88);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.mini-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.summary-card.compact {
+  padding: 16px;
+}
+
+.mini-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.mini-list-item {
+  background: rgba(12, 20, 36, 0.88);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mini-list-item.selected,
+.mini-list-item:hover {
+  border-color: var(--amber);
+}
+
+.mini-list-item strong {
+  font-size: 14px;
+}
+
+.mini-list-item span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .checklist-title {
   font-size: 12px;
   color: var(--muted);

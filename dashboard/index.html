@@ -299,6 +299,156 @@
       </section>
     </div>
 
+    <div class="two-col">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Before / after case study generator</div>
+            <p class="panel-subtitle">Seed a draft from CRM data, tighten the story, and generate a polished case study PDF for future sales proof.</p>
+          </div>
+        </div>
+        <div id="case-study-empty" class="empty-state hidden">No lead selected.</div>
+        <form id="case-study-form" class="form-grid">
+          <input type="hidden" id="case-study-id" />
+          <label class="full-span">
+            <span>Lead</span>
+            <select id="case-study-lead"></select>
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="case-study-status"></select>
+          </label>
+          <label>
+            <span>Quote attribution</span>
+            <input id="case-study-attribution" type="text" />
+          </label>
+          <label class="full-span">
+            <span>Headline</span>
+            <input id="case-study-headline" type="text" />
+          </label>
+          <label class="full-span">
+            <span>Challenge</span>
+            <textarea id="case-study-challenge" rows="4"></textarea>
+          </label>
+          <label class="full-span">
+            <span>Solution</span>
+            <textarea id="case-study-solution" rows="4"></textarea>
+          </label>
+          <label class="full-span">
+            <span>Outcome</span>
+            <textarea id="case-study-outcome" rows="4"></textarea>
+          </label>
+          <label class="full-span">
+            <span>Wins worth highlighting</span>
+            <textarea id="case-study-wins" rows="4" placeholder="One per line or comma-separated"></textarea>
+          </label>
+          <label class="full-span">
+            <span>Testimonial</span>
+            <textarea id="case-study-testimonial" rows="3" placeholder="Client quote or placeholder"></textarea>
+          </label>
+          <div class="full-span form-actions">
+            <button type="button" class="btn btn-ghost" id="case-study-seed-btn">Seed from lead</button>
+            <button type="submit" class="btn">Save draft</button>
+            <button type="button" class="btn btn-ghost" id="case-study-generate-btn">Generate case study</button>
+          </div>
+        </form>
+        <div id="case-study-result" class="result-box muted">No case study generated yet.</div>
+        <div id="case-study-list" class="mini-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Public free website audit lead magnet</div>
+            <p class="panel-subtitle">Public-facing audit page that captures inbound leads, runs a quick homepage scan, saves a report, and pushes the contact into the CRM.</p>
+          </div>
+        </div>
+        <div class="callout-card">
+          <div class="summary-label">Public URL</div>
+          <code id="lead-magnet-url">/free-audit/</code>
+          <div class="summary-note">Run the dashboard server, then open this link locally or publish the page later.</div>
+        </div>
+        <div class="mini-stat-grid">
+          <div class="summary-card compact">
+            <div class="summary-label">Submissions</div>
+            <div class="summary-value" id="lead-magnet-count">0</div>
+          </div>
+        </div>
+        <div id="lead-magnet-feed" class="mini-list"></div>
+      </section>
+    </div>
+
+    <div class="two-col">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Content engine</div>
+            <p class="panel-subtitle">Turn case studies, lead audits, packages, or individual leads into usable posts, email copy, and article angles.</p>
+          </div>
+        </div>
+        <form id="content-form" class="form-grid">
+          <label>
+            <span>Source type</span>
+            <select id="content-source-type">
+              <option value="service">Service package</option>
+              <option value="case-study">Case study</option>
+              <option value="lead-magnet">Lead magnet submission</option>
+              <option value="lead">CRM lead</option>
+            </select>
+          </label>
+          <label>
+            <span>Source</span>
+            <select id="content-source-id"></select>
+          </label>
+          <label class="full-span">
+            <span>Angle</span>
+            <textarea id="content-angle" rows="3" placeholder="Optional angle to push harder"></textarea>
+          </label>
+          <label>
+            <span>Audience</span>
+            <input id="content-audience" type="text" placeholder="Optional audience override" />
+          </label>
+          <label>
+            <span>CTA</span>
+            <input id="content-cta" type="text" placeholder="Optional CTA override" />
+          </label>
+          <div class="full-span form-actions">
+            <button type="submit" class="btn">Generate content pack</button>
+          </div>
+        </form>
+        <div id="content-result" class="result-box muted">No content pack generated yet.</div>
+        <div id="content-pack-list" class="mini-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Follow-up sequence builder</div>
+            <p class="panel-subtitle">Generate short practical multi-touch follow-ups for audit nudges, proposal chases, and cold no-response bumps.</p>
+          </div>
+        </div>
+        <form id="followup-form" class="form-grid">
+          <label>
+            <span>Lead</span>
+            <select id="followup-lead"></select>
+          </label>
+          <label>
+            <span>Sequence type</span>
+            <select id="followup-type">
+              <option value="audit-nudge">Audit follow-up</option>
+              <option value="proposal-chase">Proposal follow-up</option>
+              <option value="no-response">Cold no-response bump</option>
+            </select>
+          </label>
+          <div class="full-span form-actions">
+            <button type="submit" class="btn">Generate sequence</button>
+          </div>
+        </form>
+        <div id="followup-result" class="result-box muted">No follow-up sequence generated yet.</div>
+        <div id="followup-list" class="mini-list"></div>
+      </section>
+    </div>
+
     <section class="panel">
       <div class="panel-head">
         <div>
@@ -312,5 +462,6 @@
 
   <div id="toast" class="toast hidden"></div>
   <script src="./app.js"></script>
+  <script src="./systems.js"></script>
 </body>
 </html>

@@ -1,0 +1,48 @@
+{
+  "updatedAt": "2026-04-02T12:40:17.777Z",
+  "statuses": [
+    "Draft",
+    "Queued",
+    "Sent"
+  ],
+  "sequences": [
+    {
+      "id": "followup-1775133617773",
+      "leadId": "gypsy-sips-caf-sierra-vista",
+      "businessName": "Gypsy Sips Café",
+      "sequenceType": "proposal-chase",
+      "status": "Draft",
+      "generatedAt": "2026-04-02T12:40:17.774Z",
+      "steps": [
+        {
+          "dayOffset": "Day 0",
+          "channel": "Email",
+          "subject": "Gypsy Sips Café proposal — any questions?",
+          "body": "Wanted to circle back on the proposal I sent over. The recommendation is still the same: keep it practical, fix the highest-impact issues first, and get the site feeling more trustworthy without overbuilding it."
+        },
+        {
+          "dayOffset": "Day 2",
+          "channel": "Email",
+          "subject": "Happy to tighten the scope if needed",
+          "body": "If the package feels close but not quite right, I can trim the scope or focus it around the most important fixes first. The goal is to get the meaningful improvements done, not force a bigger project than you need."
+        },
+        {
+          "dayOffset": "Day 6",
+          "channel": "Email",
+          "subject": "Still interested in improving the site?",
+          "body": "Just checking whether this is still on your radar. If yes, I can get the project slotted in and keep the process simple. If no, totally fine — I just wanted to close the loop."
+        },
+        {
+          "dayOffset": "Day 10",
+          "channel": "Email",
+          "subject": "Last follow-up on the proposal",
+          "body": "Final bump from me. If you want to revisit it later, I can always reopen the proposal with the same practical angle and updated timing."
+        }
+      ],
+      "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/gypsy-sips-caf-proposal-chase-sequence.html",
+      "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/gypsy-sips-caf-proposal-chase-sequence.json",
+      "createdAt": "2026-04-02T12:40:17.777Z",
+      "updatedAt": "2026-04-02T12:40:17.777Z"
+    }
+  ]
+}

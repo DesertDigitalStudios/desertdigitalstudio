@@ -1,0 +1,34 @@
+{
+  "id": "content-1775133617686",
+  "title": "Website Refresh content pack",
+  "sourceType": "service",
+  "sourceId": "refresh",
+  "audience": "Local business owners who know their website needs work but do not want a giant agency project",
+  "angle": "Most local sites do not need a giant redesign. They need their weak trust and CTA gaps fixed first.",
+  "callToAction": "Book a free website audit",
+  "generatedAt": "2026-04-02T12:40:17.686Z",
+  "outputs": {
+    "hooks": [
+      "Most small-business websites are losing leads for boring reasons, not dramatic ones.",
+      "Website Refresh is the kind of project that proves simple fixes still matter.",
+      "A homepage can look \"fine\" and still make customers hesitate."
+    ],
+    "shortPost": "Most local sites do not need a giant redesign. They need their weak trust and CTA gaps fixed first. A tighter, more trustworthy site that converts better without overcomplicating the build. In plain English: tighten Homepage redesign or full-site refresh, Fix the most visible trust + conversion issues, Mobile cleanup and stronger calls to action, Updated content structure, contact flow, and SEO basics, Launch support and cleanup pass, make the next step obvious, and the site starts working harder. Book a free website audit.",
+    "longPost": "Most local sites do not need a giant redesign. They need their weak trust and CTA gaps fixed first. A tighter, more trustworthy site that converts better without overcomplicating the build. The interesting part is that this usually is not about flashy redesigns. It is about reducing friction: Homepage redesign or full-site refresh, Fix the most visible trust + conversion issues, Mobile cleanup and stronger calls to action, Updated content structure, contact flow, and SEO basics, Launch support and cleanup pass. When those pieces get clearer, the business feels easier to trust and easier to contact. Book a free website audit.",
+    "emailSubject": "Website Refresh: an easy content angle DDS can use this week",
+    "emailBody": "Audience: Local business owners who know their website needs work but do not want a giant agency project\n\nMain angle: Most local sites do not need a giant redesign. They need their weak trust and CTA gaps fixed first.\n\nCore promise: A tighter, more trustworthy site that converts better without overcomplicating the build.\n\nProof points: - Homepage redesign or full-site refresh\n- Fix the most visible trust + conversion issues\n- Mobile cleanup and stronger calls to action\n- Updated content structure, contact flow, and SEO basics\n- Launch support and cleanup pass\n\nCTA: Book a free website audit",
+    "articleTitle": "Website Refresh: what actually makes a small-business website feel trustworthy",
+    "articleOutline": [
+      "Open with the common friction local-business sites create",
+      "Use Website Refresh as the concrete example",
+      "Break down the proof points: Homepage redesign or full-site refresh, Fix the most visible trust + conversion issues, Mobile cleanup and stronger calls to action, Updated content structure, contact flow, and SEO basics, Launch support and cleanup pass",
+      "Explain why simple structure + CTA fixes beat random redesign churn",
+      "Close with a soft CTA: Book a free website audit"
+    ],
+    "ctaOptions": [
+      "Book a free website audit",
+      "Reply if you want me to point out the top 3 weak spots on your site",
+      "Send your homepage and I will tell you what I would fix first"
+    ]
+  }
+}
