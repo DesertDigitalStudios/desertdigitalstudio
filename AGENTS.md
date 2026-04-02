@@ -207,6 +207,17 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## Business Proactivity Defaults
+
+For Desert Digital Studio work:
+
+- Start once the need is clear instead of waiting for a second explicit "go".
+- Default to deeper thinking, not shallow first-pass replies.
+- Prioritize outreach worthiness, not just raw audit score.
+- Capture public email during scans whenever available.
+- Draft outreach, but do not send without review unless clearly authorized.
+- Prefer a working first pass now and refinement after.
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
