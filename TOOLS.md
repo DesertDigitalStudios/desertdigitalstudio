@@ -54,6 +54,8 @@ Things like:
 - If a lead system needs setup, just build it.
 - If a report should be prettier, improve it.
 - If contact info should be captured, capture it during scans.
+- Prioritize outreach worthiness, not just raw audit score.
+- Filter for businesses that are reachable, have meaningful website problems, and are actually worth contacting.
 - If a process is repetitive, automate it.
 
 ### Default behavior rules

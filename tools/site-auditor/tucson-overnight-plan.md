@@ -10,6 +10,14 @@ Find Tucson businesses with:
 ## Best lead formula
 **Good reputation + weak website + public email = hot lead**
 
+## Outreach-worthiness rule
+Do not prioritize by audit score alone.
+Prioritize businesses that are:
+- reachable
+- meaningfully weak online
+- worth helping
+- not already polished enough that the pitch feels forced
+
 ## Priority categories
 Run these first:
 1. restaurants
