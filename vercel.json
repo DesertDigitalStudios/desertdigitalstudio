@@ -3,6 +3,7 @@
     { "src": "/benson-web-design", "dest": "/benson-web-design.html" },
     { "src": "/sierra-vista-web-design", "dest": "/sierra-vista-web-design.html" },
     { "src": "/tombstone-web-design", "dest": "/tombstone-web-design.html" },
-    { "src": "/tucson-web-design", "dest": "/tucson-web-design.html" }
+    { "src": "/tucson-web-design", "dest": "/tucson-web-design.html" },
+    { "src": "/free-audit", "dest": "/free-audit/index.html" }
   ]
 }
