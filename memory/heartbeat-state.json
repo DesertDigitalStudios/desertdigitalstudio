@@ -1,10 +1,13 @@
 {
   "lastChecks": {
-    "email": 1743292920,
-    "leads": 1743292920,
+    "email": 1775137140,
+    "leads": 1775137140,
     "calendar": null,
     "weather": null
   },
   "lastEmailLogCount": 2,
-  "lastEmailDates": ["2026-03-28T23:51:29.539Z", "2026-03-28T23:49:29.192Z"]
+  "lastEmailDates": [
+    "2026-03-28T23:51:29.539Z",
+    "2026-03-28T23:49:29.192Z"
+  ]
 }
