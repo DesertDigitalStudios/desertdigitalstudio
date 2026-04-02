@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Website Audit — Desert Digital Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero card">
+      <div class="eyebrow">Desert Digital Studio</div>
+      <h1>Get a free website audit snapshot</h1>
+      <p class="lede">Drop your website below and get a fast homepage review covering trust signals, CTA clarity, contact path, and a few easy fixes. Quick, useful, and not weirdly corporate.</p>
+      <ul class="hero-points">
+        <li>Fast automated homepage scan</li>
+        <li>Score + issue summary</li>
+        <li>Optional manual follow-up from Desert Digital Studio</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <form id="audit-form" class="form-grid">
+        <label>
+          <span>Your name</span>
+          <input id="name" type="text" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input id="email" type="email" required />
+        </label>
+        <label>
+          <span>Business name</span>
+          <input id="businessName" type="text" required />
+        </label>
+        <label>
+          <span>Website</span>
+          <input id="website" type="text" placeholder="example.com" required />
+        </label>
+        <label>
+          <span>Phone (optional)</span>
+          <input id="phone" type="text" />
+        </label>
+        <label>
+          <span>Main goal (optional)</span>
+          <input id="goals" type="text" placeholder="More calls, more bookings, cleaner trust" />
+        </label>
+        <div class="full-span actions">
+          <button type="submit">Run free audit</button>
+          <span id="status" class="muted">Ready</span>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="section-title">Your result</div>
+      <div id="result" class="muted">Submit a website above to generate the free audit snapshot.</div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
