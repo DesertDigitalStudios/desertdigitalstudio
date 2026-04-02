@@ -47,6 +47,34 @@ Things like:
 - **Token name:** desktop-push
 - **To deploy:** clone to /tmp/dds-deploy, copy portfolio files, commit and push to main
 
+## Business Operating Rules
+
+### Standing business rules
+
+- If a lead system needs setup, just build it.
+- If a report should be prettier, improve it.
+- If contact info should be captured, capture it during scans.
+- If a process is repetitive, automate it.
+
+### Default behavior rules
+
+- Draft outreach, but do not send without review unless clearly authorized.
+- Save reports to `~/Desktop/Audit reports`.
+- Store useful business info in workspace notes/files.
+- Use local Qwen for bulk grunt work automatically.
+
+### Working style
+
+- Get the working version first, then refine it.
+- Do not wait for perfection before making useful progress.
+
+### Still pause and ask for:
+
+- sending real outbound emails/messages unless clearly authorized
+- spending money
+- deleting or overwriting important stuff
+- anything that could create risk or embarrassment
+
 ## Local AI Routing
 
 - **Primary chat model in OpenClaw:** `openai-codex/gpt-5.4`
