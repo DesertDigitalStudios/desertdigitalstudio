@@ -25,6 +25,7 @@ const DISCORD_CHANNEL = 'channel:1487016164931539024';
 const CHECK_INTERVAL_MS = 2 * 60 * 1000; // every 2 minutes
 const STATE_FILE = path.join(__dirname, '.email-state.json');
 const LOG_FILE = path.join(__dirname, 'email-log.json');
+const DEDUPE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
 
 // Quiet hours (no pings) — MST
 const QUIET_START = 22; // 10pm
@@ -42,8 +43,47 @@ function getSeenUIDs() {
   catch { return new Set(); }
 }
 
+function readState() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'));
+    return {
+      uids: raw.uids || [],
+      alerts: raw.alerts || {}
+    };
+  } catch {
+    return { uids: [], alerts: {} };
+  }
+}
+
 function saveSeenUIDs(uids) {
-  fs.writeFileSync(STATE_FILE, JSON.stringify({ uids: [...uids] }));
+  const state = readState();
+  fs.writeFileSync(STATE_FILE, JSON.stringify({ ...state, uids: [...uids] }));
+}
+
+function buildAlertKey(from, subject, body) {
+  const base = `${String(from || '').toLowerCase()}|${String(subject || '').toLowerCase()}|${truncate(body || '', 120).toLowerCase()}`;
+  return Buffer.from(base).toString('base64');
+}
+
+function shouldSuppressDuplicateAlert(from, subject, body) {
+  const state = readState();
+  const alerts = state.alerts || {};
+  const now = Date.now();
+  const key = buildAlertKey(from, subject, body);
+  const last = alerts[key];
+
+  for (const [k, ts] of Object.entries(alerts)) {
+    if (!ts || (now - ts) > DEDUPE_WINDOW_MS) delete alerts[k];
+  }
+
+  if (last && (now - last) < DEDUPE_WINDOW_MS) {
+    fs.writeFileSync(STATE_FILE, JSON.stringify({ ...state, alerts }, null, 2));
+    return true;
+  }
+
+  alerts[key] = now;
+  fs.writeFileSync(STATE_FILE, JSON.stringify({ ...state, alerts }, null, 2));
+  return false;
 }
 
 function logEmail(entry) {
@@ -105,6 +145,11 @@ function processEmail(parsed) {
   const subject = parsed.subject || '(no subject)';
   const body = parsed.text || parsed.html?.replace(/<[^>]+>/g, ' ') || '';
   const bodyPreview = truncate(body, 600);
+
+  if (shouldSuppressDuplicateAlert(from, subject, bodyPreview)) {
+    console.log('Duplicate alert suppressed:', subject);
+    return;
+  }
 
   if (shouldIgnore(from)) {
     console.log('Ignored (marketing/noreply):', subject);
