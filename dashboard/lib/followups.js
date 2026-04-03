@@ -39,6 +39,8 @@ function createSequence(input = {}) {
     leadId: input.leadId || null,
     businessName: input.businessName || '',
     sequenceType: input.sequenceType || 'audit-nudge',
+    sequenceTypeLabel: input.sequenceTypeLabel || null,
+    recommendedChannel: input.recommendedChannel || 'Email',
     status: input.status || 'Draft',
     generatedAt: input.generatedAt || new Date().toISOString(),
     steps: input.steps || [],

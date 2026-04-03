@@ -1,0 +1,31 @@
+{
+  "id": "followup-farmhouse-restaurant-benson-post-meeting-2026-04-03",
+  "leadId": "farmhouse-restaurant-benson",
+  "businessName": "Farmhouse Restaurant",
+  "sequenceType": "post-meeting",
+  "sequenceTypeLabel": "Post-meeting follow-up",
+  "recommendedChannel": "Email",
+  "summary": "A warmer follow-up sequence for Farmhouse Restaurant after a real conversation or meeting. Best sent via email.",
+  "generatedAt": "2026-04-03T22:53:35.682Z",
+  "steps": [
+    {
+      "dayOffset": "Day 0",
+      "channel": "Email",
+      "subject": "Good talking with you about Farmhouse Restaurant",
+      "body": "Good talking with you about Farmhouse Restaurant. I kept thinking about the biggest quick wins we discussed around h1 heading and social media links. If helpful, I can resend the quick notes or boil it down into the simplest next step."
+    },
+    {
+      "dayOffset": "Day 3",
+      "channel": "Email",
+      "subject": "Quick follow-up on our conversation",
+      "body": "Just checking back in after our conversation. If the full project feels like too much right now, I can narrow it to the highest-impact fixes first and keep the first step lightweight."
+    },
+    {
+      "dayOffset": "Day 8",
+      "channel": "Email",
+      "subject": "No rush — just leaving the door open",
+      "body": "No rush on my end. I just wanted to leave the door open in case you want to move forward later. If you do, I can keep it practical and make the process easy."
+    }
+  ],
+  "status": "Draft"
+}

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-02T12:40:17.777Z",
+  "updatedAt": "2026-04-03T22:53:35.683Z",
   "statuses": [
     "Draft",
     "Queued",
@@ -7,10 +7,222 @@
   ],
   "sequences": [
     {
+      "id": "followup-81-barbers-tucson-instagram-dm-2026-04-03",
+      "leadId": "81-barbers-tucson",
+      "businessName": "81 Barbers",
+      "sequenceType": "instagram-dm",
+      "sequenceTypeLabel": "Instagram DM follow-up",
+      "recommendedChannel": "Instagram DM",
+      "status": "Draft",
+      "generatedAt": "2026-04-03T22:53:35.683Z",
+      "steps": [
+        {
+          "dayOffset": "Day 0",
+          "channel": "Instagram DM",
+          "subject": "DM 1",
+          "body": "Hey — just wanted to follow up on my earlier note about 81 Barbers. I spotted a couple easy website wins around meta description and h1 heading. If you want, I can send the short version here."
+        },
+        {
+          "dayOffset": "Day 4",
+          "channel": "Instagram DM",
+          "subject": "DM 2",
+          "body": "Quick bump in case that got buried. This is not a giant rebuild pitch — more like a few practical fixes that could make the business look stronger online."
+        },
+        {
+          "dayOffset": "Day 9",
+          "channel": "Instagram DM",
+          "subject": "DM 3",
+          "body": "Last message from me on it. If you ever want the quick audit or a simple quote, I’m happy to send it over."
+        }
+      ],
+      "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/81-barbers-instagram-dm-sequence.html",
+      "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/81-barbers-instagram-dm-sequence.json",
+      "createdAt": "2026-04-03T22:50:27.876Z",
+      "updatedAt": "2026-04-03T22:53:35.683Z"
+    },
+    {
+      "id": "followup-the-bit-sierra-vista-instagram-dm-2026-04-03",
+      "leadId": "the-bit-sierra-vista",
+      "businessName": "The Bit",
+      "sequenceType": "instagram-dm",
+      "sequenceTypeLabel": "Instagram DM follow-up",
+      "recommendedChannel": "Instagram DM",
+      "status": "Draft",
+      "generatedAt": "2026-04-03T22:53:35.683Z",
+      "steps": [
+        {
+          "dayOffset": "Day 0",
+          "channel": "Instagram DM",
+          "subject": "DM 1",
+          "body": "Hey — just wanted to follow up on my earlier note about The Bit. I spotted a couple easy website wins around meta description and h1 heading. If you want, I can send the short version here."
+        },
+        {
+          "dayOffset": "Day 4",
+          "channel": "Instagram DM",
+          "subject": "DM 2",
+          "body": "Quick bump in case that got buried. This is not a giant rebuild pitch — more like a few practical fixes that could make the business look stronger online."
+        },
+        {
+          "dayOffset": "Day 9",
+          "channel": "Instagram DM",
+          "subject": "DM 3",
+          "body": "Last message from me on it. If you ever want the quick audit or a simple quote, I’m happy to send it over."
+        }
+      ],
+      "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/the-bit-instagram-dm-sequence.html",
+      "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/the-bit-instagram-dm-sequence.json",
+      "createdAt": "2026-04-03T22:50:27.876Z",
+      "updatedAt": "2026-04-03T22:53:35.683Z"
+    },
+    {
+      "id": "followup-claudia-s-hair-salon-sierra-vista-no-response-2026-04-03",
+      "leadId": "claudia-s-hair-salon-sierra-vista",
+      "businessName": "Claudia's Hair Salon",
+      "sequenceType": "no-response",
+      "sequenceTypeLabel": "Cold no-response bump",
+      "recommendedChannel": "Email",
+      "status": "Draft",
+      "generatedAt": "2026-04-03T22:53:35.683Z",
+      "steps": [
+        {
+          "dayOffset": "Day 0",
+          "channel": "Email",
+          "subject": "Quick bump on Claudia's Hair Salon",
+          "body": "Following up once in case my first note missed you. I had a few specific website observations for Claudia's Hair Salon, especially around a few trust and conversion gaps."
+        },
+        {
+          "dayOffset": "Day 4",
+          "channel": "Email",
+          "subject": "Worth sending the short version?",
+          "body": "If a full audit feels like overkill, I can just send the top 3 fixes I would make first. That usually tells you pretty quickly whether it is worth doing."
+        },
+        {
+          "dayOffset": "Day 10",
+          "channel": "Email",
+          "subject": "No pressure — closing the loop",
+          "body": "No worries if now is not the right time. I wanted to send one last follow-up so you have my note if website cleanup becomes a priority later."
+        }
+      ],
+      "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/claudia-s-hair-salon-no-response-sequence.html",
+      "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/claudia-s-hair-salon-no-response-sequence.json",
+      "createdAt": "2026-04-03T22:50:27.876Z",
+      "updatedAt": "2026-04-03T22:53:35.683Z"
+    },
+    {
+      "id": "followup-corner-barber-shop-sierra-vista-no-response-2026-04-03",
+      "leadId": "corner-barber-shop-sierra-vista",
+      "businessName": "Corner Barber Shop",
+      "sequenceType": "no-response",
+      "sequenceTypeLabel": "Cold no-response bump",
+      "recommendedChannel": "Email",
+      "status": "Draft",
+      "generatedAt": "2026-04-03T22:53:35.683Z",
+      "steps": [
+        {
+          "dayOffset": "Day 0",
+          "channel": "Email",
+          "subject": "Quick bump on Corner Barber Shop",
+          "body": "Following up once in case my first note missed you. I had a few specific website observations for Corner Barber Shop, especially around a few trust and conversion gaps."
+        },
+        {
+          "dayOffset": "Day 4",
+          "channel": "Email",
+          "subject": "Worth sending the short version?",
+          "body": "If a full audit feels like overkill, I can just send the top 3 fixes I would make first. That usually tells you pretty quickly whether it is worth doing."
+        },
+        {
+          "dayOffset": "Day 10",
+          "channel": "Email",
+          "subject": "No pressure — closing the loop",
+          "body": "No worries if now is not the right time. I wanted to send one last follow-up so you have my note if website cleanup becomes a priority later."
+        }
+      ],
+      "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/corner-barber-shop-no-response-sequence.html",
+      "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/corner-barber-shop-no-response-sequence.json",
+      "createdAt": "2026-04-03T22:50:27.876Z",
+      "updatedAt": "2026-04-03T22:53:35.683Z"
+    },
+    {
+      "id": "followup-the-horseshoe-benson-audit-nudge-2026-04-03",
+      "leadId": "the-horseshoe-benson",
+      "businessName": "The Horseshoe",
+      "sequenceType": "audit-nudge",
+      "sequenceTypeLabel": "Audit follow-up",
+      "recommendedChannel": "Email",
+      "status": "Draft",
+      "generatedAt": "2026-04-03T22:53:35.683Z",
+      "steps": [
+        {
+          "dayOffset": "Day 0",
+          "channel": "Email",
+          "subject": "The Horseshoe: quick website note",
+          "body": "Wanted to send over a quick follow-up. I took a look at The Horseshoe and noticed meta description and h1 heading. Nothing catastrophic — just a few things that can make the business feel harder to trust or contact online. If helpful, I can send the short version with the first 2–3 fixes I’d make."
+        },
+        {
+          "dayOffset": "Day 2",
+          "channel": "Email",
+          "subject": "Following up in case this got buried",
+          "body": "Just bumping this once in case it got buried. The main reason I reached out is that these are very fixable issues, and they usually do not require a giant rebuild to improve. If you want, I can keep it simple and just send the biggest quick wins."
+        },
+        {
+          "dayOffset": "Day 5",
+          "channel": "Email",
+          "subject": "The Horseshoe: the fast version",
+          "body": "Boiled down: tighten the trust signals, make the next step more obvious, and clean up the weak spots around meta description and h1 heading. That usually gets the site feeling a lot more current without turning it into a giant project."
+        },
+        {
+          "dayOffset": "Day 9",
+          "channel": "Email",
+          "subject": "Close the loop?",
+          "body": "Last nudge from me on this. If website cleanup is not a priority right now, no worries. If it is, reply and I can turn what I found into a simple action plan instead of a long complicated project."
+        }
+      ],
+      "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/the-horseshoe-audit-nudge-sequence.html",
+      "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/the-horseshoe-audit-nudge-sequence.json",
+      "createdAt": "2026-04-03T22:50:27.875Z",
+      "updatedAt": "2026-04-03T22:53:35.683Z"
+    },
+    {
+      "id": "followup-farmhouse-restaurant-benson-post-meeting-2026-04-03",
+      "leadId": "farmhouse-restaurant-benson",
+      "businessName": "Farmhouse Restaurant",
+      "sequenceType": "post-meeting",
+      "sequenceTypeLabel": "Post-meeting follow-up",
+      "recommendedChannel": "Email",
+      "status": "Draft",
+      "generatedAt": "2026-04-03T22:53:35.682Z",
+      "steps": [
+        {
+          "dayOffset": "Day 0",
+          "channel": "Email",
+          "subject": "Good talking with you about Farmhouse Restaurant",
+          "body": "Good talking with you about Farmhouse Restaurant. I kept thinking about the biggest quick wins we discussed around h1 heading and social media links. If helpful, I can resend the quick notes or boil it down into the simplest next step."
+        },
+        {
+          "dayOffset": "Day 3",
+          "channel": "Email",
+          "subject": "Quick follow-up on our conversation",
+          "body": "Just checking back in after our conversation. If the full project feels like too much right now, I can narrow it to the highest-impact fixes first and keep the first step lightweight."
+        },
+        {
+          "dayOffset": "Day 8",
+          "channel": "Email",
+          "subject": "No rush — just leaving the door open",
+          "body": "No rush on my end. I just wanted to leave the door open in case you want to move forward later. If you do, I can keep it practical and make the process easy."
+        }
+      ],
+      "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/farmhouse-restaurant-post-meeting-sequence.html",
+      "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/farmhouse-restaurant-post-meeting-sequence.json",
+      "createdAt": "2026-04-03T22:50:27.875Z",
+      "updatedAt": "2026-04-03T22:53:35.683Z"
+    },
+    {
       "id": "followup-1775133617773",
       "leadId": "gypsy-sips-caf-sierra-vista",
       "businessName": "Gypsy Sips Café",
       "sequenceType": "proposal-chase",
+      "sequenceTypeLabel": null,
+      "recommendedChannel": "Email",
       "status": "Draft",
       "generatedAt": "2026-04-02T12:40:17.774Z",
       "steps": [
@@ -42,7 +254,7 @@
       "htmlPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/gypsy-sips-caf-proposal-chase-sequence.html",
       "jsonPath": "/Users/gabrielmaciel/.openclaw/workspace/followups/generated/gypsy-sips-caf-proposal-chase-sequence.json",
       "createdAt": "2026-04-02T12:40:17.777Z",
-      "updatedAt": "2026-04-02T12:40:17.777Z"
+      "updatedAt": "2026-04-03T22:53:35.683Z"
     }
   ]
 }

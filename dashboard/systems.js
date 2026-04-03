@@ -176,7 +176,7 @@ function renderFollowupsPanel() {
   $('followup-list').innerHTML = (systemsState.followups?.sequences || []).slice(0, 5).map(item => `
     <div class="mini-list-item">
       <strong>${esc(item.businessName)}</strong>
-      <span>${esc(item.sequenceType)} · ${esc(formatDate(item.generatedAt))}</span>
+      <span>${esc(item.sequenceTypeLabel || item.sequenceType)} · ${esc(formatDate(item.generatedAt))}</span>
     </div>
   `).join('') || '<div class="empty-state">No follow-up sequences generated yet.</div>';
 }
@@ -268,7 +268,7 @@ $('followup-form').addEventListener('submit', async event => {
   });
   systemsState.followups = payload.followups;
   $('followup-result').classList.remove('muted');
-  $('followup-result').innerHTML = `<strong>Generated follow-up sequence:</strong><br>HTML: <code>${esc(payload.sequence.htmlPath || '—')}</code><br>JSON: <code>${esc(payload.sequence.jsonPath || '—')}</code>`;
+  $('followup-result').innerHTML = `<strong>Generated ${esc(payload.sequence.sequenceTypeLabel || payload.sequence.sequenceType)}:</strong><br>Channel: <code>${esc(payload.sequence.recommendedChannel || 'Email')}</code><br>HTML: <code>${esc(payload.sequence.htmlPath || '—')}</code><br>JSON: <code>${esc(payload.sequence.jsonPath || '—')}</code>`;
   renderFollowupsPanel();
   showToast('Follow-up sequence generated');
 });

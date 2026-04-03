@@ -1,0 +1,31 @@
+{
+  "id": "followup-corner-barber-shop-sierra-vista-no-response-2026-04-03",
+  "leadId": "corner-barber-shop-sierra-vista",
+  "businessName": "Corner Barber Shop",
+  "sequenceType": "no-response",
+  "sequenceTypeLabel": "Cold no-response bump",
+  "recommendedChannel": "Email",
+  "summary": "Simple low-pressure bumps for Corner Barber Shop when the first outreach got no reply.",
+  "generatedAt": "2026-04-03T22:53:35.683Z",
+  "steps": [
+    {
+      "dayOffset": "Day 0",
+      "channel": "Email",
+      "subject": "Quick bump on Corner Barber Shop",
+      "body": "Following up once in case my first note missed you. I had a few specific website observations for Corner Barber Shop, especially around a few trust and conversion gaps."
+    },
+    {
+      "dayOffset": "Day 4",
+      "channel": "Email",
+      "subject": "Worth sending the short version?",
+      "body": "If a full audit feels like overkill, I can just send the top 3 fixes I would make first. That usually tells you pretty quickly whether it is worth doing."
+    },
+    {
+      "dayOffset": "Day 10",
+      "channel": "Email",
+      "subject": "No pressure — closing the loop",
+      "body": "No worries if now is not the right time. I wanted to send one last follow-up so you have my note if website cleanup becomes a priority later."
+    }
+  ],
+  "status": "Draft"
+}

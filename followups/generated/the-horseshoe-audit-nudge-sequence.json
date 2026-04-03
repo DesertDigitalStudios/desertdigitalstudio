@@ -1,0 +1,37 @@
+{
+  "id": "followup-the-horseshoe-benson-audit-nudge-2026-04-03",
+  "leadId": "the-horseshoe-benson",
+  "businessName": "The Horseshoe",
+  "sequenceType": "audit-nudge",
+  "sequenceTypeLabel": "Audit follow-up",
+  "recommendedChannel": "Email",
+  "summary": "Short practical follow-up sequence built from the audit context for The Horseshoe.",
+  "generatedAt": "2026-04-03T22:53:35.683Z",
+  "steps": [
+    {
+      "dayOffset": "Day 0",
+      "channel": "Email",
+      "subject": "The Horseshoe: quick website note",
+      "body": "Wanted to send over a quick follow-up. I took a look at The Horseshoe and noticed meta description and h1 heading. Nothing catastrophic — just a few things that can make the business feel harder to trust or contact online. If helpful, I can send the short version with the first 2–3 fixes I’d make."
+    },
+    {
+      "dayOffset": "Day 2",
+      "channel": "Email",
+      "subject": "Following up in case this got buried",
+      "body": "Just bumping this once in case it got buried. The main reason I reached out is that these are very fixable issues, and they usually do not require a giant rebuild to improve. If you want, I can keep it simple and just send the biggest quick wins."
+    },
+    {
+      "dayOffset": "Day 5",
+      "channel": "Email",
+      "subject": "The Horseshoe: the fast version",
+      "body": "Boiled down: tighten the trust signals, make the next step more obvious, and clean up the weak spots around meta description and h1 heading. That usually gets the site feeling a lot more current without turning it into a giant project."
+    },
+    {
+      "dayOffset": "Day 9",
+      "channel": "Email",
+      "subject": "Close the loop?",
+      "body": "Last nudge from me on this. If website cleanup is not a priority right now, no worries. If it is, reply and I can turn what I found into a simple action plan instead of a long complicated project."
+    }
+  ],
+  "status": "Draft"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "followup-the-bit-sierra-vista-instagram-dm-2026-04-03",
+  "leadId": "the-bit-sierra-vista",
+  "businessName": "The Bit",
+  "sequenceType": "instagram-dm",
+  "sequenceTypeLabel": "Instagram DM follow-up",
+  "recommendedChannel": "Instagram DM",
+  "summary": "Shorter, low-pressure Instagram follow-ups for The Bit when email is weak or missing.",
+  "generatedAt": "2026-04-03T22:53:35.683Z",
+  "steps": [
+    {
+      "dayOffset": "Day 0",
+      "channel": "Instagram DM",
+      "subject": "DM 1",
+      "body": "Hey — just wanted to follow up on my earlier note about The Bit. I spotted a couple easy website wins around meta description and h1 heading. If you want, I can send the short version here."
+    },
+    {
+      "dayOffset": "Day 4",
+      "channel": "Instagram DM",
+      "subject": "DM 2",
+      "body": "Quick bump in case that got buried. This is not a giant rebuild pitch — more like a few practical fixes that could make the business look stronger online."
+    },
+    {
+      "dayOffset": "Day 9",
+      "channel": "Instagram DM",
+      "subject": "DM 3",
+      "body": "Last message from me on it. If you ever want the quick audit or a simple quote, I’m happy to send it over."
+    }
+  ],
+  "status": "Draft"
+}
