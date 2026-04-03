@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 function normalizeUrl(input) {
   const value = String(input || '').trim();
   if (!value) return '';
@@ -82,6 +84,64 @@ function scoreAudit({ title, metaDescription, h1, hasContact, hasCta, httpsOk })
   return { score, checks, topIssues, summary };
 }
 
+function buildSubmission(body, website, audit) {
+  return {
+    source: 'Desert Digital Studio free audit page',
+    submittedAt: new Date().toISOString(),
+    name: String(body.name || '').trim(),
+    email: String(body.email || '').trim().toLowerCase(),
+    businessName: String(body.businessName || '').trim(),
+    phone: String(body.phone || '').trim(),
+    goals: String(body.goals || '').trim(),
+    website,
+    audit
+  };
+}
+
+async function sendLeadAlert(submission) {
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT || 465),
+    secure: true,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
+    }
+  });
+
+  const to = process.env.ALERT_TO_EMAIL || process.env.SMTP_USER;
+  const subject = `[Free Audit Lead] ${submission.businessName || submission.name} — ${submission.audit.score}/100`;
+  const text = [
+    'New free audit lead received from the public Desert Digital Studio site.',
+    '',
+    `Name: ${submission.name}`,
+    `Business: ${submission.businessName}`,
+    `Email: ${submission.email}`,
+    `Phone: ${submission.phone || 'N/A'}`,
+    `Website: ${submission.website}`,
+    `Goals: ${submission.goals || 'N/A'}`,
+    '',
+    `Score: ${submission.audit.score}/100`,
+    `Top issues: ${submission.audit.topIssues.join(', ') || 'None'}`,
+    `Summary: ${submission.audit.summary}`,
+    '',
+    '--- CRM-FRIENDLY JSON ---',
+    JSON.stringify(submission, null, 2)
+  ].join('\n');
+
+  await transporter.sendMail({
+    from: `"Desert Digital Studio" <${process.env.SMTP_USER}>`,
+    to,
+    subject,
+    text,
+    attachments: [{
+      filename: 'free-audit-lead.json',
+      content: JSON.stringify(submission, null, 2),
+      contentType: 'application/json'
+    }]
+  });
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     res.statusCode = 405;
@@ -115,18 +175,15 @@ module.exports = async (req, res) => {
       httpsOk: finalUrl.startsWith('https://')
     });
 
+    const submission = buildSubmission(body, website, audit);
+
+    if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+      await sendLeadAlert(submission);
+    }
+
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({
-      ok: true,
-      submission: {
-        name: body.name || '',
-        email: body.email || '',
-        businessName: body.businessName || '',
-        website,
-        audit
-      }
-    }));
+    res.end(JSON.stringify({ ok: true, submission }));
   } catch (error) {
     res.statusCode = 500;
     res.setHeader('Content-Type', 'application/json');
