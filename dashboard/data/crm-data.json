@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-03T14:28:00.000Z",
+  "updatedAt": "2026-04-03T14:30:00.000Z",
   "packages": [
     {
       "id": "launch-pad",
@@ -655,6 +655,82 @@
       "sourceReport": "nightly-sierra-vista-2026-04-03",
       "importedAt": "2026-04-03T14:10:00.000Z",
       "id": "the-bit-sierra-vista"
+    },
+    {
+      "id": "corner-barber-shop-sierra-vista",
+      "businessName": "Corner Barber Shop",
+      "city": "Sierra Vista",
+      "stage": "Contacted",
+      "notes": "Sent outreach email after audit; public email found and used. Wait for reply before next move.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "lastTouch": "2026-04-03",
+      "followUpOn": "2026-04-07",
+      "nextAction": "Wait for reply; if no response, follow up later.",
+      "shouldPursue": true
+    },
+    {
+      "id": "claudia-s-hair-salon-sierra-vista",
+      "businessName": "Claudia's Hair Salon",
+      "city": "Sierra Vista",
+      "stage": "Contacted",
+      "notes": "Sent outreach email after audit; public email found and used. Wait for reply before next move.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "lastTouch": "2026-04-03",
+      "followUpOn": "2026-04-07",
+      "nextAction": "Wait for reply; if no response, follow up later.",
+      "shouldPursue": true
+    },
+    {
+      "id": "jojo-s-tucson-tucson",
+      "businessName": "JoJo's Tucson",
+      "city": "Tucson",
+      "stage": "Contacted",
+      "notes": "Sent outreach email after audit; public email found and used. Wait for reply before next move.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "lastTouch": "2026-04-03",
+      "followUpOn": "2026-04-07",
+      "nextAction": "Wait for reply; if no response, follow up later.",
+      "shouldPursue": true
+    },
+    {
+      "id": "nirvana-s-cup-of-joe-sierra-vista",
+      "businessName": "Nirvana's Cup of Joe",
+      "city": "Sierra Vista",
+      "stage": "Contacted",
+      "notes": "Sent outreach email after audit; public email found and used. Wait for reply before next move.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "lastTouch": "2026-04-03",
+      "followUpOn": "2026-04-07",
+      "nextAction": "Wait for reply; if no response, follow up later.",
+      "shouldPursue": true
     }
   ]
 }
