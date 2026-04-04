@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #ffffff; }
+  .sheet { width: 1125px; height: 675px; position: relative; overflow: hidden; background: linear-gradient(145deg,#ffffff 0%,#f9fafb 55%,#f3f4f6 100%); }
+  .texture { position:absolute; inset:0; background-image:linear-gradient(rgba(15,23,42,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(15,23,42,.03) 1px, transparent 1px); background-size: 34px 34px; mask-image: linear-gradient(180deg, rgba(0,0,0,.4), transparent 78%); }
+  .glow { position:absolute; inset:0; background:radial-gradient(circle at 82% 16%, rgba(245,158,11,.10), transparent 24%),radial-gradient(circle at 16% 82%, rgba(245,158,11,.05), transparent 26%); }
+  .front-wrap { position:absolute; inset:64px 90px; display:flex; flex-direction:column; gap:26px; }
+  .eyebrow { font-size: 19px; letter-spacing: .22em; text-transform: uppercase; color:#8b98a8; font-weight:700; }
+  .tag { font-size: 58px; line-height: 1.06; font-weight: 800; letter-spacing: -.05em; color:#0f172a; max-width: 690px; }
+  .pill { margin-top:auto; align-self:flex-start; display:inline-block; padding:14px 24px; border:1.5px solid rgba(245,158,11,.25); background:#fff7e7; border-radius:999px; color:#9a6100; font-weight:800; font-size:26px; }
+  .logo-lg { width: 420px; }
+
+  .back-wrap { position:absolute; inset:66px 90px; display:grid; grid-template-columns: 1.12fr .88fr; gap: 34px; }
+  .name { font-size: 64px; font-weight: 800; letter-spacing: -.05em; color:#0f172a; }
+  .role { margin-top:12px; font-size: 25px; color:#b76d00; font-weight:700; letter-spacing:.08em; text-transform: uppercase; }
+  .meta { margin-top:36px; display:grid; gap:18px; }
+  .meta-item { padding-bottom:16px; border-bottom:1px solid rgba(15,23,42,.08); }
+  .label { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color:#8b98a8; font-weight:700; margin-bottom:7px; }
+  .value { font-size: 31px; font-weight: 650; color:#111827; }
+  .small { font-size: 27px; color:#475467; }
+  .list { display:grid; gap:15px; align-content:start; padding-top:12px; }
+  .service { padding:18px 20px; border:1px solid #ebe3d3; border-radius:18px; background:#fff8ec; font-size:27px; font-weight:800; color:#8a5600; }
+  .mini-logo { width: 220px; justify-self:end; opacity:.98; }
+  .right-col { display:grid; grid-template-rows: auto 1fr; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="texture"></div>
+    <div class="glow"></div>
+    <div class="front-wrap">
+      <div class="logo-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" >
+  <!-- Light background -->
+  <rect width="600" height="200" fill="#ffffff"/>
+
+  <!-- Cactus Icon (centered at x=80, vertically centered) -->
+  <!-- Main trunk -->
+  <rect x="73" y="60" width="14" height="100" rx="7" fill="#f59e0b"/>
+  <!-- Left arm -->
+  <rect x="45" y="85" width="14" height="50" rx="7" fill="#f59e0b"/>
+  <rect x="45" y="82" width="42" height="14" rx="7" fill="#f59e0b"/>
+  <!-- Right arm -->
+  <rect x="101" y="90" width="14" height="45" rx="7" fill="#f59e0b"/>
+  <rect x="73" y="87" width="42" height="14" rx="7" fill="#f59e0b"/>
+
+  <!-- Digital pixel dots at top of cactus -->
+  <rect x="70" y="48" width="5" height="5" rx="1" fill="#f59e0b" opacity="0.9"/>
+  <rect x="78" y="44" width="5" height="5" rx="1" fill="#f59e0b"/>
+  <rect x="86" y="48" width="5" height="5" rx="1" fill="#f59e0b" opacity="0.9"/>
+  <rect x="70" y="56" width="5" height="5" rx="1" fill="#f59e0b" opacity="0.5"/>
+  <rect x="78" y="52" width="5" height="5" rx="1" fill="#f59e0b" opacity="0.7"/>
+  <rect x="86" y="56" width="5" height="5" rx="1" fill="#f59e0b" opacity="0.5"/>
+
+  <!-- Subtle glow behind pixel dots -->
+  <ellipse cx="80" cy="52" rx="20" ry="14" fill="#f59e0b" opacity="0.06"/>
+
+  <!-- Wordmark -->
+  <!-- DESERT DIGITAL -->
+  <text x="155" y="110" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700" fill="#1a1a2e" letter-spacing="2">DESERT DIGITAL</text>
+  <!-- Amber accent on "DIGITAL" -->
+  <!-- STUDIO -->
+  <text x="155" y="142" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="400" fill="#f59e0b" letter-spacing="8">STUDIO</text>
+
+  <!-- Thin divider line -->
+  <line x1="155" y1="120" x2="520" y2="120" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+</svg>
+</div>
+      <div>
+        <div class="eyebrow">Southern Arizona Web Design</div>
+        <div class="tag">Modern websites for Southern Arizona small businesses.</div>
+      </div>
+      <div class="pill">desertdigitalstudio.com</div>
+    </div>
+  </div>
+</body>
+</html>
