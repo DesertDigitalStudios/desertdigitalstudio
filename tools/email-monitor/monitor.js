@@ -116,13 +116,22 @@ function classifyEmail(subject, body, from) {
 
 function draftReply(subject, body, from) {
   const text = ((body || '')).slice(0, 500);
+  const isInquiry = INQUIRY_KEYWORDS.some(kw => text.toLowerCase().includes(kw));
+  if (!isInquiry) return null;
+  // Try Qwen first, fall back to template
+  try {
+    const http = require('http');
+    const prompt = `You are drafting a reply email for Gabriel Maciel at Desert Digital Studio (web design, based in Benson AZ). Someone emailed with subject "${subject}". Here is their message:\n\n${text}\n\nWrite a short, warm, professional reply under 100 words. Be helpful and direct. Do not add a subject line — just the body. Sign off as Gabriel, Desert Digital Studio, (210) 993-0509.`;
+    const payload = JSON.stringify({ model: 'qwen3:14b', prompt, stream: false, options: { temperature: 0.4, num_predict: 300 } });
+    // Sync call via child_process
+    const { execSync } = require('child_process');
+    const result = execSync(`curl -s -X POST http://localhost:11434/api/generate -H 'Content-Type: application/json' -d ${JSON.stringify(payload)}`, { timeout: 30000 });
+    const parsed = JSON.parse(result.toString());
+    let text2 = (parsed.response || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+    if (text2.length > 50) return text2;
+  } catch (e) { /* fall through to template */ }
   const firstName = (from || '').split(/[\s<@]/)[0] || 'there';
-  
-  // Simple template-based draft
-  if (INQUIRY_KEYWORDS.some(kw => text.toLowerCase().includes(kw))) {
-    return `Hi ${firstName},\n\nThank you for reaching out to Desert Digital Studio! I'd love to learn more about what you're looking for.\n\nI'll give you a call or follow up shortly — or feel free to reply here with any details about your business and what you need.\n\nLooking forward to connecting!\n\nGabriel\nDesert Digital Studio\ngabriel@desertdigitalstudio.com\ndesertdigitalstudio.com`;
-  }
-  return null;
+  return `Hi ${firstName},\n\nThank you for reaching out to Desert Digital Studio! I'd love to learn more about what you're looking for.\n\nI'll follow up shortly — or feel free to reply with any details about your business and what you need.\n\nGabriel\nDesert Digital Studio\ngabriel@desertdigitalstudio.com\n(210) 993-0509`;
 }
 
 function sendDiscord(msg) {

@@ -132,6 +132,50 @@ for city, leads in sorted(by_city.items()):
     print()
 PY2
 
+# --- Qwen outreach draft generation for top 3 new leads ---
+echo "Generating outreach drafts for top leads..." | tee -a "$LOGDIR/nightly.log"
+python3 - <<PYDRAFT >> "$OUT"
+import json, urllib.request, re
+
+leads_json = '''${BEST_JSON}'''
+try:
+    leads = json.loads(leads_json)
+except:
+    leads = []
+
+if not leads:
+    print("## Auto-generated outreach drafts")
+    print("No new leads with clean emails — no drafts generated today.")
+else:
+    print("## Auto-generated outreach drafts (Qwen3 — review before sending)")
+    print()
+    for lead in leads[:3]:
+        if not lead.get('email'):
+            continue
+        no_site = not lead.get('website')
+        issues = lead.get('pitch', 'a few trust and SEO issues')
+        if no_site:
+            prompt = f"""Write a short outreach email body from Gabriel Maciel at Desert Digital Studio (Benson, AZ) to the owner of {lead['name']} in {lead['city']}. They have no website. Pitch a simple first site that helps customers find and contact them. Under 120 words, casual, local, non-pushy. Sign off with name, studio (desertdigitalstudio.com), phone (210) 993-0509. Just the body, no subject."""
+        else:
+            prompt = f"""Write a short outreach email body from Gabriel Maciel at Desert Digital Studio (Benson, AZ) to the owner of {lead['name']} in {lead['city']}. Their website has: {issues}. Mention 2-3 issues naturally and offer a free audit summary. Under 130 words, casual, local, non-pushy. Sign off with name, studio (desertdigitalstudio.com), phone (210) 993-0509. Just the body, no subject."""
+        try:
+            payload = json.dumps({'model': 'qwen3:14b', 'prompt': prompt, 'stream': False, 'options': {'temperature': 0.5, 'num_predict': 350}}).encode()
+            req = urllib.request.Request('http://localhost:11434/api/generate', data=payload, headers={'Content-Type': 'application/json'})
+            resp = urllib.request.urlopen(req, timeout=60)
+            result = json.loads(resp.read())
+            text = result.get('response', '').strip()
+            text = re.sub(r'<think>[\s\S]*?</think>', '', text, flags=re.DOTALL).strip()
+            print(f"### {lead['name']} ({lead['city']}) → {lead['email']}")
+            print()
+            print(text)
+            print()
+        except Exception as e:
+            print(f"### {lead['name']} — draft failed: {e}")
+            print()
+PYDRAFT
+
+echo "Outreach drafts generated." | tee -a "$LOGDIR/nightly.log"
+
 # Alert via heartbeat
 openclaw system event --mode next-heartbeat --text "Morning rollup complete: ${IMPORTED} new leads imported (${WITH_EMAIL} with email). Brief: ${QWEN_BRIEF}" >/dev/null 2>&1 || true
 
