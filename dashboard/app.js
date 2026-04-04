@@ -136,14 +136,93 @@ function defaultOnboardingRecord(lead) {
   };
 }
 
+function isOverdue(lead) {
+  if (!lead.followUpOn) return false;
+  const due = new Date(lead.followUpOn);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return due < today;
+}
+
+function isDueToday(lead) {
+  if (!lead.followUpOn) return false;
+  const due = new Date(lead.followUpOn);
+  const today = new Date();
+  return due.getFullYear() === today.getFullYear() &&
+    due.getMonth() === today.getMonth() &&
+    due.getDate() === today.getDate();
+}
+
+function isDueSoon(lead) {
+  if (!lead.followUpOn) return false;
+  const due = new Date(lead.followUpOn);
+  const today = new Date();
+  const diff = (due - today) / (1000 * 60 * 60 * 24);
+  return diff >= 0 && diff <= 3;
+}
+
+function renderTodaysFocus() {
+  const leads = sortedLeads().filter(lead => !['Won', 'Parked', 'Closed Lost'].includes(lead.stage));
+  const overdue = leads.filter(isOverdue);
+  const today = leads.filter(isDueToday);
+  const soon = leads.filter(l => isDueSoon(l) && !isDueToday(l) && !isOverdue(l));
+  const noDate = leads.filter(l => l.stage === 'Contacted' && !l.followUpOn);
+
+  const focusLeads = [
+    ...overdue.map(l => ({ lead: l, tag: 'OVERDUE', cls: 'focus-overdue' })),
+    ...today.map(l => ({ lead: l, tag: 'TODAY', cls: 'focus-today' })),
+    ...soon.map(l => ({ lead: l, tag: 'SOON', cls: 'focus-soon' })),
+    ...noDate.map(l => ({ lead: l, tag: 'NO DATE', cls: 'focus-nodate' }))
+  ];
+
+  const panel = $('focus-panel');
+  if (!focusLeads.length) {
+    panel.innerHTML = '';
+    return;
+  }
+
+  panel.innerHTML = `
+    <div class="panel focus-panel-inner">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">Today's Focus</div>
+          <p class="panel-subtitle">Follow-ups that need attention — overdue, due today, or missing a date.</p>
+        </div>
+      </div>
+      <div class="focus-grid">
+        ${focusLeads.slice(0, 8).map(({ lead, tag, cls }) => `
+          <div class="focus-card ${cls}" data-focus-lead="${esc(lead.id)}">
+            <div class="focus-top">
+              <span class="focus-tag">${tag}</span>
+              <span class="focus-biz">${esc(lead.businessName)}</span>
+            </div>
+            <div class="focus-meta">${esc(lead.city || '')} · ${esc(lead.stage || '')}</div>
+            <div class="focus-action">${esc(lead.nextAction || 'No next action set')}</div>
+            ${lead.followUpOn ? `<div class="focus-date">Due ${esc(String(lead.followUpOn).slice(0,10))}</div>` : ''}
+            ${lead.publicEmail ? `<a class="focus-email" href="mailto:${esc(lead.publicEmail)}">${esc(lead.publicEmail)}</a>` : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  panel.querySelectorAll('.focus-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') return;
+      state.selectedLeadId = card.dataset.focusLead;
+      renderAll();
+      document.getElementById('lead-score-body')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
 function renderSummary() {
   const leads = sortedLeads();
   const prime = leads.filter(lead => lead.outreachTier === 'prime').length;
   const reachable = leads.filter(lead => lead.publicEmail).length;
   const proposals = leads.filter(lead => lead.proposal?.status === 'Drafted').length;
-  const audits = leads.filter(lead => lead.auditReport?.pdfPath).length;
-  const onboarded = state.onboarding?.clients?.length || 0;
   const won = leads.filter(lead => lead.stage === 'Won').length;
+  const overdueCt = leads.filter(l => isOverdue(l) && !['Won','Parked'].includes(l.stage)).length;
   const pipelineValue = leads
     .filter(lead => !['Parked', 'Won'].includes(lead.stage))
     .reduce((sum, lead) => sum + Number(lead.estimatedValue || 0), 0);
@@ -151,13 +230,13 @@ function renderSummary() {
   $('summary-grid').innerHTML = [
     ['Total leads', leads.length, 'All records currently in the CRM'],
     ['Prime leads', prime, 'Best use of outreach time right now'],
-    ['Reachable by email', reachable, 'Public email captured from notes or audits'],
+    ['Reachable by email', reachable, 'Public email captured'],
+    ['Follow-ups overdue', overdueCt, overdueCt > 0 ? '⚠️ Needs attention' : 'All caught up'],
     ['Proposals drafted', proposals, 'Generated from the proposal builder'],
-    ['Client audits', audits, 'Client-facing PDF audits created'],
-    ['Onboarding records', onboarded, `${won} won lead${won === 1 ? '' : 's'} so far`],
+    ['Won', won, 'Closed deals so far'],
     ['Pipeline value', formatMoney(pipelineValue), 'Open deal value still in motion']
   ].map(([label, value, note]) => `
-    <div class="summary-card">
+    <div class="summary-card${label === 'Follow-ups overdue' && overdueCt > 0 ? ' summary-card-warn' : ''}">
       <div class="summary-label">${esc(label)}</div>
       <div class="summary-value">${esc(value)}</div>
       <div class="summary-note">${esc(note)}</div>
@@ -235,6 +314,8 @@ function renderPipeline() {
         <div class="pipeline-meta">${esc(lead.city || '—')} · ${esc(lead.publicEmail || lead.phone || 'Need contact')}</div>
         <div class="muted">${esc(lead.nextAction || 'No next action set')}</div>
         <div class="pipeline-stamps">
+          ${isOverdue(lead) ? '<span class="mini-chip chip-overdue">⚠ Overdue</span>' : ''}
+          ${isDueToday(lead) ? '<span class="mini-chip chip-today">Due today</span>' : ''}
           ${lead.proposal?.status === 'Drafted' ? '<span class="mini-chip">Proposal</span>' : ''}
           ${lead.auditReport?.status === 'Generated' ? '<span class="mini-chip">Audit</span>' : ''}
           ${onboardingByLeadId(lead.id) ? '<span class="mini-chip">Onboarding</span>' : ''}
@@ -522,6 +603,7 @@ function renderAll() {
   if (!state.crm) return;
   fillStageOptions();
   renderSummary();
+  renderTodaysFocus();
   renderLeadTable();
   renderPipeline();
   renderLeadForm();

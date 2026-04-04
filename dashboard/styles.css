@@ -524,6 +524,43 @@ code {
 
 .email-date { margin: 4px 0 8px; }
 
+.chip-overdue { background: rgba(248,113,113,.18); color: #fca5a5; border-color: rgba(248,113,113,.3); }
+.chip-today { background: rgba(245,158,11,.18); color: #fcd34d; border-color: rgba(245,158,11,.3); }
+
+.summary-card-warn { border-color: rgba(248,113,113,.35); }
+.summary-card-warn .summary-value { color: var(--red); }
+
+.focus-panel-inner { margin-bottom: 16px; }
+.focus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.focus-card {
+  border-radius: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: rgba(12,20,36,.88);
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.focus-card:hover { border-color: var(--amber); }
+.focus-overdue { border-left: 3px solid var(--red); }
+.focus-today { border-left: 3px solid var(--amber); }
+.focus-soon { border-left: 3px solid var(--blue); }
+.focus-nodate { border-left: 3px solid var(--muted); }
+.focus-top { display:flex; gap:10px; align-items:center; margin-bottom:6px; }
+.focus-tag {
+  font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 999px;
+  background: rgba(255,255,255,.06); color: var(--muted); white-space:nowrap;
+}
+.focus-overdue .focus-tag { background: rgba(248,113,113,.14); color: #fca5a5; }
+.focus-today .focus-tag { background: rgba(245,158,11,.14); color: #fcd34d; }
+.focus-soon .focus-tag { background: rgba(96,165,250,.14); color: #93c5fd; }
+.focus-biz { font-weight: 700; font-size: 15px; }
+.focus-meta { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.focus-action { font-size: 13px; color: var(--text); line-height: 1.4; margin-bottom:6px; }
+.focus-date { font-size: 11px; color: var(--muted); margin-top:4px; }
+.focus-email { font-size: 12px; color: var(--amber); text-decoration:none; display:block; margin-top:6px; }
+.focus-email:hover { text-decoration: underline; }
+
 .toast {
   position: fixed;
   right: 20px;
