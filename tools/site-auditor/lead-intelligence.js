@@ -124,7 +124,7 @@ function computeOutreachScore({
   );
 
   if (!realWebsite) {
-    outreachScore += 42;
+    outreachScore += 48;  // bumped: no-website is always worth pursuing
     reasons.push('No usable website — easiest value conversation');
   } else {
     const needScore = clamp(100 - (Number(siteScore) || 0), 0, 100);
@@ -141,13 +141,21 @@ function computeOutreachScore({
   if (hasPublicEmail) {
     outreachScore += 20;
     reasons.push(`Public email found: ${emails[0]}`);
+  } else if (!realWebsite) {
+    // No-website leads: don't punish for missing email, phone is the contact path
+    cautions.push('No public email — call or walk in');
   } else {
     outreachScore -= 6;
     cautions.push('No public email found');
   }
 
   if (hasPhone) {
-    outreachScore += 6;
+    // Phone counts more for no-website leads (it's the primary contact path)
+    outreachScore += !realWebsite ? 12 : 6;
+    if (!realWebsite) reasons.push(`Reachable by phone: ${phones[0]}`);
+  } else if (!realWebsite) {
+    outreachScore -= 2; // softer penalty for no-website leads
+    cautions.push('No phone captured — walk-in only');
   } else {
     outreachScore -= 4;
     cautions.push('No phone captured');
@@ -180,7 +188,9 @@ function computeOutreachScore({
     cautions.push('Not enough pain to justify cold outreach right now');
   }
 
-  const finalScore = clamp(Math.round(outreachScore), 0, 100);
+  // No-website leads should always be at least WATCH regardless of final score
+  let finalScore = clamp(Math.round(outreachScore), 0, 100);
+  if (!realWebsite) finalScore = Math.max(finalScore, 40);
   const outreachTier = determineTier(finalScore);
   const recommendedPackage = inferPackage({
     website: realWebsite ? website : null,
