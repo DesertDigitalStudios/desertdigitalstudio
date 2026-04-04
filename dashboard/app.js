@@ -90,8 +90,15 @@ function onboardingByLeadId(leadId) {
   return (state.onboarding?.clients || []).find(client => client.leadId === leadId || client.id === leadId);
 }
 
+const TIER_ORDER = { prime: 0, pursue: 1, watch: 2, skip: 3 };
+
 function sortedLeads() {
-  return [...(state.crm?.leads || [])].sort((a, b) => b.outreachScore - a.outreachScore);
+  return [...(state.crm?.leads || [])].sort((a, b) => {
+    const ta = TIER_ORDER[a.outreachTier] ?? 4;
+    const tb = TIER_ORDER[b.outreachTier] ?? 4;
+    if (ta !== tb) return ta - tb;
+    return b.outreachScore - a.outreachScore;
+  });
 }
 
 function countChecklistDone(client) {
