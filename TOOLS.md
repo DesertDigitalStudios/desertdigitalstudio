@@ -116,3 +116,21 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+## Client Site Standards (every project)
+
+### Google Analytics (GA4)
+- Add GA4 to every client site as a standard deliverable
+- Create the property in the **client's Google account** (not yours)
+- Get read access so you can pull reports for monthly check-ins
+- Drop the GA4 script tag during the build — not after
+- Use this as a concrete value point in the retainer pitch:
+  > "As part of your maintenance plan, I send you a monthly traffic report."
+
+### GA4 setup checklist per project
+- [ ] Create GA4 property in client's Google account
+- [ ] Add measurement script to all pages
+- [ ] Verify tracking is firing before launch
+- [ ] Set up basic goals (contact form submissions, phone clicks if applicable)
+- [ ] Share dashboard access with client
+- [ ] Include first monthly report at 30-day check-in
