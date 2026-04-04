@@ -1,0 +1,28 @@
+#!/bin/zsh
+set -euo pipefail
+
+WORKSPACE="/Users/gabrielmaciel/.openclaw/workspace"
+TODAY_DIR="$HOME/Desktop/Audit reports/nightly-tucson/$(date +%F)"
+OUT="$HOME/Desktop/Audit reports/nightly-tucson/$(date +%F)-morning-rollup.md"
+mkdir -p "$(dirname "$OUT")"
+
+{
+  echo "# Tucson Morning Roll-up"
+  echo
+  echo "Date: $(date)"
+  echo
+  if [[ -d "$TODAY_DIR" ]]; then
+    echo "## Reports generated"
+    find "$TODAY_DIR" -name report.md -maxdepth 3 | sort | while read -r f; do
+      echo "- ${f}"
+    done
+    echo
+    echo "## Notes"
+    echo "- Review the reports in today's folder and shortlist the strongest 10–20 leads."
+    echo "- Prioritize businesses with public emails, weak websites, and strong reviews."
+  else
+    echo "No overnight reports found for today yet."
+  fi
+} > "$OUT"
+
+echo "Wrote $OUT"
