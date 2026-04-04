@@ -221,3 +221,10 @@ For Desert Digital Studio work:
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+## Model Switching
+
+- If the model switches from GPT-5.4 to Claude (or vice versa), **notify Gabriel immediately** in the current conversation.
+- Say something like: "Heads up — we switched to Claude (GPT hit the daily limit). Want me to switch back?"
+- Do not silently run on a different model without mentioning it.
+- Use `/status` or `session_status` to check the current model when uncertain.
