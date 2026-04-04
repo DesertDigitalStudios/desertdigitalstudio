@@ -14,6 +14,7 @@ echo "$IMPORT_RESULT" >> "$LOGDIR/nightly.log"
 
 IMPORTED=$(echo "$IMPORT_RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('imported',0))" 2>/dev/null || echo 0)
 WITH_EMAIL=$(echo "$IMPORT_RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('withEmail',0))" 2>/dev/null || echo 0)
+BEST_JSON=$(echo "$IMPORT_RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d.get('bestLeads',[])))" 2>/dev/null || echo "[]")
 BEST=$(echo "$IMPORT_RESULT" | python3 -c "
 import sys,json
 d=json.load(sys.stdin)
@@ -22,10 +23,52 @@ for l in leads:
     print(f\"  - {l.get('tier','?').upper()} {l.get('score',0)} | {l['name']} ({l['city']}) | {l.get('email','no email')}\")
 " 2>/dev/null || echo "  (none)")
 
+# --- Qwen3 plain-English brief ---
+echo "Generating Qwen brief..." | tee -a "$LOGDIR/nightly.log"
+QWEN_BRIEF=$(python3 - <<PYQWEN
+import json, urllib.request
+
+leads_json = '''${BEST_JSON}'''
+try:
+    leads = json.loads(leads_json)
+except:
+    leads = []
+
+if not leads:
+    print("No new leads with clean emails today.")
+else:
+    leads_text = "\n".join(
+        f"- {l.get('name','?')} in {l.get('city','?')} | score {l.get('score',0)} | email: {l.get('email','none')} | issues: {l.get('pitch','')}"
+        for l in leads[:6]
+    )
+    prompt = f"""You are a brief writer for a small web design studio in Southern Arizona. Write a plain-English morning brief (4-6 sentences max) covering these new leads from last night's scan. Tell the owner which leads to contact first, why, and any quick notes. Be direct, casual, and practical. No bullet points — just flowing sentences.
+
+Leads:
+{leads_text}"""
+
+    payload = json.dumps({"model": "qwen3:14b", "prompt": prompt, "stream": False, "options": {"temperature": 0.4}}).encode()
+    try:
+        req = urllib.request.Request("http://localhost:11434/api/generate", data=payload, headers={"Content-Type": "application/json"})
+        resp = urllib.request.urlopen(req, timeout=90)
+        result = json.loads(resp.read())
+        text = result.get("response", "").strip()
+        # Strip <think>...</think> if qwen3 adds it
+        import re
+        text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
+        print(text)
+    except Exception as e:
+        print(f"(Qwen brief unavailable: {e})")
+PYQWEN
+)
+echo "Qwen brief generated." | tee -a "$LOGDIR/nightly.log"
+
 python3 - <<PY > "$OUT"
 from datetime import datetime
 now = datetime.now().strftime('%Y-%m-%d %H:%M')
 print(f"# DDS Morning Roll-up — {now}")
+print()
+print("## Today's brief")
+print("""${QWEN_BRIEF}""")
 print()
 print(f"## New leads imported: ${IMPORTED} (${WITH_EMAIL} with clean email)")
 print()
@@ -89,7 +132,7 @@ for city, leads in sorted(by_city.items()):
     print()
 PY2
 
-# Send a heartbeat alert with the summary
-openclaw system event --mode next-heartbeat --text "Morning rollup complete: ${IMPORTED} new leads imported (${WITH_EMAIL} with email). Top leads: ${BEST}" >/dev/null 2>&1 || true
+# Alert via heartbeat
+openclaw system event --mode next-heartbeat --text "Morning rollup complete: ${IMPORTED} new leads imported (${WITH_EMAIL} with email). Brief: ${QWEN_BRIEF}" >/dev/null 2>&1 || true
 
 echo "Morning combined rollup written: $OUT" | tee -a "$LOGDIR/nightly.log"
