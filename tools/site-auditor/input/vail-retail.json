@@ -1,12 +1,107 @@
 [
-  {"name":"Vail Western Wear","city":"Vail","category":"retail"},
-  {"name":"Rincon Valley Hardware Vail AZ","city":"Vail","category":"retail"},
-  {"name":"Saguaro Gifts Vail AZ","city":"Vail","category":"retail"},
-  {"name":"Desert Finds Vail AZ","city":"Vail","category":"retail"},
-  {"name":"Vail General Store","city":"Vail","category":"retail"},
-  {"name":"Colossal Cave Gift Shop Vail","city":"Vail","category":"retail"},
-  {"name":"Vail Florist","city":"Vail","category":"retail"},
-  {"name":"Arizona Outpost Vail","city":"Vail","category":"retail"},
-  {"name":"Ranch Supply Vail AZ","city":"Vail","category":"retail"},
-  {"name":"Desert Boutique Vail AZ","city":"Vail","category":"retail"}
+  {
+    "name": "Vail Western Wear",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Rincon Valley Hardware Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Saguaro Gifts Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Desert Finds Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Vail General Store",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Colossal Cave Gift Shop Vail",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Vail Florist",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Arizona Outpost Vail",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Ranch Supply Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Desert Boutique Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Tanque Verde Gifts Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Rincon Valley Boutique Vail",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Old Vail Trading Post",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Desert Hills Nursery Vail",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Twin Peaks Farm Supply Vail",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Vail Station Antiques",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Saguaro Outfitters Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Mesquite Market Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Ranch House Decor Vail",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Eastside Pet Supply Vail AZ",
+    "city": "Vail",
+    "category": "retail"
+  },
+  {
+    "name": "Vail Country Crafts",
+    "city": "Vail",
+    "category": "retail"
+  }
 ]

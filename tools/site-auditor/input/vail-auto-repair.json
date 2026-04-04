@@ -1,12 +1,102 @@
 [
-  {"name":"Vail Auto Repair AZ","city":"Vail","category":"auto repair"},
-  {"name":"Rincon Valley Auto Service Vail","city":"Vail","category":"auto repair"},
-  {"name":"Desert Auto Specialists Vail AZ","city":"Vail","category":"auto repair"},
-  {"name":"Ace Auto Vail AZ","city":"Vail","category":"auto repair"},
-  {"name":"Saguaro Auto Repair Vail","city":"Vail","category":"auto repair"},
-  {"name":"Precision Auto Vail AZ","city":"Vail","category":"auto repair"},
-  {"name":"Midas Vail AZ","city":"Vail","category":"auto repair"},
-  {"name":"Vail Tire and Service","city":"Vail","category":"auto repair"},
-  {"name":"Quick Lube Vail AZ","city":"Vail","category":"auto repair"},
-  {"name":"Valley Auto Repair Vail AZ","city":"Vail","category":"auto repair"}
+  {
+    "name": "Vail Auto Repair AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Rincon Valley Auto Service Vail",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Desert Auto Specialists Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Ace Auto Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Saguaro Auto Repair Vail",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Precision Auto Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Midas Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Vail Tire and Service",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Quick Lube Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Valley Auto Repair Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Colossal Cave Auto Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Old Vail Road Auto Service",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Tanque Verde Auto Repair Vail",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Rincon Mountain Auto Vail",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Interstate 10 Auto Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Rancho Vail Auto Repair",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Sahuarita Auto Care Vail Area",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Vail Station Auto Service",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Desert Ridge Auto Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  },
+  {
+    "name": "Twin Peaks Auto Vail AZ",
+    "city": "Vail",
+    "category": "auto repair"
+  }
 ]

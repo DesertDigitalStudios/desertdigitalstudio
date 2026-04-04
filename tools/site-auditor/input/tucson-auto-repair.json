@@ -1,12 +1,112 @@
 [
-  {"name":"Brakes Plus Tucson","city":"Tucson","category":"auto repair"},
-  {"name":"Christian Brothers Automotive Tucson","city":"Tucson","category":"auto repair"},
-  {"name":"Precision Auto Repair Tucson","city":"Tucson","category":"auto repair"},
-  {"name":"Quality Auto Repair Tucson","city":"Tucson","category":"auto repair"},
-  {"name":"Desert Auto Specialists","city":"Tucson","category":"auto repair"},
-  {"name":"Ace Auto Repair Tucson","city":"Tucson","category":"auto repair"},
-  {"name":"Tune Up Kings Tucson","city":"Tucson","category":"auto repair"},
-  {"name":"Midas Tucson","city":"Tucson","category":"auto repair"},
-  {"name":"Honest-1 Auto Care Tucson","city":"Tucson","category":"auto repair"},
-  {"name":"Napa AutoCare Tucson","city":"Tucson","category":"auto repair"}
+  {
+    "name": "Brakes Plus Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Christian Brothers Automotive Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Precision Auto Repair Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Quality Auto Repair Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Desert Auto Specialists",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Ace Auto Repair Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Tune Up Kings Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Midas Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Honest-1 Auto Care Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Napa AutoCare Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Firestone Complete Auto Care Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Tucson Auto Service Center",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Pep Boys Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Mavis Discount Tire Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Sun Devil Auto Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Goodyear Auto Service Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Tucson Transmission Specialists",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Old Pueblo Auto Service Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Rincon Valley Auto Repair Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Catalina Auto Repair Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Eastside Auto Repair Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Speedway Auto Service Tucson",
+    "city": "Tucson",
+    "category": "auto repair"
+  }
 ]

@@ -1,12 +1,102 @@
 [
-  {"name":"Benson Auto Repair","city":"Benson","category":"auto repair"},
-  {"name":"Desert Star Auto Benson","city":"Benson","category":"auto repair"},
-  {"name":"Benson Tire and Automotive","city":"Benson","category":"auto repair"},
-  {"name":"Muffler Man Benson AZ","city":"Benson","category":"auto repair"},
-  {"name":"Arizona Auto Rescue Benson","city":"Benson","category":"auto repair"},
-  {"name":"San Pedro Auto Benson","city":"Benson","category":"auto repair"},
-  {"name":"Cochise Auto Repair Benson","city":"Benson","category":"auto repair"},
-  {"name":"Valley Lube Benson AZ","city":"Benson","category":"auto repair"},
-  {"name":"Budget Auto Repair Benson","city":"Benson","category":"auto repair"},
-  {"name":"Express Lube Benson","city":"Benson","category":"auto repair"}
+  {
+    "name": "Benson Auto Repair",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Desert Star Auto Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Benson Tire and Automotive",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Muffler Man Benson AZ",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Arizona Auto Rescue Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "San Pedro Auto Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Cochise Auto Repair Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Valley Lube Benson AZ",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Budget Auto Repair Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Express Lube Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Benson Auto Body and Paint",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "I-10 Auto Service Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Kartchner Caverns Auto Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Roadside Auto Repair Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Southwest Transmission Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Desert Auto Specialists Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Benson Full Service Garage",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "High Desert Tire Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Cochise Auto Works Benson",
+    "city": "Benson",
+    "category": "auto repair"
+  },
+  {
+    "name": "Sunrise Auto Benson AZ",
+    "city": "Benson",
+    "category": "auto repair"
+  }
 ]

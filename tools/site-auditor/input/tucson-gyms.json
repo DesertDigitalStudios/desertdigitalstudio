@@ -1,12 +1,112 @@
 [
-  {"name":"Planet Fitness Tucson","city":"Tucson","category":"gyms"},
-  {"name":"Anytime Fitness Tucson","city":"Tucson","category":"gyms"},
-  {"name":"Desert Sports Fitness","city":"Tucson","category":"gyms"},
-  {"name":"CrossFit Tucson","city":"Tucson","category":"gyms"},
-  {"name":"Orangetheory Fitness Tucson","city":"Tucson","category":"gyms"},
-  {"name":"Gold's Gym Tucson","city":"Tucson","category":"gyms"},
-  {"name":"Synergy Fitness Tucson","city":"Tucson","category":"gyms"},
-  {"name":"Pilates Plus Tucson","city":"Tucson","category":"gyms"},
-  {"name":"Tucson Yoga Collective","city":"Tucson","category":"gyms"},
-  {"name":"YMCA Tucson","city":"Tucson","category":"gyms"}
+  {
+    "name": "Planet Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Anytime Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Desert Sports Fitness",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "CrossFit Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Orangetheory Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Gold's Gym Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Synergy Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Pilates Plus Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Tucson Yoga Collective",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "YMCA Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "LA Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "24 Hour Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Lifetime Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "EōS Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "F45 Training Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Saguaro CrossFit Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Breathe Yoga Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Club Fitness Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Catalyst Athletics Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Iron 86 Gym Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Balance Tucson Yoga and Fitness",
+    "city": "Tucson",
+    "category": "gyms"
+  },
+  {
+    "name": "Pantano Athletic Club Tucson",
+    "city": "Tucson",
+    "category": "gyms"
+  }
 ]

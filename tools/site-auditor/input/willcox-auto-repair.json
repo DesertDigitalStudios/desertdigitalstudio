@@ -1,12 +1,102 @@
 [
-  {"name":"Willcox Auto Repair","city":"Willcox","category":"auto repair"},
-  {"name":"Cochise Auto Service Willcox","city":"Willcox","category":"auto repair"},
-  {"name":"Desert Auto Willcox AZ","city":"Willcox","category":"auto repair"},
-  {"name":"Arizona Auto Rescue Willcox","city":"Willcox","category":"auto repair"},
-  {"name":"Willcox Tire and Service","city":"Willcox","category":"auto repair"},
-  {"name":"Grahm Auto Repair Willcox","city":"Willcox","category":"auto repair"},
-  {"name":"Sulphur Springs Auto Willcox","city":"Willcox","category":"auto repair"},
-  {"name":"Valley Auto Service Willcox","city":"Willcox","category":"auto repair"},
-  {"name":"Reliable Auto Willcox","city":"Willcox","category":"auto repair"},
-  {"name":"Roadrunner Automotive Willcox","city":"Willcox","category":"auto repair"}
+  {
+    "name": "Willcox Auto Repair",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Cochise Auto Service Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Desert Auto Willcox AZ",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Arizona Auto Rescue Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Willcox Tire and Service",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Grahm Auto Repair Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Sulphur Springs Auto Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Valley Auto Service Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Reliable Auto Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Roadrunner Automotive Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Willcox Body Shop",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "I-10 Auto Willcox AZ",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Dos Cabezas Auto Repair Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Rex Allen Auto Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Apple Valley Auto Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Willcox Transmission and Auto",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Sulphur Springs Tire Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Riggs Road Auto Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "Frontier Auto Service Willcox",
+    "city": "Willcox",
+    "category": "auto repair"
+  },
+  {
+    "name": "High Plains Auto Willcox AZ",
+    "city": "Willcox",
+    "category": "auto repair"
+  }
 ]

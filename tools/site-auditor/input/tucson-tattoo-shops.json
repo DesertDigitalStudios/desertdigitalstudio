@@ -1,12 +1,112 @@
 [
-  {"name":"Asylum Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Outer Limits Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Ancient Art Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Skin Kitchen Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Desert Rose Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Blackheart Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Electric Chair Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Saguaro Ink Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Iron Palm Tattoo Tucson","city":"Tucson","category":"tattoo shops"},
-  {"name":"Nomad Tattoo Tucson","city":"Tucson","category":"tattoo shops"}
+  {
+    "name": "Asylum Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Outer Limits Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Ancient Art Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Skin Kitchen Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Desert Rose Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Blackheart Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Electric Chair Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Saguaro Ink Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Iron Palm Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Nomad Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Diamondback Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Lucky Strike Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Twisted Image Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Black Market Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Warlord Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Tattoo Paradise Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Skin Deep Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Holy Grail Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Electric Desert Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Copper State Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "4th Ave Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "True Love Tattoo Tucson",
+    "city": "Tucson",
+    "category": "tattoo shops"
+  }
 ]

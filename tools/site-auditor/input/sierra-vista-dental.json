@@ -1,12 +1,112 @@
 [
-  {"name":"Sierra Vista Family Dentistry","city":"Sierra Vista","category":"dental"},
-  {"name":"Cochise Dental Associates","city":"Sierra Vista","category":"dental"},
-  {"name":"Huachuca Dental Care","city":"Sierra Vista","category":"dental"},
-  {"name":"Arizona Dental Sierra Vista","city":"Sierra Vista","category":"dental"},
-  {"name":"Gentle Dental Sierra Vista","city":"Sierra Vista","category":"dental"},
-  {"name":"Desert Bloom Dentistry Sierra Vista","city":"Sierra Vista","category":"dental"},
-  {"name":"Landmark Dental Sierra Vista","city":"Sierra Vista","category":"dental"},
-  {"name":"Fry Dental Arts","city":"Sierra Vista","category":"dental"},
-  {"name":"Valley Dental Group Sierra Vista","city":"Sierra Vista","category":"dental"},
-  {"name":"Southwest Dental Sierra Vista","city":"Sierra Vista","category":"dental"}
+  {
+    "name": "Sierra Vista Family Dentistry",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Cochise Dental Associates",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Huachuca Dental Care",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Arizona Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Gentle Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Bloom Dentistry Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Landmark Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Fry Dental Arts",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Valley Dental Group Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Southwest Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Cochise Dental Arts Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Mountain View Dentistry Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Bloom Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Fry Boulevard Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Kids Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Huachuca Family Dental",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Sierra Vista Cosmetic Dentistry",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Sunrise Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Smile Gallery Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Fort Huachuca Dental Clinic",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Old Pueblo Dental Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  },
+  {
+    "name": "Affordable Dentistry Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "dental"
+  }
 ]

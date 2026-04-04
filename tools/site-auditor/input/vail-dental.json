@@ -1,12 +1,102 @@
 [
-  {"name":"Vail Family Dentistry AZ","city":"Vail","category":"dental"},
-  {"name":"Rincon Valley Dental Vail","city":"Vail","category":"dental"},
-  {"name":"Desert Smiles Dental Vail AZ","city":"Vail","category":"dental"},
-  {"name":"Saguaro Dental Vail AZ","city":"Vail","category":"dental"},
-  {"name":"Southwest Dental Vail AZ","city":"Vail","category":"dental"},
-  {"name":"Arizona Dental Center Vail","city":"Vail","category":"dental"},
-  {"name":"Gentle Dental Vail AZ","city":"Vail","category":"dental"},
-  {"name":"High Desert Dentistry Vail","city":"Vail","category":"dental"},
-  {"name":"Rancho Del Lago Dental Vail","city":"Vail","category":"dental"},
-  {"name":"Colossal Cave Dental Vail AZ","city":"Vail","category":"dental"}
+  {
+    "name": "Vail Family Dentistry AZ",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Rincon Valley Dental Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Smiles Dental Vail AZ",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Saguaro Dental Vail AZ",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Southwest Dental Vail AZ",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Arizona Dental Center Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Gentle Dental Vail AZ",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "High Desert Dentistry Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Rancho Del Lago Dental Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Colossal Cave Dental Vail AZ",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Tanque Verde Dental Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Rincon Mountain Dentistry Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Old Vail Dental Care",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Hills Family Dental Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Twin Peaks Dental Vail AZ",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Vail Station Dentistry",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Sahuarita Road Dental Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Eastside Family Dental Vail AZ",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Mesquite Hills Dental Vail",
+    "city": "Vail",
+    "category": "dental"
+  },
+  {
+    "name": "Saguaro Ridge Dental Vail",
+    "city": "Vail",
+    "category": "dental"
+  }
 ]

@@ -1,12 +1,102 @@
 [
-  {"name":"Tombstone Tattoo Parlor","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Outlaw Ink Tombstone","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Boot Hill Tattoo Tombstone","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Doc Holliday Tattoo Tombstone","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Wyatt Earp Tattoo Tombstone","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Wild West Ink Tombstone","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Helldorado Tattoo Tombstone","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Old West Tattoo Tombstone AZ","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Frontier Ink Tombstone","city":"Tombstone","category":"tattoo shops"},
-  {"name":"Southwest Tattoo Tombstone","city":"Tombstone","category":"tattoo shops"}
+  {
+    "name": "Tombstone Tattoo Parlor",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Outlaw Ink Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Boot Hill Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Doc Holliday Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Wyatt Earp Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Wild West Ink Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Helldorado Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Old West Tattoo Tombstone AZ",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Frontier Ink Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Southwest Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Corral Tattoo Tombstone AZ",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Sheriff's Ink Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Undertaker Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Tombstone Tattooing Co",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Silver Spur Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Cochise Ink Tombstone AZ",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Wanted Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Deadwood Tattoo Tombstone AZ",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Gunpowder Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Six Shooter Tattoo Tombstone",
+    "city": "Tombstone",
+    "category": "tattoo shops"
+  }
 ]

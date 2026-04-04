@@ -1,12 +1,102 @@
 [
-  {"name":"Tombstone Plumbing and Repair","city":"Tombstone","category":"home services"},
-  {"name":"Cochise County Roofing Tombstone","city":"Tombstone","category":"home services"},
-  {"name":"Desert Electrical Tombstone","city":"Tombstone","category":"home services"},
-  {"name":"Southwest Home Repair Tombstone","city":"Tombstone","category":"home services"},
-  {"name":"Arizona HVAC Tombstone","city":"Tombstone","category":"home services"},
-  {"name":"Old West Landscaping Tombstone","city":"Tombstone","category":"home services"},
-  {"name":"Tombstone Pest Control","city":"Tombstone","category":"home services"},
-  {"name":"Boothill Contractors Tombstone","city":"Tombstone","category":"home services"},
-  {"name":"Wyatt Construction Tombstone","city":"Tombstone","category":"home services"},
-  {"name":"Desert Home Services Tombstone","city":"Tombstone","category":"home services"}
+  {
+    "name": "Tombstone Plumbing and Repair",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Cochise County Roofing Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Desert Electrical Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Southwest Home Repair Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Arizona HVAC Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Old West Landscaping Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Tombstone Pest Control",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Boothill Contractors Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Wyatt Construction Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Desert Home Services Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Tombstone Handyman Services",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Helldorado Home Repair Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Boot Hill Contractors Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Allen Street HVAC Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Tombstone Wiring and Electric",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Old West Plumbing Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Gunfighter Roofing Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Silver Lining Landscaping Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Cochise Pest Services Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  },
+  {
+    "name": "Earp Ranch Maintenance Tombstone",
+    "city": "Tombstone",
+    "category": "home services"
+  }
 ]

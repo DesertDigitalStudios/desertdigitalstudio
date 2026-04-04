@@ -1,7 +1,92 @@
 [
-  {"name":"KS Hair","website":"https://www.kshairllc.com/","city":"Sierra Vista","category":"salons"},
-  {"name":"Claudia's Hair Salon","website":"https://www.claudiashairsalon.com/","city":"Sierra Vista","category":"salons"},
-  {"name":"Ginger's Beauty Salon","website":"https://gingersbeautysalon.com/","city":"Sierra Vista","category":"salons"},
-  {"name":"Pamper Me Suites","website":"https://pampermesuites.com/","city":"Sierra Vista","category":"salons"},
-  {"name":"The Realm Salon","website":"https://realmsalon.com/","city":"Sierra Vista","category":"salons"}
+  {
+    "name": "KS Hair",
+    "website": "https://www.kshairllc.com/",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Claudia's Hair Salon",
+    "website": "https://www.claudiashairsalon.com/",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Ginger's Beauty Salon",
+    "website": "https://gingersbeautysalon.com/",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Pamper Me Suites",
+    "website": "https://pampermesuites.com/",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "The Realm Salon",
+    "website": "https://realmsalon.com/",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Chic Salon Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Military Wives Beauty Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Fry Blvd Hair Studio Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Color Theory Salon Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "The Beauty Bar Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Huachuca Nails and Hair Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Shear Bliss Salon Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "La Bella Salon Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Rose Beauty Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Style House Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "The Cut Above Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  },
+  {
+    "name": "Salon Breeze Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "salons"
+  }
 ]

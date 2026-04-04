@@ -1,12 +1,102 @@
 [
-  {"name":"Benson Family Dentistry","city":"Benson","category":"dental"},
-  {"name":"Cochise Dental Benson AZ","city":"Benson","category":"dental"},
-  {"name":"San Pedro Dental Care Benson","city":"Benson","category":"dental"},
-  {"name":"Desert Smiles Dental Benson","city":"Benson","category":"dental"},
-  {"name":"Arizona Dental Benson AZ","city":"Benson","category":"dental"},
-  {"name":"Kartchner Dental Benson","city":"Benson","category":"dental"},
-  {"name":"Benson Dental Associates","city":"Benson","category":"dental"},
-  {"name":"Southwest Dental Benson AZ","city":"Benson","category":"dental"},
-  {"name":"Gentle Dental Benson","city":"Benson","category":"dental"},
-  {"name":"High Desert Dentistry Benson","city":"Benson","category":"dental"}
+  {
+    "name": "Benson Family Dentistry",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Cochise Dental Benson AZ",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "San Pedro Dental Care Benson",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Smiles Dental Benson",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Arizona Dental Benson AZ",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Kartchner Dental Benson",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Benson Dental Associates",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Southwest Dental Benson AZ",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Gentle Dental Benson",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "High Desert Dentistry Benson",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Benson Dental Group",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Cave Country Dental Benson",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Kartchner Smiles Benson AZ",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Valley Dental Benson AZ",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "I-10 Dental Benson AZ",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Benson Orthodontics",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Cochise Smiles Benson",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Dental Benson AZ",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "San Pedro Dentistry Benson",
+    "city": "Benson",
+    "category": "dental"
+  },
+  {
+    "name": "Sunrise Dental Benson AZ",
+    "city": "Benson",
+    "category": "dental"
+  }
 ]

@@ -1,12 +1,102 @@
 [
-  {"name":"Benson Barber Shop","city":"Benson","category":"barbers"},
-  {"name":"San Pedro Barbers Benson AZ","city":"Benson","category":"barbers"},
-  {"name":"Main Street Barbershop Benson","city":"Benson","category":"barbers"},
-  {"name":"Desert Edge Barbers Benson","city":"Benson","category":"barbers"},
-  {"name":"Cochise Barber Benson AZ","city":"Benson","category":"barbers"},
-  {"name":"Classic Cuts Benson AZ","city":"Benson","category":"barbers"},
-  {"name":"The Barbershop Benson AZ","city":"Benson","category":"barbers"},
-  {"name":"Arizona Barbers Benson","city":"Benson","category":"barbers"},
-  {"name":"Kartchner Cuts Benson","city":"Benson","category":"barbers"},
-  {"name":"High Desert Barbers Benson","city":"Benson","category":"barbers"}
+  {
+    "name": "Benson Barber Shop",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "San Pedro Barbers Benson AZ",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Main Street Barbershop Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Desert Edge Barbers Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Cochise Barber Benson AZ",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Classic Cuts Benson AZ",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "The Barbershop Benson AZ",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Arizona Barbers Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Kartchner Cuts Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "High Desert Barbers Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Iron Horse Barbershop Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Frontier Fade Benson AZ",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Southwest Cuts Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Desert Trim Benson AZ",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "The Fade Factory Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Old Town Barbers Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Benson Clippers",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Highway 10 Barbershop Benson",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "Sharp Cuts Benson AZ",
+    "city": "Benson",
+    "category": "barbers"
+  },
+  {
+    "name": "The Mane Shack Benson",
+    "city": "Benson",
+    "category": "barbers"
+  }
 ]

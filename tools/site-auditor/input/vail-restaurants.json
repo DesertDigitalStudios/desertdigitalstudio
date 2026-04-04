@@ -1,12 +1,107 @@
 [
-  {"name":"Vail Pizza and Wings","city":"Vail","category":"restaurants"},
-  {"name":"Saguaro Corners Restaurant Vail AZ","city":"Vail","category":"restaurants"},
-  {"name":"La Paloma Mexican Restaurant Vail AZ","city":"Vail","category":"restaurants"},
-  {"name":"Rincon Valley Restaurant Vail AZ","city":"Vail","category":"restaurants"},
-  {"name":"Vail Family Restaurant","city":"Vail","category":"restaurants"},
-  {"name":"Rancho Del Lago Cafe Vail","city":"Vail","category":"restaurants"},
-  {"name":"Desert Sage Bistro Vail AZ","city":"Vail","category":"restaurants"},
-  {"name":"Vail Grill House","city":"Vail","category":"restaurants"},
-  {"name":"Colossal Cave Cafe Vail AZ","city":"Vail","category":"restaurants"},
-  {"name":"Southwest Kitchen Vail AZ","city":"Vail","category":"restaurants"}
+  {
+    "name": "Vail Pizza and Wings",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Saguaro Corners Restaurant Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "La Paloma Mexican Restaurant Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Rincon Valley Restaurant Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Vail Family Restaurant",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Rancho Del Lago Cafe Vail",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Desert Sage Bistro Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Vail Grill House",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Colossal Cave Cafe Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Southwest Kitchen Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Tanque Verde Ranch Dining Vail",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Old Vail Station Bar and Grill",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Rincon Mountain Pizza Vail",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Desert Hills Diner Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Twin Peaks Burger Vail",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "La Hacienda Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Mesquite Grill Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Saguaro Roadhouse Vail",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Vail Smokehouse BBQ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "El Saguaro Mexican Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  },
+  {
+    "name": "Riverbend Restaurant Vail AZ",
+    "city": "Vail",
+    "category": "restaurants"
+  }
 ]

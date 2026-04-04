@@ -1,12 +1,102 @@
 [
-  {"name":"Vail Fitness Center AZ","city":"Vail","category":"gyms"},
-  {"name":"Rincon Valley Gym Vail","city":"Vail","category":"gyms"},
-  {"name":"Desert Crossfit Vail AZ","city":"Vail","category":"gyms"},
-  {"name":"Saguaro Fitness Vail AZ","city":"Vail","category":"gyms"},
-  {"name":"Southwest Gym Vail AZ","city":"Vail","category":"gyms"},
-  {"name":"Anytime Fitness Vail AZ","city":"Vail","category":"gyms"},
-  {"name":"High Desert Yoga Vail","city":"Vail","category":"gyms"},
-  {"name":"Arizona Fitness Vail","city":"Vail","category":"gyms"},
-  {"name":"Rancho Del Lago Fitness Vail","city":"Vail","category":"gyms"},
-  {"name":"Iron Palm Gym Vail AZ","city":"Vail","category":"gyms"}
+  {
+    "name": "Vail Fitness Center AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Rincon Valley Gym Vail",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Desert Crossfit Vail AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Saguaro Fitness Vail AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Southwest Gym Vail AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Anytime Fitness Vail AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "High Desert Yoga Vail",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Arizona Fitness Vail",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Rancho Del Lago Fitness Vail",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Iron Palm Gym Vail AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Tanque Verde CrossFit Vail",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Rincon Valley Yoga Studio Vail",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Old Vail Fitness AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Desert Boot Camp Vail AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Twin Peaks Training Vail",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Vail Community Fitness Center",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Planet Fitness Vail Area AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Sahuarita Fitness Vail",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Eastside Athletic Club Vail AZ",
+    "city": "Vail",
+    "category": "gyms"
+  },
+  {
+    "name": "Mesquite Training Studio Vail",
+    "city": "Vail",
+    "category": "gyms"
+  }
 ]

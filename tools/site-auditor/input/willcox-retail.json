@@ -1,12 +1,107 @@
 [
-  {"name":"Willcox Western Wear","city":"Willcox","category":"retail"},
-  {"name":"Rex Allen Museum Gift Shop Willcox","city":"Willcox","category":"retail"},
-  {"name":"Arizona Winery Willcox","city":"Willcox","category":"retail"},
-  {"name":"Cochise Antiques Willcox","city":"Willcox","category":"retail"},
-  {"name":"Willcox Hardware Store","city":"Willcox","category":"retail"},
-  {"name":"Plummer's Feed Store Willcox","city":"Willcox","category":"retail"},
-  {"name":"Sulphur Springs General Store","city":"Willcox","category":"retail"},
-  {"name":"High Desert Collectibles Willcox","city":"Willcox","category":"retail"},
-  {"name":"Apple Country Gifts Willcox","city":"Willcox","category":"retail"},
-  {"name":"Willcox Florist","city":"Willcox","category":"retail"}
+  {
+    "name": "Willcox Western Wear",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Rex Allen Museum Gift Shop Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Arizona Winery Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Cochise Antiques Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Willcox Hardware Store",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Plummer's Feed Store Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Sulphur Springs General Store",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "High Desert Collectibles Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Apple Country Gifts Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Willcox Florist",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Flying Leap Vineyards Tasting Room Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Apple Annie's Orchard Store Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Sand Reckoner Winery Shop Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Willcox Farm Market",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Dos Cabezas WineWorks Shop Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Chiricahua Gem and Mineral Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Willcox Gunsmoke Trading Post",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Bright Star Ranch Store Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Willcox Mercantile Co",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Grape Day Park Gifts Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  },
+  {
+    "name": "Keeling Schaefer Winery Shop Willcox",
+    "city": "Willcox",
+    "category": "retail"
+  }
 ]

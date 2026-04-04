@@ -1,12 +1,112 @@
 [
-  {"name":"Bookmans Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"Arizona Trading Post Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"Military Clothing Sales Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"Desert Provisions Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"The Mercantile Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"Western Wear Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"Cochise Crafts Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"Gift Gallery Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"Photo Lab Sierra Vista","city":"Sierra Vista","category":"retail"},
-  {"name":"Frontier Trading Post Sierra Vista","city":"Sierra Vista","category":"retail"}
+  {
+    "name": "Bookmans Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Arizona Trading Post Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Military Clothing Sales Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Desert Provisions Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "The Mercantile Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Western Wear Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Cochise Crafts Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Gift Gallery Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Photo Lab Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Frontier Trading Post Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Sierra Vista Mall Shops",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Hobby Lobby Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Old Towne Sierra Vista Antiques",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "JCPenney Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Desert Trading Post Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Cochise County Collectibles",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Military Surplus Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Fry Blvd Boutique Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Huachuca Mountain Outfitters",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Three Sisters Gifts Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "The Treasure Box Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "retail"
+  },
+  {
+    "name": "Sierra Vista Florist",
+    "city": "Sierra Vista",
+    "category": "retail"
+  }
 ]

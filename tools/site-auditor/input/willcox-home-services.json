@@ -1,12 +1,102 @@
 [
-  {"name":"Willcox Plumbing","city":"Willcox","category":"home services"},
-  {"name":"Sulphur Springs Valley Electric Willcox","city":"Willcox","category":"home services"},
-  {"name":"Desert HVAC Willcox","city":"Willcox","category":"home services"},
-  {"name":"Cochise Roofing Willcox","city":"Willcox","category":"home services"},
-  {"name":"Willcox Pest Control","city":"Willcox","category":"home services"},
-  {"name":"Arizona Landscaping Willcox","city":"Willcox","category":"home services"},
-  {"name":"High Desert Cleaning Willcox","city":"Willcox","category":"home services"},
-  {"name":"Southwest Contractors Willcox","city":"Willcox","category":"home services"},
-  {"name":"Willcox General Repair","city":"Willcox","category":"home services"},
-  {"name":"Valley Cleaning Services Willcox","city":"Willcox","category":"home services"}
+  {
+    "name": "Willcox Plumbing",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Sulphur Springs Valley Electric Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Desert HVAC Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Cochise Roofing Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Willcox Pest Control",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Arizona Landscaping Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "High Desert Cleaning Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Southwest Contractors Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Willcox General Repair",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Valley Cleaning Services Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Apple Valley Plumbing Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Sulphur Springs Roofing Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Willcox Electric Pro",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Dos Cabezas HVAC Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Chiricahua Landscaping Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Willcox Junk Removal",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "High Desert Fencing Willcox AZ",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Ranch Hand Repair Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Vineyard Gate Repair Willcox",
+    "city": "Willcox",
+    "category": "home services"
+  },
+  {
+    "name": "Willcox House Painting Co",
+    "city": "Willcox",
+    "category": "home services"
+  }
 ]

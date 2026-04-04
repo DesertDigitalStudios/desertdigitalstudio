@@ -1,7 +1,92 @@
 [
-  {"name":"Juan's Barber Shop","website":"https://juansbarbershopsv.com/","city":"Sierra Vista","category":"barbers"},
-  {"name":"Corner Barber Shop","website":"https://cornerbarbershop.com/","city":"Sierra Vista","category":"barbers"},
-  {"name":"Executive Barber Club","website":"https://www.executivebarberclub.com/","city":"Sierra Vista","category":"barbers"},
-  {"name":"CCXXIII","website":"https://www.ccxxiii.com/","city":"Sierra Vista","category":"barbers"},
-  {"name":"Luqa Barbershop","website":"https://luqabarbershop.com/","city":"Sierra Vista","category":"barbers"}
+  {
+    "name": "Juan's Barber Shop",
+    "website": "https://juansbarbershopsv.com/",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Corner Barber Shop",
+    "website": "https://cornerbarbershop.com/",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Executive Barber Club",
+    "website": "https://www.executivebarberclub.com/",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "CCXXIII",
+    "website": "https://www.ccxxiii.com/",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Luqa Barbershop",
+    "website": "https://luqabarbershop.com/",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Military Fade Barbers Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Fort Huachuca Barbershop",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Cochise Cuts Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Old Town Barbers Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "The Classic Barbershop Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Desert Edge Barbers Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Sharp Lines Barbershop Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Fry Blvd Barbershop Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "High Desert Barbers Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Veteran Cuts Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Main Street Barbers Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  },
+  {
+    "name": "Huachuca City Barbershop",
+    "city": "Sierra Vista",
+    "category": "barbers"
+  }
 ]

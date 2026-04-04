@@ -1,12 +1,112 @@
 [
-  {"name":"Sonoran Desert Dentistry","city":"Tucson","category":"dental"},
-  {"name":"Tucson Smiles Family Dentistry","city":"Tucson","category":"dental"},
-  {"name":"Gentle Dental Tucson","city":"Tucson","category":"dental"},
-  {"name":"Arizona Dental Center Tucson","city":"Tucson","category":"dental"},
-  {"name":"Sunrise Family Dentistry Tucson","city":"Tucson","category":"dental"},
-  {"name":"Sabino Canyon Dental","city":"Tucson","category":"dental"},
-  {"name":"Desert Dental Alternatives","city":"Tucson","category":"dental"},
-  {"name":"Catalina Dental Tucson","city":"Tucson","category":"dental"},
-  {"name":"Old Pueblo Dentistry","city":"Tucson","category":"dental"},
-  {"name":"Mountain View Dental Tucson","city":"Tucson","category":"dental"}
+  {
+    "name": "Sonoran Desert Dentistry",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Tucson Smiles Family Dentistry",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Gentle Dental Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Arizona Dental Center Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Sunrise Family Dentistry Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Sabino Canyon Dental",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Dental Alternatives",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Catalina Dental Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Old Pueblo Dentistry",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Mountain View Dental Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Tucson Dental Arts",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Rincon Family Dentistry Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Smile Arizona Dentists Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Eastside Dental Group Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Saguaro Dental Studio Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Catalina Smiles Dentistry Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "University Family Dentistry Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Midtown Dental Care Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Foothills Dental Center Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Pima Dental Associates Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Tucson Orthodontics and Family Dentistry",
+    "city": "Tucson",
+    "category": "dental"
+  },
+  {
+    "name": "Westside Dental Care Tucson",
+    "city": "Tucson",
+    "category": "dental"
+  }
 ]

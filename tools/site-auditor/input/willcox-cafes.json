@@ -1,12 +1,102 @@
 [
-  {"name":"Willcox Coffee Shop","city":"Willcox","category":"cafes"},
-  {"name":"Rex Allen Cafe Willcox","city":"Willcox","category":"cafes"},
-  {"name":"Sulphur Springs Brew Willcox","city":"Willcox","category":"cafes"},
-  {"name":"Apple Country Coffee Willcox","city":"Willcox","category":"cafes"},
-  {"name":"Desert Morning Cafe Willcox","city":"Willcox","category":"cafes"},
-  {"name":"Dos Cabezas Coffee Willcox","city":"Willcox","category":"cafes"},
-  {"name":"Cochise Coffee Willcox AZ","city":"Willcox","category":"cafes"},
-  {"name":"Main Street Coffee Willcox","city":"Willcox","category":"cafes"},
-  {"name":"Southwest Cafe Willcox AZ","city":"Willcox","category":"cafes"},
-  {"name":"High Desert Brew Willcox","city":"Willcox","category":"cafes"}
+  {
+    "name": "Willcox Coffee Shop",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Rex Allen Cafe Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Sulphur Springs Brew Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Apple Country Coffee Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Desert Morning Cafe Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Dos Cabezas Coffee Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Cochise Coffee Willcox AZ",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Main Street Coffee Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Southwest Cafe Willcox AZ",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "High Desert Brew Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Chiricahua Coffee Willcox AZ",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Apple Annie's Cafe Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Grape Route Espresso Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Dos Cabezas Cafe Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "The Orchard Cafe Willcox AZ",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Willcox Wine Country Cafe",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Rancher's Cup Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Tumbleweed Coffee Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "I-10 Pit Stop Cafe Willcox",
+    "city": "Willcox",
+    "category": "cafes"
+  },
+  {
+    "name": "Harvest Moon Cafe Willcox AZ",
+    "city": "Willcox",
+    "category": "cafes"
+  }
 ]

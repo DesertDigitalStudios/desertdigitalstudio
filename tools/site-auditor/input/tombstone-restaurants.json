@@ -1,12 +1,107 @@
 [
-  {"name":"Big Nose Kate's Saloon Tombstone","city":"Tombstone","category":"restaurants"},
-  {"name":"Crystal Palace Saloon Tombstone","city":"Tombstone","category":"restaurants"},
-  {"name":"Longhorn Restaurant Tombstone","city":"Tombstone","category":"restaurants"},
-  {"name":"Nellie Cashman's Restaurant Tombstone","city":"Tombstone","category":"restaurants"},
-  {"name":"Wyatt Earp's Eat House Tombstone","city":"Tombstone","category":"restaurants"},
-  {"name":"OK Cafe Tombstone","city":"Tombstone","category":"restaurants"},
-  {"name":"Tombstone Taphouse","city":"Tombstone","category":"restaurants"},
-  {"name":"Pizza Plus Tombstone AZ","city":"Tombstone","category":"restaurants"},
-  {"name":"Saguaro Diner Tombstone","city":"Tombstone","category":"restaurants"},
-  {"name":"Cochise County Café Tombstone","city":"Tombstone","category":"restaurants"}
+  {
+    "name": "Big Nose Kate's Saloon Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Crystal Palace Saloon Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Longhorn Restaurant Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Nellie Cashman's Restaurant Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Wyatt Earp's Eat House Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "OK Cafe Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Tombstone Taphouse",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Pizza Plus Tombstone AZ",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Saguaro Diner Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Cochise County Café Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Tombstone Brewing Company",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Wyatt's Barbeque Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Silver Bullet Saloon Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "El Paso Taqueria Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Tombstone Steakhouse",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "The Depot Restaurant Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Larian Motel Diner Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Doc Holliday's Beef n Brew Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Virgil's Kitchen Tombstone AZ",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Frontier Fajitas Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  },
+  {
+    "name": "Six Gun City Grill Tombstone",
+    "city": "Tombstone",
+    "category": "restaurants"
+  }
 ]

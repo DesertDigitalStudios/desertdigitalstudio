@@ -1,12 +1,102 @@
 [
-  {"name":"Benson Hair Salon","city":"Benson","category":"salons"},
-  {"name":"Desert Style Salon Benson AZ","city":"Benson","category":"salons"},
-  {"name":"San Pedro Beauty Salon Benson","city":"Benson","category":"salons"},
-  {"name":"Cochise Hair Studio Benson","city":"Benson","category":"salons"},
-  {"name":"Main Street Salon Benson AZ","city":"Benson","category":"salons"},
-  {"name":"Shear Magic Benson AZ","city":"Benson","category":"salons"},
-  {"name":"Cuts and Color Benson","city":"Benson","category":"salons"},
-  {"name":"Desert Rose Salon Benson","city":"Benson","category":"salons"},
-  {"name":"Arizona Hair Studio Benson","city":"Benson","category":"salons"},
-  {"name":"The Salon Benson AZ","city":"Benson","category":"salons"}
+  {
+    "name": "Benson Hair Salon",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Style Salon Benson AZ",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "San Pedro Beauty Salon Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Cochise Hair Studio Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Main Street Salon Benson AZ",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Shear Magic Benson AZ",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Cuts and Color Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Rose Salon Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Arizona Hair Studio Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "The Salon Benson AZ",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Cave Country Salon Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Kartchner Hair Studio Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "I-10 Beauty Benson AZ",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Valley Glam Salon Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Nails and Beyond Benson AZ",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Fringe Benefits Salon Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Bloom Beauty Benson",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "La Bella Beauty Benson AZ",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Benson Spa and Nails",
+    "city": "Benson",
+    "category": "salons"
+  },
+  {
+    "name": "Tresses Hair Studio Benson",
+    "city": "Benson",
+    "category": "salons"
+  }
 ]

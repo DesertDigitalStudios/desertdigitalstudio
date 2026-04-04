@@ -1,8 +1,98 @@
 [
-  {"name":"Gadabout SalonSpas","website":"https://gadabout.com/","city":"Tucson","category":"salons"},
-  {"name":"The Studio Hair Artistry","website":"https://www.thestudiotucson.com/","city":"Tucson","category":"salons"},
-  {"name":"Salon Salon","website":"https://salonsalonaz.com/","city":"Tucson","category":"salons"},
-  {"name":"Circa 79 Salon","website":"https://www.circa79salon.com/","city":"Tucson","category":"salons"},
-  {"name":"Salon Blonde Tucson","website":"https://salonblonde.biz/","city":"Tucson","category":"salons"},
-  {"name":"Willow Salon","website":"https://www.willowsalonaz.com/","city":"Tucson","category":"salons"}
+  {
+    "name": "Gadabout SalonSpas",
+    "website": "https://gadabout.com/",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "The Studio Hair Artistry",
+    "website": "https://www.thestudiotucson.com/",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Salon Salon",
+    "website": "https://salonsalonaz.com/",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Circa 79 Salon",
+    "website": "https://www.circa79salon.com/",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Salon Blonde Tucson",
+    "website": "https://salonblonde.biz/",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Willow Salon",
+    "website": "https://www.willowsalonaz.com/",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Elements Salon Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Snipped Salon Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Bloom Salon Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Tangerine Salon Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Hair by Maria Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Oasis Salon and Spa Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Color Lab Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Savvy Hair Studio Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Luxe Beauty Salon Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Tres Chic Salon Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Mane Event Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  },
+  {
+    "name": "Vibe Salon Tucson",
+    "city": "Tucson",
+    "category": "salons"
+  }
 ]

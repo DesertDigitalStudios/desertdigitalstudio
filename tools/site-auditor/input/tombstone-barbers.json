@@ -1,12 +1,102 @@
 [
-  {"name":"Tombstone Barber Shop","city":"Tombstone","category":"barbers"},
-  {"name":"Old West Barbers Tombstone","city":"Tombstone","category":"barbers"},
-  {"name":"Doc Holliday Barbershop Tombstone","city":"Tombstone","category":"barbers"},
-  {"name":"Wyatt Earp Barbers Tombstone","city":"Tombstone","category":"barbers"},
-  {"name":"Boot Hill Barbers Tombstone","city":"Tombstone","category":"barbers"},
-  {"name":"Frontier Cuts Tombstone AZ","city":"Tombstone","category":"barbers"},
-  {"name":"Allen Street Barbers Tombstone","city":"Tombstone","category":"barbers"},
-  {"name":"Cochise Barbers Tombstone","city":"Tombstone","category":"barbers"},
-  {"name":"Desert Edge Barbers Tombstone","city":"Tombstone","category":"barbers"},
-  {"name":"The Gunfighter Barbershop Tombstone","city":"Tombstone","category":"barbers"}
+  {
+    "name": "Tombstone Barber Shop",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Old West Barbers Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Doc Holliday Barbershop Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Wyatt Earp Barbers Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Boot Hill Barbers Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Frontier Cuts Tombstone AZ",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Allen Street Barbers Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Cochise Barbers Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Desert Edge Barbers Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "The Gunfighter Barbershop Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Virgil Earp Barbershop Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Silver Dollar Barbershop Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Tombstone Shave and a Haircut",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "OK Cuts Tombstone AZ",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Saloon Row Barbers Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "High Noon Barbers Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Tombstone Trail Barbers",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Checkpoint Charlie's Barbershop Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Clanton Gang Cuts Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  },
+  {
+    "name": "Ike's Barbershop Tombstone",
+    "city": "Tombstone",
+    "category": "barbers"
+  }
 ]

@@ -1,12 +1,102 @@
 [
-  {"name":"Vail Plumbing and Repair","city":"Vail","category":"home services"},
-  {"name":"Rincon Valley HVAC Vail AZ","city":"Vail","category":"home services"},
-  {"name":"Desert Home Services Vail","city":"Vail","category":"home services"},
-  {"name":"Vail Electrical Contractor","city":"Vail","category":"home services"},
-  {"name":"Southwest Roofing Vail AZ","city":"Vail","category":"home services"},
-  {"name":"Vail Pest Control","city":"Vail","category":"home services"},
-  {"name":"Arizona Landscaping Vail","city":"Vail","category":"home services"},
-  {"name":"High Desert Cleaning Vail AZ","city":"Vail","category":"home services"},
-  {"name":"Saguaro Contractors Vail","city":"Vail","category":"home services"},
-  {"name":"Rancho Del Lago Maintenance Vail","city":"Vail","category":"home services"}
+  {
+    "name": "Vail Plumbing and Repair",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Rincon Valley HVAC Vail AZ",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Desert Home Services Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Vail Electrical Contractor",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Southwest Roofing Vail AZ",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Vail Pest Control",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Arizona Landscaping Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "High Desert Cleaning Vail AZ",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Saguaro Contractors Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Rancho Del Lago Maintenance Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Tanque Verde Plumbing Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Rincon Mountain Roofing Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Old Vail Electric Services",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Desert Hills HVAC Vail AZ",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Vail Area Pest Control AZ",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Twin Peaks Landscaping Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Saguaro Valley Cleaning Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Ranch District Handyman Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Mesquite Hill Construction Vail",
+    "city": "Vail",
+    "category": "home services"
+  },
+  {
+    "name": "Eastside Painting Vail AZ",
+    "city": "Vail",
+    "category": "home services"
+  }
 ]

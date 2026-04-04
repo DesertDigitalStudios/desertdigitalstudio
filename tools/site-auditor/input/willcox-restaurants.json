@@ -1,12 +1,107 @@
 [
-  {"name":"Steak Out Restaurant Willcox AZ","city":"Willcox","category":"restaurants"},
-  {"name":"La Casita Restaurant Willcox","city":"Willcox","category":"restaurants"},
-  {"name":"Big Tex BBQ Willcox","city":"Willcox","category":"restaurants"},
-  {"name":"Plaza Restaurant Willcox","city":"Willcox","category":"restaurants"},
-  {"name":"Willcox Brewing Company","city":"Willcox","category":"restaurants"},
-  {"name":"Rex Allen Museum Cafe Willcox","city":"Willcox","category":"restaurants"},
-  {"name":"Dos Cabezas WineWorks Willcox","city":"Willcox","category":"restaurants"},
-  {"name":"Cornucopia Restaurant Willcox","city":"Willcox","category":"restaurants"},
-  {"name":"Apple Annie's Orchard Willcox","city":"Willcox","category":"restaurants"},
-  {"name":"Calico County Cafe Willcox","city":"Willcox","category":"restaurants"}
+  {
+    "name": "Steak Out Restaurant Willcox AZ",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "La Casita Restaurant Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Big Tex BBQ Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Plaza Restaurant Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Willcox Brewing Company",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Rex Allen Museum Cafe Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Dos Cabezas WineWorks Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Cornucopia Restaurant Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Apple Annie's Orchard Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Calico County Cafe Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Flying Leap Vineyards Restaurant Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Keeling Schaefer Winery Restaurant Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Sand Reckoner Winery Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Willcox Chophouse",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "La Paloma Mexican Grill Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "I-10 Diner Willcox AZ",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Cowboy Palace Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Rancho Casitas Restaurant Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Rex Allen Roadhouse Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Harvest Table Willcox AZ",
+    "city": "Willcox",
+    "category": "restaurants"
+  },
+  {
+    "name": "Chiricahua Pub Willcox",
+    "city": "Willcox",
+    "category": "restaurants"
+  }
 ]

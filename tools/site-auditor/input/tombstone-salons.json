@@ -1,12 +1,102 @@
 [
-  {"name":"Tombstone Hair Salon","city":"Tombstone","category":"salons"},
-  {"name":"Old West Beauty Tombstone","city":"Tombstone","category":"salons"},
-  {"name":"Desert Rose Salon Tombstone","city":"Tombstone","category":"salons"},
-  {"name":"Cochise Hair Studio Tombstone","city":"Tombstone","category":"salons"},
-  {"name":"Arizona Salon Tombstone AZ","city":"Tombstone","category":"salons"},
-  {"name":"Shear Excellence Tombstone","city":"Tombstone","category":"salons"},
-  {"name":"Wild West Salon Tombstone","city":"Tombstone","category":"salons"},
-  {"name":"Frontier Hair Tombstone AZ","city":"Tombstone","category":"salons"},
-  {"name":"Boot Hill Beauty Tombstone","city":"Tombstone","category":"salons"},
-  {"name":"Southwest Salon Tombstone","city":"Tombstone","category":"salons"}
+  {
+    "name": "Tombstone Hair Salon",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Old West Beauty Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Rose Salon Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Cochise Hair Studio Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Arizona Salon Tombstone AZ",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Shear Excellence Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Wild West Salon Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Frontier Hair Tombstone AZ",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Boot Hill Beauty Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Southwest Salon Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Nellie's Beauty Parlor Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Silver Star Salon Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Wild West Nails Tombstone AZ",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Tombstone Beauty Bar",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Big Nose Kate Beauty Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Frontier Style Salon Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Lucky Lady Salon Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "The Silver Chair Salon Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Helldorado Hair Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  },
+  {
+    "name": "Shotgun Style Salon Tombstone",
+    "city": "Tombstone",
+    "category": "salons"
+  }
 ]

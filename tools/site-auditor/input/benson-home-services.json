@@ -1,12 +1,102 @@
 [
-  {"name":"Benson Plumbing and Repair","city":"Benson","category":"home services"},
-  {"name":"Desert Home Services Benson","city":"Benson","category":"home services"},
-  {"name":"Cochise County HVAC Benson","city":"Benson","category":"home services"},
-  {"name":"San Pedro Valley Roofing","city":"Benson","category":"home services"},
-  {"name":"Benson Electrical Services","city":"Benson","category":"home services"},
-  {"name":"Arizona Home Repair Benson","city":"Benson","category":"home services"},
-  {"name":"Southwest Landscaping Benson","city":"Benson","category":"home services"},
-  {"name":"Benson Pest Control","city":"Benson","category":"home services"},
-  {"name":"High Desert Cleaning Benson","city":"Benson","category":"home services"},
-  {"name":"Kartchner Construction Benson","city":"Benson","category":"home services"}
+  {
+    "name": "Benson Plumbing and Repair",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Desert Home Services Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Cochise County HVAC Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "San Pedro Valley Roofing",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Benson Electrical Services",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Arizona Home Repair Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Southwest Landscaping Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Benson Pest Control",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "High Desert Cleaning Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Kartchner Construction Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Benson Handyman Service",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Cave Country Roofing Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "San Pedro Valley Plumbing Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Desert Sun HVAC Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "I-10 Electric Benson AZ",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Kartchner Construction Repair Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Frontier Painting Benson AZ",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Benson Hauling and Cleanup",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "High Desert Exterminators Benson",
+    "city": "Benson",
+    "category": "home services"
+  },
+  {
+    "name": "Valley Fencing Benson AZ",
+    "city": "Benson",
+    "category": "home services"
+  }
 ]

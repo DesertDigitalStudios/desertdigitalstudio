@@ -1,7 +1,92 @@
 [
-  {"name":"Sierra Vista Plumbing, Inc.","website":"https://sierravistaplumbing.com/","city":"Sierra Vista","category":"home services"},
-  {"name":"Cool Willy's Air & Plumbing","website":"https://coolwillys.com/service-areas/sierra-vista-az/","city":"Sierra Vista","category":"home services"},
-  {"name":"Struse Plumbing & Air","website":"https://www.struseplumbing.net/","city":"Sierra Vista","category":"home services"},
-  {"name":"Rite Way Sierra Vista","website":"https://ritewayac.com/areas-we-serve/sierra-vista-az/","city":"Sierra Vista","category":"home services"},
-  {"name":"Temperature Control","website":"https://temp-con.com/city/sierra-vista-az/","city":"Sierra Vista","category":"home services"}
+  {
+    "name": "Sierra Vista Plumbing, Inc.",
+    "website": "https://sierravistaplumbing.com/",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Cool Willy's Air & Plumbing",
+    "website": "https://coolwillys.com/service-areas/sierra-vista-az/",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Struse Plumbing & Air",
+    "website": "https://www.struseplumbing.net/",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Rite Way Sierra Vista",
+    "website": "https://ritewayac.com/areas-we-serve/sierra-vista-az/",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Temperature Control",
+    "website": "https://temp-con.com/city/sierra-vista-az/",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Cochise County Plumbing Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Desert Sun HVAC Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Sierra Vista Roofing Co",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Huachuca Electric Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Terminix Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Desert Landscaping Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Clean Sweep Cleaning Services Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Fort Huachuca Area Handyman",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Precision Painting Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Mountain Contractors Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Fry Blvd Home Repair Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  },
+  {
+    "name": "Southwest Home Solutions Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "home services"
+  }
 ]

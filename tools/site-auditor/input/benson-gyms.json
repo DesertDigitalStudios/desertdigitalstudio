@@ -1,12 +1,102 @@
 [
-  {"name":"Benson Fitness Center","city":"Benson","category":"gyms"},
-  {"name":"Desert Gym Benson AZ","city":"Benson","category":"gyms"},
-  {"name":"San Pedro Fitness Benson","city":"Benson","category":"gyms"},
-  {"name":"Cochise Crossfit Benson","city":"Benson","category":"gyms"},
-  {"name":"High Desert Fitness Benson","city":"Benson","category":"gyms"},
-  {"name":"Benson Yoga Studio","city":"Benson","category":"gyms"},
-  {"name":"Arizona Fitness Benson AZ","city":"Benson","category":"gyms"},
-  {"name":"Iron Desert Gym Benson","city":"Benson","category":"gyms"},
-  {"name":"Kartchner Fitness Benson","city":"Benson","category":"gyms"},
-  {"name":"Southwest Gym Benson AZ","city":"Benson","category":"gyms"}
+  {
+    "name": "Benson Fitness Center",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Desert Gym Benson AZ",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "San Pedro Fitness Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Cochise Crossfit Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "High Desert Fitness Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Benson Yoga Studio",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Arizona Fitness Benson AZ",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Iron Desert Gym Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Kartchner Fitness Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Southwest Gym Benson AZ",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Cave Country Fitness Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Kartchner Crossfit Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Benson Power Gym",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "San Pedro Valley Yoga Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Frontier Fitness Benson AZ",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "The Benson Barbell Club",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "I-10 Fitness Center Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Desert Strong Gym Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Cochise Martial Arts Benson",
+    "city": "Benson",
+    "category": "gyms"
+  },
+  {
+    "name": "Benson Community Fitness",
+    "city": "Benson",
+    "category": "gyms"
+  }
 ]

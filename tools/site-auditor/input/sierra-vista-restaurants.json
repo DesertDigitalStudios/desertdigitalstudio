@@ -1,7 +1,97 @@
 [
-  {"name":"Landmark Cafe","website":"https://landmark-cafe.com/","city":"Sierra Vista","category":"restaurants"},
-  {"name":"La Casita Mexican Restaurant & Cantina","website":"https://lacasitarestaurantandcatering.com/","city":"Sierra Vista","category":"restaurants"},
-  {"name":"Doc's Watering Hole","website":"https://docswateringhole.com/","city":"Sierra Vista","category":"restaurants"},
-  {"name":"Golden Dragon Restaurant","website":"https://www.goldendragonsv.com/","city":"Sierra Vista","category":"restaurants"},
-  {"name":"Manda Le Bar & Grill","website":"https://www.mandalebarandgrill.com/","city":"Sierra Vista","category":"restaurants"}
+  {
+    "name": "Landmark Cafe",
+    "website": "https://landmark-cafe.com/",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "La Casita Mexican Restaurant & Cantina",
+    "website": "https://lacasitarestaurantandcatering.com/",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Doc's Watering Hole",
+    "website": "https://docswateringhole.com/",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Golden Dragon Restaurant",
+    "website": "https://www.goldendragonsv.com/",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Manda Le Bar & Grill",
+    "website": "https://www.mandalebarandgrill.com/",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Mesquite Tree Restaurant Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Habanero's Mexican Grill Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Pizza Plus Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Subs by the Foot Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Thai Kitchen Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Great Wall Chinese Restaurant Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Denny's Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Subway Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Cracker Barrel Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Texas Roadhouse Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Applebee's Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "El Tapatio Mexican Restaurant Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  },
+  {
+    "name": "Huachuca Steakhouse Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "restaurants"
+  }
 ]

@@ -1,7 +1,92 @@
 [
-  {"name":"Landmark Cafe","website":"https://landmark-cafe.com/","city":"Sierra Vista","category":"cafes"},
-  {"name":"Urbano Coffee Company","website":"https://urbanocoffeecompany.com/","city":"Sierra Vista","category":"cafes"},
-  {"name":"Nirvana's Cup of Joe","website":"https://nirvanas.top/","city":"Sierra Vista","category":"cafes"},
-  {"name":"The Bit","website":"https://www.thebitsv.com/","city":"Sierra Vista","category":"cafes"},
-  {"name":"Baker's Dozen Donuts & Coffee","website":"http://www.bakersdozendonut.com","city":"Sierra Vista","category":"cafes"}
+  {
+    "name": "Landmark Cafe",
+    "website": "https://landmark-cafe.com/",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Urbano Coffee Company",
+    "website": "https://urbanocoffeecompany.com/",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Nirvana's Cup of Joe",
+    "website": "https://nirvanas.top/",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "The Bit",
+    "website": "https://www.thebitsv.com/",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Baker's Dozen Donuts & Coffee",
+    "website": "http://www.bakersdozendonut.com",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Bisbee Coffee Co Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "The Copper Kettle Cafe Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Desert Perch Coffee Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Morning Grind Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Huachuca Brew House Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Fry Blvd Coffee Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Arizona Sunrise Cafe Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Southwest Roast Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Cochise Coffee House Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "The Espresso Bar Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "Daily Grind Sierra Vista AZ",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  },
+  {
+    "name": "High Desert Coffee Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "cafes"
+  }
 ]

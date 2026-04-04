@@ -1,12 +1,102 @@
 [
-  {"name":"Tombstone Fitness Center","city":"Tombstone","category":"gyms"},
-  {"name":"Desert Gym Tombstone AZ","city":"Tombstone","category":"gyms"},
-  {"name":"Cochise Crossfit Tombstone","city":"Tombstone","category":"gyms"},
-  {"name":"High Desert Fitness Tombstone","city":"Tombstone","category":"gyms"},
-  {"name":"Tombstone Yoga Studio","city":"Tombstone","category":"gyms"},
-  {"name":"Old West Fitness Tombstone","city":"Tombstone","category":"gyms"},
-  {"name":"Arizona Gym Tombstone AZ","city":"Tombstone","category":"gyms"},
-  {"name":"Iron Horse Gym Tombstone","city":"Tombstone","category":"gyms"},
-  {"name":"Southwest Fitness Tombstone","city":"Tombstone","category":"gyms"},
-  {"name":"Boot Hill Gym Tombstone AZ","city":"Tombstone","category":"gyms"}
+  {
+    "name": "Tombstone Fitness Center",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Desert Gym Tombstone AZ",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Cochise Crossfit Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "High Desert Fitness Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Tombstone Yoga Studio",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Old West Fitness Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Arizona Gym Tombstone AZ",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Iron Horse Gym Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Southwest Fitness Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Boot Hill Gym Tombstone AZ",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Boot Hill Bootcamp Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Outlaw Fitness Tombstone AZ",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Doc Holliday Gym Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Gunslinger Crossfit Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Allen Street Athletics Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Tombstone Trail Running Club",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Wild West Yoga Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Silver City Gym Tombstone AZ",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Earp Brothers Fitness Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  },
+  {
+    "name": "Wyatt's Workout Tombstone",
+    "city": "Tombstone",
+    "category": "gyms"
+  }
 ]

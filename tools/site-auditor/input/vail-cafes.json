@@ -1,12 +1,102 @@
 [
-  {"name":"Vail Coffee Shop AZ","city":"Vail","category":"cafes"},
-  {"name":"Rincon Valley Cafe Vail","city":"Vail","category":"cafes"},
-  {"name":"Desert Morning Coffee Vail AZ","city":"Vail","category":"cafes"},
-  {"name":"Saguaro Brew Vail AZ","city":"Vail","category":"cafes"},
-  {"name":"Southwest Cafe Vail AZ","city":"Vail","category":"cafes"},
-  {"name":"Rancho Del Lago Coffee Vail","city":"Vail","category":"cafes"},
-  {"name":"Colossal Cave Coffee Vail","city":"Vail","category":"cafes"},
-  {"name":"High Desert Cafe Vail AZ","city":"Vail","category":"cafes"},
-  {"name":"The Daily Grind Vail AZ","city":"Vail","category":"cafes"},
-  {"name":"Arizona Coffee Co Vail","city":"Vail","category":"cafes"}
+  {
+    "name": "Vail Coffee Shop AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Rincon Valley Cafe Vail",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Desert Morning Coffee Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Saguaro Brew Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Southwest Cafe Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Rancho Del Lago Coffee Vail",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Colossal Cave Coffee Vail",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "High Desert Cafe Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "The Daily Grind Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Arizona Coffee Co Vail",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Tanque Verde Coffee Vail",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Rincon Valley Roast Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Old Vail Road Coffee",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Mesquite Brew Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Desert Hills Cafe Vail",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Twin Peaks Espresso Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Vail Station Coffee House",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Saguaro Hills Coffee Vail",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Sunrise Perk Vail AZ",
+    "city": "Vail",
+    "category": "cafes"
+  },
+  {
+    "name": "Ranch Market Cafe Vail",
+    "city": "Vail",
+    "category": "cafes"
+  }
 ]

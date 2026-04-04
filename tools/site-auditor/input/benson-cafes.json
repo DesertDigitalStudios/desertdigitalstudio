@@ -1,12 +1,102 @@
 [
-  {"name":"Benson Coffee Shop","city":"Benson","category":"cafes"},
-  {"name":"San Pedro Cafe Benson AZ","city":"Benson","category":"cafes"},
-  {"name":"Desert Brew Benson","city":"Benson","category":"cafes"},
-  {"name":"Kartchner Koffee Benson","city":"Benson","category":"cafes"},
-  {"name":"High Desert Coffee Benson AZ","city":"Benson","category":"cafes"},
-  {"name":"Cochise Coffee Co Benson","city":"Benson","category":"cafes"},
-  {"name":"Main Street Cafe Benson AZ","city":"Benson","category":"cafes"},
-  {"name":"Arizona Morning Cafe Benson","city":"Benson","category":"cafes"},
-  {"name":"Sunrise Coffee Benson AZ","city":"Benson","category":"cafes"},
-  {"name":"The Daily Grind Benson AZ","city":"Benson","category":"cafes"}
+  {
+    "name": "Benson Coffee Shop",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "San Pedro Cafe Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Desert Brew Benson",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Kartchner Koffee Benson",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "High Desert Coffee Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Cochise Coffee Co Benson",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Main Street Cafe Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Arizona Morning Cafe Benson",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Sunrise Coffee Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "The Daily Grind Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Horseshoe Coffee Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Kartchner Cafe Benson",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "I-10 Espresso Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Desert Junction Cafe Benson",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "The Brew Stop Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Cave Country Coffee Benson",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Benson Biscuits and Brew",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Valley Morning Coffee Benson",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "Roadrunner Cafe Benson AZ",
+    "city": "Benson",
+    "category": "cafes"
+  },
+  {
+    "name": "San Pedro Valley Brew Benson",
+    "city": "Benson",
+    "category": "cafes"
+  }
 ]

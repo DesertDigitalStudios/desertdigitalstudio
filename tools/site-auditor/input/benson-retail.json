@@ -1,12 +1,107 @@
 [
-  {"name":"Benson Hardware Store","city":"Benson","category":"retail"},
-  {"name":"Benson Western Wear","city":"Benson","category":"retail"},
-  {"name":"Desert Finds Benson","city":"Benson","category":"retail"},
-  {"name":"Benson Dollar Store","city":"Benson","category":"retail"},
-  {"name":"Southwest Trading Post Benson","city":"Benson","category":"retail"},
-  {"name":"Benson Gift Shop","city":"Benson","category":"retail"},
-  {"name":"Cochise Antiques Benson","city":"Benson","category":"retail"},
-  {"name":"San Pedro Gifts Benson","city":"Benson","category":"retail"},
-  {"name":"Benson Florist","city":"Benson","category":"retail"},
-  {"name":"Arizona Outpost Benson","city":"Benson","category":"retail"}
+  {
+    "name": "Benson Hardware Store",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Benson Western Wear",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Desert Finds Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Benson Dollar Store",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Southwest Trading Post Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Benson Gift Shop",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Cochise Antiques Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "San Pedro Gifts Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Benson Florist",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Arizona Outpost Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Kartchner Caverns Gift Shop Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Cave Country Antiques Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "I-10 Trading Post Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Benson Western Supply",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "San Pedro River Rock Shop Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Desert Treasures Benson AZ",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Benson Farm and Ranch Supply",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Old Pueblo Relics Benson",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Frontier Jewelry Benson AZ",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Benson Thrift and Resale",
+    "city": "Benson",
+    "category": "retail"
+  },
+  {
+    "name": "Highway 10 Collectibles Benson",
+    "city": "Benson",
+    "category": "retail"
+  }
 ]

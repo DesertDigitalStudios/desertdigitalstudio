@@ -1,12 +1,102 @@
 [
-  {"name":"Tombstone Family Dentistry","city":"Tombstone","category":"dental"},
-  {"name":"Cochise Dental Tombstone AZ","city":"Tombstone","category":"dental"},
-  {"name":"Desert Smiles Dental Tombstone","city":"Tombstone","category":"dental"},
-  {"name":"Arizona Dental Tombstone","city":"Tombstone","category":"dental"},
-  {"name":"Southwest Dental Tombstone AZ","city":"Tombstone","category":"dental"},
-  {"name":"Doc Dental Tombstone","city":"Tombstone","category":"dental"},
-  {"name":"Frontier Dental Care Tombstone","city":"Tombstone","category":"dental"},
-  {"name":"Bisbee Dental Tombstone area","city":"Tombstone","category":"dental"},
-  {"name":"Gentle Dental Tombstone AZ","city":"Tombstone","category":"dental"},
-  {"name":"Old West Dental Tombstone","city":"Tombstone","category":"dental"}
+  {
+    "name": "Tombstone Family Dentistry",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Cochise Dental Tombstone AZ",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Smiles Dental Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Arizona Dental Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Southwest Dental Tombstone AZ",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Doc Dental Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Frontier Dental Care Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Bisbee Dental Tombstone area",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Gentle Dental Tombstone AZ",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Old West Dental Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Tombstone Smiles Dental",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Boot Hill Family Dentistry Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Wyatt Dental Tombstone AZ",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Cochise Dentistry Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Silver Tooth Dental Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "OK Corral Dental Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Allen Street Dental Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Tombstone Pediatric Dentistry",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Desert Dental Group Tombstone",
+    "city": "Tombstone",
+    "category": "dental"
+  },
+  {
+    "name": "Frontier Dental Tombstone AZ",
+    "city": "Tombstone",
+    "category": "dental"
+  }
 ]

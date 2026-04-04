@@ -1,12 +1,102 @@
 [
-  {"name":"Vail Hair Salon AZ","city":"Vail","category":"salons"},
-  {"name":"Rincon Valley Salon Vail","city":"Vail","category":"salons"},
-  {"name":"Desert Style Salon Vail AZ","city":"Vail","category":"salons"},
-  {"name":"Saguaro Beauty Vail AZ","city":"Vail","category":"salons"},
-  {"name":"Southwest Salon Vail AZ","city":"Vail","category":"salons"},
-  {"name":"Shear Magic Vail AZ","city":"Vail","category":"salons"},
-  {"name":"Arizona Hair Studio Vail","city":"Vail","category":"salons"},
-  {"name":"Desert Rose Salon Vail","city":"Vail","category":"salons"},
-  {"name":"Rancho Del Lago Salon Vail","city":"Vail","category":"salons"},
-  {"name":"Cuts and Color Vail AZ","city":"Vail","category":"salons"}
+  {
+    "name": "Vail Hair Salon AZ",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Rincon Valley Salon Vail",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Style Salon Vail AZ",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Saguaro Beauty Vail AZ",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Southwest Salon Vail AZ",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Shear Magic Vail AZ",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Arizona Hair Studio Vail",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Rose Salon Vail",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Rancho Del Lago Salon Vail",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Cuts and Color Vail AZ",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Tanque Verde Hair Studio Vail",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Rincon Valley Beauty Vail",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Old Vail Nail Spa",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Desert Hills Salon Vail AZ",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Twin Peaks Spa Vail AZ",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Vail Station Hair Studio",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Saguaro Glow Salon Vail",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Mesquite Beauty Bar Vail",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "La Bella Vail AZ Salon",
+    "city": "Vail",
+    "category": "salons"
+  },
+  {
+    "name": "Eastside Lash and Hair Vail",
+    "city": "Vail",
+    "category": "salons"
+  }
 ]

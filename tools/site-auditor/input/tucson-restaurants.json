@@ -1,7 +1,97 @@
 [
-  {"name":"Kingfisher Bar & Grill","website":"https://www.kingfishertucson.com/","city":"Tucson","category":"restaurants"},
-  {"name":"The Parish","website":"https://www.theparishtucson.com/","city":"Tucson","category":"restaurants"},
-  {"name":"Vivace Restaurant","website":"https://www.vivacetucson.com/","city":"Tucson","category":"restaurants"},
-  {"name":"JoJo's Tucson","website":"https://www.jojostucson.com/","city":"Tucson","category":"restaurants"},
-  {"name":"Arizona Inn Dining","website":"https://www.arizonainn.com/dining/","city":"Tucson","category":"restaurants"}
+  {
+    "name": "Kingfisher Bar & Grill",
+    "website": "https://www.kingfishertucson.com/",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "The Parish",
+    "website": "https://www.theparishtucson.com/",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Vivace Restaurant",
+    "website": "https://www.vivacetucson.com/",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "JoJo's Tucson",
+    "website": "https://www.jojostucson.com/",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Arizona Inn Dining",
+    "website": "https://www.arizonainn.com/dining/",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "El Charro Cafe Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Mi Nidito Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Cafe Poca Cosa Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Seis Kitchen Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Brushfire BBQ Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Hub Restaurant and Creamery Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Reforma Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Maynards Kitchen Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Guadalajara Original Grill Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Beyond Bread Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Prep and Pastry Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Hacienda Del Sol Restaurant Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  },
+  {
+    "name": "Teresa's Mosaic Cafe Tucson",
+    "city": "Tucson",
+    "category": "restaurants"
+  }
 ]

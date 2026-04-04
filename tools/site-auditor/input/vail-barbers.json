@@ -1,12 +1,102 @@
 [
-  {"name":"Vail Barber Shop AZ","city":"Vail","category":"barbers"},
-  {"name":"Rincon Valley Barbers Vail","city":"Vail","category":"barbers"},
-  {"name":"Desert Edge Barbers Vail AZ","city":"Vail","category":"barbers"},
-  {"name":"Saguaro Cuts Vail AZ","city":"Vail","category":"barbers"},
-  {"name":"Classic Cuts Vail AZ","city":"Vail","category":"barbers"},
-  {"name":"Southwest Barbers Vail AZ","city":"Vail","category":"barbers"},
-  {"name":"The Barbershop Vail AZ","city":"Vail","category":"barbers"},
-  {"name":"Arizona Barbers Vail","city":"Vail","category":"barbers"},
-  {"name":"High Desert Barbers Vail","city":"Vail","category":"barbers"},
-  {"name":"Colossal Cave Barbers Vail","city":"Vail","category":"barbers"}
+  {
+    "name": "Vail Barber Shop AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Rincon Valley Barbers Vail",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Desert Edge Barbers Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Saguaro Cuts Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Classic Cuts Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Southwest Barbers Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "The Barbershop Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Arizona Barbers Vail",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "High Desert Barbers Vail",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Colossal Cave Barbers Vail",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Rincon Peak Barbershop Vail",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Tanque Verde Barbers Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Old Vail Barbers",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "The Trim Shop Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Premier Cuts Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Saguaro Barbers East Tucson Vail",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Ranch District Barbers Vail",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Fade Master Vail AZ",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Vail Station Barbershop",
+    "city": "Vail",
+    "category": "barbers"
+  },
+  {
+    "name": "Desert Hills Barbers Vail",
+    "city": "Vail",
+    "category": "barbers"
+  }
 ]

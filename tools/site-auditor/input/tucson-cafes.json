@@ -1,8 +1,98 @@
 [
-  {"name":"Café a la C'Art","website":"https://www.cafealacarttucson.com/","city":"Tucson","category":"cafes"},
-  {"name":"Coronet Cafe","website":"https://coronettucson.com/cafe/","city":"Tucson","category":"cafes"},
-  {"name":"Cafe Passe","website":"https://cafepassetucson.com/","city":"Tucson","category":"cafes"},
-  {"name":"The National","website":"https://thenationaltucson.com/","city":"Tucson","category":"cafes"},
-  {"name":"Coffee X Change Bistro","website":"https://coffee-x-change.com/","city":"Tucson","category":"cafes"},
-  {"name":"Cafe 54","website":"https://www.cafe54.org","city":"Tucson","category":"cafes"}
+  {
+    "name": "Café a la C'Art",
+    "website": "https://www.cafealacarttucson.com/",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Coronet Cafe",
+    "website": "https://coronettucson.com/cafe/",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Cafe Passe",
+    "website": "https://cafepassetucson.com/",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "The National",
+    "website": "https://thenationaltucson.com/",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Coffee X Change Bistro",
+    "website": "https://coffee-x-change.com/",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Cafe 54",
+    "website": "https://www.cafe54.org",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Shot in the Dark Cafe Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Public Brewhouse Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Raging Sage Coffee Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Presidio Cafe Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Epic Cafe Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Bison Witches Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Village Bakehouse Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Presta Coffee Roasters Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Savaya Coffee Market Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Flying V Bar and Grill Coffee Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Monsoon Chocolate Cafe Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  },
+  {
+    "name": "Borderlands Brewing Cafe Tucson",
+    "city": "Tucson",
+    "category": "cafes"
+  }
 ]

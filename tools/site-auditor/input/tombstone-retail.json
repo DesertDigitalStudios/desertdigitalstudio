@@ -1,12 +1,107 @@
 [
-  {"name":"Tombstone Western Wear","city":"Tombstone","category":"retail"},
-  {"name":"Helldorado Mercantile Tombstone","city":"Tombstone","category":"retail"},
-  {"name":"Tombstone Epitaph newspaper gift shop","city":"Tombstone","category":"retail"},
-  {"name":"Boot Hill Gift Shop Tombstone","city":"Tombstone","category":"retail"},
-  {"name":"Tombstone Monument Ranch store","city":"Tombstone","category":"retail"},
-  {"name":"Old West Curios Tombstone","city":"Tombstone","category":"retail"},
-  {"name":"Silver Nugget Shop Tombstone","city":"Tombstone","category":"retail"},
-  {"name":"Arizona Trading Post Tombstone","city":"Tombstone","category":"retail"},
-  {"name":"Frontier Photography Tombstone","city":"Tombstone","category":"retail"},
-  {"name":"The Gunfighter Store Tombstone","city":"Tombstone","category":"retail"}
+  {
+    "name": "Tombstone Western Wear",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Helldorado Mercantile Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Tombstone Epitaph newspaper gift shop",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Boot Hill Gift Shop Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Tombstone Monument Ranch store",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Old West Curios Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Silver Nugget Shop Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Arizona Trading Post Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Frontier Photography Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "The Gunfighter Store Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Tombstone Trading Post",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Silver Spur Gifts Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Wyatt's Western Wear Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Boot Hill Souvenirs Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Tombstone Turquoise Gallery",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Allen Street Antiques Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Prospector's Gem Shop Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Ghost Town Crafts Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Tombstone Historicana Store",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "OK Corral Gift Shop Tombstone",
+    "city": "Tombstone",
+    "category": "retail"
+  },
+  {
+    "name": "Doc's Vintage Tombstone AZ",
+    "city": "Tombstone",
+    "category": "retail"
+  }
 ]

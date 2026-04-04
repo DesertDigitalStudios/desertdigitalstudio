@@ -1,12 +1,112 @@
 [
-  {"name":"Antigone Books Tucson","city":"Tucson","category":"retail"},
-  {"name":"Bahti Indian Arts Tucson","city":"Tucson","category":"retail"},
-  {"name":"Mostly Books Tucson","city":"Tucson","category":"retail"},
-  {"name":"Pop Cycle Tucson","city":"Tucson","category":"retail"},
-  {"name":"Yikes Toys Tucson","city":"Tucson","category":"retail"},
-  {"name":"Clues Unlimited Tucson","city":"Tucson","category":"retail"},
-  {"name":"Rocks and Ropes Tucson","city":"Tucson","category":"retail"},
-  {"name":"Old Town Artisans Tucson","city":"Tucson","category":"retail"},
-  {"name":"Lost Barrio Tucson","city":"Tucson","category":"retail"},
-  {"name":"Arizona State Gift Shop Tucson","city":"Tucson","category":"retail"}
+  {
+    "name": "Antigone Books Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Bahti Indian Arts Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Mostly Books Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Pop Cycle Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Yikes Toys Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Clues Unlimited Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Rocks and Ropes Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Old Town Artisans Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Lost Barrio Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Arizona State Gift Shop Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Bookmans Entertainment Exchange Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Sur La Table Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Tucson Gem and Mineral Society",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Arizona Hatters Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Antigone Books Fourth Avenue Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Picante Designs Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Desert Artisans Gallery Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Copper Country Gifts Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Pima Street Kitchen Supply Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "The Extra Mile Shoes Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Fiesta Fashion Mall Boutique Tucson",
+    "city": "Tucson",
+    "category": "retail"
+  },
+  {
+    "name": "Tucson Thrift Store",
+    "city": "Tucson",
+    "category": "retail"
+  }
 ]

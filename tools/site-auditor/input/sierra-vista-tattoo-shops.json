@@ -1,12 +1,112 @@
 [
-  {"name":"Sierra Vista Tattoo","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Cochise Ink Tattoo Sierra Vista","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Desert Ink Tattoo Sierra Vista","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Huachuca Tattoo Studio","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Iron Eagle Tattoo Sierra Vista","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Midnight Sun Tattoo Sierra Vista","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Military Ink Tattoo Sierra Vista","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Black Rose Tattoo Sierra Vista","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Sacred Skin Tattoo Sierra Vista","city":"Sierra Vista","category":"tattoo shops"},
-  {"name":"Southwest Tattoo Company Sierra Vista","city":"Sierra Vista","category":"tattoo shops"}
+  {
+    "name": "Sierra Vista Tattoo",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Cochise Ink Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Desert Ink Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Huachuca Tattoo Studio",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Iron Eagle Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Midnight Sun Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Military Ink Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Black Rose Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Sacred Skin Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Southwest Tattoo Company Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Ink Addiction Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Sacred Heart Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Fort Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Lone Wolf Ink Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Fry Blvd Tattoo Studio",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Desert Rose Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Old School Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Thunder Bird Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Army Ink Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Skin Art Studio Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Black Anchor Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  },
+  {
+    "name": "Electric Soul Tattoo Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "tattoo shops"
+  }
 ]

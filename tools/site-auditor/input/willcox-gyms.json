@@ -1,12 +1,102 @@
 [
-  {"name":"Willcox Fitness Center","city":"Willcox","category":"gyms"},
-  {"name":"Desert Gym Willcox AZ","city":"Willcox","category":"gyms"},
-  {"name":"Sulphur Springs Fitness Willcox","city":"Willcox","category":"gyms"},
-  {"name":"Cochise Crossfit Willcox","city":"Willcox","category":"gyms"},
-  {"name":"High Desert Fitness Willcox","city":"Willcox","category":"gyms"},
-  {"name":"Willcox Yoga Studio","city":"Willcox","category":"gyms"},
-  {"name":"Arizona Fitness Willcox","city":"Willcox","category":"gyms"},
-  {"name":"Iron Desert Gym Willcox","city":"Willcox","category":"gyms"},
-  {"name":"Southwest Gym Willcox AZ","city":"Willcox","category":"gyms"},
-  {"name":"Anytime Fitness Willcox","city":"Willcox","category":"gyms"}
+  {
+    "name": "Willcox Fitness Center",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Desert Gym Willcox AZ",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Sulphur Springs Fitness Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Cochise Crossfit Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "High Desert Fitness Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Willcox Yoga Studio",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Arizona Fitness Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Iron Desert Gym Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Southwest Gym Willcox AZ",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Anytime Fitness Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Apple Country Fitness Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Cowboy Crossfit Willcox AZ",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Dos Cabezas Athletic Club Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Vineyard Yoga Willcox AZ",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Willcox Community Gym",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Sulphur Springs Strength Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "High Plains Martial Arts Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Chiricahua Fitness Center Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Willcox Boxing Club",
+    "city": "Willcox",
+    "category": "gyms"
+  },
+  {
+    "name": "Rex Allen Recreation Center Willcox",
+    "city": "Willcox",
+    "category": "gyms"
+  }
 ]

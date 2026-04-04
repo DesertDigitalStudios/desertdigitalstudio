@@ -1,12 +1,112 @@
 [
-  {"name":"Planet Fitness Sierra Vista","city":"Sierra Vista","category":"gyms"},
-  {"name":"Anytime Fitness Sierra Vista","city":"Sierra Vista","category":"gyms"},
-  {"name":"YMCA Fort Huachuca","city":"Sierra Vista","category":"gyms"},
-  {"name":"CrossFit Sierra Vista","city":"Sierra Vista","category":"gyms"},
-  {"name":"Curves Sierra Vista","city":"Sierra Vista","category":"gyms"},
-  {"name":"Desert Fitness Sierra Vista","city":"Sierra Vista","category":"gyms"},
-  {"name":"Snap Fitness Sierra Vista","city":"Sierra Vista","category":"gyms"},
-  {"name":"Warrior Fitness Sierra Vista","city":"Sierra Vista","category":"gyms"},
-  {"name":"Elevate Gym Sierra Vista","city":"Sierra Vista","category":"gyms"},
-  {"name":"Iron Tribe Fitness Sierra Vista","city":"Sierra Vista","category":"gyms"}
+  {
+    "name": "Planet Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Anytime Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "YMCA Fort Huachuca",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "CrossFit Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Curves Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Desert Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Snap Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Warrior Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Elevate Gym Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Iron Tribe Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Gold's Gym Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "EōS Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Cochise Strength and Conditioning",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Huachuca CrossFit",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Yoga Garden Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "YMCA Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Barre and Soul Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Hot Yoga Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Total Body Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Fit Club Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Mountain Fitness Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  },
+  {
+    "name": "Iron Works Gym Sierra Vista",
+    "city": "Sierra Vista",
+    "category": "gyms"
+  }
 ]

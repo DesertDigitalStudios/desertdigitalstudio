@@ -1,12 +1,102 @@
 [
-  {"name":"Willcox Barber Shop","city":"Willcox","category":"barbers"},
-  {"name":"Sulphur Springs Barbers Willcox","city":"Willcox","category":"barbers"},
-  {"name":"Main Street Barbershop Willcox","city":"Willcox","category":"barbers"},
-  {"name":"Desert Edge Barbers Willcox","city":"Willcox","category":"barbers"},
-  {"name":"Cochise Barbers Willcox AZ","city":"Willcox","category":"barbers"},
-  {"name":"Classic Cuts Willcox AZ","city":"Willcox","category":"barbers"},
-  {"name":"The Barbershop Willcox","city":"Willcox","category":"barbers"},
-  {"name":"Arizona Barbers Willcox","city":"Willcox","category":"barbers"},
-  {"name":"Rex Allen Barbers Willcox","city":"Willcox","category":"barbers"},
-  {"name":"High Desert Barbers Willcox","city":"Willcox","category":"barbers"}
+  {
+    "name": "Willcox Barber Shop",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Sulphur Springs Barbers Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Main Street Barbershop Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Desert Edge Barbers Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Cochise Barbers Willcox AZ",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Classic Cuts Willcox AZ",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "The Barbershop Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Arizona Barbers Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Rex Allen Barbers Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "High Desert Barbers Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Rex Allen Barbershop Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Cowboy Cuts Willcox AZ",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Apple Country Barbers Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Dos Cabezas Cuts Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Grape Vine Barbers Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Route 186 Barbershop Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Willcox Old Town Barbers",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Rancher's Barbers Willcox AZ",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Winemaker's Barbershop Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  },
+  {
+    "name": "Mustang Trail Barbers Willcox",
+    "city": "Willcox",
+    "category": "barbers"
+  }
 ]
