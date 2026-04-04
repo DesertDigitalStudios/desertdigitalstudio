@@ -1,25 +1,25 @@
 {
-  "updatedAt": "2026-04-03T14:30:00.000Z",
+  "updatedAt": "2026-04-04T04:30:18.427Z",
   "packages": [
     {
       "id": "launch-pad",
       "name": "Launch Pad Website",
       "price": 1200,
-      "timeline": "5\u20137 business days",
+      "timeline": "5–7 business days",
       "headline": "A clean first website that makes the business look real, reachable, and current."
     },
     {
       "id": "refresh",
       "name": "Website Refresh",
       "price": 900,
-      "timeline": "4\u20136 business days",
+      "timeline": "4–6 business days",
       "headline": "A tighter, more trustworthy site that converts better without overcomplicating the build."
     },
     {
       "id": "tune-up",
       "name": "Quick Wins Tune-Up",
       "price": 500,
-      "timeline": "2\u20133 business days",
+      "timeline": "2–3 business days",
       "headline": "A short project focused on the highest-impact fixes instead of a full rebuild."
     }
   ],
@@ -72,10 +72,10 @@
       "recommendedPackage": "refresh",
       "estimatedValue": 900,
       "quickPitch": "I spotted meta description, h1 heading issues that make the site harder to trust and use.",
-      "nextAction": "Send or review follow-up email if no reply yet.",
-      "lastTouch": "2026-03-28",
-      "followUpOn": "2026-04-02",
-      "notes": "Initial outreach email sent successfully to TheHorseshoe@yahoo.com. Follow-up draft created later.",
+      "nextAction": "Wait for reply. If no response by Apr 10, send soft close.",
+      "lastTouch": "2026-04-03",
+      "followUpOn": "2026-04-10",
+      "notes": "Initial outreach email sent successfully to TheHorseshoe@yahoo.com. Follow-up draft created later.\nFollow-up #2 sent 2026-04-02 via email to TheHorseshoe@yahoo.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -89,7 +89,7 @@
     },
     {
       "id": "gypsy-sips-caf-sierra-vista",
-      "businessName": "Gypsy Sips Caf\u00e9",
+      "businessName": "Gypsy Sips Café",
       "city": "Sierra Vista",
       "website": null,
       "hasWebsite": true,
@@ -156,12 +156,12 @@
       "stage": "Scored",
       "auditScore": 0,
       "siteHealth": "F",
-      "leadTemperature": "\ud83d\udd25\ud83d\udd25\ud83d\udd25 HOT LEAD (no site)",
+      "leadTemperature": "🔥🔥🔥 HOT LEAD (no site)",
       "topIssues": [
         "No Website"
       ],
       "priorityReasons": [
-        "No usable website \u2014 easiest value conversation"
+        "No usable website — easiest value conversation"
       ],
       "cautions": [
         "No public email found"
@@ -172,7 +172,7 @@
       "nextAction": "Call or walk in with the audit and ask who handles the website.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "No website at all \u2014 call (520) 586-2525",
+      "notes": "No website at all — call (520) 586-2525",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -218,10 +218,10 @@
       "recommendedPackage": "refresh",
       "estimatedValue": 900,
       "quickPitch": "I spotted h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
-      "nextAction": "Send or review polite follow-up and wait for owner decision.",
-      "lastTouch": "2026-03-30",
-      "followUpOn": "2026-04-02",
-      "notes": "Met Phil in person. Proposal emailed to philesapple@yahoo.com for him and his wife to review. Follow-up draft created.",
+      "nextAction": "Wait for reply. If no response by Apr 10, send soft close.",
+      "lastTouch": "2026-04-03",
+      "followUpOn": "2026-04-10",
+      "notes": "Met Phil in person. Proposal emailed to philesapple@yahoo.com for him and his wife to review. Follow-up draft created.\nFollow-up #2 sent 2026-04-02 via email to philesapple@yahoo.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -269,7 +269,7 @@
       "nextAction": "Call or walk in with the audit and ask who handles the website.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "No meta description, phone missing \u2014 (520) 732-8886",
+      "notes": "No meta description, phone missing — (520) 732-8886",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -365,7 +365,7 @@
       "nextAction": "Call or walk in with the audit and ask who handles the website.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "No contact info on site \u2014 (520) 459-7162",
+      "notes": "No contact info on site — (520) 459-7162",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -410,7 +410,7 @@
       "nextAction": "Call or walk in with the audit and ask who handles the website.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Copyright stuck at 2014 \u2014 (520) 458-5150",
+      "notes": "Copyright stuck at 2014 — (520) 458-5150",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -452,7 +452,7 @@
       "nextAction": "Research contact details before spending more time here.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Running on Google Sites \u2014 easy upgrade pitch",
+      "notes": "Running on Google Sites — easy upgrade pitch",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -531,7 +531,7 @@
       ],
       "priorityReasons": [],
       "cautions": [
-        "Site is already pretty polished \u2014 lower priority",
+        "Site is already pretty polished — lower priority",
         "No public email found",
         "Not enough pain to justify cold outreach right now"
       ],
@@ -541,7 +541,7 @@
       "nextAction": "Research contact details before spending more time here.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Mostly solid \u2014 copyright 2021",
+      "notes": "Mostly solid — copyright 2021",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -569,7 +569,7 @@
       "shouldPursue": true,
       "stage": "Contacted",
       "auditScore": 54,
-      "leadTemperature": "\ud83d\udd25 Lukewarm",
+      "leadTemperature": "🔥 Lukewarm",
       "topIssues": [
         "Meta Description",
         "H1 Heading",
@@ -620,7 +620,7 @@
       "shouldPursue": true,
       "stage": "Contacted",
       "auditScore": 47,
-      "leadTemperature": "\ud83d\udd25\ud83d\udd25 Warm Lead",
+      "leadTemperature": "🔥🔥 Warm Lead",
       "topIssues": [
         "Meta Description",
         "H1 Heading",
