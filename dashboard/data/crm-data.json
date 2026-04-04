@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-04T04:30:18.427Z",
+  "updatedAt": "2026-04-04T04:32:36.862Z",
   "packages": [
     {
       "id": "launch-pad",
@@ -731,6 +731,335 @@
       "followUpOn": "2026-04-07",
       "nextAction": "Wait for reply; if no response, follow up later.",
       "shouldPursue": true
+    },
+    {
+      "id": "caf-a-la-c-art-tucson",
+      "businessName": "Café a la C'Art",
+      "city": "Tucson",
+      "website": "https://www.cafealacarttucson.com/",
+      "hasWebsite": true,
+      "publicEmail": "eat@cafealacarttucson.com",
+      "publicEmails": [
+        "eat@cafealacarttucson.com"
+      ],
+      "phone": "(520) 628-8533",
+      "phones": [
+        "(520) 628-8533"
+      ],
+      "platform": "facebook",
+      "outreachScore": 61,
+      "outreachTier": "pursue",
+      "shouldPursue": true,
+      "stage": "Scored",
+      "auditScore": 74,
+      "siteHealth": "B",
+      "leadTemperature": "🌤️ Decent",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: eat@cafealacarttucson.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Tucson scan 2026-04-03. Category: cafes.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-tucson-2026-04-03-cafes",
+      "importedAt": "2026-04-04T04:32:36.861Z"
+    },
+    {
+      "id": "the-studio-hair-artistry-tucson",
+      "businessName": "The Studio Hair Artistry",
+      "city": "Tucson",
+      "website": "https://www.thestudiotucson.com/",
+      "hasWebsite": true,
+      "publicEmail": "hair.artistry@thestudiotucson.com",
+      "publicEmails": [
+        "hair.artistry@thestudiotucson.com"
+      ],
+      "phone": "2545352419",
+      "phones": [
+        "2545352419"
+      ],
+      "platform": "facebook",
+      "outreachScore": 58,
+      "outreachTier": "pursue",
+      "shouldPursue": true,
+      "stage": "Scored",
+      "auditScore": 80,
+      "siteHealth": "B",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: hair.artistry@thestudiotucson.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Tucson scan 2026-04-03. Category: salons.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-tucson-2026-04-03-salons",
+      "importedAt": "2026-04-04T04:32:36.862Z"
+    },
+    {
+      "id": "a-tucson-barbershop-tucson",
+      "businessName": "A Tucson Barbershop",
+      "city": "Tucson",
+      "website": "https://www.atucsonbarbers.com/",
+      "hasWebsite": true,
+      "publicEmail": "latenightbarber@gmail.com",
+      "publicEmails": [
+        "latenightbarber@gmail.com",
+        "atucsonbarbershop@gmail.com"
+      ],
+      "phone": "9958988585",
+      "phones": [
+        "9958988585"
+      ],
+      "platform": "facebook",
+      "outreachScore": 58,
+      "outreachTier": "pursue",
+      "shouldPursue": true,
+      "stage": "Scored",
+      "auditScore": 80,
+      "siteHealth": "B",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: latenightbarber@gmail.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Tucson scan 2026-04-03. Category: barbers.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-tucson-2026-04-03-barbers",
+      "importedAt": "2026-04-04T04:32:36.862Z"
+    },
+    {
+      "id": "gentlemen-s-choice-barber-shop-tucson",
+      "businessName": "Gentlemen's Choice Barber Shop",
+      "city": "Tucson",
+      "website": "https://gentlemenschoicebarbershop.com/",
+      "hasWebsite": true,
+      "publicEmail": null,
+      "publicEmails": [],
+      "phone": "1775205049",
+      "phones": [
+        "1775205049"
+      ],
+      "platform": "facebook",
+      "outreachScore": 58,
+      "outreachTier": "pursue",
+      "shouldPursue": true,
+      "stage": "Scored",
+      "auditScore": 81,
+      "siteHealth": "B",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: user@domain.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Tucson scan 2026-04-03. Category: barbers.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-tucson-2026-04-03-barbers",
+      "importedAt": "2026-04-04T04:32:36.862Z"
+    },
+    {
+      "id": "pamper-me-suites-sierra-vista",
+      "businessName": "Pamper Me Suites",
+      "city": "Sierra Vista",
+      "website": "https://pampermesuites.com/",
+      "hasWebsite": true,
+      "publicEmail": "typesetit@att.net",
+      "publicEmails": [
+        "typesetit@att.net"
+      ],
+      "phone": "3333333333",
+      "phones": [
+        "3333333333"
+      ],
+      "platform": "facebook",
+      "outreachScore": 68,
+      "outreachTier": "pursue",
+      "shouldPursue": true,
+      "stage": "Scored",
+      "auditScore": 66,
+      "siteHealth": "C",
+      "leadTemperature": "🌤️ Decent",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: typesetit@att.net",
+        "4 concrete website issues to reference",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, image alt tags, contact info issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Sierra Vista scan 2026-04-03. Category: salons.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-sierra-vista-2026-04-03-salons",
+      "importedAt": "2026-04-04T04:32:36.862Z"
+    },
+    {
+      "id": "ks-hair-sierra-vista",
+      "businessName": "KS Hair",
+      "city": "Sierra Vista",
+      "website": "https://www.kshairllc.com/",
+      "hasWebsite": true,
+      "publicEmail": "kellysepo@yahoo.com",
+      "publicEmails": [
+        "kellysepo@yahoo.com"
+      ],
+      "phone": "1775205939",
+      "phones": [
+        "1775205939"
+      ],
+      "platform": "facebook",
+      "outreachScore": 62,
+      "outreachTier": "pursue",
+      "shouldPursue": true,
+      "stage": "Scored",
+      "auditScore": 71,
+      "siteHealth": "B",
+      "leadTemperature": "🌤️ Decent",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: user@domain.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, contact info, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Sierra Vista scan 2026-04-03. Category: salons.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-sierra-vista-2026-04-03-salons",
+      "importedAt": "2026-04-04T04:32:36.862Z"
+    },
+    {
+      "id": "ccxxiii-sierra-vista",
+      "businessName": "CCXXIII",
+      "city": "Sierra Vista",
+      "website": "https://www.ccxxiii.com/",
+      "hasWebsite": true,
+      "publicEmail": "ccxxiiiaz@gmail.com",
+      "publicEmails": [
+        "ccxxiiiaz@gmail.com"
+      ],
+      "phone": "1751499372",
+      "phones": [
+        "1751499372"
+      ],
+      "platform": "facebook",
+      "outreachScore": 59,
+      "outreachTier": "pursue",
+      "shouldPursue": true,
+      "stage": "Scored",
+      "auditScore": 78,
+      "siteHealth": "B",
+      "leadTemperature": "🌤️ Decent",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: user@domain.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Sierra Vista scan 2026-04-03. Category: barbers.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-sierra-vista-2026-04-03-barbers",
+      "importedAt": "2026-04-04T04:32:36.862Z"
     }
   ]
 }
