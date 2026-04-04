@@ -7,7 +7,7 @@ OUTDIR="$HOME/Desktop/Audit reports/nightly-tombstone/$(date +%F)"
 LOGDIR="$WORKSPACE/tools/site-auditor/logs"
 mkdir -p "$OUTDIR" "$LOGDIR"
 
-categories=(restaurants retail "home services")
+categories=(restaurants retail "home services" "tattoo shops")
 
 had_failure=0
 ran_count=0

@@ -7,7 +7,7 @@ OUTDIR="$HOME/Desktop/Audit reports/nightly-sierra-vista/$(date +%F)"
 LOGDIR="$WORKSPACE/tools/site-auditor/logs"
 mkdir -p "$OUTDIR" "$LOGDIR"
 
-categories=(restaurants cafes salons barbers "home services" "auto repair" dental gyms retail)
+categories=(restaurants cafes salons barbers "home services" "auto repair" dental gyms retail "tattoo shops")
 
 had_failure=0
 ran_count=0

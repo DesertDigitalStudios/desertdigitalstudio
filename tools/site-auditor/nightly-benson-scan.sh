@@ -7,7 +7,7 @@ OUTDIR="$HOME/Desktop/Audit reports/nightly-benson/$(date +%F)"
 LOGDIR="$WORKSPACE/tools/site-auditor/logs"
 mkdir -p "$OUTDIR" "$LOGDIR"
 
-categories=(restaurants "auto repair" "home services" retail)
+categories=(restaurants "auto repair" "home services" retail "tattoo shops")
 
 had_failure=0
 ran_count=0
