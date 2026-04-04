@@ -1,5 +1,7 @@
-Desert Digital Studio business card — print-ready hybrid version
+Desert Digital Studio — Print-Ready Business Card
+Phone: (210) 993-0509
+QR Code: https://www.desertdigitalstudio.com
 Final size: 3.5in x 2in
-Bleed size exported: 3.75in x 2.25in
-Raster export: 1125 x 675 px (300 DPI equivalent)
-Files: front/back PNG + PDF + HTML proof
+Exported with bleed: 3.75in x 2.25in
+Raster: 1125 x 675 px (300 DPI)
+Files: front/back PNG + PDF
