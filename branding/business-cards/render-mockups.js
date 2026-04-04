@@ -59,6 +59,57 @@ const cards = {
   </div>
 </div>
 </body></html>`,
+  hybrid: `<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  :root{--text:#111827;--muted:#667085;--amber:#f59e0b;--line:#e5e7eb;}
+  *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#eef1f5,#dde4eb);font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--text)}
+  .canvas{width:1600px;height:1000px;padding:70px;position:relative;overflow:hidden}
+  .title{font-size:42px;font-weight:800;letter-spacing:-0.04em}.sub{margin-top:12px;color:#4b5563;font-size:20px}
+  .row{display:flex;gap:48px;margin-top:54px}
+  .card{width:700px;height:400px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(145deg,#ffffff 0%,#f9fafb 55%,#f3f4f6 100%);border:1px solid #d9e1ea;box-shadow:0 24px 60px rgba(15,23,42,.14)}
+  .front::before,.back::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 82% 16%, rgba(245,158,11,.10), transparent 24%),radial-gradient(circle at 16% 82%, rgba(245,158,11,.05), transparent 26%)}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(15,23,42,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(15,23,42,.03) 1px, transparent 1px);background-size:36px 36px;mask-image:linear-gradient(180deg,rgba(0,0,0,.4),transparent 78%)}
+  .front-inner{position:absolute;inset:0;padding:40px 48px 48px;display:flex;flex-direction:column;justify-content:flex-start;gap:28px}
+  .logo{width:295px}.eyebrow{font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#8b98a8}.tag{font-size:34px;line-height:1.08;font-weight:800;max-width:500px;letter-spacing:-.04em;color:#0f172a}
+  .pill{display:inline-block;padding:11px 18px;border:1px solid rgba(245,158,11,.25);background:#fff7e7;border-radius:999px;color:#9a6100;font-weight:700;font-size:17px;margin-top:auto;align-self:flex-start}
+  .back-inner{position:absolute;inset:0;padding:46px 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+  .name{font-size:38px;font-weight:800;letter-spacing:-.04em;color:#0f172a}.role{margin-top:10px;font-size:18px;color:#b76d00;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.meta{margin-top:24px;display:grid;gap:16px}
+  .meta-item{padding-bottom:12px;border-bottom:1px solid rgba(15,23,42,.08)} .label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8b98a8;margin-bottom:6px}
+  .value{font-size:20px;font-weight:600;color:#111827}.small{font-size:18px;color:#475467}.list{display:grid;gap:14px;align-content:start;padding-top:10px}
+  .service{padding:16px 18px;border:1px solid #ebe3d3;border-radius:18px;background:#fff8ec;font-size:19px;font-weight:700;color:#8a5600}
+  .footer-note{position:absolute;left:48px;right:48px;bottom:28px;display:flex;justify-content:space-between;color:#98a2b3;font-size:14px}
+</style></head><body>
+<div class="canvas">
+  <div class="title">Option C — White hybrid</div>
+  <div class="sub">Dark version layout, but with a lighter print-friendly feel.</div>
+  <div class="row">
+    <div class="card front"><div class="grid"></div><div class="front-inner">
+      <div>${lightLogo.replace('width="600" height="200"','')}</div>
+      <div>
+        <div class="eyebrow">Southern Arizona Web Design</div>
+        <div class="tag">Websites that make small businesses look current, credible, and easy to contact.</div>
+      </div>
+      <div class="pill">desertdigitalstudio.com</div>
+    </div></div>
+    <div class="card back"><div class="grid"></div><div class="back-inner">
+      <div>
+        <div class="name">Gabriel Maciel</div>
+        <div class="role">Founder · Web Designer</div>
+        <div class="meta">
+          <div class="meta-item"><div class="label">Email</div><div class="value">gabriel@desertdigitalstudio.com</div></div>
+          <div class="meta-item"><div class="label">Website</div><div class="value">desertdigitalstudio.com</div></div>
+          <div class="meta-item"><div class="label">Based in</div><div class="value small">Benson, Arizona · Serving Southern Arizona</div></div>
+        </div>
+      </div>
+      <div class="list">
+        <div class="service">Web Design</div>
+        <div class="service">Local SEO</div>
+        <div class="service">Website Maintenance</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+</body></html>`,
   light: `<!doctype html>
 <html><head><meta charset="utf-8"><style>
   :root{--bg:#f3f4f6;--card:#ffffff;--text:#111827;--muted:#5b6472;--amber:#f59e0b;--line:#e5e7eb;}
