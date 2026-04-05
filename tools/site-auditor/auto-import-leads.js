@@ -67,13 +67,15 @@ function main() {
       } catch { continue; }
 
       for (const b of (data.businesses || [])) {
-        if (!['prime', 'pursue'].includes(b.outreachTier)) {
+        const emails = cleanEmails(b.publicEmails);
+        // Include watch leads IF they have a clean email — reachability elevates them
+        const isWatchWithEmail = b.outreachTier === 'watch' && emails.length > 0;
+        if (!['prime', 'pursue'].includes(b.outreachTier) && !isWatchWithEmail) {
           skipped.push(b.name);
           continue;
         }
         if (existingNames.has(b.name.toLowerCase())) continue;
 
-        const emails = cleanEmails(b.publicEmails);
         const id = `${slugify(b.name)}-${city.toLowerCase().replace(/\s+/g, '-')}`;
 
         const lead = {
@@ -120,7 +122,7 @@ function main() {
     saveCRM(crm);
   }
 
-  // Sort best leads for the brief
+  // Sort best leads for the brief — prioritize prime/pursue, then watch with email
   const best = imported
     .filter(l => l.publicEmail)
     .sort((a, b) => {

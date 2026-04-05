@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-04T17:38:40.060Z",
+  "updatedAt": "2026-04-05T15:07:15.106Z",
   "packages": [
     {
       "id": "launch-pad",
@@ -1115,6 +1115,295 @@
       },
       "sourceReport": "legacy-dashboard",
       "importedAt": "2026-04-02T11:31:51.709Z"
+    },
+    {
+      "id": "arizona-inn-dining-tucson",
+      "businessName": "Arizona Inn Dining",
+      "city": "Tucson",
+      "website": "https://www.arizonainn.com/dining/",
+      "hasWebsite": true,
+      "publicEmail": "reservations@arizonainn.com",
+      "publicEmails": [
+        "reservations@arizonainn.com"
+      ],
+      "phone": "1099073696",
+      "phones": [
+        "1099073696"
+      ],
+      "platform": "facebook",
+      "outreachScore": 57,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 84,
+      "siteHealth": "B",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: reservations@arizonainn.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: restaurants.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-tucson-2026-04-05-restaurants",
+      "importedAt": "2026-04-05T15:07:15.101Z"
+    },
+    {
+      "id": "kingfisher-bar-grill-tucson",
+      "businessName": "Kingfisher Bar & Grill",
+      "city": "Tucson",
+      "website": "https://www.kingfishertucson.com/",
+      "hasWebsite": true,
+      "publicEmail": "eatfish@kingfishertucson.com",
+      "publicEmails": [
+        "eatfish@kingfishertucson.com",
+        "jacki@kingfishertucson.com"
+      ],
+      "phone": "1766194958",
+      "phones": [
+        "1766194958"
+      ],
+      "platform": "facebook",
+      "outreachScore": 40,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 86,
+      "siteHealth": "A",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: eatfish@kingfishertucson.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [
+        "Site is already pretty polished — lower priority"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: restaurants.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-tucson-2026-04-05-restaurants",
+      "importedAt": "2026-04-05T15:07:15.101Z"
+    },
+    {
+      "id": "coffee-x-change-bistro-tucson",
+      "businessName": "Coffee X Change Bistro",
+      "city": "Tucson",
+      "website": "https://coffee-x-change.com/",
+      "hasWebsite": true,
+      "publicEmail": "cxcowner@aol.com",
+      "publicEmails": [
+        "cxcowner@aol.com"
+      ],
+      "phone": "2287690004",
+      "phones": [
+        "2287690004"
+      ],
+      "platform": "facebook",
+      "outreachScore": 40,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 86,
+      "siteHealth": "A",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: cxcowner@aol.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [
+        "Site is already pretty polished — lower priority"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted meta description, h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: cafes.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-tucson-2026-04-05-cafes",
+      "importedAt": "2026-04-05T15:07:15.102Z"
+    },
+    {
+      "id": "circa-79-salon-tucson",
+      "businessName": "Circa 79 Salon",
+      "city": "Tucson",
+      "website": "https://www.circa79salon.com/",
+      "hasWebsite": true,
+      "publicEmail": "info@circa79salon.com",
+      "publicEmails": [
+        "info@circa79salon.com",
+        "states825.0015info@circa79salon.com"
+      ],
+      "phone": "1775377837",
+      "phones": [
+        "1775377837"
+      ],
+      "platform": "facebook",
+      "outreachScore": 57,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 84,
+      "siteHealth": "B",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: info@circa79salon.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted h1 heading, copyright up-to-date, clear cta (button/form) issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: salons.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-tucson-2026-04-05-salons",
+      "importedAt": "2026-04-05T15:07:15.102Z"
+    },
+    {
+      "id": "manda-le-bar-grill-sierra-vista",
+      "businessName": "Manda Le Bar & Grill",
+      "city": "Sierra Vista",
+      "website": "https://www.mandalebarandgrill.com/",
+      "hasWebsite": true,
+      "publicEmail": "mandalebarandgrill@gmail.com",
+      "publicEmails": [
+        "mandalebarandgrill@gmail.com"
+      ],
+      "phone": "2545352419",
+      "phones": [
+        "2545352419"
+      ],
+      "platform": "facebook",
+      "outreachScore": 40,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 86,
+      "siteHealth": "A",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: mandalebarandgrill@gmail.com",
+        "Has at least one conversion or trust issue",
+        "Facebook page instead of a real site"
+      ],
+      "cautions": [
+        "Site is already pretty polished — lower priority"
+      ],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted h1 heading, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Sierra Vista scan 2026-04-05. Category: restaurants.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-sierra-vista-2026-04-05-restaurants",
+      "importedAt": "2026-04-05T15:07:15.102Z"
+    },
+    {
+      "id": "luqa-barbershop-sierra-vista",
+      "businessName": "Luqa Barbershop",
+      "city": "Sierra Vista",
+      "website": "https://luqabarbershop.com/",
+      "hasWebsite": true,
+      "publicEmail": "luqabarbershopusa@gmail.com",
+      "publicEmails": [
+        "luqabarbershopusa@gmail.com"
+      ],
+      "phone": "5475638051",
+      "phones": [
+        "5475638051"
+      ],
+      "platform": "godaddy",
+      "outreachScore": 50,
+      "outreachTier": "watch",
+      "shouldPursue": false,
+      "stage": "Scored",
+      "auditScore": 80,
+      "siteHealth": "B",
+      "leadTemperature": "✅ Well Built",
+      "topIssues": [],
+      "priorityReasons": [
+        "Public email found: luqabarbershopusa@gmail.com",
+        "GoDaddy site builder — common small-business upgrade pitch"
+      ],
+      "cautions": [],
+      "recommendedPackage": "refresh",
+      "estimatedValue": 900,
+      "quickPitch": "I spotted image alt tags, social media links, copyright up-to-date issues that make the site harder to trust and use.",
+      "nextAction": "Draft a short audit-based email with 2–3 specific issues and a simple offer.",
+      "lastTouch": null,
+      "followUpOn": null,
+      "notes": "Imported from nightly Sierra Vista scan 2026-04-05. Category: barbers.",
+      "proposal": {
+        "status": "Not started",
+        "lastGeneratedAt": null,
+        "htmlPath": null,
+        "pdfPath": null,
+        "packageId": "refresh",
+        "price": 900
+      },
+      "sourceReport": "nightly-sierra-vista-2026-04-05-barbers",
+      "importedAt": "2026-04-05T15:07:15.103Z"
     }
   ]
 }
