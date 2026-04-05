@@ -37,3 +37,4 @@ __pycache__/
 # OS/editor noise
 .vscode/
 .idea/
+.yelp-config.json
