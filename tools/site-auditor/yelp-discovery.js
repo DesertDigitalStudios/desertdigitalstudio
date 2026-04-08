@@ -22,6 +22,45 @@ const path = require('path');
 
 const CONFIG_PATH = path.resolve(__dirname, '../../.yelp-config.json');
 
+const CITY_CONFIG = {
+  'Tucson, AZ': {
+    latitude: 32.2226,
+    longitude: -110.9747,
+    radius: 30000,
+    aliases: ['tucson']
+  },
+  'Sierra Vista, AZ': {
+    latitude: 31.5455,
+    longitude: -110.2773,
+    radius: 18000,
+    aliases: ['sierra vista']
+  },
+  'Benson, AZ': {
+    latitude: 31.9679,
+    longitude: -110.2945,
+    radius: 12000,
+    aliases: ['benson']
+  },
+  'Tombstone, AZ': {
+    latitude: 31.7129,
+    longitude: -110.0676,
+    radius: 10000,
+    aliases: ['tombstone']
+  },
+  'Willcox, AZ': {
+    latitude: 32.2528,
+    longitude: -109.8320,
+    radius: 12000,
+    aliases: ['willcox', 'willcox az']
+  },
+  'Vail, AZ': {
+    latitude: 32.0478,
+    longitude: -110.7123,
+    radius: 18000,
+    aliases: ['vail']
+  }
+};
+
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
 
 function loadApiKey() {
@@ -59,12 +98,20 @@ const YELP_CATEGORIES = {
 function yelpSearch({ location, categories, limit = 20, apiKey }) {
   return new Promise((resolve, reject) => {
     const yelpCat = YELP_CATEGORIES[categories] || categories;
+    const cityConfig = CITY_CONFIG[location];
     const params = new URLSearchParams({
-      location,
       categories: yelpCat,
       limit: Math.min(limit, 50),
-      sort_by: 'review_count'
+      sort_by: 'best_match'
     });
+
+    if (cityConfig?.latitude && cityConfig?.longitude) {
+      params.set('latitude', String(cityConfig.latitude));
+      params.set('longitude', String(cityConfig.longitude));
+      params.set('radius', String(cityConfig.radius || 15000));
+    } else {
+      params.set('location', location);
+    }
 
     const options = {
       hostname: 'api.yelp.com',
@@ -91,12 +138,35 @@ function yelpSearch({ location, categories, limit = 20, apiKey }) {
   });
 }
 
+function isLocalResult(business, city) {
+  const config = CITY_CONFIG[city];
+  if (!config?.aliases?.length) return true;
+  const haystack = [
+    business.location?.city,
+    business.location?.display_address?.join(', '),
+    business.location?.address1,
+    business.location?.address2,
+    business.location?.address3
+  ].filter(Boolean).join(' | ').toLowerCase();
+
+  return config.aliases.some(alias => haystack.includes(String(alias).toLowerCase()));
+}
+
 function yelpToInputFormat(businesses, city, category) {
+  const seen = new Set();
+
   return businesses
     .filter(b => b.name && !b.is_closed)
+    .filter(b => isLocalResult(b, city))
+    .filter(b => {
+      const key = `${String(b.id || '').toLowerCase()}|${String(b.name || '').toLowerCase()}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
     .map(b => ({
       name: b.name,
-      website: b.url ? undefined : undefined, // Yelp doesn't give website URLs in search
+      website: undefined,
       city: city.split(',')[0].trim(),
       category,
       yelpId: b.id,
@@ -105,8 +175,7 @@ function yelpToInputFormat(businesses, city, category) {
       rating: b.rating,
       reviewCount: b.review_count,
       address: b.location?.display_address?.join(', ') || null
-    }))
-    .filter(b => Object.keys(b).length > 0);
+    }));
 }
 
 // ─── CLI ──────────────────────────────────────────────────────────────────────
@@ -169,7 +238,7 @@ async function main() {
 
 // ─── MODULE EXPORT ────────────────────────────────────────────────────────────
 
-module.exports = { yelpSearch, yelpToInputFormat, loadApiKey, YELP_CATEGORIES };
+module.exports = { yelpSearch, yelpToInputFormat, loadApiKey, YELP_CATEGORIES, CITY_CONFIG };
 
 if (require.main === module) {
   main().catch(e => { console.error(e); process.exit(1); });
