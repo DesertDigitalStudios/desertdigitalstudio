@@ -182,6 +182,8 @@ function generateJSONReport(businesses, meta) {
       nextAction: b.leadProfile?.nextAction || null,
       quickPitch: b.leadProfile?.quickPitch || null,
       platform: b.leadProfile?.platform || null,
+      socialLinks: b.leadProfile?.socialLinks || {},
+      contactPages: b.leadProfile?.contactPages || [],
       checks: b.result.checks ? Object.fromEntries(
         Object.entries(b.result.checks).map(([k, v]) => [k, {
           pass: v.pass,

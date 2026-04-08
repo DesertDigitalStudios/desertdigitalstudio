@@ -8,6 +8,7 @@
 
 const path = require('path');
 const fs = require('fs');
+const { URL } = require('url');
 
 // Use the shared Playwright install from workspace/browser/
 // __dirname = .../workspace/tools/site-auditor — go up two levels to workspace
@@ -283,6 +284,129 @@ async function findBusinessWebsite(browser, businessName, city, timeout, verbose
   }
 }
 
+function absolutizeUrl(href, baseUrl) {
+  try {
+    return new URL(href, baseUrl).toString();
+  } catch {
+    return null;
+  }
+}
+
+function uniqueUrls(urls = []) {
+  const normalized = urls
+    .filter(Boolean)
+    .map(url => {
+      try {
+        const parsed = new URL(url);
+        parsed.hash = '';
+        return parsed.toString();
+      } catch {
+        return url;
+      }
+    });
+  return [...new Set(normalized)];
+}
+
+async function discoverContactPaths(page, baseUrl) {
+  return page.evaluate((base) => {
+    const CONTACT_KEYWORDS = [
+      'contact', 'about', 'location', 'locations', 'hours', 'menu',
+      'book', 'booking', 'appointment', 'appointments', 'connect',
+      'team', 'staff', 'visit', 'find-us', 'get-in-touch'
+    ];
+    const SOCIAL_PATTERNS = {
+      instagram: ['instagram.com'],
+      facebook: ['facebook.com', 'fb.com'],
+      tiktok: ['tiktok.com'],
+      linkedin: ['linkedin.com']
+    };
+
+    const toAbsolute = (href) => {
+      try {
+        return new URL(href, base).toString();
+      } catch {
+        return null;
+      }
+    };
+
+    const baseOrigin = (() => {
+      try {
+        return new URL(base).origin;
+      } catch {
+        return null;
+      }
+    })();
+
+    const mailtoEmails = new Set();
+    const contactLinks = [];
+    const socialLinks = {};
+    const seen = new Set();
+
+    document.querySelectorAll('a[href]').forEach((anchor) => {
+      const href = anchor.getAttribute('href') || '';
+      const text = (anchor.textContent || '').trim().toLowerCase();
+      const rel = `${text} ${href.toLowerCase()}`;
+
+      if (href.startsWith('mailto:')) {
+        const email = href.replace(/^mailto:/i, '').split('?')[0].trim().toLowerCase();
+        if (email) mailtoEmails.add(email);
+        return;
+      }
+
+      const abs = toAbsolute(href);
+      if (!abs) return;
+
+      for (const [platform, patterns] of Object.entries(SOCIAL_PATTERNS)) {
+        if (!socialLinks[platform] && patterns.some(pattern => abs.includes(pattern))) {
+          socialLinks[platform] = abs;
+        }
+      }
+
+      let sameOrigin = false;
+      try {
+        sameOrigin = !!baseOrigin && new URL(abs).origin === baseOrigin;
+      } catch {
+        sameOrigin = false;
+      }
+      if (!sameOrigin) return;
+
+      if (!CONTACT_KEYWORDS.some(keyword => rel.includes(keyword))) return;
+      if (seen.has(abs)) return;
+      seen.add(abs);
+      contactLinks.push(abs);
+    });
+
+    return {
+      mailtoEmails: Array.from(mailtoEmails),
+      contactLinks: contactLinks.slice(0, 5),
+      socialLinks
+    };
+  }, baseUrl);
+}
+
+async function fetchExtraContactPages(context, urls, timeout, verbose) {
+  const pages = [];
+  const pageTimeout = Math.min(Math.max(timeout, 8000), 12000);
+
+  for (const url of uniqueUrls(urls).slice(0, 3)) {
+    const page = await context.newPage();
+    try {
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: pageTimeout });
+      await page.waitForTimeout(800);
+      const html = await page.content();
+      const textContent = await page.evaluate(() => document.body?.innerText || '');
+      pages.push({ url, html, textContent });
+      if (verbose) console.log(`    Contact page scanned: ${url}`);
+    } catch (err) {
+      if (verbose) console.log(`    Contact page failed: ${url} (${err.message.substring(0, 80)})`);
+    } finally {
+      await page.close();
+    }
+  }
+
+  return pages;
+}
+
 // --- Site Audit ---
 async function auditWebsite(browser, url, timeout, verbose) {
   const context = await browser.newContext({
@@ -297,6 +421,9 @@ async function auditWebsite(browser, url, timeout, verbose) {
   let finalUrl = url;
   let loadTimeMs = null;
   let error = null;
+  let contactPages = [];
+  let socialLinks = {};
+  let mailtoEmails = [];
   
   try {
     const response = await page.goto(url, {
@@ -314,6 +441,17 @@ async function auditWebsite(browser, url, timeout, verbose) {
       await page.waitForTimeout(1000);
       html = await page.content();
       textContent = await page.evaluate(() => document.body?.innerText || '');
+
+      const discovery = await discoverContactPaths(page, finalUrl);
+      socialLinks = discovery.socialLinks || {};
+      mailtoEmails = discovery.mailtoEmails || [];
+      const extraPages = await fetchExtraContactPages(context, discovery.contactLinks || [], timeout, verbose);
+      contactPages = extraPages.map(p => p.url);
+
+      if (extraPages.length > 0) {
+        html = [html, ...extraPages.map(p => p.html)].join('\n\n<!-- extra contact page -->\n\n');
+        textContent = [textContent, ...extraPages.map(p => p.textContent)].join('\n\n');
+      }
     }
     
   } catch (err) {
@@ -333,7 +471,7 @@ async function auditWebsite(browser, url, timeout, verbose) {
     await context.close();
   }
   
-  return { url: finalUrl, html, textContent, loadTimeMs, error };
+  return { url: finalUrl, html, textContent, loadTimeMs, error, contactPages, socialLinks, mailtoEmails };
 }
 
 // --- Main ---

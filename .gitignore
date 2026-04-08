@@ -34,6 +34,8 @@ __pycache__/
 .env.*
 !.env.example
 
+tools/openclaw-usage-state.json
+
 # OS/editor noise
 .vscode/
 .idea/

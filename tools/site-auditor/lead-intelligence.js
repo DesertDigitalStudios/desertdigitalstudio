@@ -32,11 +32,15 @@ function unique(values) {
   return [...new Set((values || []).filter(Boolean))];
 }
 
+function normalizeEmail(email) {
+  return String(email || '').trim().toLowerCase();
+}
+
 function extractEmails({ html = '', textContent = '' } = {}) {
   const combined = `${html}\n${textContent}`;
   const matches = combined.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g) || [];
 
-  return unique(matches.map(email => email.trim().toLowerCase())).filter(email => {
+  return unique(matches.map(normalizeEmail)).filter(email => {
     if (email.length > 120) return false;
     if (/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(email)) return false;
     if (/(example|yourname|youremail)@/i.test(email)) return false;
@@ -229,9 +233,11 @@ function buildLeadProfile({ business = {}, result = {}, pageData = null } = {}) 
   const textContent = pageData?.textContent || '';
   const detectedEmails = extractEmails({ html, textContent });
   const detectedPhones = extractPhones({ html, textContent });
+  const mailtoEmails = unique((pageData?.mailtoEmails || []).map(normalizeEmail));
   const phones = unique([business.phone, ...(business.phone ? [] : detectedPhones), ...detectedPhones]);
-  const emails = detectedEmails;
+  const emails = unique([...detectedEmails, ...mailtoEmails]);
   const platform = detectPlatform({ url: website, html });
+  const socialLinks = pageData?.socialLinks || {};
   const failedChecks = result.failedChecks || [];
   const siteScore = typeof result.percentage === 'number'
     ? result.percentage
@@ -258,6 +264,8 @@ function buildLeadProfile({ business = {}, result = {}, pageData = null } = {}) 
     platformLabel: platformLabel(platform),
     siteScore,
     topIssues: failedChecks.slice(0, 5),
+    socialLinks,
+    contactPages: pageData?.contactPages || [],
     ...computed
   };
 }
