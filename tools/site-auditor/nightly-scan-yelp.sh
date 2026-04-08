@@ -25,7 +25,7 @@ ran_count=0
 TODAY=$(date +%F)
 
 for city_full in "${cities[@]}"; do
-  city_slug=$(echo "$city_full" | tr ',' ' ' | awk '{print $1}' | tr '[:upper:]' '[:lower:]')
+  city_slug=$(echo "$city_full" | cut -d',' -f1 | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g; s/-\{2,\}/-/g; s/^-//; s/-$//')
   OUTDIR="$HOME/Desktop/Audit reports/nightly-${city_slug}/${TODAY}"
   mkdir -p "$OUTDIR"
 
