@@ -89,6 +89,8 @@ function main() {
           phone: typeof b.phone === 'string' && b.phone.length > 6 ? b.phone : null,
           phones: typeof b.phone === 'string' && b.phone.length > 6 ? [b.phone] : [],
           platform: b.platform || 'custom',
+          socialLinks: b.socialLinks || {},
+          socialHandles: b.socialHandles || {},
           outreachScore: b.outreachScore || 0,
           outreachTier: b.outreachTier || 'watch',
           shouldPursue: b.shouldPursue || false,
@@ -124,7 +126,7 @@ function main() {
 
   // Sort best leads for the brief — prioritize prime/pursue, then watch with email
   const best = imported
-    .filter(l => l.publicEmail)
+    .filter(l => l.publicEmail || Object.keys(l.socialHandles || {}).length > 0)
     .sort((a, b) => {
       const ta = TIER_ORDER[a.outreachTier] ?? 4;
       const tb = TIER_ORDER[b.outreachTier] ?? 4;
@@ -144,6 +146,7 @@ function main() {
       tier: l.outreachTier,
       score: l.outreachScore,
       email: l.publicEmail,
+      socialHandles: l.socialHandles || {},
       pitch: l.quickPitch
     }))
   };

@@ -395,7 +395,14 @@ async function fetchExtraContactPages(context, urls, timeout, verbose) {
       await page.waitForTimeout(800);
       const html = await page.content();
       const textContent = await page.evaluate(() => document.body?.innerText || '');
-      pages.push({ url, html, textContent });
+      const discovery = await discoverContactPaths(page, page.url());
+      pages.push({
+        url,
+        html,
+        textContent,
+        mailtoEmails: discovery.mailtoEmails || [],
+        socialLinks: discovery.socialLinks || {}
+      });
       if (verbose) console.log(`    Contact page scanned: ${url}`);
     } catch (err) {
       if (verbose) console.log(`    Contact page failed: ${url} (${err.message.substring(0, 80)})`);
@@ -451,6 +458,8 @@ async function auditWebsite(browser, url, timeout, verbose) {
       if (extraPages.length > 0) {
         html = [html, ...extraPages.map(p => p.html)].join('\n\n<!-- extra contact page -->\n\n');
         textContent = [textContent, ...extraPages.map(p => p.textContent)].join('\n\n');
+        mailtoEmails = [...mailtoEmails, ...extraPages.flatMap(p => p.mailtoEmails || [])];
+        socialLinks = Object.assign({}, ...extraPages.map(p => p.socialLinks || {}), socialLinks);
       }
     }
     

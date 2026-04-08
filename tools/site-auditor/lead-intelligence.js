@@ -70,6 +70,50 @@ function detectPlatform({ url = '', html = '' } = {}) {
   return 'custom';
 }
 
+function extractSocialHandles(socialLinks = {}) {
+  const handles = {};
+
+  for (const [platform, rawUrl] of Object.entries(socialLinks || {})) {
+    if (!rawUrl) continue;
+    try {
+      const url = new URL(rawUrl);
+      const parts = url.pathname.split('/').filter(Boolean);
+      let handle = null;
+
+      if (platform === 'instagram') {
+        const first = parts[0];
+        if (first && !['p', 'reel', 'stories', 'explore', 'accounts'].includes(first.toLowerCase())) {
+          handle = first.replace(/^@/, '');
+        }
+      } else if (platform === 'facebook') {
+        const first = parts[0];
+        if (first && !['pages', 'share', 'profile.php', 'groups', 'events'].includes(first.toLowerCase())) {
+          handle = first.replace(/^@/, '');
+        }
+      } else if (platform === 'tiktok') {
+        const first = parts[0];
+        if (first && first.startsWith('@')) {
+          handle = first.replace(/^@/, '');
+        }
+      } else if (platform === 'linkedin') {
+        if (parts[0] === 'company' && parts[1]) handle = parts[1];
+        else if (parts[0] === 'in' && parts[1]) handle = parts[1];
+      }
+
+      if (handle) {
+        handles[platform] = {
+          handle,
+          url: rawUrl
+        };
+      }
+    } catch {
+      continue;
+    }
+  }
+
+  return handles;
+}
+
 function platformLabel(platform) {
   return LOW_EFFORT_PLATFORMS.find(item => item.key === platform)?.label || null;
 }
@@ -114,6 +158,7 @@ function computeOutreachScore({
   failedChecks = [],
   emails = [],
   phones = [],
+  socialHandles = {},
   platform = 'custom'
 }) {
   let outreachScore = 0;
@@ -123,6 +168,8 @@ function computeOutreachScore({
   const realWebsite = !!website && !error;
   const hasPublicEmail = emails.length > 0;
   const hasPhone = phones.length > 0;
+  const socialPlatforms = Object.keys(socialHandles || {});
+  const hasSocial = socialPlatforms.length > 0;
   const criticalIssue = failedChecks.some(issue =>
     /ssl|mobile|contact info|cta|meta description|h1/i.test(issue)
   );
@@ -163,6 +210,11 @@ function computeOutreachScore({
   } else {
     outreachScore -= 4;
     cautions.push('No phone captured');
+  }
+
+  if (hasSocial) {
+    outreachScore += 6;
+    reasons.push(`Social outreach path found: ${socialPlatforms.join(', ')}`);
   }
 
   if (failedChecks.length >= 4) {
@@ -220,9 +272,13 @@ function computeOutreachScore({
     cautions: unique(cautions).slice(0, 3),
     nextAction: hasPublicEmail
       ? 'Draft a short audit-based email with 2–3 specific issues and a simple offer.'
-      : hasPhone
-        ? 'Call or walk in with the audit and ask who handles the website.'
-        : 'Research contact details before spending more time here.',
+      : socialHandles.instagram?.handle
+        ? `DM them on Instagram (@${socialHandles.instagram.handle}) with a short audit note and simple offer.`
+        : socialHandles.facebook?.handle
+          ? `Message them on Facebook (${socialHandles.facebook.handle}) with a short audit note and simple offer.`
+          : hasPhone
+            ? 'Call or walk in with the audit and ask who handles the website.'
+            : 'Research contact details before spending more time here.',
     quickPitch
   };
 }
@@ -238,6 +294,7 @@ function buildLeadProfile({ business = {}, result = {}, pageData = null } = {}) 
   const emails = unique([...detectedEmails, ...mailtoEmails]);
   const platform = detectPlatform({ url: website, html });
   const socialLinks = pageData?.socialLinks || {};
+  const socialHandles = extractSocialHandles(socialLinks);
   const failedChecks = result.failedChecks || [];
   const siteScore = typeof result.percentage === 'number'
     ? result.percentage
@@ -251,6 +308,7 @@ function buildLeadProfile({ business = {}, result = {}, pageData = null } = {}) 
     failedChecks,
     emails,
     phones,
+    socialHandles,
     platform
   });
 
@@ -265,6 +323,7 @@ function buildLeadProfile({ business = {}, result = {}, pageData = null } = {}) 
     siteScore,
     topIssues: failedChecks.slice(0, 5),
     socialLinks,
+    socialHandles,
     contactPages: pageData?.contactPages || [],
     ...computed
   };
@@ -292,6 +351,8 @@ function fromAuditBusiness(business, sourceReport = null) {
     phone: leadProfile.primaryPhone || business.phone || null,
     phones: leadProfile.phones,
     platform: leadProfile.platform,
+    socialLinks: leadProfile.socialLinks || {},
+    socialHandles: leadProfile.socialHandles || {},
     outreachScore: leadProfile.outreachScore,
     outreachTier: leadProfile.outreachTier,
     shouldPursue: leadProfile.shouldPursue,
@@ -328,6 +389,7 @@ module.exports = {
   extractEmails,
   extractPhones,
   detectPlatform,
+  extractSocialHandles,
   computeOutreachScore,
   buildLeadProfile,
   fromAuditBusiness,

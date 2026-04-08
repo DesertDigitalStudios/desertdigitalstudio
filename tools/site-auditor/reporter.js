@@ -21,6 +21,16 @@ function formatCheckRow(key, check, meta) {
   return `| ${info.emoji} ${info.label} | ${status} | ${check.score}/${check.max} | ${check.detail} |`;
 }
 
+function formatSocialHandles(leadProfile = {}) {
+  const handles = leadProfile.socialHandles || {};
+  const lines = [];
+  if (handles.instagram?.handle) lines.push(`- 📸 Instagram: @${handles.instagram.handle}`);
+  if (handles.facebook?.handle) lines.push(`- 👍 Facebook: ${handles.facebook.handle}`);
+  if (handles.tiktok?.handle) lines.push(`- 🎵 TikTok: @${handles.tiktok.handle}`);
+  if (handles.linkedin?.handle) lines.push(`- 💼 LinkedIn: ${handles.linkedin.handle}`);
+  return lines.join('\n');
+}
+
 function generateBusinessSection(business, index) {
   const { name, website, city, phone, result, leadProfile = {} } = business;
   const rank = index + 1;
@@ -32,6 +42,7 @@ function generateBusinessSection(business, index) {
 - 📍 ${city || 'Unknown location'}
 ${phone ? `- 📞 ${phone}` : ''}
 ${leadProfile.publicEmail ? `- 📧 ${leadProfile.publicEmail}` : ''}
+${formatSocialHandles(leadProfile)}
 ${leadProfile.outreachScore ? `- 🎯 Outreach Worthiness: ${leadProfile.outreachScore}/100 (${leadProfile.outreachTier})` : ''}
 > **This is a PERFECT lead** — they have no web presence at all!
 
@@ -57,6 +68,7 @@ ${leadProfile.outreachScore ? `- 🎯 Outreach Worthiness: ${leadProfile.outreac
 ${city ? `- 📍 ${city}` : ''}
 ${phone ? `- 📞 ${phone}` : ''}
 ${leadProfile.publicEmail ? `- 📧 ${leadProfile.publicEmail}` : ''}
+${formatSocialHandles(leadProfile)}
 ${leadProfile.outreachScore ? `- 🎯 Outreach Worthiness: ${leadProfile.outreachScore}/100 (${leadProfile.outreachTier})` : ''}
 
 ### Audit Results
@@ -183,6 +195,7 @@ function generateJSONReport(businesses, meta) {
       quickPitch: b.leadProfile?.quickPitch || null,
       platform: b.leadProfile?.platform || null,
       socialLinks: b.leadProfile?.socialLinks || {},
+      socialHandles: b.leadProfile?.socialHandles || {},
       contactPages: b.leadProfile?.contactPages || [],
       checks: b.result.checks ? Object.fromEntries(
         Object.entries(b.result.checks).map(([k, v]) => [k, {

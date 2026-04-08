@@ -20,7 +20,18 @@ import sys,json
 d=json.load(sys.stdin)
 leads=d.get('bestLeads',[])
 for l in leads:
-    print(f\"  - {l.get('tier','?').upper()} {l.get('score',0)} | {l['name']} ({l['city']}) | {l.get('email','no email')}\")
+    contact = l.get('email')
+    socials = l.get('socialHandles') or {}
+    if not contact:
+        if socials.get('instagram', {}).get('handle'):
+            contact = '@' + socials['instagram']['handle'] + ' on Instagram'
+        elif socials.get('facebook', {}).get('handle'):
+            contact = socials['facebook']['handle'] + ' on Facebook'
+        elif socials.get('tiktok', {}).get('handle'):
+            contact = '@' + socials['tiktok']['handle'] + ' on TikTok'
+        elif socials.get('linkedin', {}).get('handle'):
+            contact = socials['linkedin']['handle'] + ' on LinkedIn'
+    print(f\"  - {l.get('tier','?').upper()} {l.get('score',0)} | {l['name']} ({l['city']}) | {contact or 'no direct contact'}\")
 " 2>/dev/null || echo "  (none)")
 
 # --- Qwen3 plain-English brief ---
@@ -37,8 +48,22 @@ except:
 if not leads:
     print("No new leads with clean emails today.")
 else:
+    def contact_label(lead):
+        if lead.get('email'):
+            return lead.get('email')
+        socials = lead.get('socialHandles') or {}
+        if socials.get('instagram', {}).get('handle'):
+            return '@' + socials['instagram']['handle'] + ' on Instagram'
+        if socials.get('facebook', {}).get('handle'):
+            return socials['facebook']['handle'] + ' on Facebook'
+        if socials.get('tiktok', {}).get('handle'):
+            return '@' + socials['tiktok']['handle'] + ' on TikTok'
+        if socials.get('linkedin', {}).get('handle'):
+            return socials['linkedin']['handle'] + ' on LinkedIn'
+        return 'none'
+
     leads_text = "\n".join(
-        f"- {l.get('name','?')} in {l.get('city','?')} | score {l.get('score',0)} | email: {l.get('email','none')} | issues: {l.get('pitch','')}"
+        f"- {l.get('name','?')} in {l.get('city','?')} | score {l.get('score',0)} | contact: {contact_label(l)} | issues: {l.get('pitch','')}"
         for l in leads[:6]
     )
     prompt = f"""You are a brief writer for a small web design studio in Southern Arizona. Write a plain-English morning brief (4-6 sentences max) covering these new leads from last night's scan. Tell the owner which leads to contact first, why, and any quick notes. Be direct, casual, and practical. No bullet points — just flowing sentences.
