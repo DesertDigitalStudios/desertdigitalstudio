@@ -34,6 +34,17 @@ const QUIET_END = 7;    // 7am
 // Keywords that flag a client inquiry
 const INQUIRY_KEYWORDS = ['website', 'quote', 'price', 'cost', 'interested', 'design', 'help', 'build', 'seo', 'hire', 'contact', 'inquiry', 'services'];
 
+// Vendor / platform outreach that is not a real lead
+const VENDOR_PATTERNS = [
+  'yelp.com',
+  'yelp places',
+  'places project',
+  'api trial',
+  'share how you\'re using',
+  'provide guidance',
+  'schedule a short google meet'
+];
+
 // Senders/domains to ignore (spam/marketing)
 const IGNORE_PATTERNS = ['noreply@', 'no-reply@', 'donotreply@', 'newsletter@', 'marketing@', 'notifications@', 'hello@squarespace', 'mail@waveapps', 'zoho.com'];
 
@@ -106,9 +117,12 @@ function shouldIgnore(from) {
 
 function classifyEmail(subject, body, from) {
   const text = ((subject || '') + ' ' + (body || '')).toLowerCase();
+  const fromText = String(from || '').toLowerCase();
+  const isVendor = VENDOR_PATTERNS.some(pattern => text.includes(pattern) || fromText.includes(pattern));
   const isInquiry = INQUIRY_KEYWORDS.some(kw => text.includes(kw));
   const isReply = (subject || '').toLowerCase().startsWith('re:');
   
+  if (isVendor) return { type: 'vendor', emoji: '🛠️', label: 'VENDOR / PLATFORM EMAIL' };
   if (isInquiry) return { type: 'inquiry', emoji: '🔥', label: 'CLIENT INQUIRY' };
   if (isReply) return { type: 'reply', emoji: '💬', label: 'REPLY' };
   return { type: 'general', emoji: '📬', label: 'NEW EMAIL' };
