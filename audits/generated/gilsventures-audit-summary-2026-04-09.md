@@ -1,96 +1,77 @@
-# Gil's Ventures, LLC — Website Audit Summary
+# Gil's Ventures, LLC — Website Audit + Recommended Scope
 
 **Website:** <https://www.gilsventures.com/>  
-**Reviewed:** 2026-04-09  
-**Business type:** Commercial and residential roofing / construction  
+**Reviewed:** 2026-04-10  
 **Prepared by:** Desert Digital Studio
 
-## Executive summary
-Gil's Ventures already has a workable website foundation. The business has a real domain, clear navigation, core service pages, a projects gallery, a contact page, and visible branding. This is not a teardown job.
+## Overall read
+Gil's Ventures already has a real website foundation. This is not a teardown or emergency rebuild.
 
-The main opportunity is improving **conversion clarity and trust on the first screen** so the site does a better job turning visitors into estimate requests. Right now the site feels serviceable, but it could do more to immediately communicate who the company is, where it serves, why it is trustworthy, and what the visitor should do next.
+The site is functional and credible enough to work from, but it could do a much better job turning visitors into estimate requests. The biggest opportunity is improving **clarity, trust, and conversion flow** so the business looks sharper and gets more value out of the traffic it already earns.
 
-## What is already working
-- Real business website with a professional domain
-- Clear navigation structure
-- Service business branding is easy to understand
-- Projects gallery adds proof that real work exists
+## What's working already
+- Professional domain and live website
+- Clear service-business structure
+- Projects/gallery content adds proof
 - Contact path exists
-- Social and email contact are present
+- Social and email are visible
+- Strong enough foundation to refresh instead of replace
 
-## Main opportunities
-### 1. Strengthen the hero section
-The first screen should do more selling.
+## Main issues worth fixing
+### 1. Hero section is not selling hard enough
+The first screen should explain the offer faster, make the service area obvious, and push the visitor toward a quote request.
 
-Recommended work:
-- tighten the headline and subheadline
-- make the service area clearer immediately
-- add a stronger primary CTA like **Get a Free Estimate** or **Request a Quote**
-- make the value proposition more obvious above the fold
+### 2. Contact and estimate CTAs could be stronger
+For a roofing business, the next step should be impossible to miss. Phone, quote, and contact actions should be more prominent, especially on mobile.
 
-### 2. Make contact and estimate actions more prominent
-For a roofing/construction business, visitors should be able to act fast.
+### 3. Trust signals can be stronger
+This type of business benefits a lot from visible credibility. Licensing, insured messaging, service area clarity, years in business, review proof, and reassurance copy should be more obvious.
 
-Recommended work:
-- add a clear CTA button in the header and hero
-- surface a clickable phone number more prominently
-- make the quote/contact path more obvious on mobile
+### 4. SEO basics need cleanup
+The site is good enough that basic optimization would be worth it, especially page titles, meta descriptions, local service-area targeting, and footer polish.
 
-### 3. Add stronger trust signals
-Contractor websites win when they reduce hesitation quickly.
+### 5. Tracking should be installed
+If the site is generating traffic or leads, it should be measurable. GA4 and conversion tracking should be part of the job.
 
-Recommended work:
-- add licensing / insured messaging if applicable
-- highlight service area and years in business
-- add review snippets or testimonial proof if available
-- strengthen credibility language near the top of the page
+## Recommended package
+## Website Refresh
+**Price:** **$900**  
+**Timeline:** **4–6 business days**
 
-### 4. Clean up basic SEO items
-The site is good enough to justify some basic optimization.
+### What this package would include
+- Homepage redesign or full-site refresh
+- Fix the most visible trust and conversion issues
+- Mobile cleanup and stronger calls to action
+- Updated content structure, contact flow, and SEO basics
+- GA4 setup with form-submit and phone-click tracking
+- Final polish and launch support
 
-Recommended work:
-- improve meta descriptions on key pages
-- tighten page title strategy if needed
-- make local search targeting clearer for service areas
-- update footer copyright/year
+## Why this is the right fit
+This site does not need to be rebuilt from scratch.
 
-### 5. Add tracking and measurement
-If the site is bringing in leads, it should be measurable.
+A refresh is the right middle ground because it keeps what is already working, while improving the parts that most affect trust and lead generation.
 
-Recommended work:
-- install GA4
-- track form submissions
-- track phone-click events on mobile
-- make future marketing decisions based on real traffic and conversion data
+## Lower-entry option
+## Quick Wins Tune-Up
+**Price:** **$500**  
+**Timeline:** **2–3 business days**
 
-## Recommended DDS scope
-### Best fit: Website Refresh
-This looks like a **refresh project**, not a full rebuild.
-
-A refresh would focus on:
-- hero/message cleanup
-- CTA and contact improvement
-- trust/proof polish
-- SEO basics
-- GA4 setup
-- overall conversion polish
-
-### Smaller option: Quick Wins Tune-Up
-If they want a lighter entry project, DDS could offer a smaller tune-up focused on the highest-impact fixes first.
-
-That version would prioritize:
+### What that would cover
 - CTA/button improvements
-- phone/contact visibility
-- hero copy cleanup
-- metadata/footer cleanup
-- analytics install
-
-## Suggested positioning if you pitch it
-"Your site already has a real foundation, which is good news. I would not recommend a full rebuild here. I would recommend a focused refresh that makes the site feel more trustworthy, makes estimates easier to request, and cleans up a few SEO and conversion issues so it performs better without overcomplicating it."
+- More visible phone/contact actions
+- Hero copy cleanup
+- Basic SEO cleanup
+- Footer/trust/polish fixes
+- GA4 install
 
 ## DDS recommendation
-- **Primary recommendation:** Website Refresh
-- **Backup entry offer:** Quick Wins Tune-Up
+If I were pitching this one, I would lead with:
 
-## Quick note
-This is the kind of project DDS can position well because it is not about tearing everything down. It is about making an already-functional site look sharper, feel more trustworthy, and convert better.
+> Your site already has a workable foundation, which is good news. I would not recommend a full rebuild here. I would recommend a focused refresh that makes the site feel more trustworthy, makes estimates easier to request, and cleans up a few SEO and conversion issues so it performs better without overcomplicating it.
+
+## Recommended investment
+- **Best fit:** Website Refresh — **$900**
+- **Smaller starter option:** Quick Wins Tune-Up — **$500**
+
+## My honest take
+This is a good DDS-style project because it is a performance polish job, not a rescue mission. That usually makes it easier to sell, easier to deliver, and easier for the client to say yes to.
