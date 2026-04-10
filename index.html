@@ -143,7 +143,9 @@
       cursor: pointer;
       background: none;
       border: none;
-      padding: 4px;
+      padding: 8px;
+      position: relative;
+      z-index: 1001;
     }
 
     .hamburger span {
@@ -152,20 +154,57 @@
       height: 2px;
       background: var(--text);
       border-radius: 2px;
-      transition: all 0.3s;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      transform-origin: center;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      z-index: 998;
+    }
+
+    .mobile-menu-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .mobile-menu {
-      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(320px, 84vw);
+      height: 100vh;
+      display: flex;
       flex-direction: column;
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px 24px;
+      background: rgba(22, 27, 34, 0.98);
+      border-left: 1px solid var(--border);
+      padding: 96px 24px 28px;
       gap: 4px;
+      transform: translateX(100%);
+      transition: transform 0.28s ease;
+      z-index: 999;
+      box-shadow: -20px 0 40px rgba(0, 0, 0, 0.35);
     }
 
     .mobile-menu a {
-      padding: 12px 0;
+      padding: 14px 0;
       color: var(--muted);
       font-size: 1rem;
       font-weight: 500;
@@ -175,7 +214,11 @@
 
     .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu a:hover { color: var(--text); }
-    .mobile-menu.open { display: flex; }
+    .mobile-menu.open { transform: translateX(0); }
+
+    body.menu-open {
+      overflow: hidden;
+    }
 
     /* ─── HERO ─── */
     #home {
@@ -734,10 +777,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-  <div class="mobile-menu" id="mobileMenu" role="navigation">
+  <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-hidden="true">
     <a href="#home" class="mobile-link">Home</a>
     <a href="#services" class="mobile-link">Services</a>
     <a href="/free-audit/" class="mobile-link">Free Audit</a>
+    <a href="#areas" class="mobile-link">Areas</a>
     <a href="#about" class="mobile-link">About</a>
     <a href="#contact" class="mobile-link">Contact</a>
   </div>
@@ -1154,17 +1199,32 @@
   // ─── Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+
+  function setMobileMenu(open) {
+    mobileMenu.classList.toggle('open', open);
+    mobileMenuBackdrop.classList.toggle('open', open);
+    hamburger.classList.toggle('active', open);
+    document.body.classList.toggle('menu-open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+  }
 
   hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open);
+    const isOpen = mobileMenu.classList.contains('open');
+    setMobileMenu(!isOpen);
   });
 
+  mobileMenuBackdrop.addEventListener('click', () => setMobileMenu(false));
+
   document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', () => setMobileMenu(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      setMobileMenu(false);
+    }
   });
 
   // ─── Contact form
