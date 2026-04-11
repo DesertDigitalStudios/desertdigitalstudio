@@ -49,9 +49,24 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="container split-section">
-          <div className="content-media">
-            <Image src="/images/restoration.jpg" alt="Gil's Ventures crew performing roof restoration work" width={900} height={700} />
+        <div className="container split-section split-section-proof">
+          <div className="proof-panel">
+            <div className="proof-stat">
+              <strong>40+</strong>
+              <span>Years of roofing experience in the Borderland</span>
+            </div>
+            <div className="proof-stat">
+              <strong>20+</strong>
+              <span>Years supporting federal and public-sector work</span>
+            </div>
+            <div className="proof-stat">
+              <strong>10</strong>
+              <span>Manufacturer certifications and applicator affiliations</span>
+            </div>
+            <div className="proof-stat">
+              <strong>NM</strong>
+              <span>Licensed, bonded, and insured for protected project delivery</span>
+            </div>
           </div>
           <div className="content-block">
             <span className="eyebrow">About Gil&apos;s Ventures</span>

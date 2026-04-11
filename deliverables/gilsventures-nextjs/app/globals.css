@@ -69,8 +69,13 @@ main { min-height: 60vh; }
 .service-card h3, .reason-card h3, .area-card h3, .contact-card h3 { margin: 0 0 0.75rem; color: var(--navy); }
 .service-card p, .project-copy p, .reason-card p, .area-card p, .contact-card p, .timeline-card p, .content-block p, .content-block li { color: var(--text-soft); line-height: 1.7; }
 .split-section, .about-grid, .contact-grid { grid-template-columns: repeat(2, 1fr); align-items: center; }
+.split-section-proof { align-items: stretch; }
 .content-media img, .project-image img, .gallery-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .content-media, .project-image { overflow: hidden; border-radius: 28px; min-height: 340px; box-shadow: var(--shadow); }
+.proof-panel { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; background: var(--navy); color: var(--white); border-radius: 28px; padding: 2rem; box-shadow: var(--shadow); }
+.proof-stat { padding: 1.25rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; background: rgba(255,255,255,0.04); }
+.proof-stat strong { display: block; font-size: 2.2rem; line-height: 1; margin-bottom: 0.6rem; color: var(--amber-light); }
+.proof-stat span { display: block; color: rgba(255,255,255,0.84); line-height: 1.55; }
 .projects-grid { grid-template-columns: repeat(2, 1fr); }
 .project-card { overflow: hidden; }
 .project-image { min-height: 280px; border-radius: 0; }
@@ -123,7 +128,7 @@ main { min-height: 60vh; }
 @media (max-width: 768px) {
   .section { padding: 4rem 0; }
   .hero-inner { min-height: 66vh; padding: 5rem 0; }
-  .trust-grid, .cards-grid, .split-section, .projects-grid, .reasons-grid, .gallery-grid, .areas-grid, .about-grid, .contact-grid, .footer-grid, .form-grid, .cta-band-inner { grid-template-columns: 1fr; }
+  .trust-grid, .cards-grid, .split-section, .projects-grid, .reasons-grid, .gallery-grid, .areas-grid, .about-grid, .contact-grid, .footer-grid, .form-grid, .cta-band-inner, .proof-panel { grid-template-columns: 1fr; }
   .service-row { grid-template-columns: 1fr; }
   .service-row .service-icon { width: 72px; height: 72px; }
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
