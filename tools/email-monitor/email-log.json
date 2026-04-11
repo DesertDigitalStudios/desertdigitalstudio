@@ -1,5 +1,19 @@
 [
   {
+    "from": "\"Desert Digital Studio\" <gabriel@desertdigitalstudio.com>",
+    "subject": "[Free Audit Lead] Gil’s ventures — 85/100",
+    "type": "inquiry",
+    "body": "New free audit lead received from the public Desert Digital Studio site. Name: Gilbert gil Business: Gil’s ventures Email: baconstrps@gmail.com Phone: N/A Website: https://Gilsventures.com Goals: N/A Score: 85/100 Top issues: H1 Heading Summary: Your homepage has a few easy improvement opportunities: H1 Heading. --- CRM-FRIENDLY JSON --- { \"source\": \"Desert Digital Studio free audit page\", \"submittedAt\": \"2026-04-09T23:56:47.020Z\", \"name\": \"Gilbert gil\", \"email\": \"baconstrps@gmail.com\", \"businessName\": \"Gil’s ventures\", \"phone\": \"\", \"goals\": \"\", \"website\": \"https://Gilsventures.com\", \"audit\": { \"score\": 85, \"checks\": [ { \"label\": \"HTTPS\", \"pass\": true }, { \"label\": \"Title Tag\", \"pass\": true }, { \"label\": \"Meta Description\", \"pass\": true }, { \"label\": \"H1 Heading\", \"pass\": false, \"failMessage\": \"Main page heading is missing or unclear.\" }, { \"label\": \"Contact Path\", \"pass\": true }, { \"label\": \"Calls to Action\", \"pass\": true } ], \"topIssues\": [ \"H1 Heading\" ], \"summary\": \"Your homepage h...",
+    "date": "2026-04-09T23:59:58.935Z"
+  },
+  {
+    "from": "\"Desert Digital Studio\" <gabriel@desertdigitalstudio.com>",
+    "subject": "[Free Audit Lead] Trounce R Us — 65/100",
+    "type": "inquiry",
+    "body": "New free audit lead received from the public Desert Digital Studio site. Name: G Feria Business: Trounce R Us Email: ligma@balls.com Phone: N/A Website: https://tranny69.com Goals: More calls Score: 65/100 Top issues: Meta Description, Contact Path Summary: Your homepage has a few easy improvement opportunities: Meta Description, Contact Path. --- CRM-FRIENDLY JSON --- { \"source\": \"Desert Digital Studio free audit page\", \"submittedAt\": \"2026-04-09T20:14:57.944Z\", \"name\": \"G Feria\", \"email\": \"ligma@balls.com\", \"businessName\": \"Trounce R Us\", \"phone\": \"\", \"goals\": \"More calls\", \"website\": \"https://tranny69.com\", \"audit\": { \"score\": 65, \"checks\": [ { \"label\": \"HTTPS\", \"pass\": true }, { \"label\": \"Title Tag\", \"pass\": true }, { \"label\": \"Meta Description\", \"pass\": false, \"failMessage\": \"Meta description is missing.\" }, { \"label\": \"H1 Heading\", \"pass\": true }, { \"label\": \"Contact Path\", \"pass\": false, \"failMessage\": \"Contact path is weak or not obvious.\" }, { \"label\": \"Calls to Action\", \"pass...",
+    "date": "2026-04-09T23:59:55.193Z"
+  },
+  {
     "from": "baconstrps@icloud.com",
     "subject": "Test",
     "type": "inquiry",
