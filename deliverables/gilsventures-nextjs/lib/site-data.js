@@ -58,6 +58,8 @@ export const galleryItems = [
   { src: '/images/jackie-robinson-apts.jpg', alt: 'Roofing work completed at Jackie Robinson apartment complex', caption: 'Multifamily commercial roofing', category: 'Commercial Roofing' },
   { src: '/images/canopy.jpg', alt: 'Metal canopy installation completed for a Customs and Border Protection facility', caption: 'CBP metal canopy system', category: 'Federal / Government Projects' },
   { src: '/images/restoration.jpg', alt: 'Exterior restoration and sealing work completed at the CBP Santa Teresa Station', caption: 'CBP Santa Teresa restoration', category: 'Federal / Government Projects' },
+  { src: '/images/metal-roof-2.jpg', alt: 'Desert Hills Elementary School roof recovery work completed using a no-dollar-limit warranty roofing system', caption: 'Desert Hills Elementary School roof recovery', category: 'Federal / Government Projects' },
+  { src: '/images/restoration-2.jpg', alt: 'Desert Hills Elementary School roof restoration and exterior repair work in the Borderland', caption: 'Desert Hills Elementary School restoration', category: 'Federal / Government Projects' },
   { src: '/images/shingle-roof.jpg', alt: 'Completed residential shingle roof in El Paso', caption: 'Architectural shingle replacement', category: 'Residential Roofing' },
   { src: '/images/shingle-install.jpg', alt: 'Residential roofing crew installing shingles', caption: 'Residential installation in progress', category: 'Residential Roofing' },
   { src: '/images/tile-roof.jpg', alt: 'Tile roof installation on custom residential home', caption: 'Concrete tile roof system', category: 'Residential Roofing' },
