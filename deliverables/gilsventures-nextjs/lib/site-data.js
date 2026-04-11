@@ -68,7 +68,7 @@ export const galleryItems = [
   { src: '/images/shingle-roof.jpg', alt: 'Completed residential shingle roof in El Paso', caption: 'Architectural shingle replacement', category: 'Residential Roofing' },
   { src: '/images/residential-mexican-clay-s-tile.jpg', alt: 'Completed Mexican clay S-tile roof on a residential home in the Borderland', caption: 'Mexican clay S-tile residential roof', category: 'Residential Roofing' },
   { src: '/images/residential-standing-seam-grey.jpg', alt: 'Completed light grey standing seam metal roof on a residential home', caption: 'Light grey standing seam residential roof', category: 'Residential Roofing' },
-  { src: '/images/shingle-roof.jpg', alt: 'Completed residential shingle roof in El Paso', caption: 'Completed residential shingle roof', category: 'Residential Roofing' },
+  { src: '/images/residential-completed-shingle-drone.jpg', alt: 'Completed residential shingle roof captured by drone at golden hour', caption: 'Completed residential shingle roof', category: 'Residential Roofing' },
   { src: '/images/metal-roof-1.jpg', alt: 'Standing seam metal roof on commercial structure', caption: 'Standing seam detail', category: 'Metal & Sheet Metal' },
   { src: '/images/metal-roof-2.jpg', alt: 'Metal roofing panels installed on sloped roof', caption: 'Exposed fastener metal roofing', category: 'Metal & Sheet Metal' },
   { src: '/images/catwalk-1.jpg', alt: 'Custom sheet metal catwalk and roof access detail', caption: 'Custom sheet metal fabrication', category: 'Metal & Sheet Metal' },
