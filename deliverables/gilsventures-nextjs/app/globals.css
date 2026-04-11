@@ -61,6 +61,8 @@ main { min-height: 60vh; }
 .cards-grid { grid-template-columns: repeat(3, 1fr); }
 .service-card, .project-card, .area-card, .reason-card, .contact-card, .timeline-card, .cert-card, .gallery-card { background: var(--white); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); }
 .service-card { padding: 1.5rem; }
+.service-card-serious { padding-top: 1.25rem; }
+.service-kicker { display: inline-block; margin-bottom: 0.95rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
 .service-icon, .reason-icon { font-size: 2rem; margin-bottom: 1rem; }
 .service-card h3, .reason-card h3, .area-card h3, .contact-card h3 { margin: 0 0 0.75rem; color: var(--navy); }
 .service-card p, .project-copy p, .reason-card p, .area-card p, .contact-card p, .timeline-card p, .content-block p, .content-block li { color: var(--text-soft); line-height: 1.7; }

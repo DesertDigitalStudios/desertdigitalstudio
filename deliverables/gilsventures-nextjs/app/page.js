@@ -38,9 +38,9 @@ export default function HomePage() {
           <span className="eyebrow">Services</span>
           <h2 className="section-title">Roofing systems built for homes, facilities, and demanding job sites</h2>
           <div className="cards-grid">
-            {services.map((service) => (
-              <article key={service.slug} className="service-card">
-                <div className="service-icon">{service.icon}</div>
+            {services.map((service, index) => (
+              <article key={service.slug} className="service-card service-card-serious">
+                <div className="service-kicker">Service {String(index + 1).padStart(2, '0')}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
               </article>
