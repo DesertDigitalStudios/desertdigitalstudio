@@ -20,7 +20,7 @@ export const services = [
 ];
 
 export const featuredProjects = [
-  { image: '/images/federal-1.webp', category: 'Federal', title: 'Federal Government Roofing', description: 'Government facility roofing completed with proper documentation, site safety, and durable system performance.' },
+  { image: '/images/federal-5.webp', category: 'Federal', title: 'Federal Government Roofing', description: 'Government facility roofing completed with proper documentation, site safety, and durable system performance.' },
   { image: '/images/commercial-featured.webp', category: 'Commercial', title: 'Commercial Roofing Project', description: 'Commercial roofing scope delivered on schedule with quality materials and clean execution.' },
   { image: '/images/residential-5.webp', category: 'Residential', title: 'Residential Reroof — Aerial View', description: 'Aerial view of a completed residential roofing project in the El Paso Borderland area.' },
   { image: '/images/metal-1.webp', category: 'Metal & Sheet Metal', title: 'Metal Roofing System', description: 'Custom metal roofing installation with precision fit, flashing details, and long-term weather performance.' },
