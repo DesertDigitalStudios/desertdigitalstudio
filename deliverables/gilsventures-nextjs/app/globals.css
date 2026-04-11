@@ -31,6 +31,8 @@ main { min-height: 60vh; }
 .btn-outline-light { border-color: var(--white); color: var(--white); background: transparent; }
 .btn-ghost-accent { color: var(--amber); background: transparent; }
 .site-header { position: sticky; top: 0; z-index: 150; background: rgba(255,255,255,0.96); border-bottom: 1px solid rgba(0,0,0,0.05); backdrop-filter: blur(10px); }
+.header-logo { display: flex; align-items: center; flex-shrink: 0; }
+.header-logo img { width: 180px; height: auto; display: block; }
 .header-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem; min-height: 88px; }
 .desktop-nav { display: flex; justify-content: center; gap: 1.4rem; font-weight: 600; color: var(--slate); }
 .header-actions { display: flex; align-items: center; gap: 0.9rem; }
