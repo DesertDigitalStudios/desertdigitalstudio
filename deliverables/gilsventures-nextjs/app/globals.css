@@ -64,6 +64,8 @@ main { min-height: 60vh; }
 .service-card-serious { padding-top: 1.25rem; }
 .service-kicker { display: inline-block; margin-bottom: 0.95rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
 .service-icon, .reason-icon { font-size: 2rem; margin-bottom: 1rem; }
+.reason-card-serious { padding-top: 1.25rem; }
+.reason-kicker { display: inline-block; margin-bottom: 0.95rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
 .service-card h3, .reason-card h3, .area-card h3, .contact-card h3 { margin: 0 0 0.75rem; color: var(--navy); }
 .service-card p, .project-copy p, .reason-card p, .area-card p, .contact-card p, .timeline-card p, .content-block p, .content-block li { color: var(--text-soft); line-height: 1.7; }
 .split-section, .about-grid, .contact-grid { grid-template-columns: repeat(2, 1fr); align-items: center; }

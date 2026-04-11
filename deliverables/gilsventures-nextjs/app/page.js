@@ -95,13 +95,13 @@ export default function HomePage() {
           </div>
           <div className="reasons-grid">
             {[
-              ['🧱', 'Proven systems', 'Experience across shingle, tile, TPO, standing seam, repairs, and restoration.'],
-              ['📋', 'Reliable coordination', 'Clear communication for homeowners, property managers, and public-sector stakeholders.'],
-              ['🛡️', 'Protected work', 'Licensed in New Mexico, bonded, and backed by general liability plus workers’ compensation coverage.'],
-              ['🤝', 'Family-owned accountability', 'A local team whose name stays tied to every finished roof.'],
-            ].map(([icon, title, text]) => (
-              <article key={title} className="reason-card">
-                <div className="reason-icon">{icon}</div>
+              ['01', 'Proven systems', 'Experience across shingle, tile, TPO, standing seam, repairs, and restoration.'],
+              ['02', 'Reliable coordination', 'Clear communication for homeowners, property managers, and public-sector stakeholders.'],
+              ['03', 'Protected work', 'Licensed in New Mexico, bonded, and backed by general liability plus workers’ compensation coverage.'],
+              ['04', 'Family-owned accountability', 'A local team whose name stays tied to every finished roof.'],
+            ].map(([number, title, text]) => (
+              <article key={title} className="reason-card reason-card-serious">
+                <div className="reason-kicker">{number}</div>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </article>
