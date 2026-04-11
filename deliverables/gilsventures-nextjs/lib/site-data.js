@@ -56,6 +56,8 @@ export const galleryItems = [
   { src: '/images/cbp-siding-1.jpg', alt: 'Metal wall and roofing detail at federal project', caption: 'Federal metal panel integration', category: 'Federal / Government Projects' },
   { src: '/images/fort-bliss-tpo.jpg', alt: 'Federal reroof project in progress in the El Paso Borderland', caption: 'Federal reroof project', category: 'Federal / Government Projects' },
   { src: '/images/jackie-robinson-apts.jpg', alt: 'Roofing work completed at Jackie Robinson apartment complex', caption: 'Multifamily commercial roofing', category: 'Commercial Roofing' },
+  { src: '/images/la-cantera-1.jpg', alt: 'La Cantera Shopping Center no-dollar-limit warranty SBS roofing system under installation', caption: 'La Cantera Shopping Center SBS roofing system', category: 'Commercial Roofing' },
+  { src: '/images/la-cantera-2.jpg', alt: 'La Cantera Shopping Center custom metal cap, gutters, and standing seam soffit detail by Berridge', caption: 'La Cantera Shopping Center metal detail', category: 'Commercial Roofing' },
   { src: '/images/canopy.jpg', alt: 'Metal canopy installation completed for a Customs and Border Protection facility', caption: 'CBP metal canopy system', category: 'Federal / Government Projects' },
   { src: '/images/restoration.jpg', alt: 'Exterior restoration and sealing work completed at the CBP Santa Teresa Station', caption: 'CBP Santa Teresa restoration', category: 'Federal / Government Projects' },
   { src: '/images/metal-roof-2.jpg', alt: 'Desert Hills Elementary School roof recovery work completed using a no-dollar-limit warranty roofing system', caption: 'Desert Hills Elementary School roof recovery', category: 'Federal / Government Projects' },
