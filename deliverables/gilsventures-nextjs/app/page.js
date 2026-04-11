@@ -97,8 +97,8 @@ export default function HomePage() {
             </div>
             <div>
               <p className="section-body">
-                From single-family homes to military installations, Gil's Ventures brings the same level of craft,
-                accountability, and field-tested experience to every project.
+                Gil&apos;s Ventures provides meticulous residential and commercial roofing services for single-ply,
+                shingle, tile, metal, restoration, coating, built-up, and SBS roofing systems across the Borderland.
               </p>
               <Link href="/services/" className="btn btn-ghost-accent" style={{ marginTop: '1.25rem' }}>
                 See all services →
@@ -170,7 +170,7 @@ export default function HomePage() {
               <h2 className="section-title">Projects that show the range of the company</h2>
             </div>
             <p className="section-body">
-              He already has the kind of project history that should make people feel confident fast. The site should surface that immediately.
+              From Fort Bliss and Customs and Border Protection to Housing Authority work and residential roofing, the project history shows the scale and consistency behind the company.
             </p>
           </div>
           <div className="featured-projects-grid">
@@ -180,6 +180,7 @@ export default function HomePage() {
                   <Image src={project.image} alt={project.title} fill style={{ objectFit: 'cover' }} />
                 </div>
                 <div className="featured-project-copy">
+                  <span className="featured-project-kicker">{project.eyebrow}</span>
                   <h3>{project.title}</h3>
                   <p>{project.summary}</p>
                 </div>
@@ -194,13 +195,16 @@ export default function HomePage() {
           <div className="certs-header">
             <span className="eyebrow">Certified applicators</span>
             <h2 className="section-title" style={{ fontSize: '1.75rem' }}>
-              Manufacturer-certified for the systems we install
+              Certified Applicators of Versico, Weather Stop, Duro-Last, and CertainTeed
             </h2>
           </div>
           <div className="certs-grid">
             {certifications.map((c) => (
               <div key={c.alt} className="cert-card">
-                <Image src={c.src} alt={c.alt} width={180} height={68} style={{ objectFit: 'contain', maxHeight: '68px', width: 'auto' }} />
+                <div className="cert-card-inner">
+                  <Image src={c.src} alt={c.alt} width={180} height={68} style={{ objectFit: 'contain', maxHeight: '68px', width: 'auto' }} />
+                  <span className="cert-name">{c.name}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -222,7 +226,10 @@ export default function HomePage() {
             {galleryItems.slice(0, 6).map((item, index) => (
               <figure key={item.src} className={`gallery-item gi-${index + 1}`} style={{ margin: 0 }}>
                 <Image src={item.src} alt={item.alt} fill style={{ objectFit: 'cover' }} />
-                <div className="gallery-item-caption">{item.caption}</div>
+                <div className="gallery-item-caption">
+                  <strong>{item.title}</strong>
+                  <span>{item.caption}</span>
+                </div>
               </figure>
             ))}
           </div>
