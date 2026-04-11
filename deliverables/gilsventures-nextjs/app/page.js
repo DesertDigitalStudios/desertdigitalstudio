@@ -195,7 +195,7 @@ export default function HomePage() {
           <div className="certs-header">
             <span className="eyebrow">Certified applicators</span>
             <h2 className="section-title" style={{ fontSize: '1.75rem' }}>
-              Certified Applicators of Versico, Weather Stop, Duro-Last, and CertainTeed
+              Certified Applicators Of
             </h2>
           </div>
           <div className="certs-grid">

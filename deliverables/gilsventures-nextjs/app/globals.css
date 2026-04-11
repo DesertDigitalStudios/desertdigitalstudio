@@ -618,20 +618,20 @@ ul, ol { padding: 0; margin: 0; }
 
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.1rem;
 }
 
 .cert-card {
   background: white;
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: box-shadow 0.18s, border-color 0.18s;
-  min-height: 132px;
+  min-height: 148px;
 }
 
 .cert-card:hover {
@@ -648,14 +648,14 @@ ul, ol { padding: 0; margin: 0; }
 }
 
 .cert-card img {
-  max-height: 68px;
+  max-height: 64px;
   width: 100%;
   object-fit: contain;
 }
 
 .cert-name {
-  font-size: 0.84rem;
-  line-height: 1.4;
+  font-size: 0.78rem;
+  line-height: 1.35;
   color: var(--text-soft);
   font-weight: 700;
 }
@@ -1186,6 +1186,7 @@ ul, ol { padding: 0; margin: 0; }
   .services-header,
   .section-intro-row,
   .featured-projects-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {

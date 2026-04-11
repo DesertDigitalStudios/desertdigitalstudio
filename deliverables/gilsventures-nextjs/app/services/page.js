@@ -41,7 +41,7 @@ export default function ServicesPage() {
           <div className="section-intro-row">
             <div>
               <span className="eyebrow">Systems & manufacturers</span>
-              <h2 className="section-title">Certified Applicators of Versico, Weather Stop, Duro-Last, and CertainTeed</h2>
+              <h2 className="section-title">Certified Applicators Of</h2>
             </div>
             <p className="section-body">
               Certified applicator recognition helps reinforce material familiarity, installation credibility, and confidence in the systems Gil&apos;s Ventures installs.

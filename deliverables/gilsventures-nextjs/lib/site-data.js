@@ -144,8 +144,14 @@ export const galleryItems = [
 ];
 
 export const certifications = [
-  { src: '/images/versico.png', alt: 'Versico certified applicator', name: 'Versico' },
-  { src: '/images/weather-stop.png', alt: 'Weather Stop certified applicator', name: 'Weather Stop' },
+  { src: '/images/johns-manville.png', alt: 'Johns Manville certified applicator', name: 'Johns Manville' },
+  { src: '/images/owens-corning.png', alt: 'Owens Corning certified applicator', name: 'Owens Corning' },
+  { src: '/images/versico.png', alt: 'Versico Roofing Systems certified applicator', name: 'Versico Roofing Systems' },
+  { src: '/images/berridge.png', alt: 'Berridge Roofs of Distinction certified applicator', name: 'Berridge Roofs of Distinction' },
+  { src: '/images/weather-stop.png', alt: 'GAF Certified Weather Stopper Roofing Contractor badge', name: 'GAF Certified Weather Stopper Roofing Contractor' },
+  { src: '/images/mueller.jpg', alt: 'Mueller, Inc. certified applicator', name: 'Mueller, Inc.' },
   { src: '/images/durolast.png', alt: 'Duro-Last certified applicator', name: 'Duro-Last' },
+  { src: '/images/malarkey.png', alt: 'Malarkey Roofing Products certified applicator', name: 'Malarkey Roofing Products' },
+  { src: '/images/mule-hide.jpg', alt: 'Mule-Hide Products certified applicator', name: 'Mule-Hide Products' },
   { src: '/images/certainteed.png', alt: 'CertainTeed Master Shingle Applicator', name: 'CertainTeed Master Shingle Applicator' },
 ];
