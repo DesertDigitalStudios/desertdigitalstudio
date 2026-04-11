@@ -22,7 +22,7 @@ export const services = [
 export const featuredProjects = [
   { image: '/images/cbp-standing-seam.jpg', category: 'Federal', title: 'CBP Standing Seam Roofing', description: 'Standing seam metal roofing completed for a U.S. Customs and Border Protection facility.' },
   { image: '/images/jackie-robinson-apts.jpg', category: 'Commercial', title: 'Jackie Robinson Apartments', description: 'Large-scale apartment roofing project focused on longevity, scheduling, and clean execution.' },
-  { image: '/images/fort-bliss-tpo.jpg', category: 'Federal', title: 'Fort Bliss TPO Roofing', description: 'Low-slope TPO installation delivered for military infrastructure in the El Paso market.' },
+  { image: '/images/fort-bliss-tpo.jpg', category: 'Federal', title: 'Federal Re-Roof Project', description: 'Federal reroof project in the Borderland completed with jobsite safety, coordination, and durable system performance in mind.' },
   { image: '/images/metal-roof-1.jpg', category: 'Metal Roofing', title: 'Standing Seam Metal Roof', description: 'Standing seam metal roofing system installed with precision fit and long-term performance in mind.' },
   { image: '/images/canopy.jpg', category: 'Metal', title: 'Custom Canopy Work', description: 'Structural canopy and metal detailing fabricated for durable shade and weather performance.' },
   { image: '/images/shingle-roof.jpg', category: 'Residential', title: 'Shingle Roof Installation', description: 'Architectural shingle system installed with clean lines and dependable flashing details.' },
@@ -54,7 +54,7 @@ export const serviceAreas = [
 export const galleryItems = [
   { src: '/images/cbp-standing-seam.jpg', alt: 'Standing seam metal roof at CBP facility in El Paso', caption: 'CBP standing seam roofing project', category: 'Federal / Government Projects' },
   { src: '/images/cbp-siding-1.jpg', alt: 'Metal wall and roofing detail at federal project', caption: 'Federal metal panel integration', category: 'Federal / Government Projects' },
-  { src: '/images/fort-bliss-tpo.jpg', alt: 'TPO roofing system installed at Fort Bliss facility', caption: 'Fort Bliss TPO roofing', category: 'Federal / Government Projects' },
+  { src: '/images/fort-bliss-tpo.jpg', alt: 'Federal reroof project in progress in the El Paso Borderland', caption: 'Federal reroof project', category: 'Federal / Government Projects' },
   { src: '/images/jackie-robinson-apts.jpg', alt: 'Roofing work completed at Jackie Robinson apartment complex', caption: 'Multifamily commercial roofing', category: 'Commercial Roofing' },
   { src: '/images/canopy.jpg', alt: 'Commercial canopy and metal roofing installation', caption: 'Commercial canopy system', category: 'Commercial Roofing' },
   { src: '/images/restoration.jpg', alt: 'Commercial roof restoration project in progress', caption: 'Roof restoration and repair', category: 'Commercial Roofing' },
