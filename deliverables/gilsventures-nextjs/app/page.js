@@ -89,6 +89,10 @@ export default function HomePage() {
         <div className="container">
           <span className="eyebrow">Why Gil&apos;s Ventures</span>
           <h2 className="section-title">The kind of contractor owners and managers want on site</h2>
+          <div className="award-badge-row">
+            <Image src="/images/tile-roof.jpg" alt="2024 Best of the Border Community's Choice Award — Winner" width={180} height={180} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+            <p className="award-badge-text">Voted <strong>Best of the Border 2024</strong> by the El Paso community — a recognition earned through consistent workmanship and customer trust.</p>
+          </div>
           <div className="reasons-grid">
             {[
               ['🧱', 'Proven systems', 'Experience across shingle, tile, TPO, standing seam, repairs, and restoration.'],

@@ -74,6 +74,10 @@ main { min-height: 60vh; }
 .project-copy span { color: var(--amber); font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
 .reason-card, .area-card, .contact-card, .timeline-card { padding: 1.5rem; }
 .reasons-grid { grid-template-columns: repeat(4, 1fr); }
+.award-badge-row { display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--cream); border-radius: 12px; border: 1px solid var(--border); }
+.award-badge-row img { flex-shrink: 0; border-radius: 50%; object-fit: cover; }
+.award-badge-text { font-size: 1.05rem; line-height: 1.6; color: var(--text); }
+
 .cert-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 2rem; }
 .cert-card { display: grid; place-items: center; padding: 1.25rem; min-height: 130px; }
 .cert-card img { max-height: 62px; width: auto; object-fit: contain; }

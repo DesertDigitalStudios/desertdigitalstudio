@@ -23,7 +23,7 @@ export const featuredProjects = [
   { image: '/images/cbp-standing-seam.jpg', category: 'Federal', title: 'CBP Standing Seam Roofing', description: 'Standing seam metal roofing completed for a U.S. Customs and Border Protection facility.' },
   { image: '/images/jackie-robinson-apts.jpg', category: 'Commercial', title: 'Jackie Robinson Apartments', description: 'Large-scale apartment roofing project focused on longevity, scheduling, and clean execution.' },
   { image: '/images/fort-bliss-tpo.jpg', category: 'Federal', title: 'Fort Bliss TPO Roofing', description: 'Low-slope TPO installation delivered for military infrastructure in the El Paso market.' },
-  { image: '/images/tile-roof.jpg', category: 'Residential', title: 'Tile Roof Replacement', description: 'High-end residential tile roofing built for curb appeal and long-term protection.' },
+  { image: '/images/metal-roof-1.jpg', category: 'Metal Roofing', title: 'Standing Seam Metal Roof', description: 'Standing seam metal roofing system installed with precision fit and long-term performance in mind.' },
   { image: '/images/canopy.jpg', category: 'Metal', title: 'Custom Canopy Work', description: 'Structural canopy and metal detailing fabricated for durable shade and weather performance.' },
   { image: '/images/shingle-roof.jpg', category: 'Residential', title: 'Shingle Roof Installation', description: 'Architectural shingle system installed with clean lines and dependable flashing details.' },
 ];
