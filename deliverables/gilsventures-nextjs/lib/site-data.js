@@ -65,7 +65,6 @@ export const galleryItems = [
   { src: '/images/commercial-6.webp', alt: 'Commercial roof with drainage, flashing, and system detail by Gil\'s Ventures', caption: 'Commercial drainage and flashing detail', category: 'Commercial Roofing' },
   // Residential Roofing
   { src: '/images/residential-1.webp', alt: 'Residential roofing replacement completed in an El Paso neighborhood', caption: 'Residential roof replacement', category: 'Residential Roofing' },
-  { src: '/images/residential-2.webp', alt: 'Home roofing project completed by Gil\'s Ventures in the El Paso area', caption: 'Home roofing project', category: 'Residential Roofing' },
   { src: '/images/residential-3.webp', alt: 'Residential reroof with shingle system installed in El Paso or Sunland Park', caption: 'Shingle reroof', category: 'Residential Roofing' },
   { src: '/images/residential-4.webp', alt: 'Residential roofing project completed in the Borderland area', caption: 'Residential roofing — Borderland', category: 'Residential Roofing' },
   { src: '/images/residential-5.webp', alt: 'Aerial drone view of a completed residential roofing project by Gil\'s Ventures', caption: 'Aerial view — residential completion', category: 'Residential Roofing' },
