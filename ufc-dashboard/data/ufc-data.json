@@ -1,8 +1,10 @@
 {
-  "updatedAt": "2026-04-12T02:12:21.851Z",
+  "updatedAt": "2026-04-12T02:17:57.924Z",
   "source": {
     "events": "http://www.ufcstats.com/statistics/events/upcoming",
-    "note": "Primary stats source: UFCStats. Odds layer not wired yet in MVP."
+    "oddsMode": "manual",
+    "oddsProvider": "Manual",
+    "note": "Stats from UFCStats. Odds currently using local manual fallback file."
   },
   "nextEvent": {
     "name": "UFC Fight Night: Burns vs. Malott",
@@ -197,8 +199,8 @@
         ]
       },
       "analysis": {
-        "lean": "Lean Gilbert Burns",
-        "confidence": 44,
+        "lean": "Pass",
+        "confidence": 11,
         "notes": [
           "Gilbert Burns owns the stronger takedown defense on paper."
         ],
@@ -208,10 +210,25 @@
           "tdAvgEdge": 0.24,
           "tdDefEdge": 39,
           "reachEdge": -2,
-          "recentFormEdge": 0,
+          "recentFormEdge": -3,
           "experienceEdge": 15
         },
+        "modelWinProbabilityA": 54.8,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 54.8,
+        "modelB": 45.2,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -376,7 +393,22 @@
           "recentFormEdge": 0,
           "experienceEdge": -10
         },
+        "modelWinProbabilityA": 78.8,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 78.8,
+        "modelB": 21.2,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -502,10 +534,25 @@
           "tdAvgEdge": -0.43,
           "tdDefEdge": 34,
           "reachEdge": -2,
-          "recentFormEdge": 0,
+          "recentFormEdge": -1,
           "experienceEdge": -3
         },
+        "modelWinProbabilityA": 85,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 85,
+        "modelB": 15,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -656,7 +703,7 @@
       },
       "analysis": {
         "lean": "Lean Jasmine Jasudavicius",
-        "confidence": 78,
+        "confidence": 89,
         "notes": [
           "Jasmine Jasudavicius has the stronger striking pace.",
           "Jasmine Jasudavicius owns the stronger takedown defense on paper."
@@ -667,10 +714,25 @@
           "tdAvgEdge": 0.29,
           "tdDefEdge": 54,
           "reachEdge": 1,
-          "recentFormEdge": 0,
+          "recentFormEdge": 1,
           "experienceEdge": -7
         },
+        "modelWinProbabilityA": 85,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 85,
+        "modelB": 15,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -803,7 +865,7 @@
       },
       "analysis": {
         "lean": "Pass",
-        "confidence": 20,
+        "confidence": 9,
         "notes": [
           "Thiago Moises absorbs less damage per minute."
         ],
@@ -813,10 +875,25 @@
           "tdAvgEdge": 0.31,
           "tdDefEdge": -19,
           "reachEdge": 0,
-          "recentFormEdge": 0,
+          "recentFormEdge": 1,
           "experienceEdge": 15
         },
+        "modelWinProbabilityA": 46.4,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 46.4,
+        "modelB": 53.6,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -930,8 +1007,8 @@
         ]
       },
       "analysis": {
-        "lean": "Lean Marcio Barbosa",
-        "confidence": 38,
+        "lean": "Pass",
+        "confidence": 27,
         "notes": [
           "Dennis Buzukja absorbs less damage per minute."
         ],
@@ -941,10 +1018,25 @@
           "tdAvgEdge": 0.63,
           "tdDefEdge": -25,
           "reachEdge": 0,
-          "recentFormEdge": 0,
+          "recentFormEdge": 1,
           "experienceEdge": -2
         },
+        "modelWinProbabilityA": 38.7,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 38.7,
+        "modelB": 61.3,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -1044,7 +1136,22 @@
           "recentFormEdge": 0,
           "experienceEdge": -5
         },
+        "modelWinProbabilityA": 30.3,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 30.3,
+        "modelB": 69.7,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -1152,7 +1259,8 @@
         "confidence": 100,
         "notes": [
           "Tanner Boser has the stronger striking pace.",
-          "Tanner Boser owns the stronger takedown defense on paper."
+          "Tanner Boser owns the stronger takedown defense on paper.",
+          "Tanner Boser has the better recent form."
         ],
         "metrics": {
           "slpmEdge": 4.7,
@@ -1160,10 +1268,25 @@
           "tdAvgEdge": 0,
           "tdDefEdge": 63,
           "reachEdge": null,
-          "recentFormEdge": 0,
+          "recentFormEdge": 2,
           "experienceEdge": 20
         },
+        "modelWinProbabilityA": 85,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 85,
+        "modelB": 15,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -1269,7 +1392,7 @@
       },
       "analysis": {
         "lean": "Pass",
-        "confidence": 35,
+        "confidence": 24,
         "notes": [
           "Melissa Croden absorbs less damage per minute.",
           "Melissa Croden owns the stronger takedown defense on paper."
@@ -1280,10 +1403,25 @@
           "tdAvgEdge": 0.58,
           "tdDefEdge": 16,
           "reachEdge": 0,
-          "recentFormEdge": 0,
+          "recentFormEdge": -1,
           "experienceEdge": -2
         },
+        "modelWinProbabilityA": 60.2,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 60.2,
+        "modelB": 39.8,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -1424,8 +1562,8 @@
         ]
       },
       "analysis": {
-        "lean": "Pass",
-        "confidence": 9,
+        "lean": "Lean Allan Nascimento",
+        "confidence": 41,
         "notes": [
           "Mitch Raposo shows the more active wrestling game.",
           "Mitch Raposo owns the stronger takedown defense on paper."
@@ -1436,10 +1574,25 @@
           "tdAvgEdge": 1.28,
           "tdDefEdge": 24,
           "reachEdge": -5,
-          "recentFormEdge": 0,
+          "recentFormEdge": -3,
           "experienceEdge": -15
         },
+        "modelWinProbabilityA": 33,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 33,
+        "modelB": 67,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -1601,7 +1754,22 @@
           "recentFormEdge": 0,
           "experienceEdge": 10
         },
+        "modelWinProbabilityA": 36.7,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 36.7,
+        "modelB": 63.3,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -1729,10 +1897,25 @@
           "tdAvgEdge": 1.68,
           "tdDefEdge": 16,
           "reachEdge": 6,
-          "recentFormEdge": 0,
+          "recentFormEdge": 2,
           "experienceEdge": 12
         },
+        "modelWinProbabilityA": 85,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 85,
+        "modelB": 15,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     },
     {
@@ -1812,7 +1995,22 @@
           "recentFormEdge": 0,
           "experienceEdge": 4
         },
+        "modelWinProbabilityA": 55.9,
         "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      },
+      "odds": {
+        "source": "Manual",
+        "mode": "manual",
+        "fighterAOdds": null,
+        "fighterBOdds": null,
+        "impliedA": null,
+        "impliedB": null,
+        "modelA": 55.9,
+        "modelB": 44.1,
+        "edgeA": null,
+        "edgeB": null,
+        "valueLabel": "No clear value edge",
+        "updatedAt": null
       }
     }
   ],
@@ -1836,13 +2034,14 @@
       {
         "matchup": "Jasmine Jasudavicius vs Karine Silva",
         "lean": "Lean Jasmine Jasudavicius",
-        "confidence": 78
+        "confidence": 89
       },
       {
         "matchup": "Kyler Phillips vs Charles Jourdain",
         "lean": "Lean Kyler Phillips",
         "confidence": 69
       }
-    ]
+    ],
+    "bestValueSpots": []
   }
 }

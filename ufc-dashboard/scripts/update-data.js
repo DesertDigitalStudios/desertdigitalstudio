@@ -2,7 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 const OUT_FILE = path.join(__dirname, '..', 'data', 'ufc-data.json');
+const MANUAL_ODDS_FILE = path.join(__dirname, '..', 'data', 'manual-odds.json');
 const UPCOMING_EVENTS_URL = 'http://www.ufcstats.com/statistics/events/upcoming';
+const ODDS_API_KEY = process.env.ODDS_API_KEY || '';
+const ODDS_REGION = process.env.ODDS_REGION || 'us';
+const ODDS_MARKETS = process.env.ODDS_MARKETS || 'h2h';
 
 function clean(value = '') {
   return String(value)
@@ -21,6 +25,10 @@ function toSlug(value = '') {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+}
+
+function normalizeName(value = '') {
+  return clean(value).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
 function parseNumber(value) {
@@ -47,6 +55,12 @@ async function fetchText(url) {
   const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 OpenClaw UFC Dashboard' } });
   if (!res.ok) throw new Error(`Fetch failed ${res.status} for ${url}`);
   return res.text();
+}
+
+async function fetchJson(url, headers = {}) {
+  const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 OpenClaw UFC Dashboard', ...headers } });
+  if (!res.ok) throw new Error(`Fetch failed ${res.status} for ${url}`);
+  return res.json();
 }
 
 function extractStatMap(html) {
@@ -167,7 +181,63 @@ function diff(a, b) {
 }
 
 function winsInRecent(recent = []) {
-  return recent.filter(f => /^W$/i.test(f.result)).length;
+  return recent.filter(f => /^W(IN)?$/i.test(f.result)).length;
+}
+
+function americanToImpliedProbability(odds) {
+  if (odds == null || Number.isNaN(Number(odds))) return null;
+  const n = Number(odds);
+  if (n < 0) return Math.round((Math.abs(n) / (Math.abs(n) + 100)) * 1000) / 10;
+  return Math.round((100 / (n + 100)) * 1000) / 10;
+}
+
+function estimateModelWinProbability(scoreA) {
+  const probability = 50 + Math.max(-35, Math.min(35, scoreA * 5));
+  return Math.round(probability * 10) / 10;
+}
+
+function readManualOdds() {
+  try {
+    return JSON.parse(fs.readFileSync(MANUAL_ODDS_FILE, 'utf8'));
+  } catch {
+    return { updatedAt: null, bookmaker: 'Manual', fights: [] };
+  }
+}
+
+function pickBestSportsbook(bookmakers = []) {
+  return bookmakers.find((book) => book.key === 'draftkings') || bookmakers.find((book) => book.key === 'fanduel') || bookmakers[0] || null;
+}
+
+async function fetchApiOdds() {
+  if (!ODDS_API_KEY) return null;
+  const url = `https://api.the-odds-api.com/v4/sports/mma_mixed_martial_arts/odds/?apiKey=${encodeURIComponent(ODDS_API_KEY)}&regions=${encodeURIComponent(ODDS_REGION)}&markets=${encodeURIComponent(ODDS_MARKETS)}&oddsFormat=american`;
+  const data = await fetchJson(url);
+  return {
+    updatedAt: new Date().toISOString(),
+    bookmaker: 'The Odds API',
+    fights: (Array.isArray(data) ? data : []).map((event) => {
+      const book = pickBestSportsbook(event.bookmakers || []);
+      const market = book?.markets?.find((item) => item.key === 'h2h') || null;
+      const outcomes = market?.outcomes || [];
+      return {
+        fighterA: event.home_team,
+        fighterB: event.away_team,
+        fighterAOdds: outcomes.find((o) => o.name === event.home_team)?.price ?? null,
+        fighterBOdds: outcomes.find((o) => o.name === event.away_team)?.price ?? null,
+        bookmaker: book?.title || 'Unknown',
+        commenceTime: event.commence_time || null
+      };
+    })
+  };
+}
+
+function buildOddsLookup(oddsData) {
+  const lookup = new Map();
+  for (const fight of oddsData?.fights || []) {
+    const key = [normalizeName(fight.fighterA), normalizeName(fight.fighterB)].sort().join('::');
+    lookup.set(key, fight);
+  }
+  return lookup;
 }
 
 function buildFightAnalysis(fighterA, fighterB) {
@@ -210,7 +280,54 @@ function buildFightAnalysis(fighterA, fighterB) {
     confidence,
     notes: notes.slice(0, 4),
     metrics,
+    modelWinProbabilityA: estimateModelWinProbability(scoreA),
     caution: 'Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting.'
+  };
+}
+
+function addOddsToFight(fight, oddsLookup, oddsSourceMeta) {
+  const key = [normalizeName(fight.fighterA.name), normalizeName(fight.fighterB.name)].sort().join('::');
+  const odds = oddsLookup.get(key) || null;
+  const fighterAOdds = odds?.fighterA && normalizeName(odds.fighterA) === normalizeName(fight.fighterA.name)
+    ? odds.fighterAOdds
+    : odds?.fighterB && normalizeName(odds.fighterB) === normalizeName(fight.fighterA.name)
+      ? odds.fighterBOdds
+      : null;
+  const fighterBOdds = odds?.fighterA && normalizeName(odds.fighterA) === normalizeName(fight.fighterB.name)
+    ? odds.fighterAOdds
+    : odds?.fighterB && normalizeName(odds.fighterB) === normalizeName(fight.fighterB.name)
+      ? odds.fighterBOdds
+      : null;
+
+  const impliedA = americanToImpliedProbability(fighterAOdds);
+  const impliedB = americanToImpliedProbability(fighterBOdds);
+  const modelA = fight.analysis.modelWinProbabilityA;
+  const modelB = modelA == null ? null : Math.round((100 - modelA) * 10) / 10;
+  const edgeA = modelA != null && impliedA != null ? Math.round((modelA - impliedA) * 10) / 10 : null;
+  const edgeB = modelB != null && impliedB != null ? Math.round((modelB - impliedB) * 10) / 10 : null;
+
+  const valueLabel = edgeA != null && edgeA >= 6 ? `Value on ${fight.fighterA.name}`
+    : edgeB != null && edgeB >= 6 ? `Value on ${fight.fighterB.name}`
+    : edgeA != null && edgeA >= 3 ? `Small value on ${fight.fighterA.name}`
+    : edgeB != null && edgeB >= 3 ? `Small value on ${fight.fighterB.name}`
+    : 'No clear value edge';
+
+  return {
+    ...fight,
+    odds: {
+      source: odds?.bookmaker || oddsSourceMeta.bookmaker || null,
+      mode: oddsSourceMeta.mode,
+      fighterAOdds,
+      fighterBOdds,
+      impliedA,
+      impliedB,
+      modelA,
+      modelB,
+      edgeA,
+      edgeB,
+      valueLabel,
+      updatedAt: oddsSourceMeta.updatedAt || null
+    }
   };
 }
 
@@ -232,23 +349,48 @@ async function main() {
     return fighterCache.get(url);
   }
 
+  const manualOdds = readManualOdds();
+  let oddsFeed = manualOdds;
+  let oddsMode = 'manual';
+  if (ODDS_API_KEY) {
+    try {
+      const apiOdds = await fetchApiOdds();
+      if (apiOdds?.fights?.length) {
+        oddsFeed = apiOdds;
+        oddsMode = 'api';
+      }
+    } catch (error) {
+      console.warn(`Odds API failed, falling back to manual odds: ${error.message}`);
+    }
+  }
+  const oddsLookup = buildOddsLookup(oddsFeed);
+
   const enrichedFights = [];
   for (const fight of fights) {
     const fighterA = await getFighter(fight.fighterA.url);
     const fighterB = await getFighter(fight.fighterB.url);
-    enrichedFights.push({
+    const analyzedFight = {
       ...fight,
       fighterA,
       fighterB,
       analysis: buildFightAnalysis(fighterA, fighterB)
-    });
+    };
+    enrichedFights.push(addOddsToFight(analyzedFight, oddsLookup, {
+      mode: oddsMode,
+      bookmaker: oddsFeed?.bookmaker || manualOdds?.bookmaker || null,
+      updatedAt: oddsFeed?.updatedAt || manualOdds?.updatedAt || null
+    }));
   }
 
   const payload = {
     updatedAt: new Date().toISOString(),
     source: {
       events: UPCOMING_EVENTS_URL,
-      note: 'Primary stats source: UFCStats. Odds layer not wired yet in MVP.'
+      oddsMode,
+      oddsProvider: oddsFeed?.bookmaker || null,
+      note: oddsMode === 'api'
+        ? 'Stats from UFCStats. Odds pulled from API feed.'
+        : 'Stats from UFCStats. Odds currently using local manual fallback file.'
     },
     nextEvent: {
       ...nextEvent,
@@ -268,6 +410,16 @@ async function main() {
           matchup: `${fight.fighterA.name} vs ${fight.fighterB.name}`,
           lean: fight.analysis.lean,
           confidence: fight.analysis.confidence
+        })),
+      bestValueSpots: enrichedFights
+        .filter(fight => (fight.odds?.edgeA || 0) >= 3 || (fight.odds?.edgeB || 0) >= 3)
+        .sort((a, b) => Math.max(b.odds?.edgeA || -999, b.odds?.edgeB || -999) - Math.max(a.odds?.edgeA || -999, a.odds?.edgeB || -999))
+        .slice(0, 5)
+        .map(fight => ({
+          matchup: `${fight.fighterA.name} vs ${fight.fighterB.name}`,
+          valueLabel: fight.odds.valueLabel,
+          edgeA: fight.odds.edgeA,
+          edgeB: fight.odds.edgeB
         }))
     }
   };

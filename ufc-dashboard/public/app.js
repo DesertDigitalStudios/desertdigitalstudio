@@ -46,6 +46,7 @@ function recordText(record = {}) {
 function renderSummary(data) {
   const fights = data.fights || [];
   const withLean = fights.filter(f => f.analysis?.lean && f.analysis.lean !== 'Pass').length;
+  const valueSpots = fights.filter(f => (f.odds?.edgeA || 0) >= 3 || (f.odds?.edgeB || 0) >= 3).length;
   const avgConfidence = fights.length
     ? Math.round(fights.reduce((sum, f) => sum + (f.analysis?.confidence || 0), 0) / fights.length)
     : 0;
@@ -53,6 +54,7 @@ function renderSummary(data) {
   document.getElementById('summary-grid').innerHTML = [
     ['Card fights', fights.length, 'Current upcoming event'],
     ['Top leans', withLean, 'Matchups with a non-pass heuristic lean'],
+    ['Value spots', valueSpots, 'Model edge vs current odds line'],
     ['Avg confidence', `${avgConfidence}%`, 'Heuristic only, not guaranteed edge'],
     ['Tracked events', (data.upcomingEvents || []).length, 'Current card plus the next few spots on the calendar']
   ].map(([label, value, note]) => `
@@ -79,7 +81,24 @@ function renderHeader(data) {
     </div>
   `).join('');
 
-  document.getElementById('top-leans').innerHTML = topLeans || '<div class="muted">No strong early leans yet. Probably a pass-heavy card by this simple model.</div>';
+  const topValue = (data.generatedInsights?.bestValueSpots || []).map(item => `
+    <div class="lean-item">
+      <strong>${esc(item.valueLabel)}</strong>
+      <span>${esc(item.matchup)}</span>
+    </div>
+  `).join('');
+
+  document.getElementById('top-leans').innerHTML = `
+    ${topLeans || '<div class="muted">No strong early leans yet. Probably a pass-heavy card by this simple model.</div>'}
+    ${topValue ? `<div class="leans-divider">Best value looks</div>${topValue}` : ''}
+  `;
+}
+
+function formatOdds(value) {
+  if (value == null || value === '') return '—';
+  const n = Number(value);
+  if (!Number.isFinite(n)) return value;
+  return n > 0 ? `+${n}` : `${n}`;
 }
 
 function renderUpcomingEvents(data) {
@@ -140,6 +159,23 @@ function renderFights(data) {
             ${(fight.analysis?.notes || []).map(note => `<li>${esc(note)}</li>`).join('') || '<li>No strong edge popped yet, which usually means pass or wait for odds.</li>'}
           </ul>
           <div class="caution">${esc(fight.analysis?.caution || '')}</div>
+        </div>
+
+        <div class="odds-panel">
+          <div class="notes-title">Odds and value</div>
+          <div class="odds-source">${esc(fight.odds?.source || data.source?.oddsProvider || 'Manual / not set')} · ${esc(data.source?.oddsMode || 'manual')}</div>
+          <div class="metric-table odds-table">
+            <div class="metric-header">
+              <span></span>
+              <span>${esc(a.name.split(' ')[0])}</span>
+              <span>${esc(b.name.split(' ')[0])}</span>
+            </div>
+            ${metricCell('Moneyline', formatOdds(fight.odds?.fighterAOdds), formatOdds(fight.odds?.fighterBOdds))}
+            ${metricCell('Implied %', fight.odds?.impliedA, fight.odds?.impliedB)}
+            ${metricCell('Model %', fight.odds?.modelA, fight.odds?.modelB)}
+            ${metricCell('Edge %', fight.odds?.edgeA, fight.odds?.edgeB)}
+          </div>
+          <div class="value-label ${(fight.odds?.edgeA || 0) >= 3 || (fight.odds?.edgeB || 0) >= 3 ? 'value-live' : ''}">${esc(fight.odds?.valueLabel || 'No odds loaded')}</div>
         </div>
 
         <div class="recent-grid">

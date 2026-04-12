@@ -46,6 +46,7 @@ h2 { margin: 8px 0 6px; font-size: 30px; letter-spacing: -.03em; }
 .hero-panel { background: linear-gradient(180deg, rgba(245,158,11,.08), rgba(15,26,40,.96)); }
 .lean-list { display: grid; gap: 10px; }
 .lean-item { display: grid; gap: 4px; padding: 12px; background: rgba(255,255,255,.03); border-radius: 14px; border: 1px solid rgba(255,255,255,.05); }
+.leans-divider { margin: 8px 0 2px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); font-weight: 800; }
 .event-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .event-card { padding: 14px; }
 .event-name { font-weight: 700; margin-bottom: 8px; }
@@ -67,9 +68,13 @@ h2 { margin: 8px 0 6px; font-size: 30px; letter-spacing: -.03em; }
 .metric-value { font-weight: 700; }
 .metric-value.better { color: #86efac; }
 .metric-value.worse { color: #fca5a5; }
-.notes-block { margin-top: 16px; }
+.notes-block, .odds-panel { margin-top: 16px; }
 .notes-title { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; color: var(--amber); margin-bottom: 8px; }
 .notes-block ul, .recent-list { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
+.odds-source { color: var(--muted); margin-bottom: 10px; }
+.odds-table { margin-bottom: 10px; }
+.value-label { border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 10px 12px; color: var(--muted); background: rgba(255,255,255,.03); }
+.value-label.value-live { color: #86efac; border-color: rgba(34,197,94,.24); background: rgba(34,197,94,.09); }
 .recent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
 .confidence-row { align-items: center; margin-top: 16px; gap: 12px; }
 .confidence-bar { flex: 1; height: 10px; background: rgba(255,255,255,.06); border-radius: 999px; overflow: hidden; }

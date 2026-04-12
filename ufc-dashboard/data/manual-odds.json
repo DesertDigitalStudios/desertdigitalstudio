@@ -1,0 +1,13 @@
+{
+  "updatedAt": null,
+  "bookmaker": "Manual",
+  "notes": "Use American odds. Negative means favorite, positive means underdog.",
+  "fights": [
+    {
+      "fighterA": "Gilbert Burns",
+      "fighterB": "Mike Malott",
+      "fighterAOdds": null,
+      "fighterBOdds": null
+    }
+  ]
+}
