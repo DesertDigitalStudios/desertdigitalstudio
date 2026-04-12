@@ -1,0 +1,1848 @@
+{
+  "updatedAt": "2026-04-12T02:12:21.851Z",
+  "source": {
+    "events": "http://www.ufcstats.com/statistics/events/upcoming",
+    "note": "Primary stats source: UFCStats. Odds layer not wired yet in MVP."
+  },
+  "nextEvent": {
+    "name": "UFC Fight Night: Burns vs. Malott",
+    "url": "http://www.ufcstats.com/event-details/c3ac8d0da7b05772",
+    "date": "April 18, 2026",
+    "location": "Winnipeg, Manitoba, Canada",
+    "totalFights": 13
+  },
+  "upcomingEvents": [
+    {
+      "name": "UFC Fight Night: Burns vs. Malott",
+      "url": "http://www.ufcstats.com/event-details/c3ac8d0da7b05772",
+      "date": "April 18, 2026",
+      "location": "Winnipeg, Manitoba, Canada"
+    },
+    {
+      "name": "UFC Fight Night: Sterling vs. Zalal",
+      "url": "http://www.ufcstats.com/event-details/e60d773a0a42048a",
+      "date": "April 25, 2026",
+      "location": "Las Vegas, Nevada, USA"
+    },
+    {
+      "name": "UFC Fight Night: Della Maddalena vs. Prates",
+      "url": "http://www.ufcstats.com/event-details/872b018076f831b0",
+      "date": "May 02, 2026",
+      "location": "Perth, Western Australia, Australia"
+    },
+    {
+      "name": "UFC 328: Chimaev vs. Strickland",
+      "url": "http://www.ufcstats.com/event-details/9eedac48b497de5a",
+      "date": "May 09, 2026",
+      "location": "Newark, New Jersey, USA"
+    },
+    {
+      "name": "UFC Fight Night: Allen vs. Costa",
+      "url": "http://www.ufcstats.com/event-details/73abb7a5c57fb443",
+      "date": "May 16, 2026",
+      "location": "Las Vegas, Nevada, USA"
+    },
+    {
+      "name": "UFC Fight Night: Song vs. Figueiredo",
+      "url": "http://www.ufcstats.com/event-details/1e75e6c9de99fa76",
+      "date": "May 30, 2026",
+      "location": "Macau, China"
+    }
+  ],
+  "fights": [
+    {
+      "id": "gilbert-burns-mike-malott",
+      "fightUrl": "http://www.ufcstats.com/fight-details/32054bf2b36b0e47",
+      "weightClass": "Welterweight",
+      "fighterA": {
+        "name": "Gilbert Burns",
+        "url": "http://www.ufcstats.com/fighter-details/23024fdfc966410a",
+        "nickname": "Durinho",
+        "height": "5' 10\"",
+        "weight": "170 lbs.",
+        "reach": "71\"",
+        "stance": "Orthodox",
+        "dob": "Jul 20, 1986",
+        "slpm": 3.15,
+        "strikeAcc": 48,
+        "sapm": 3.64,
+        "strikeDef": 52,
+        "tdAvg": 2.12,
+        "tdAcc": 37,
+        "tdDef": 53,
+        "subAvg": 0.5,
+        "record": {
+          "wins": 22,
+          "losses": 9,
+          "draws": 0,
+          "total": 31
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Michael Morales",
+            "event": "UFC Fight Night: Burns vs. Morales",
+            "date": "May. 17, 2025",
+            "method": "KO/TKO Punches",
+            "round": "1",
+            "time": "3:39"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Sean Brady",
+            "event": "UFC Fight Night: Burns vs. Brady",
+            "date": "Sep. 07, 2024",
+            "method": "U-DEC",
+            "round": "5",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Jack Della Maddalena",
+            "event": "UFC 299: O'Malley vs. Vera 2",
+            "date": "Mar. 09, 2024",
+            "method": "KO/TKO Elbows",
+            "round": "3",
+            "time": "3:43"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Belal Muhammad",
+            "event": "UFC 288: Sterling vs. Cejudo",
+            "date": "May. 06, 2023",
+            "method": "U-DEC",
+            "round": "5",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Jorge Masvidal",
+            "event": "UFC 287: Pereira vs. Adesanya 2",
+            "date": "Apr. 08, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Mike Malott",
+        "url": "http://www.ufcstats.com/fighter-details/dd6103dd7127db1d",
+        "nickname": "Proper",
+        "height": "6' 1\"",
+        "weight": "170 lbs.",
+        "reach": "73\"",
+        "stance": "Orthodox",
+        "dob": "Nov 07, 1991",
+        "slpm": 3.93,
+        "strikeAcc": 48,
+        "sapm": 3.06,
+        "strikeDef": 56,
+        "tdAvg": 1.88,
+        "tdAcc": 50,
+        "tdDef": 14,
+        "subAvg": 0.8,
+        "record": {
+          "wins": 13,
+          "losses": 2,
+          "draws": 1,
+          "total": 16
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Kevin Holland",
+            "event": "UFC Fight Night: De Ridder vs. Allen",
+            "date": "Oct. 18, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Charles Radtke",
+            "event": "UFC 315: Muhammad vs. Della Maddalena",
+            "date": "May. 10, 2025",
+            "method": "KO/TKO Punch",
+            "round": "2",
+            "time": "0:26"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Trevin Giles",
+            "event": "UFC Fight Night: Moreno vs. Albazi",
+            "date": "Nov. 02, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Neil Magny",
+            "event": "UFC 297: Strickland vs. Du Plessis",
+            "date": "Jan. 20, 2024",
+            "method": "KO/TKO Punches",
+            "round": "3",
+            "time": "4:45"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Adam Fugitt",
+            "event": "UFC 289: Nunes vs. Aldana",
+            "date": "Jun. 10, 2023",
+            "method": "SUB Guillotine Choke",
+            "round": "2",
+            "time": "1:06"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Lean Gilbert Burns",
+        "confidence": 44,
+        "notes": [
+          "Gilbert Burns owns the stronger takedown defense on paper."
+        ],
+        "metrics": {
+          "slpmEdge": -0.78,
+          "sapmEdge": -0.58,
+          "tdAvgEdge": 0.24,
+          "tdDefEdge": 39,
+          "reachEdge": -2,
+          "recentFormEdge": 0,
+          "experienceEdge": 15
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "kyler-phillips-charles-jourdain",
+      "fightUrl": "http://www.ufcstats.com/fight-details/b5299e5b946015e5",
+      "weightClass": "Bantamweight",
+      "fighterA": {
+        "name": "Kyler Phillips",
+        "url": "http://www.ufcstats.com/fighter-details/60425d07ef4b91a7",
+        "nickname": "The Matrix",
+        "height": "5' 8\"",
+        "weight": "135 lbs.",
+        "reach": "72\"",
+        "stance": "Orthodox",
+        "dob": "Jun 12, 1995",
+        "slpm": 5.04,
+        "strikeAcc": 42,
+        "sapm": 3.83,
+        "strikeDef": 60,
+        "tdAvg": 2.31,
+        "tdAcc": 45,
+        "tdDef": 75,
+        "subAvg": 0.4,
+        "record": {
+          "wins": 12,
+          "losses": 4,
+          "draws": 0,
+          "total": 16
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Vinicius Oliveira",
+            "event": "UFC 318: Holloway vs. Poirier 3",
+            "date": "Jul. 19, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Rob Font",
+            "event": "UFC Fight Night: Hernandez vs. Pereira",
+            "date": "Oct. 19, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Pedro Munhoz",
+            "event": "UFC 299: O'Malley vs. Vera 2",
+            "date": "Mar. 09, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Raoni Barcelos",
+            "event": "UFC Fight Night: Sandhagen vs. Font",
+            "date": "Aug. 05, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Marcelo Rojo",
+            "event": "UFC 271: Adesanya vs. Whittaker 2",
+            "date": "Feb. 12, 2022",
+            "method": "SUB Triangle Armbar",
+            "round": "3",
+            "time": "1:48"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Charles Jourdain",
+        "url": "http://www.ufcstats.com/fighter-details/f1d64ae34e088832",
+        "nickname": "Air",
+        "height": "5' 9\"",
+        "weight": "135 lbs.",
+        "reach": "69\"",
+        "stance": "Switch",
+        "dob": "Nov 27, 1995",
+        "slpm": 5.48,
+        "strikeAcc": 49,
+        "sapm": 4.25,
+        "strikeDef": 56,
+        "tdAvg": 0.33,
+        "tdAcc": 21,
+        "tdDef": 47,
+        "subAvg": 0.7,
+        "record": {
+          "wins": 17,
+          "losses": 8,
+          "draws": 1,
+          "total": 26
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Davey Grant",
+            "event": "UFC Fight Night: De Ridder vs. Allen",
+            "date": "Oct. 18, 2025",
+            "method": "SUB Guillotine Choke",
+            "round": "1",
+            "time": "3:05"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Victor Henry",
+            "event": "UFC Fight Night: Moreno vs. Albazi",
+            "date": "Nov. 02, 2024",
+            "method": "SUB Guillotine Choke",
+            "round": "2",
+            "time": "3:43"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Jean Silva",
+            "event": "UFC 303: Pereira vs. Prochazka 2",
+            "date": "Jun. 29, 2024",
+            "method": "KO/TKO Punch",
+            "round": "2",
+            "time": "1:22"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Sean Woodson",
+            "event": "UFC 297: Strickland vs. Du Plessis",
+            "date": "Jan. 20, 2024",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Ricardo Ramos",
+            "event": "UFC Fight Night: Fiziev vs. Gamrot",
+            "date": "Sep. 23, 2023",
+            "method": "SUB Guillotine Choke",
+            "round": "1",
+            "time": "3:12"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Lean Kyler Phillips",
+        "confidence": 69,
+        "notes": [
+          "Kyler Phillips shows the more active wrestling game.",
+          "Kyler Phillips owns the stronger takedown defense on paper."
+        ],
+        "metrics": {
+          "slpmEdge": -0.44,
+          "sapmEdge": 0.42,
+          "tdAvgEdge": 1.98,
+          "tdDefEdge": 28,
+          "reachEdge": 3,
+          "recentFormEdge": 0,
+          "experienceEdge": -10
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "mandel-nallo-jai-herbert",
+      "fightUrl": "http://www.ufcstats.com/fight-details/e644218737c1a778",
+      "weightClass": "Lightweight",
+      "fighterA": {
+        "name": "Mandel Nallo",
+        "url": "http://www.ufcstats.com/fighter-details/8f4528c10bd34fab",
+        "nickname": "Mango",
+        "height": "6' 0\"",
+        "weight": "155 lbs.",
+        "reach": "75\"",
+        "stance": "Orthodox",
+        "dob": "Jul 26, 1989",
+        "slpm": 8.61,
+        "strikeAcc": 62,
+        "sapm": 2.58,
+        "strikeDef": 72,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 100,
+        "subAvg": 0,
+        "record": {
+          "wins": 14,
+          "losses": 3,
+          "draws": 0,
+          "total": 17
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Samuel Silva",
+            "event": "DWCS 9.4",
+            "date": "Sep. 02, 2025",
+            "method": "KO/TKO Punch",
+            "round": "1",
+            "time": "3:29"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Jai Herbert",
+        "url": "http://www.ufcstats.com/fighter-details/4c88a1db5a46c6a4",
+        "nickname": "Black Country Banger",
+        "height": "6' 1\"",
+        "weight": "155 lbs.",
+        "reach": "77\"",
+        "stance": "Orthodox",
+        "dob": "May 13, 1988",
+        "slpm": 3.07,
+        "strikeAcc": 40,
+        "sapm": 3.26,
+        "strikeDef": 53,
+        "tdAvg": 0.43,
+        "tdAcc": 21,
+        "tdDef": 66,
+        "subAvg": 0,
+        "record": {
+          "wins": 13,
+          "losses": 6,
+          "draws": 1,
+          "total": 20
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Chris Padilla",
+            "event": "UFC Fight Night: Edwards vs. Brady",
+            "date": "Mar. 22, 2025",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Rolando Bedoya",
+            "event": "UFC Fight Night: Sandhagen vs. Nurmagomedov",
+            "date": "Aug. 03, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Fares Ziam",
+            "event": "UFC Fight Night: Aspinall vs. Tybura",
+            "date": "Jul. 22, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "DRAW",
+            "opponent": "Ludovit Klein",
+            "event": "UFC 286: Edwards vs. Usman 3",
+            "date": "Mar. 18, 2023",
+            "method": "M-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Kyle Nelson",
+            "event": "UFC Fight Night: Blaydes vs. Aspinall",
+            "date": "Jul. 23, 2022",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Lean Mandel Nallo",
+        "confidence": 100,
+        "notes": [
+          "Mandel Nallo has the stronger striking pace.",
+          "Mandel Nallo owns the stronger takedown defense on paper."
+        ],
+        "metrics": {
+          "slpmEdge": 5.54,
+          "sapmEdge": 0.68,
+          "tdAvgEdge": -0.43,
+          "tdDefEdge": 34,
+          "reachEdge": -2,
+          "recentFormEdge": 0,
+          "experienceEdge": -3
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "jasmine-jasudavicius-karine-silva",
+      "fightUrl": "http://www.ufcstats.com/fight-details/5a209522211d7530",
+      "weightClass": "Women's Flyweight",
+      "fighterA": {
+        "name": "Jasmine Jasudavicius",
+        "url": "http://www.ufcstats.com/fighter-details/a9e260472d321361",
+        "nickname": null,
+        "height": "5' 7\"",
+        "weight": "125 lbs.",
+        "reach": "68\"",
+        "stance": "Orthodox",
+        "dob": "Mar 01, 1989",
+        "slpm": 3.7,
+        "strikeAcc": 45,
+        "sapm": 3.71,
+        "strikeDef": 51,
+        "tdAvg": 2.59,
+        "tdAcc": 44,
+        "tdDef": 75,
+        "subAvg": 0.6,
+        "record": {
+          "wins": 14,
+          "losses": 4,
+          "draws": 0,
+          "total": 18
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Manon Fiorot",
+            "event": "UFC Fight Night: De Ridder vs. Allen",
+            "date": "Oct. 18, 2025",
+            "method": "KO/TKO Punches",
+            "round": "1",
+            "time": "1:14"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Jessica Andrade",
+            "event": "UFC 315: Muhammad vs. Della Maddalena",
+            "date": "May. 10, 2025",
+            "method": "SUB Rear Naked Choke",
+            "round": "1",
+            "time": "2:40"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Mayra Bueno Silva",
+            "event": "UFC Fight Night: Adesanya vs. Imavov",
+            "date": "Feb. 01, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Ariane da Silva",
+            "event": "UFC Fight Night: Moreno vs. Albazi",
+            "date": "Nov. 02, 2024",
+            "method": "SUB D'Arce Choke",
+            "round": "3",
+            "time": "2:28"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Fatima Kline",
+            "event": "UFC Fight Night: Namajunas vs. Cortez",
+            "date": "Jul. 13, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Karine Silva",
+        "url": "http://www.ufcstats.com/fighter-details/9d62c2d8ee151f08",
+        "nickname": "Killer",
+        "height": "5' 5\"",
+        "weight": "125 lbs.",
+        "reach": "67\"",
+        "stance": "Orthodox",
+        "dob": "Dec 02, 1993",
+        "slpm": 2.48,
+        "strikeAcc": 39,
+        "sapm": 3.04,
+        "strikeDef": 48,
+        "tdAvg": 2.3,
+        "tdAcc": 50,
+        "tdDef": 21,
+        "subAvg": 1.5,
+        "record": {
+          "wins": 19,
+          "losses": 6,
+          "draws": 0,
+          "total": 25
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Maycee Barber",
+            "event": "UFC 323: Dvalishvili vs. Yan 2",
+            "date": "Dec. 06, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Dione Barbosa",
+            "event": "UFC 319: Du Plessis vs. Chimaev",
+            "date": "Aug. 16, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Viviane Araujo",
+            "event": "UFC 309: Jones vs. Miocic",
+            "date": "Nov. 16, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Ariane da Silva",
+            "event": "UFC Fight Night: Nicolau vs. Perez",
+            "date": "Apr. 27, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Maryna Moroz",
+            "event": "UFC 292: Sterling vs. O'Malley",
+            "date": "Aug. 19, 2023",
+            "method": "SUB Guillotine Choke",
+            "round": "1",
+            "time": "4:59"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Lean Jasmine Jasudavicius",
+        "confidence": 78,
+        "notes": [
+          "Jasmine Jasudavicius has the stronger striking pace.",
+          "Jasmine Jasudavicius owns the stronger takedown defense on paper."
+        ],
+        "metrics": {
+          "slpmEdge": 1.22,
+          "sapmEdge": -0.67,
+          "tdAvgEdge": 0.29,
+          "tdDefEdge": 54,
+          "reachEdge": 1,
+          "recentFormEdge": 0,
+          "experienceEdge": -7
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "thiago-moises-gauge-young",
+      "fightUrl": "http://www.ufcstats.com/fight-details/a661c0bee7c8d5af",
+      "weightClass": "Lightweight",
+      "fighterA": {
+        "name": "Thiago Moises",
+        "url": "http://www.ufcstats.com/fighter-details/d945aae53e3e54e6",
+        "nickname": null,
+        "height": "5' 9\"",
+        "weight": "155 lbs.",
+        "reach": "70\"",
+        "stance": "Orthodox",
+        "dob": "Mar 23, 1995",
+        "slpm": 2.48,
+        "strikeAcc": 42,
+        "sapm": 4.08,
+        "strikeDef": 53,
+        "tdAvg": 1.31,
+        "tdAcc": 35,
+        "tdDef": 52,
+        "subAvg": 1.1,
+        "record": {
+          "wins": 19,
+          "losses": 9,
+          "draws": 0,
+          "total": 28
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Jared Gordon",
+            "event": "UFC Fight Night: Burns vs. Morales",
+            "date": "May. 17, 2025",
+            "method": "KO/TKO Punch",
+            "round": "1",
+            "time": "3:37"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Trey Ogden",
+            "event": "UFC Fight Night: Dern vs. Ribas 2",
+            "date": "Jan. 11, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Ludovit Klein",
+            "event": "UFC Fight Night: Cannonier vs. Imavov",
+            "date": "Jun. 08, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Mitch Ramirez",
+            "event": "UFC Fight Night: Tuivasa vs. Tybura",
+            "date": "Mar. 16, 2024",
+            "method": "KO/TKO Kick",
+            "round": "3",
+            "time": "0:15"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Benoit Saint Denis",
+            "event": "UFC Fight Night: Gane vs. Spivac",
+            "date": "Sep. 02, 2023",
+            "method": "KO/TKO Punches",
+            "round": "2",
+            "time": "4:44"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Gauge Young",
+        "url": "http://www.ufcstats.com/fighter-details/b2a78df161bd67f9",
+        "nickname": "Gee Money",
+        "height": "5' 9\"",
+        "weight": "155 lbs.",
+        "reach": "70\"",
+        "stance": "Orthodox",
+        "dob": "Jul 14, 2000",
+        "slpm": 5.71,
+        "strikeAcc": 51,
+        "sapm": 5.82,
+        "strikeDef": 48,
+        "tdAvg": 1,
+        "tdAcc": 30,
+        "tdDef": 71,
+        "subAvg": 0,
+        "record": {
+          "wins": 10,
+          "losses": 3,
+          "draws": 0,
+          "total": 13
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Maheshate",
+            "event": "UFC Fight Night: Walker vs. Zhang",
+            "date": "Aug. 23, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Evan Elder",
+            "event": "UFC Fight Night: Machado Garry vs. Prates",
+            "date": "Apr. 26, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Quillan Salkilld",
+            "event": "DWCS 8.4",
+            "date": "Sep. 03, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Pass",
+        "confidence": 20,
+        "notes": [
+          "Thiago Moises absorbs less damage per minute."
+        ],
+        "metrics": {
+          "slpmEdge": -3.23,
+          "sapmEdge": 1.74,
+          "tdAvgEdge": 0.31,
+          "tdDefEdge": -19,
+          "reachEdge": 0,
+          "recentFormEdge": 0,
+          "experienceEdge": 15
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "dennis-buzukja-marcio-barbosa",
+      "fightUrl": "http://www.ufcstats.com/fight-details/678440bd8274a18e",
+      "weightClass": "Featherweight",
+      "fighterA": {
+        "name": "Dennis Buzukja",
+        "url": "http://www.ufcstats.com/fighter-details/c4d039123e62f6a9",
+        "nickname": "The Great",
+        "height": "5' 9\"",
+        "weight": "145 lbs.",
+        "reach": "70\"",
+        "stance": "Switch",
+        "dob": "Oct 01, 1997",
+        "slpm": 4.21,
+        "strikeAcc": 43,
+        "sapm": 4.82,
+        "strikeDef": 48,
+        "tdAvg": 0.63,
+        "tdAcc": 27,
+        "tdDef": 75,
+        "subAvg": 0.2,
+        "record": {
+          "wins": 12,
+          "losses": 5,
+          "draws": 0,
+          "total": 17
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Francis Marshall",
+            "event": "UFC Fight Night: Cannonier vs. Borralho",
+            "date": "Aug. 24, 2024",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Connor Matthews",
+            "event": "UFC Fight Night: Blanchfield vs. Fiorot",
+            "date": "Mar. 30, 2024",
+            "method": "KO/TKO Punch",
+            "round": "3",
+            "time": "0:22"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Jamall Emmers",
+            "event": "UFC 295: Prochazka vs. Pereira",
+            "date": "Nov. 11, 2023",
+            "method": "KO/TKO Punch",
+            "round": "1",
+            "time": "0:49"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Sean Woodson",
+            "event": "UFC Fight Night: Sandhagen vs. Font",
+            "date": "Aug. 05, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Kaleio Romero",
+            "event": "DWCS 6.1",
+            "date": "Jul. 26, 2022",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Marcio Barbosa",
+        "url": "http://www.ufcstats.com/fighter-details/c85bad793cd14e28",
+        "nickname": "Ticoto",
+        "height": "5' 6\"",
+        "weight": "145 lbs.",
+        "reach": "70\"",
+        "stance": "Orthodox",
+        "dob": "May 22, 1998",
+        "slpm": 8.27,
+        "strikeAcc": 47,
+        "sapm": 7.56,
+        "strikeDef": 50,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 100,
+        "subAvg": 0,
+        "record": {
+          "wins": 17,
+          "losses": 2,
+          "draws": 0,
+          "total": 19
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Damon Wilson",
+            "event": "DWCS 9.3",
+            "date": "Aug. 26, 2025",
+            "method": "KO/TKO Punches",
+            "round": "1",
+            "time": "4:14"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Lean Marcio Barbosa",
+        "confidence": 38,
+        "notes": [
+          "Dennis Buzukja absorbs less damage per minute."
+        ],
+        "metrics": {
+          "slpmEdge": -4.06,
+          "sapmEdge": 2.74,
+          "tdAvgEdge": 0.63,
+          "tdDefEdge": -25,
+          "reachEdge": 0,
+          "recentFormEdge": 0,
+          "experienceEdge": -2
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "julien-leblanc-robert-valentin",
+      "fightUrl": "http://www.ufcstats.com/fight-details/9fab4b0ad082f670",
+      "weightClass": "Middleweight",
+      "fighterA": {
+        "name": "Julien Leblanc",
+        "url": "http://www.ufcstats.com/fighter-details/cd0dfd9846bd03b9",
+        "nickname": null,
+        "height": "--",
+        "weight": "185 lbs.",
+        "reach": "--",
+        "stance": "Southpaw",
+        "dob": "Jan 21, 1992",
+        "slpm": 0,
+        "strikeAcc": 0,
+        "sapm": 0,
+        "strikeDef": 0,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 0,
+        "subAvg": 0,
+        "record": {
+          "wins": 10,
+          "losses": 2,
+          "draws": 0,
+          "total": 12
+        },
+        "recentFights": []
+      },
+      "fighterB": {
+        "name": "Robert Valentin",
+        "url": "http://www.ufcstats.com/fighter-details/0cd0456d6029cec2",
+        "nickname": "Robzilla",
+        "height": "6' 2\"",
+        "weight": "185 lbs.",
+        "reach": "77\"",
+        "stance": "Orthodox",
+        "dob": "Mar 31, 1995",
+        "slpm": 1.13,
+        "strikeAcc": 56,
+        "sapm": 2.83,
+        "strikeDef": 32,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 55,
+        "subAvg": 1.3,
+        "record": {
+          "wins": 11,
+          "losses": 6,
+          "draws": 0,
+          "total": 17
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Ateba Gautier",
+            "event": "UFC 318: Holloway vs. Poirier 3",
+            "date": "Jul. 19, 2025",
+            "method": "KO/TKO Punch",
+            "round": "1",
+            "time": "1:10"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Torrez Finney",
+            "event": "UFC Fight Night: Emmett vs. Murphy",
+            "date": "Apr. 05, 2025",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Ryan Loder",
+            "event": "UFC Fight Night: Cannonier vs. Borralho",
+            "date": "Aug. 24, 2024",
+            "method": "KO/TKO Elbows",
+            "round": "2",
+            "time": "1:49"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Lean Robert Valentin",
+        "confidence": 47,
+        "notes": [
+          "Julien Leblanc absorbs less damage per minute."
+        ],
+        "metrics": {
+          "slpmEdge": -1.13,
+          "sapmEdge": 2.83,
+          "tdAvgEdge": 0,
+          "tdDefEdge": -55,
+          "reachEdge": null,
+          "recentFormEdge": 0,
+          "experienceEdge": -5
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "tanner-boser-gokhan-saricam",
+      "fightUrl": "http://www.ufcstats.com/fight-details/85c7a0f44aa3e10a",
+      "weightClass": "Heavyweight",
+      "fighterA": {
+        "name": "Tanner Boser",
+        "url": "http://www.ufcstats.com/fighter-details/04c8b08b16a5b99e",
+        "nickname": "The Bulldozer",
+        "height": "6' 2\"",
+        "weight": "205 lbs.",
+        "reach": "75\"",
+        "stance": "Orthodox",
+        "dob": "Aug 02, 1991",
+        "slpm": 4.7,
+        "strikeAcc": 52,
+        "sapm": 2.75,
+        "strikeDef": 58,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 63,
+        "subAvg": 0,
+        "record": {
+          "wins": 22,
+          "losses": 10,
+          "draws": 1,
+          "total": 33
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Aleksa Camur",
+            "event": "UFC Fight Night: Sandhagen vs. Font",
+            "date": "Aug. 05, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Ion Cutelaba",
+            "event": "UFC Fight Night: Holloway vs. Allen",
+            "date": "Apr. 15, 2023",
+            "method": "KO/TKO Punches",
+            "round": "1",
+            "time": "2:05"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Rodrigo Nascimento",
+            "event": "UFC Fight Night: Sandhagen vs. Song",
+            "date": "Sep. 17, 2022",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Ovince Saint Preux",
+            "event": "UFC Fight Night: Gane vs. Volkov",
+            "date": "Jun. 26, 2021",
+            "method": "KO/TKO Punch",
+            "round": "2",
+            "time": "2:31"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Ilir Latifi",
+            "event": "UFC Fight Night: Rozenstruik vs. Sakai",
+            "date": "Jun. 05, 2021",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Gokhan Saricam",
+        "url": "http://www.ufcstats.com/fighter-details/1a97a3ef4c758fae",
+        "nickname": null,
+        "height": "--",
+        "weight": "265 lbs.",
+        "reach": "--",
+        "stance": "Orthodox",
+        "dob": "Feb 28, 1991",
+        "slpm": 0,
+        "strikeAcc": 0,
+        "sapm": 0,
+        "strikeDef": 0,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 0,
+        "subAvg": 0,
+        "record": {
+          "wins": 11,
+          "losses": 2,
+          "draws": 0,
+          "total": 13
+        },
+        "recentFights": []
+      },
+      "analysis": {
+        "lean": "Lean Tanner Boser",
+        "confidence": 100,
+        "notes": [
+          "Tanner Boser has the stronger striking pace.",
+          "Tanner Boser owns the stronger takedown defense on paper."
+        ],
+        "metrics": {
+          "slpmEdge": 4.7,
+          "sapmEdge": -2.75,
+          "tdAvgEdge": 0,
+          "tdDefEdge": 63,
+          "reachEdge": null,
+          "recentFormEdge": 0,
+          "experienceEdge": 20
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "melissa-croden-daria-zhelezniakova",
+      "fightUrl": "http://www.ufcstats.com/fight-details/bae4de7ef8c0769e",
+      "weightClass": "Women's Bantamweight",
+      "fighterA": {
+        "name": "Melissa Croden",
+        "url": "http://www.ufcstats.com/fighter-details/51e2f44a8dbf6984",
+        "nickname": "Scare",
+        "height": "5' 9\"",
+        "weight": "135 lbs.",
+        "reach": "68\"",
+        "stance": "Orthodox",
+        "dob": "Apr 12, 1991",
+        "slpm": 4.1,
+        "strikeAcc": 48,
+        "sapm": 1.83,
+        "strikeDef": 53,
+        "tdAvg": 1.02,
+        "tdAcc": 50,
+        "tdDef": 66,
+        "subAvg": 0,
+        "record": {
+          "wins": 7,
+          "losses": 3,
+          "draws": 0,
+          "total": 10
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Luana Santos",
+            "event": "UFC Fight Night: Royval vs. Kape",
+            "date": "Dec. 13, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Tainara Lisboa",
+            "event": "UFC Fight Night: De Ridder vs. Allen",
+            "date": "Oct. 18, 2025",
+            "method": "KO/TKO Punches",
+            "round": "3",
+            "time": "4:32"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Daria Zhelezniakova",
+        "url": "http://www.ufcstats.com/fighter-details/07047eb7d17fb0a2",
+        "nickname": "Iron Lady",
+        "height": "5' 9\"",
+        "weight": "135 lbs.",
+        "reach": "68\"",
+        "stance": "Orthodox",
+        "dob": "Jan 23, 1996",
+        "slpm": 4.75,
+        "strikeAcc": 41,
+        "sapm": 2.83,
+        "strikeDef": 68,
+        "tdAvg": 0.44,
+        "tdAcc": 100,
+        "tdDef": 50,
+        "subAvg": 0,
+        "record": {
+          "wins": 10,
+          "losses": 2,
+          "draws": 0,
+          "total": 12
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Melissa Mullins",
+            "event": "UFC Fight Night: Hill vs. Rountree Jr.",
+            "date": "Jun. 21, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Ailin Perez",
+            "event": "UFC Fight Night: Moicano vs. Saint Denis",
+            "date": "Sep. 28, 2024",
+            "method": "SUB Arm Triangle",
+            "round": "1",
+            "time": "3:52"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Montse Rendon",
+            "event": "UFC Fight Night: Ribas vs. Namajunas",
+            "date": "Mar. 23, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Pass",
+        "confidence": 35,
+        "notes": [
+          "Melissa Croden absorbs less damage per minute.",
+          "Melissa Croden owns the stronger takedown defense on paper."
+        ],
+        "metrics": {
+          "slpmEdge": -0.65,
+          "sapmEdge": 1,
+          "tdAvgEdge": 0.58,
+          "tdDefEdge": 16,
+          "reachEdge": 0,
+          "recentFormEdge": 0,
+          "experienceEdge": -2
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "mitch-raposo-allan-nascimento",
+      "fightUrl": "http://www.ufcstats.com/fight-details/82fc26ffad703fc9",
+      "weightClass": "Flyweight",
+      "fighterA": {
+        "name": "Mitch Raposo",
+        "url": "http://www.ufcstats.com/fighter-details/0be6776db31d98ec",
+        "nickname": null,
+        "height": "5' 5\"",
+        "weight": "125 lbs.",
+        "reach": "64\"",
+        "stance": "Switch",
+        "dob": "Oct 16, 1998",
+        "slpm": 1.73,
+        "strikeAcc": 36,
+        "sapm": 2.65,
+        "strikeDef": 61,
+        "tdAvg": 2.54,
+        "tdAcc": 37,
+        "tdDef": 61,
+        "subAvg": 0,
+        "record": {
+          "wins": 10,
+          "losses": 3,
+          "draws": 0,
+          "total": 13
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Azat Maksum",
+            "event": "UFC 321: Aspinall vs. Gane",
+            "date": "Oct. 25, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Sumudaerji",
+            "event": "UFC 314: Volkanovski vs. Lopes",
+            "date": "Apr. 12, 2025",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Andre Lima",
+            "event": "UFC 302: Makhachev vs. Poirier",
+            "date": "Jun. 01, 2024",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Jake Hadley",
+            "event": "DWCS 5.7",
+            "date": "Oct. 12, 2021",
+            "method": "SUB Rear Naked Choke",
+            "round": "2",
+            "time": "3:11"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Allan Nascimento",
+        "url": "http://www.ufcstats.com/fighter-details/253076a23d03dcd0",
+        "nickname": "Puro Osso",
+        "height": "5' 8\"",
+        "weight": "125 lbs.",
+        "reach": "69\"",
+        "stance": "Orthodox",
+        "dob": "Sep 11, 1991",
+        "slpm": 3.06,
+        "strikeAcc": 55,
+        "sapm": 2.53,
+        "strikeDef": 52,
+        "tdAvg": 1.26,
+        "tdAcc": 23,
+        "tdDef": 37,
+        "subAvg": 1.1,
+        "record": {
+          "wins": 22,
+          "losses": 6,
+          "draws": 0,
+          "total": 28
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Cody Durden",
+            "event": "UFC Fight Night: Garcia vs. Onama",
+            "date": "Nov. 01, 2025",
+            "method": "SUB Anaconda Choke",
+            "round": "2",
+            "time": "3:13"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Jafel Filho",
+            "event": "UFC Fight Night: Blanchfield vs. Barber",
+            "date": "May. 31, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Carlos Hernandez",
+            "event": "UFC Fight Night: Strickland vs. Imavov",
+            "date": "Jan. 14, 2023",
+            "method": "SUB Rear Naked Choke",
+            "round": "1",
+            "time": "3:16"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Jake Hadley",
+            "event": "UFC Fight Night: Blachowicz vs. Rakic",
+            "date": "May. 14, 2022",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Tagir Ulanbekov",
+            "event": "UFC 267: Blachowicz vs. Teixeira",
+            "date": "Oct. 30, 2021",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Pass",
+        "confidence": 9,
+        "notes": [
+          "Mitch Raposo shows the more active wrestling game.",
+          "Mitch Raposo owns the stronger takedown defense on paper."
+        ],
+        "metrics": {
+          "slpmEdge": -1.33,
+          "sapmEdge": -0.12,
+          "tdAvgEdge": 1.28,
+          "tdDefEdge": 24,
+          "reachEdge": -5,
+          "recentFormEdge": 0,
+          "experienceEdge": -15
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "jj-aldrich-jamey-lyn-horth",
+      "fightUrl": "http://www.ufcstats.com/fight-details/0b6c13ab8ad7f82b",
+      "weightClass": "Women's Flyweight",
+      "fighterA": {
+        "name": "JJ Aldrich",
+        "url": "http://www.ufcstats.com/fighter-details/6fd953151d981979",
+        "nickname": null,
+        "height": "5' 5\"",
+        "weight": "125 lbs.",
+        "reach": "67\"",
+        "stance": "Southpaw",
+        "dob": "Sep 29, 1992",
+        "slpm": 3.96,
+        "strikeAcc": 47,
+        "sapm": 4.32,
+        "strikeDef": 61,
+        "tdAvg": 0.75,
+        "tdAcc": 26,
+        "tdDef": 67,
+        "subAvg": 0,
+        "record": {
+          "wins": 14,
+          "losses": 7,
+          "draws": 0,
+          "total": 21
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Andrea Lee",
+            "event": "UFC Fight Night: Kape vs. Almabayev",
+            "date": "Mar. 01, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Veronica Hardy",
+            "event": "UFC Fight Night: Lewis vs. Nascimento",
+            "date": "May. 11, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Montana De La Rosa",
+            "event": "UFC Fight Night: Dawson vs. Green",
+            "date": "Oct. 07, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Liang Na",
+            "event": "UFC Fight Night: Holloway vs. The Korean Zombie",
+            "date": "Aug. 26, 2023",
+            "method": "KO/TKO Elbows",
+            "round": "2",
+            "time": "4:49"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Ariane da Silva",
+            "event": "UFC Fight Night: Yan vs. Dvalishvili",
+            "date": "Mar. 11, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Jamey-Lyn Horth",
+        "url": "http://www.ufcstats.com/fighter-details/5c637af9472ae7cc",
+        "nickname": null,
+        "height": "5' 7\"",
+        "weight": "125 lbs.",
+        "reach": "66\"",
+        "stance": "Orthodox",
+        "dob": "Mar 30, 1990",
+        "slpm": 3.63,
+        "strikeAcc": 55,
+        "sapm": 2.5,
+        "strikeDef": 63,
+        "tdAvg": 1.17,
+        "tdAcc": 42,
+        "tdDef": 79,
+        "subAvg": 0.2,
+        "record": {
+          "wins": 9,
+          "losses": 2,
+          "draws": 0,
+          "total": 11
+        },
+        "recentFights": [
+          {
+            "result": "WIN",
+            "opponent": "Tereza Bleda",
+            "event": "UFC Fight Night: Royval vs. Kape",
+            "date": "Dec. 13, 2025",
+            "method": "KO/TKO Punches",
+            "round": "1",
+            "time": "2:05"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Vanessa Demopoulos",
+            "event": "UFC Fight Night: Usman vs. Buckley",
+            "date": "Jun. 14, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Miranda Maverick",
+            "event": "UFC Fight Night: Covington vs. Buckley",
+            "date": "Dec. 14, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Ivana Petrovic",
+            "event": "UFC Fight Night: Moreno vs. Albazi",
+            "date": "Nov. 02, 2024",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Veronica Hardy",
+            "event": "UFC Fight Night: Dariush vs. Tsarukyan",
+            "date": "Dec. 02, 2023",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Pass",
+        "confidence": 32,
+        "notes": [],
+        "metrics": {
+          "slpmEdge": 0.33,
+          "sapmEdge": -1.82,
+          "tdAvgEdge": -0.42,
+          "tdDefEdge": -12,
+          "reachEdge": 1,
+          "recentFormEdge": 0,
+          "experienceEdge": 10
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "john-castaneda-mark-vologdin",
+      "fightUrl": "http://www.ufcstats.com/fight-details/552f7cdaf93e1055",
+      "weightClass": "Bantamweight",
+      "fighterA": {
+        "name": "John Castaneda",
+        "url": "http://www.ufcstats.com/fighter-details/5fa2974cbd18e05c",
+        "nickname": "Sexi Mexi",
+        "height": "5' 6\"",
+        "weight": "135 lbs.",
+        "reach": "71\"",
+        "stance": "Switch",
+        "dob": "Dec 18, 1991",
+        "slpm": 4.42,
+        "strikeAcc": 50,
+        "sapm": 4.94,
+        "strikeDef": 53,
+        "tdAvg": 1.68,
+        "tdAcc": 37,
+        "tdDef": 73,
+        "subAvg": 0.1,
+        "record": {
+          "wins": 21,
+          "losses": 8,
+          "draws": 0,
+          "total": 29
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Chris Gutierrez",
+            "event": "UFC Fight Night: Machado Garry vs. Prates",
+            "date": "Apr. 26, 2025",
+            "method": "S-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Daniel Marcos",
+            "event": "UFC Fight Night: Cannonier vs. Imavov",
+            "date": "Jun. 08, 2024",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Kyung Ho Kang",
+            "event": "UFC 295: Prochazka vs. Pereira",
+            "date": "Nov. 11, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "WIN",
+            "opponent": "Muin Gafurov",
+            "event": "UFC Fight Night: Kara-France vs. Albazi",
+            "date": "Jun. 03, 2023",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          },
+          {
+            "result": "LOSS",
+            "opponent": "Daniel Santos",
+            "event": "UFC Fight Night: Dern vs. Yan",
+            "date": "Oct. 01, 2022",
+            "method": "KO/TKO Knee",
+            "round": "2",
+            "time": "4:28"
+          }
+        ]
+      },
+      "fighterB": {
+        "name": "Mark Vologdin",
+        "url": "http://www.ufcstats.com/fighter-details/0e6b611451a9a7d8",
+        "nickname": null,
+        "height": "5' 3\"",
+        "weight": "135 lbs.",
+        "reach": "65\"",
+        "stance": "Orthodox",
+        "dob": "Apr 18, 2000",
+        "slpm": 7.8,
+        "strikeAcc": 52,
+        "sapm": 11,
+        "strikeDef": 34,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 57,
+        "subAvg": 0,
+        "record": {
+          "wins": 12,
+          "losses": 4,
+          "draws": 1,
+          "total": 17
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Juan Adrian Martinetti",
+            "event": "DWCS 9.9",
+            "date": "Oct. 07, 2025",
+            "method": "U-DEC",
+            "round": "3",
+            "time": "5:00"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Lean John Castaneda",
+        "confidence": 100,
+        "notes": [
+          "John Castaneda absorbs less damage per minute.",
+          "John Castaneda shows the more active wrestling game.",
+          "John Castaneda owns the stronger takedown defense on paper.",
+          "John Castaneda has a meaningful reach edge."
+        ],
+        "metrics": {
+          "slpmEdge": -3.38,
+          "sapmEdge": 6.06,
+          "tdAvgEdge": 1.68,
+          "tdDefEdge": 16,
+          "reachEdge": 6,
+          "recentFormEdge": 0,
+          "experienceEdge": 12
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    },
+    {
+      "id": "jamie-siraj-john-yannis",
+      "fightUrl": "http://www.ufcstats.com/fight-details/32087c183dffcae0",
+      "weightClass": "Bantamweight",
+      "fighterA": {
+        "name": "Jamie Siraj",
+        "url": "http://www.ufcstats.com/fighter-details/e6679e38e7fab7a8",
+        "nickname": "The Gremlin",
+        "height": "--",
+        "weight": "135 lbs.",
+        "reach": "--",
+        "stance": "Orthodox",
+        "dob": "Jun 28, 1994",
+        "slpm": 0,
+        "strikeAcc": 0,
+        "sapm": 0,
+        "strikeDef": 0,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 0,
+        "subAvg": 0,
+        "record": {
+          "wins": 14,
+          "losses": 3,
+          "draws": 0,
+          "total": 17
+        },
+        "recentFights": []
+      },
+      "fighterB": {
+        "name": "John Yannis",
+        "url": "http://www.ufcstats.com/fighter-details/450bcab0968562c4",
+        "nickname": null,
+        "height": "5' 7\"",
+        "weight": "135 lbs.",
+        "reach": "70\"",
+        "stance": "Southpaw",
+        "dob": "Jul 07, 1994",
+        "slpm": 0,
+        "strikeAcc": 0,
+        "sapm": 0.55,
+        "strikeDef": 71,
+        "tdAvg": 0,
+        "tdAcc": 0,
+        "tdDef": 0,
+        "subAvg": 0,
+        "record": {
+          "wins": 9,
+          "losses": 4,
+          "draws": 0,
+          "total": 13
+        },
+        "recentFights": [
+          {
+            "result": "LOSS",
+            "opponent": "Austin Bashi",
+            "event": "UFC Fight Night: Taira vs. Park",
+            "date": "Aug. 02, 2025",
+            "method": "SUB Rear Naked Choke",
+            "round": "1",
+            "time": "3:39"
+          }
+        ]
+      },
+      "analysis": {
+        "lean": "Pass",
+        "confidence": 14,
+        "notes": [],
+        "metrics": {
+          "slpmEdge": 0,
+          "sapmEdge": 0.55,
+          "tdAvgEdge": 0,
+          "tdDefEdge": 0,
+          "reachEdge": null,
+          "recentFormEdge": 0,
+          "experienceEdge": 4
+        },
+        "caution": "Heuristic only. Check injuries, weigh-ins, short notice, and live odds before betting."
+      }
+    }
+  ],
+  "generatedInsights": {
+    "bestConfidenceLeans": [
+      {
+        "matchup": "Mandel Nallo vs Jai Herbert",
+        "lean": "Lean Mandel Nallo",
+        "confidence": 100
+      },
+      {
+        "matchup": "Tanner Boser vs Gokhan Saricam",
+        "lean": "Lean Tanner Boser",
+        "confidence": 100
+      },
+      {
+        "matchup": "John Castaneda vs Mark Vologdin",
+        "lean": "Lean John Castaneda",
+        "confidence": 100
+      },
+      {
+        "matchup": "Jasmine Jasudavicius vs Karine Silva",
+        "lean": "Lean Jasmine Jasudavicius",
+        "confidence": 78
+      },
+      {
+        "matchup": "Kyler Phillips vs Charles Jourdain",
+        "lean": "Lean Kyler Phillips",
+        "confidence": 69
+      }
+    ]
+  }
+}

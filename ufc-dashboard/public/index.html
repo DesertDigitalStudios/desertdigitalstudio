@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFC Fight Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Fight Research Lab</div>
+        <h1>UFC Betting Dashboard</h1>
+        <p class="subcopy">Weekly-updating fighter stats, matchup edges, and quick betting research for the next UFC card.</p>
+      </div>
+      <div class="topbar-actions">
+        <div class="meta-chip">Updated <span id="updated-at">—</span></div>
+        <div class="meta-chip">Card <span id="fight-count">0 fights</span></div>
+      </div>
+    </header>
+
+    <section class="summary-grid" id="summary-grid"></section>
+
+    <section class="panel hero-panel">
+      <div class="hero-grid">
+        <div>
+          <div class="panel-title">Next event</div>
+          <h2 id="event-name">Loading...</h2>
+          <p class="panel-subtitle"><span id="event-date">—</span> · <span id="event-location">—</span></p>
+        </div>
+        <div>
+          <div class="panel-title">Top leans</div>
+          <div id="top-leans" class="lean-list muted">Loading...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">Upcoming slate</div>
+          <p class="panel-subtitle">Next several UFC events from the feed, so you can see what’s coming after the current card.</p>
+        </div>
+      </div>
+      <div id="upcoming-events" class="event-list"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">Fight-by-fight breakdown</div>
+          <p class="panel-subtitle">Heuristic research helper only. Use this to narrow where to look deeper, not to blindly tail numbers.</p>
+        </div>
+      </div>
+      <div id="fights-grid" class="fight-grid"></div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
