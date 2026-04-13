@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Weekly Dinner Menu for 2</title>
+<style>
+  @page { size: Letter; margin: 0.55in; }
+  :root {
+    --bg: #f5f4ef;
+    --ink: #1f2722;
+    --muted: #5f655f;
+    --green: #415b49;
+    --green2: #73907d;
+    --card: #ffffff;
+    --accent: #d9d0bb;
+    --line: #d8ddd6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.4;
+    font-size: 11.5px;
+  }
+  .header {
+    background: var(--green);
+    color: white;
+    padding: 22px 26px 18px;
+    border-radius: 16px;
+    margin-bottom: 18px;
+  }
+  .header h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+    line-height: 1.1;
+  }
+  .header p {
+    margin: 0;
+    color: #e2e8e2;
+    font-size: 13px;
+  }
+  .summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .pill {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 14px;
+  }
+  .pill strong {
+    display: block;
+    color: var(--green);
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 14px 16px 14px;
+    break-inside: avoid;
+  }
+  .day {
+    margin: 0 0 4px;
+    color: var(--green);
+    font-size: 18px;
+  }
+  .meal {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .tag {
+    background: var(--accent);
+    color: #4a4333;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  h3 {
+    margin: 12px 0 6px;
+    font-size: 12px;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  ul, ol {
+    margin: 6px 0 0 18px;
+    padding: 0;
+  }
+  li { margin-bottom: 4px; }
+  .bottom {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .section-title {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--green);
+  }
+  .shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .small {
+    color: var(--muted);
+    font-size: 10.5px;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Weekly Dinner Menu for 2</h1>
+    <p>Quick, high-protein, vegetable-focused dinners with moderate to minimal carbs. Built for 2 adults and designed to stay affordable and easy to cook on weeknights.</p>
+  </div>
+
+  <div class="summary">
+    <div class="pill"><strong>Best for</strong> Busy weeknights, fast cleanup, affordable grocery runs</div>
+    <div class="pill"><strong>Focus</strong> Protein + vegetables, lighter on carbs</div>
+    <div class="pill"><strong>Plan style</strong> 5 dinners, 20 to 30 minutes each</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2 class="day">Monday</h2>
+      <p class="meal">Garlic Chicken and Broccoli Skillet</p>
+      <div class="meta">
+        <span class="tag">Serves 2</span>
+        <span class="tag">20 to 25 min</span>
+        <span class="tag">High protein</span>
+        <span class="tag">Low carb</span>
+      </div>
+      <h3>Ingredients</h3>
+      <ul>
+        <li>1 lb chicken thighs or chicken breast</li>
+        <li>1 large head broccoli or 1 bag frozen broccoli</li>
+        <li>1/2 onion, sliced</li>
+        <li>2 to 3 garlic cloves, minced</li>
+        <li>1 tbsp olive oil</li>
+        <li>1 tsp paprika, plus salt and pepper</li>
+        <li>Optional: 1 cup cooked rice total</li>
+      </ul>
+      <h3>Instructions</h3>
+      <ol>
+        <li>Heat oil in a skillet over medium-high heat.</li>
+        <li>Season chicken with paprika, salt, and pepper.</li>
+        <li>Cook chicken 6 to 8 minutes until browned and cooked through.</li>
+        <li>Add onion and broccoli, cook 4 to 5 minutes.</li>
+        <li>Add garlic, stir 30 seconds, combine, and serve.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2 class="day">Tuesday</h2>
+      <p class="meal">Ground Turkey Taco Bowls</p>
+      <div class="meta">
+        <span class="tag">Serves 2</span>
+        <span class="tag">20 min</span>
+        <span class="tag">High protein</span>
+        <span class="tag">Low to moderate carb</span>
+      </div>
+      <h3>Ingredients</h3>
+      <ul>
+        <li>1 lb ground turkey</li>
+        <li>2 tsp taco seasoning</li>
+        <li>1/2 head lettuce, chopped</li>
+        <li>1 tomato, diced</li>
+        <li>1/2 onion, diced</li>
+        <li>1 bell pepper, diced</li>
+        <li>Salsa</li>
+        <li>Optional: black beans, cheese, avocado</li>
+      </ul>
+      <h3>Instructions</h3>
+      <ol>
+        <li>Brown ground turkey in a skillet, about 7 to 8 minutes.</li>
+        <li>Add taco seasoning with a splash of water.</li>
+        <li>Split lettuce and vegetables between 2 bowls.</li>
+        <li>Top with turkey, salsa, and any optional toppings.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2 class="day">Wednesday</h2>
+      <p class="meal">Beef and Zucchini Stir-Fry</p>
+      <div class="meta">
+        <span class="tag">Serves 2</span>
+        <span class="tag">20 to 25 min</span>
+        <span class="tag">High protein</span>
+        <span class="tag">Low carb</span>
+      </div>
+      <h3>Ingredients</h3>
+      <ul>
+        <li>1 lb ground beef or thin sliced beef</li>
+        <li>2 zucchini, sliced</li>
+        <li>1/2 onion, sliced</li>
+        <li>1 to 1.5 cups frozen mixed vegetables</li>
+        <li>2 garlic cloves, minced</li>
+        <li>2 tbsp soy sauce</li>
+        <li>1 tbsp oil and black pepper</li>
+      </ul>
+      <h3>Instructions</h3>
+      <ol>
+        <li>Heat oil and cook beef until browned.</li>
+        <li>Add onion, then zucchini and frozen vegetables.</li>
+        <li>Cook 5 to 6 minutes until tender.</li>
+        <li>Add garlic, soy sauce, and pepper. Stir and serve.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2 class="day">Thursday</h2>
+      <p class="meal">Egg Roll in a Bowl</p>
+      <div class="meta">
+        <span class="tag">Serves 2</span>
+        <span class="tag">20 min</span>
+        <span class="tag">High protein</span>
+        <span class="tag">Very low carb</span>
+      </div>
+      <h3>Ingredients</h3>
+      <ul>
+        <li>1 lb ground pork or ground turkey</li>
+        <li>1/2 bag coleslaw mix</li>
+        <li>1/2 onion, sliced</li>
+        <li>2 garlic cloves, minced</li>
+        <li>2 tbsp soy sauce</li>
+        <li>1 tsp sesame oil, optional</li>
+        <li>Optional green onions</li>
+      </ul>
+      <h3>Instructions</h3>
+      <ol>
+        <li>Brown the meat in a large skillet.</li>
+        <li>Add onion, then garlic.</li>
+        <li>Add coleslaw mix and cook until softened.</li>
+        <li>Stir in soy sauce and sesame oil, then serve.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2 class="day">Friday</h2>
+      <p class="meal">Sheet Pan Sausage and Vegetables</p>
+      <div class="meta">
+        <span class="tag">Serves 2</span>
+        <span class="tag">25 to 30 min</span>
+        <span class="tag">Moderate to high protein</span>
+        <span class="tag">Low carb</span>
+      </div>
+      <h3>Ingredients</h3>
+      <ul>
+        <li>12 to 14 oz smoked sausage or chicken sausage</li>
+        <li>2 zucchini, chopped</li>
+        <li>1 head broccoli or 1 bag frozen broccoli</li>
+        <li>1 bell pepper, chopped</li>
+        <li>1/2 onion, chopped</li>
+        <li>1 tbsp olive oil</li>
+        <li>Salt, pepper, garlic powder</li>
+      </ul>
+      <h3>Instructions</h3>
+      <ol>
+        <li>Preheat oven to 425°F.</li>
+        <li>Spread sausage and vegetables on a sheet pan.</li>
+        <li>Drizzle with oil and season well.</li>
+        <li>Roast 20 to 25 minutes, stirring halfway through.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2 class="day">Optional Leftovers</h2>
+      <p class="meal">Easy Lunch Add-On Strategy</p>
+      <div class="meta">
+        <span class="tag">Optional</span>
+        <span class="tag">Budget-friendly</span>
+      </div>
+      <ul>
+        <li>Increase Monday chicken to 1.25 lbs for an extra lunch portion.</li>
+        <li>Increase Tuesday turkey to 1.25 lbs if you want leftovers.</li>
+        <li>Thursday reheats especially well, so it is the best meal to make extra.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="card">
+      <h2 class="section-title">Grocery List for 2</h2>
+      <div class="shop-grid">
+        <div>
+          <h3>Proteins</h3>
+          <ul>
+            <li>1 lb chicken thighs or chicken breast</li>
+            <li>2 lbs ground turkey total</li>
+            <li>1 lb ground beef</li>
+            <li>1 lb ground pork or more turkey</li>
+            <li>1 package smoked sausage or chicken sausage</li>
+          </ul>
+          <h3>Vegetables</h3>
+          <ul>
+            <li>2 heads broccoli or frozen broccoli bags</li>
+            <li>1 head lettuce</li>
+            <li>1 tomato</li>
+            <li>2 to 3 onions</li>
+            <li>4 zucchini</li>
+            <li>2 bell peppers</li>
+          </ul>
+        </div>
+        <div>
+          <h3>More produce and pantry</h3>
+          <ul>
+            <li>1 bag coleslaw mix</li>
+            <li>1 bag frozen mixed vegetables</li>
+            <li>1 bulb garlic</li>
+            <li>Olive oil</li>
+            <li>Salt and pepper</li>
+            <li>Paprika</li>
+            <li>Garlic powder</li>
+            <li>Soy sauce</li>
+            <li>Taco seasoning</li>
+            <li>Salsa</li>
+          </ul>
+          <h3>Optional extras</h3>
+          <ul>
+            <li>Black beans</li>
+            <li>Shredded cheese</li>
+            <li>Sesame oil</li>
+            <li>Rice</li>
+            <li>Green onions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Budget Notes</h2>
+      <ul>
+        <li>Use chicken thighs instead of chicken breast if cheaper.</li>
+        <li>Frozen broccoli is often cheaper and lasts longer.</li>
+        <li>Ground turkey carries two meals well and keeps cost down.</li>
+        <li>Reuse onion, garlic, and peppers across multiple dinners.</li>
+        <li>Skip premium toppings unless you already have them.</li>
+      </ul>
+      <p class="small">Tip: if you shop at Aldi or Walmart, this plan should stay fairly reasonable while still keeping protein high and prep time low.</p>
+    </div>
+  </div>
+</body>
+</html>
