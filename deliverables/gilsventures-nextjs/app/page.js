@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { certifications, featuredProjects, serviceAreas, services } from '@/lib/site-data';
+import { certifications, company, featuredProjects, serviceAreas, services } from '@/lib/site-data';
 
 export const metadata = {
   title: "El Paso Roofing Contractor | Gil's Ventures, LLC",
@@ -14,11 +14,16 @@ export default function HomePage() {
         <div className="container hero-inner">
           <div className="hero-copy">
             <span className="eyebrow">Licensed in New Mexico • Bonded • Insured</span>
-            <h1>El Paso&apos;s Trusted Roofing Contractor, Built to Last Since 1981</h1>
-            <p>Gil&apos;s Ventures delivers residential, commercial, federal, and sheet metal roofing work backed by decades of Borderland experience and a reputation for showing up, solving problems, and finishing strong.</p>
+            <h1>Commercial, residential, and federal roofing built by a Borderland contractor with 40+ years of field experience.</h1>
+            <p>Gil&apos;s Ventures helps owners, property managers, and facility teams across El Paso, Sunland Park, and surrounding areas handle reroofs, repairs, sheet metal scopes, and demanding project coordination with confidence.</p>
             <div className="hero-actions">
-              <Link href="/contact/" className="btn btn-primary">Get a Free Estimate</Link>
-              <Link href="/projects/" className="btn btn-outline-light">View Recent Projects</Link>
+              <Link href="/contact/" className="btn btn-primary">Request a Free Estimate</Link>
+              <a href={company.phonePrimaryHref} className="btn btn-outline-light">Call {company.phonePrimary}</a>
+              <Link href="/projects/" className="btn btn-ghost-light">View Recent Projects</Link>
+            </div>
+            <div className="hero-assurance">
+              <span>Serving El Paso, Sunland Park, Las Cruces, Anthony, Socorro, Horizon City, and nearby Borderland communities.</span>
+              <span>Fast response for reroofs, repairs, and sheet metal scopes.</span>
             </div>
           </div>
         </div>
@@ -26,10 +31,10 @@ export default function HomePage() {
 
       <section className="trust-bar">
         <div className="container trust-grid">
-          <div className="trust-item"><strong>40+ Years</strong><span>Carlos started roofing in 1981</span></div>
-          <div className="trust-item"><strong>20+ Years</strong><span>Company track record since the early 2000s</span></div>
-          <div className="trust-item"><strong>Federal Experience</strong><span>Fort Bliss and government project support</span></div>
-          <div className="trust-item"><strong>Borderland Coverage</strong><span>El Paso, Sunland Park, Las Cruces, and beyond</span></div>
+          <div className="trust-item"><strong>40+ Years</strong><span>Roofing experience dating back to 1981</span></div>
+          <div className="trust-item"><strong>10 Certifications</strong><span>Recognized applicator and manufacturer affiliations</span></div>
+          <div className="trust-item"><strong>Federal Experience</strong><span>Fort Bliss, CBP, and public-sector project support</span></div>
+          <div className="trust-item"><strong>Free Estimates</strong><span>Call, email, or send project details for a fast next step</span></div>
         </div>
       </section>
 
@@ -102,10 +107,34 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <span className="eyebrow">Why Gil&apos;s Ventures</span>
-          <h2 className="section-title">The kind of contractor owners and managers want on site</h2>
+          <h2 className="section-title">A stronger trust story than the usual contractor site</h2>
           <div className="award-badge-row">
             <Image src="/images/tile-roof.jpg" alt="2024 Best of the Border Community's Choice Award — Winner" width={180} height={180} style={{ borderRadius: '50%', objectFit: 'cover' }} />
-            <p className="award-badge-text">Voted <strong>Best of the Border 2024</strong> by the El Paso community — a recognition earned through consistent workmanship and customer trust.</p>
+            <p className="award-badge-text">Voted <strong>Best of the Border 2024</strong> by the El Paso community, with a project history that spans homes, multifamily properties, commercial scopes, and public-sector work.</p>
+          </div>
+          <div className="trust-proof-shell">
+            <div className="trust-proof-main">
+              <h3>What gives owners confidence to call</h3>
+              <p>Gil&apos;s Ventures combines long-term field experience, manufacturer-backed systems, and local accountability. That means clearer communication, better fit-for-scope recommendations, and a contractor that can handle both everyday roofing work and more demanding commercial or federal conditions.</p>
+              <ul className="trust-proof-list">
+                <li>40+ years of roofing experience in the Borderland</li>
+                <li>Licensed in New Mexico, bonded, and insured</li>
+                <li>Residential, commercial, sheet metal, and federal capability</li>
+                <li>Real project gallery with named work across multiple scope types</li>
+              </ul>
+            </div>
+            <div className="trust-proof-side">
+              {[
+                ['Fast estimate path', 'Call, email, or submit project details for the next step.'],
+                ['Documented capability', 'Trusted for projects that need coordination, access, and reliability.'],
+                ['Borderland coverage', 'Serving El Paso, Sunland Park, Las Cruces, and nearby communities.'],
+              ].map(([title, text]) => (
+                <article key={title} className="trust-mini-card">
+                  <h4>{title}</h4>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
           </div>
           <div className="reasons-grid">
             {[

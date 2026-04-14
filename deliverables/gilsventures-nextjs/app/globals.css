@@ -29,6 +29,8 @@ main { min-height: 60vh; }
 .btn-primary:hover { background: var(--amber-light); }
 .btn-outline { border-color: var(--navy); color: var(--navy); background: transparent; }
 .btn-outline-light { border-color: var(--white); color: var(--white); background: transparent; }
+.btn-ghost-light { border-color: rgba(255,255,255,0.28); color: rgba(255,255,255,0.92); background: transparent; }
+.btn-ghost-light:hover { border-color: var(--white); color: var(--white); }
 .btn-ghost-accent { color: var(--amber); background: transparent; }
 .site-header { position: sticky; top: 0; z-index: 150; background: rgba(255,255,255,0.96); border-bottom: 1px solid rgba(0,0,0,0.05); backdrop-filter: blur(10px); }
 .header-logo { display: flex; align-items: center; flex-shrink: 0; }
@@ -51,8 +53,10 @@ main { min-height: 60vh; }
 .hero-inner { display: grid; align-items: center; min-height: 76vh; padding: 6rem 0; }
 .hero-copy { max-width: 760px; }
 .hero h1 { margin: 0 0 1rem; font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.02; }
-.hero p { max-width: 650px; font-size: 1.15rem; color: rgba(255,255,255,0.88); }
+.hero p { max-width: 720px; font-size: 1.15rem; color: rgba(255,255,255,0.88); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.hero-assurance { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.3rem; color: rgba(255,255,255,0.76); font-size: 0.96rem; }
+.hero-assurance span { padding: 0.5rem 0.85rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; background: rgba(255,255,255,0.06); }
 .trust-bar { background: var(--navy); color: var(--white); }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 .trust-item { padding: 1.35rem 0; }
@@ -86,6 +90,14 @@ main { min-height: 60vh; }
 .award-badge-row { display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--cream); border-radius: 12px; border: 1px solid var(--border); }
 .award-badge-row img { flex-shrink: 0; border-radius: 50%; object-fit: cover; }
 .award-badge-text { font-size: 1.05rem; line-height: 1.6; color: var(--text); }
+.trust-proof-shell { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem; margin-bottom: 2rem; }
+.trust-proof-main, .trust-mini-card { background: var(--white); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); }
+.trust-proof-main { padding: 1.75rem; }
+.trust-proof-main h3, .trust-mini-card h4 { margin: 0 0 0.85rem; color: var(--navy); }
+.trust-proof-main p, .trust-mini-card p, .trust-proof-list li, .contact-note { color: var(--text-soft); line-height: 1.7; }
+.trust-proof-list { margin: 1rem 0 0; padding-left: 1.15rem; display: grid; gap: 0.5rem; }
+.trust-proof-side { display: grid; gap: 1rem; }
+.trust-mini-card { padding: 1.25rem; }
 
 .cert-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 2rem; }
 .cert-card { display: grid; place-items: center; padding: 1.25rem; min-height: 130px; }
@@ -106,10 +118,15 @@ main { min-height: 60vh; }
 .gallery-card img { aspect-ratio: 4 / 3; }
 .gallery-copy { padding: 1rem 1rem 1.25rem; }
 .estimate-form { display: grid; gap: 1rem; }
+.form-intro-box { display: grid; gap: 0.35rem; padding: 1rem 1.1rem; background: var(--cream); border: 1px solid var(--border); border-radius: 18px; color: var(--text-soft); }
+.form-intro-box strong { color: var(--navy); }
 .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .estimate-form label { display: grid; gap: 0.45rem; font-weight: 600; color: var(--navy); }
 .estimate-form input, .estimate-form select, .estimate-form textarea { width: 100%; padding: 0.95rem 1rem; border: 1px solid var(--border); border-radius: 16px; font: inherit; background: var(--white); }
 .estimate-form textarea { min-height: 160px; resize: vertical; }
+.form-reassurance { display: grid; gap: 0.45rem; color: var(--text-soft); font-size: 0.96rem; }
+.contact-hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+.contact-card-accent { border-color: rgba(212,130,10,0.28); background: #fffaf2; }
 .site-footer { background: var(--navy); color: rgba(255,255,255,0.88); margin-top: 0; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 1fr; gap: 2rem; padding: 4rem 1.5rem; }
 .site-footer h3 { color: var(--white); }
@@ -122,13 +139,15 @@ main { min-height: 60vh; }
   .desktop-nav, .header-actions .phone-link, .header-actions .btn { display: none; }
   .menu-toggle { display: inline-flex; }
   .cards-grid, .reasons-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .trust-grid, .split-section, .about-grid, .contact-grid, .footer-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid, .split-section, .about-grid, .contact-grid, .footer-grid, .projects-grid, .trust-proof-shell { grid-template-columns: repeat(2, 1fr); }
   .cert-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
   .section { padding: 4rem 0; }
   .hero-inner { min-height: 66vh; padding: 5rem 0; }
-  .trust-grid, .cards-grid, .split-section, .projects-grid, .reasons-grid, .gallery-grid, .areas-grid, .about-grid, .contact-grid, .footer-grid, .form-grid, .cta-band-inner, .proof-panel { grid-template-columns: 1fr; }
+  .trust-grid, .cards-grid, .split-section, .projects-grid, .reasons-grid, .gallery-grid, .areas-grid, .about-grid, .contact-grid, .footer-grid, .form-grid, .cta-band-inner, .proof-panel, .trust-proof-shell { grid-template-columns: 1fr; }
+  .hero-assurance { flex-direction: column; }
+  .contact-hero-actions { flex-direction: column; align-items: flex-start; }
   .service-row { grid-template-columns: 1fr; }
   .service-row .service-icon { width: 72px; height: 72px; }
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
