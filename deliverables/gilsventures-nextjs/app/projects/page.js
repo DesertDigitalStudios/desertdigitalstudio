@@ -4,7 +4,8 @@ import { galleryItems } from '@/lib/site-data';
 
 export const metadata = {
   title: 'Project Gallery | Commercial & Residential Roofing — Gil\'s Ventures',
-  description: 'Browse Gil\'s Ventures project gallery — including federal, commercial, and residential roofing work across El Paso, Fort Bliss, and the Borderland.',
+  description: 'Browse Gil\'s Ventures project gallery with federal, commercial, residential, multifamily, and sheet metal roofing work across El Paso and the Borderland.',
+  alternates: { canonical: '/projects/' },
 };
 
 const categories = ['Federal / Government Projects', 'Commercial Roofing', 'Residential Roofing', 'Metal & Sheet Metal'];

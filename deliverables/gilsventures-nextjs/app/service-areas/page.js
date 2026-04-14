@@ -3,7 +3,8 @@ import { serviceAreas } from '@/lib/site-data';
 
 export const metadata = {
   title: 'Roofing Service Areas | El Paso, Sunland Park & the Borderland',
-  description: 'Gil\'s Ventures serves El Paso, Sunland Park, Fort Bliss, Las Cruces, Anthony, Horizon City, and communities throughout the Borderland region.',
+  description: 'Gil\'s Ventures serves El Paso, Sunland Park, Fort Bliss, Las Cruces, Anthony, Horizon City, Socorro, and communities throughout the Borderland region.',
+  alternates: { canonical: '/service-areas/' },
 };
 
 export default function ServiceAreasPage() {

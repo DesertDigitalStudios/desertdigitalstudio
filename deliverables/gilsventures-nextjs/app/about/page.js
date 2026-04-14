@@ -4,7 +4,8 @@ import { certifications } from '@/lib/site-data';
 
 export const metadata = {
   title: 'About Gil\'s Ventures | 40+ Years of El Paso Roofing',
-  description: 'Learn about Gil\'s Ventures — a family-owned roofing company serving El Paso since 1981, with 20+ years of federal project experience at Fort Bliss and beyond.',
+  description: 'Learn about Gil\'s Ventures, a family-owned roofing company with 40+ years of field experience serving El Paso, Sunland Park, and the Borderland.',
+  alternates: { canonical: '/about/' },
 };
 
 export default function AboutPage() {

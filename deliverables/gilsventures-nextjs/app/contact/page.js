@@ -2,7 +2,13 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Request a Free Roofing Estimate | Gil\'s Ventures — El Paso',
-  description: 'Contact Gil\'s Ventures for a free roofing estimate in El Paso, TX. Residential, commercial, and federal projects. Call (915) 274-3835 or fill out our quick form.',
+  description: 'Contact Gil\'s Ventures for a free roofing estimate in El Paso, TX. Residential, commercial, federal, repair, and sheet metal projects. Call (915) 274-3835.',
+  alternates: { canonical: '/contact/' },
+  openGraph: {
+    title: 'Request a Free Roofing Estimate | Gil\'s Ventures',
+    description: 'Call or send project details for residential, commercial, federal, and sheet metal roofing work across El Paso and the Borderland.',
+    url: 'https://www.gilsventures.com/contact/',
+  },
 };
 
 export default function ContactPage() {

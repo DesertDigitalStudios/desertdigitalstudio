@@ -4,7 +4,8 @@ import { certifications, services } from '@/lib/site-data';
 
 export const metadata = {
   title: 'Roofing Services in El Paso, TX | Gil\'s Ventures',
-  description: 'From residential shingle and tile to commercial TPO, metal roofing, and federal projects — Gil\'s Ventures covers all roofing needs in El Paso and the Borderland.',
+  description: 'From residential shingle and tile to commercial TPO, metal roofing, sheet metal, and federal projects, Gil\'s Ventures covers roofing needs across El Paso and the Borderland.',
+  alternates: { canonical: '/services/' },
 };
 
 export default function ServicesPage() {
