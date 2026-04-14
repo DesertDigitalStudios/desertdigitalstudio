@@ -20,10 +20,10 @@ export const services = [
 ];
 
 export const featuredProjects = [
-  { image: '/images/federal-5.webp', category: 'Federal', title: 'Federal Government Roofing', description: 'Government facility roofing completed with proper documentation, site safety, and durable system performance.' },
-  { image: '/images/commercial-featured.webp', category: 'Commercial', title: 'Commercial Roofing Project', description: 'Commercial roofing scope delivered on schedule with quality materials and clean execution.' },
-  { image: '/images/residential-5.webp', category: 'Residential', title: 'Residential Reroof — Aerial View', description: 'Aerial view of a completed residential roofing project in the El Paso Borderland area.' },
-  { image: '/images/metal-1.webp', category: 'Metal & Sheet Metal', title: 'Metal Roofing System', description: 'Custom metal roofing installation with precision fit, flashing details, and long-term weather performance.' },
+  { image: '/images/restoration.jpg', category: 'Federal', title: 'CBP Santa Teresa Restoration', description: 'Federal restoration work completed with coordination, compliance, and durable exterior repair performance.' },
+  { image: '/images/la-cantera-1.jpg', category: 'Commercial', title: 'La Cantera Shopping Center', description: 'Commercial SBS roofing work completed on a named retail-center scope from the live Gil\'s Ventures gallery.' },
+  { image: '/images/residential-mexican-clay-s-tile.jpg', category: 'Residential', title: 'Completed Residential Tile Roof', description: 'Drone view of a completed residential clay tile roofing project in the Borderland.' },
+  { image: '/images/catwalk-1.jpg', category: 'Metal & Sheet Metal', title: 'Custom Sheet Metal Catwalk', description: 'Specialty metal fabrication and rooftop access detail installed for long-term performance and serviceability.' },
 ];
 
 export const certifications = [
@@ -51,24 +51,26 @@ export const serviceAreas = [
 
 export const galleryItems = [
   // Federal / Government Projects
-  { src: '/images/federal-1.webp', alt: 'Federal government roofing project completed by Gil\'s Ventures in the El Paso area', caption: 'Federal roofing project', category: 'Federal / Government Projects' },
-  { src: '/images/federal-2.webp', alt: 'Government facility roofing installation in the El Paso Borderland', caption: 'Government facility roofing', category: 'Federal / Government Projects' },
-  { src: '/images/federal-3.webp', alt: 'Federal scope roofing project managed and installed by Gil\'s Ventures', caption: 'Federal scope installation', category: 'Federal / Government Projects' },
-  { src: '/images/federal-4.webp', alt: 'Public-sector roofing project completed with jobsite compliance near El Paso', caption: 'Public-sector roof system', category: 'Federal / Government Projects' },
-  { src: '/images/federal-5.webp', alt: 'Federal roofing coordination and completion in the El Paso Borderland area', caption: 'Federal project completion', category: 'Federal / Government Projects' },
+  { src: '/images/canopy.jpg', alt: 'Metal canopy installation completed for a Customs and Border Protection facility', caption: 'CBP metal canopy system', category: 'Federal / Government Projects' },
+  { src: '/images/restoration.jpg', alt: 'Exterior restoration and sealing work completed at the CBP Santa Teresa Station', caption: 'CBP Santa Teresa restoration', category: 'Federal / Government Projects' },
+  { src: '/images/metal-roof-2.jpg', alt: 'Desert Hills Elementary School roof recovery work completed using a no-dollar-limit warranty roofing system', caption: 'Desert Hills Elementary School roof recovery', category: 'Federal / Government Projects' },
+  { src: '/images/restoration-2.jpg', alt: 'Desert Hills Elementary School roof restoration and exterior repair work in the Borderland', caption: 'Desert Hills Elementary School restoration', category: 'Federal / Government Projects' },
+  { src: '/images/cbp-siding-1.jpg', alt: 'Federal facility envelope and siding improvement work completed by Gil\'s Ventures', caption: 'Federal facility exterior upgrade', category: 'Federal / Government Projects' },
   // Commercial Roofing
-  { src: '/images/commercial-1.webp', alt: 'Commercial roofing installation completed by Gil\'s Ventures in El Paso', caption: 'Commercial roofing project', category: 'Commercial Roofing' },
-  { src: '/images/commercial-2.webp', alt: 'Commercial flat or low-slope roof system installed in the El Paso area', caption: 'Commercial flat roof system', category: 'Commercial Roofing' },
-  { src: '/images/commercial-3.webp', alt: 'Commercial property reroof and restoration work by Gil\'s Ventures', caption: 'Commercial reroof and restoration', category: 'Commercial Roofing' },
-  { src: '/images/commercial-4.webp', alt: 'Multi-unit commercial building roofing project by Gil\'s Ventures', caption: 'Multi-unit commercial roofing', category: 'Commercial Roofing' },
-  { src: '/images/commercial-5.webp', alt: 'Commercial roofing scope completed in the El Paso Borderland', caption: 'Commercial roofing scope', category: 'Commercial Roofing' },
-  { src: '/images/commercial-6.webp', alt: 'Commercial roof with drainage, flashing, and system detail by Gil\'s Ventures', caption: 'Commercial drainage and flashing detail', category: 'Commercial Roofing' },
+  { src: '/images/la-cantera-1.jpg', alt: 'La Cantera Shopping Center no-dollar-limit warranty SBS roofing system under installation', caption: 'La Cantera Shopping Center SBS roofing system', category: 'Commercial Roofing' },
+  { src: '/images/la-cantera-2.jpg', alt: 'La Cantera Shopping Center custom metal cap, gutters, and standing seam soffit detail by Berridge', caption: 'La Cantera Shopping Center metal detail', category: 'Commercial Roofing' },
+  { src: '/images/jackie-robinson-apts.jpg', alt: 'Roofing work completed at Jackie Robinson apartment complex', caption: 'Jackie Robinson Apartments roofing project', category: 'Commercial Roofing' },
+  { src: '/images/gonzalez-apartments.jpg', alt: 'New shingle roof system at the Gonzalez Apartments for the Housing Authority of the City of El Paso', caption: 'Gonzalez Apartments roofing project', category: 'Commercial Roofing' },
+  { src: '/images/ridgeline-west.jpg', alt: 'New shingle roof system for the Ridgeline West Apartments', caption: 'Ridgeline West Apartments roofing project', category: 'Commercial Roofing' },
+  { src: '/images/jackie-robinson-2.jpg', alt: 'New shingle system and metal cap installed at the Jackie Robinson Apartments for the Housing Authority of the City of El Paso', caption: 'Jackie Robinson Apartments shingle and metal cap work', category: 'Commercial Roofing' },
   // Residential Roofing
-  { src: '/images/residential-1.webp', alt: 'Residential roofing replacement completed in an El Paso neighborhood', caption: 'Residential roof replacement', category: 'Residential Roofing' },
-  { src: '/images/residential-3.webp', alt: 'Residential reroof with shingle system installed in El Paso or Sunland Park', caption: 'Shingle reroof', category: 'Residential Roofing' },
-  { src: '/images/residential-4.webp', alt: 'Residential roofing project completed in the Borderland area', caption: 'Residential roofing — Borderland', category: 'Residential Roofing' },
-  { src: '/images/residential-5.webp', alt: 'Aerial drone view of a completed residential roofing project by Gil\'s Ventures', caption: 'Aerial view — residential completion', category: 'Residential Roofing' },
+  { src: '/images/residential-mexican-clay-s-tile.jpg', alt: 'Completed Mexican clay S-tile roof on a residential home in the Borderland', caption: 'Mexican clay S-tile residential roof', category: 'Residential Roofing' },
+  { src: '/images/residential-standing-seam-grey.jpg', alt: 'Completed light grey standing seam metal roof on a residential home', caption: 'Light grey standing seam residential roof', category: 'Residential Roofing' },
+  { src: '/images/residential-completed-shingle-drone.jpg', alt: 'Completed residential shingle roof captured by drone at golden hour', caption: 'Completed residential shingle roof', category: 'Residential Roofing' },
+  { src: '/images/residential-shingle-comparison-drone.png', alt: 'Completed residential shingle roof comparison captured by drone', caption: 'Completed residential shingle roofing project', category: 'Residential Roofing' },
   // Metal & Sheet Metal
-  { src: '/images/metal-1.webp', alt: 'Metal roofing system installed by Gil\'s Ventures in the El Paso area', caption: 'Metal roofing system', category: 'Metal & Sheet Metal' },
-  { src: '/images/metal-2.webp', alt: 'Sheet metal fabrication and standing seam roofing project by Gil\'s Ventures', caption: 'Sheet metal and standing seam', category: 'Metal & Sheet Metal' },
+  { src: '/images/catwalk-1.jpg', alt: 'Custom sheet metal catwalk and roof access detail on a commercial roof', caption: 'Custom sheet metal catwalk', category: 'Metal & Sheet Metal' },
+  { src: '/images/metal-roof-1.jpg', alt: 'Standing seam metal roofing detail completed on a commercial structure', caption: 'Standing seam detail', category: 'Metal & Sheet Metal' },
+  { src: '/images/cbp-standing-seam.jpg', alt: 'Standing seam metal roofing system installed on a large-scale project', caption: 'Standing seam project installation', category: 'Metal & Sheet Metal' },
+  { src: '/images/shingle-install.jpg', alt: 'Roof edge, flashing, and installation detail completed by Gil\'s Ventures', caption: 'Roof edge and flashing detail', category: 'Metal & Sheet Metal' },
 ];

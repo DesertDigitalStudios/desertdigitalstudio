@@ -20,16 +20,26 @@ export default function ServicesPage() {
       </section>
       <section className="section">
         <div className="container">
+          <div className="services-proof-strip">
+            <div><strong>Residential</strong><span>Shingle, tile, metal, reroofs, and repairs</span></div>
+            <div><strong>Commercial</strong><span>TPO, low-slope systems, apartments, and retail scopes</span></div>
+            <div><strong>Federal</strong><span>Experience with CBP, Fort Bliss-related work, and public projects</span></div>
+            <div><strong>Sheet Metal</strong><span>Flashing, coping, gutters, downspouts, and specialty details</span></div>
+          </div>
           {services.map((service) => (
             <article key={service.slug} className="service-row service-card">
-              <div className="service-icon">{service.icon}</div>
               <div>
-                <h2>{service.title}</h2>
+                <div className="service-row-top">
+                  <span className="service-row-badge">Service Scope</span>
+                  <h2>{service.title}</h2>
+                </div>
                 <p>{service.description}</p>
                 <ul>
                   {service.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
                 </ul>
-                <Link href="/contact/" className="btn btn-outline">Talk About This Service</Link>
+                <div className="service-row-actions">
+                  <Link href="/contact/" className="btn btn-outline">Talk About This Service</Link>
+                </div>
               </div>
             </article>
           ))}

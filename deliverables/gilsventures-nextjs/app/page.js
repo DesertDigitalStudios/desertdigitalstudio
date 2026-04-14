@@ -45,8 +45,13 @@ export default function HomePage() {
           <div className="cards-grid">
             {services.map((service) => (
               <article key={service.slug} className="service-card service-card-serious">
+                <span className="service-kicker">Scope</span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+                <ul className="service-card-list">
+                  {service.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                </ul>
+                <Link href="/contact/" className="service-link">Talk with Gil&apos;s Ventures</Link>
               </article>
             ))}
           </div>
