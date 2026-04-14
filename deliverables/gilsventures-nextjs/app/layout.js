@@ -20,7 +20,6 @@ const schema = {
   logo: `${siteUrl}/images/logo-light.png`,
   telephone: ['+19152743835', '+19158209263'],
   email: 'gilbertgil@gmail.com',
-  priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '250 Quinella',
