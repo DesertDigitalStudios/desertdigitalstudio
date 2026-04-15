@@ -55,8 +55,8 @@ export default function HomePage() {
         <div className="container split-section split-section-proof">
           <div className="proof-panel">
             <div className="proof-stat">
-              <strong>40+</strong>
-              <span>Years of roofing experience in the Borderland</span>
+              <strong>1981</strong>
+              <span>Roofing experience rooted in decades of hands-on field work</span>
             </div>
             <div className="proof-stat">
               <strong>20+</strong>
@@ -115,7 +115,7 @@ export default function HomePage() {
               <h3>What gives owners confidence to call</h3>
               <p>Gil&apos;s Ventures combines long-term field experience, manufacturer-backed systems, and local accountability. That means clearer communication, better fit-for-scope recommendations, and a contractor that can handle both everyday roofing work and more demanding commercial or federal conditions.</p>
               <ul className="trust-proof-list">
-                <li>40+ years of roofing experience in the Borderland</li>
+                <li>Long-established Borderland roofing experience</li>
                 <li>Licensed in New Mexico, bonded, and insured</li>
                 <li>Residential, commercial, sheet metal, and federal capability</li>
                 <li>Real project gallery with named work across multiple scope types</li>
