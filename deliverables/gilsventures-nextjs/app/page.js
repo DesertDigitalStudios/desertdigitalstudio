@@ -39,7 +39,6 @@ export default function HomePage() {
           <div className="cards-grid">
             {services.map((service) => (
               <article key={service.slug} className="service-card service-card-serious">
-                <span className="service-kicker">Scope</span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
                 <ul className="service-card-list">

@@ -30,7 +30,6 @@ export default function ServicesPage() {
             <article key={service.slug} className="service-row service-card">
               <div>
                 <div className="service-row-top">
-                  <span className="service-row-badge">Service Scope</span>
                   <h2>{service.title}</h2>
                 </div>
                 <p>{service.description}</p>
