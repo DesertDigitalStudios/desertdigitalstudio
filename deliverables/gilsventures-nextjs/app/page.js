@@ -14,16 +14,14 @@ export default function HomePage() {
         <div className="container hero-inner">
           <div className="hero-copy">
             <span className="eyebrow">Licensed in New Mexico • Bonded • Insured</span>
-            <h1>Commercial, residential, and federal roofing built by a Borderland contractor with 40+ years of field experience.</h1>
-            <p>Gil&apos;s Ventures helps owners, property managers, and facility teams across El Paso, Sunland Park, and surrounding areas handle reroofs, repairs, sheet metal scopes, and demanding project coordination with confidence.</p>
+            <h1>Roofing done right across El Paso and the Borderland.</h1>
+            <p>Residential, commercial, federal, and sheet metal roofing backed by 40+ years of field experience.</p>
             <div className="hero-actions">
               <Link href="/contact/" className="btn btn-primary">Request a Free Estimate</Link>
               <a href={company.phonePrimaryHref} className="btn btn-outline-light">Call {company.phonePrimary}</a>
-              <Link href="/projects/" className="btn btn-ghost-light">View Recent Projects</Link>
             </div>
             <div className="hero-assurance">
               <span>Serving El Paso, Sunland Park, Las Cruces, Anthony, Socorro, Horizon City, and nearby Borderland communities.</span>
-              <span>Fast response for reroofs, repairs, and sheet metal scopes.</span>
             </div>
           </div>
         </div>
