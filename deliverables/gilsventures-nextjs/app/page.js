@@ -12,16 +12,12 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="container hero-inner">
-          <div className="hero-copy">
-            <span className="eyebrow">Licensed in New Mexico • Bonded • Insured</span>
-            <h1>Roofing done right across El Paso and the Borderland.</h1>
+          <div className="hero-copy hero-copy-tight">
+            <h1>El Paso roofing done right.</h1>
             <p>Residential, commercial, federal, and sheet metal roofing backed by 40+ years of field experience.</p>
             <div className="hero-actions">
               <Link href="/contact/" className="btn btn-primary">Request a Free Estimate</Link>
               <a href={company.phonePrimaryHref} className="btn btn-outline-light">Call {company.phonePrimary}</a>
-            </div>
-            <div className="hero-assurance">
-              <span>Serving El Paso, Sunland Park, Las Cruces, Anthony, Socorro, Horizon City, and nearby Borderland communities.</span>
             </div>
           </div>
         </div>

@@ -50,11 +50,12 @@ main { min-height: 60vh; }
 .mobile-nav { display: flex; flex-direction: column; gap: 1rem; font-size: 1.1rem; font-weight: 700; }
 .mobile-drawer-cta { display: grid; gap: 0.9rem; margin-top: auto; }
 .hero { position: relative; color: var(--white); background: linear-gradient(rgba(26,35,50,0.66), rgba(26,35,50,0.72)), url('/images/hero-aerial.jpg') center/cover no-repeat; }
-.hero-inner { display: grid; align-items: center; min-height: 76vh; padding: 6rem 0; }
+.hero-inner { display: grid; align-items: center; min-height: 66vh; padding: 4.75rem 0; }
 .hero-copy { max-width: 760px; }
-.hero h1 { margin: 0 0 1rem; font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.02; }
-.hero p { max-width: 720px; font-size: 1.15rem; color: rgba(255,255,255,0.88); }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.hero-copy-tight { max-width: 680px; }
+.hero h1 { margin: 0 0 0.85rem; font-size: clamp(2.3rem, 5.6vw, 4.1rem); line-height: 1.02; }
+.hero p { max-width: 640px; font-size: 1.08rem; color: rgba(255,255,255,0.88); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.6rem; }
 .hero-assurance { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.3rem; color: rgba(255,255,255,0.76); font-size: 0.96rem; }
 .hero-assurance span { padding: 0.5rem 0.85rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; background: rgba(255,255,255,0.06); }
 .trust-bar { background: var(--navy); color: var(--white); }
@@ -154,7 +155,7 @@ main { min-height: 60vh; }
 }
 @media (max-width: 768px) {
   .section { padding: 4rem 0; }
-  .hero-inner { min-height: 66vh; padding: 5rem 0; }
+  .hero-inner { min-height: 58vh; padding: 4rem 0; }
   .trust-grid, .cards-grid, .split-section, .projects-grid, .reasons-grid, .gallery-grid, .areas-grid, .about-grid, .contact-grid, .footer-grid, .form-grid, .cta-band-inner, .proof-panel, .trust-proof-shell, .services-proof-strip { grid-template-columns: 1fr; }
   .hero-assurance { flex-direction: column; }
   .contact-hero-actions { flex-direction: column; align-items: flex-start; }
