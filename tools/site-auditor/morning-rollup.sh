@@ -1,85 +1,65 @@
 #!/bin/zsh
 set -euo pipefail
 
-TODAY_DIR="$HOME/Desktop/Audit reports/nightly-tucson/$(date +%F)"
-OUT="$HOME/Desktop/Audit reports/nightly-tucson/$(date +%F)-morning-rollup.md"
+export HOME="${HOME:-/Users/gabrielmaciel}"
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/node/bin:/usr/bin:/bin:/usr/sbin:/sbin:${PATH:-}"
+
+WORKSPACE="/Users/gabrielmaciel/.openclaw/workspace"
+OUT="$WORKSPACE/reports/nightly-tucson/$(date +%F)-morning-rollup.md"
 mkdir -p "$(dirname "$OUT")"
 
-python3 - <<'PY' > "$OUT"
-import json
-from pathlib import Path
-from datetime import datetime
+node - <<'NODE' > "$OUT"
+const fs = require('fs');
+const path = require('path');
 
-base = Path.home() / 'Desktop' / 'Audit reports' / 'nightly-tucson' / datetime.now().strftime('%Y-%m-%d')
-print('# Tucson Morning Roll-up')
-print()
-print('Date:', datetime.now().strftime('%Y-%m-%d %H:%M'))
-print()
+const crmPath = path.join('/Users/gabrielmaciel/.openclaw/workspace', 'dashboard', 'data', 'crm-data.json');
+const data = JSON.parse(fs.readFileSync(crmPath, 'utf8'));
+const leads = Array.isArray(data) ? data : (data.leads || []);
+const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Phoenix' });
+const now = new Date().toLocaleString('sv-SE', { timeZone: 'America/Phoenix', hour12: false }).slice(0, 16);
 
-if not base.exists():
-    print('No overnight reports found for today yet.')
-    raise SystemExit
+const todayLeads = leads.filter((lead) => {
+  const source = lead.sourceReport || '';
+  const imported = (lead.importedAt || '').slice(0, 10);
+  return lead.city === 'Tucson' && (source.includes(`nightly-tucson-${today}`) || imported === today);
+});
 
-reports = sorted(base.glob('*/report.json'))
-if not reports:
-    print('No report.json files found in today\'s Tucson scan folder.')
-    raise SystemExit
+const tierOrder = { prime: 0, pursue: 1, watch: 2 };
+todayLeads.sort((a, b) => (tierOrder[a.outreachTier] ?? 9) - (tierOrder[b.outreachTier] ?? 9) || (b.outreachScore || 0) - (a.outreachScore || 0));
 
-all_leads = []
-print('## Category Snapshot')
-print()
-for rp in reports:
-    data = json.loads(rp.read_text())
-    cat = data['meta']['category']
-    avg = data['summary'].get('averageScore')
-    audited = data['summary'].get('audited')
-    print(f'- **{cat.title()}** — {audited} audited, avg score {avg}/100')
-    for b in data.get('businesses', []):
-        issues = b.get('failedChecks', [])
-        score = b.get('score', 999)
-        temp = b.get('leadTemperature', '')
-        worthwhile = isinstance(score, (int, float)) and score <= 82 and len(issues) >= 2 and 'Well Built' not in temp
-        if worthwhile:
-            all_leads.append({
-                'category': cat,
-                'name': b['name'],
-                'website': b.get('website'),
-                'score': score,
-                'issues': issues[:3],
-                'temp': temp,
-            })
-print()
+const withEmail = todayLeads.filter((lead) => lead.publicEmail || (lead.publicEmails || []).length);
+const noWebsite = todayLeads.filter((lead) => lead.hasWebsite === false || !lead.website);
+const lines = [];
+lines.push('# Tucson Morning Roll-up', '', `Date: ${now}`, '');
+lines.push(`Imported leads today: ${todayLeads.length}`);
+lines.push(`Leads with email: ${withEmail.length}`);
+lines.push(`No-website opportunities: ${noWebsite.length}`, '');
+lines.push('## Best Tucson leads', '');
 
-all_leads.sort(key=lambda x: (x['score'], len(x['issues'])*-1))
+if (!todayLeads.length) {
+  lines.push('- No Tucson leads were imported into the CRM today yet.');
+} else {
+  for (const lead of todayLeads.slice(0, 10)) {
+    const contact = lead.publicEmail || (lead.publicEmails || [])[0] || 'no clean email';
+    lines.push(`- **${lead.businessName}** — ${(lead.outreachTier || '?').toUpperCase()} ${lead.outreachScore || 0}`);
+    lines.push(`  - Contact: ${contact}`);
+    if (lead.topIssues?.length) lines.push(`  - Issues: ${lead.topIssues.slice(0, 3).join(', ')}`);
+    if (lead.quickPitch) lines.push(`  - Pitch angle: ${lead.quickPitch}`);
+  }
+}
 
-print('## Best Outreach-Worthy Leads')
-print()
-if not all_leads:
-    print('- No strong outreach-worthy leads surfaced from today\'s Tucson scan.')
-else:
-    for i, lead in enumerate(all_leads[:10], 1):
-        issues = ', '.join(lead['issues'])
-        print(f'{i}. **{lead["name"]}** ({lead["category"]}) — score {lead["score"]}/100')
-        print(f'   - Issues: {issues}')
-        if lead['website']:
-            print(f'   - Website: {lead["website"]}')
+lines.push('', '## Recommended next actions', '');
+if (withEmail.length) {
+  lines.push('- Start with the best Tucson leads that already have clean emails.');
+  lines.push('- Draft outreach for the top 3 before doing lower-tier manual research.');
+} else if (todayLeads.length) {
+  lines.push('- No clean emails surfaced, so prioritize Instagram, Facebook, phone, or walk-in follow-up.');
+  lines.push('- Manually enrich the strongest Tucson leads before drafting outreach.');
+} else {
+  lines.push('- No fresh Tucson imports showed up yet. Recheck after the next scan/import cycle.');
+}
 
-print()
-print('## Recommended Next Actions')
-print()
-if all_leads:
-    print('- Pull public contact emails for the top 5 leads first.')
-    print('- Draft outreach only for the strongest reachable businesses.')
-    print('- Skip businesses that look polished enough that the pitch feels forced.')
-else:
-    print('- Review category reports manually and tighten the starter input lists.')
-    print('- Consider swapping weak categories for better local-fit businesses.')
-
-print()
-print('## Report Files')
-print()
-for rp in reports:
-    print(f'- {rp.parent / "report.md"}')
-PY
+console.log(lines.join('\n'));
+NODE
 
 echo "Wrote $OUT"

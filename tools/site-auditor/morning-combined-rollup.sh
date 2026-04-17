@@ -1,10 +1,14 @@
 #!/bin/zsh
 set -euo pipefail
 
+export HOME="${HOME:-/Users/gabrielmaciel}"
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/node/bin:/usr/bin:/bin:/usr/sbin:/sbin:${PATH:-}"
+
 WORKSPACE="/Users/gabrielmaciel/.openclaw/workspace"
 NODE_BIN="/opt/homebrew/opt/node/bin/node"
 LOGDIR="$WORKSPACE/tools/site-auditor/logs"
-OUT="$HOME/Desktop/Audit reports/morning-rollup-$(date +%F).md"
+OUT="$WORKSPACE/reports/morning-rollup-$(date +%F).md"
+TMP_OUT="$(mktemp "${TMPDIR:-/tmp}/dds-morning-rollup.XXXXXX")"
 mkdir -p "$(dirname "$OUT")" "$LOGDIR"
 
 echo "Running auto-import..." | tee -a "$LOGDIR/nightly.log"
@@ -87,7 +91,7 @@ PYQWEN
 )
 echo "Qwen brief generated." | tee -a "$LOGDIR/nightly.log"
 
-python3 - <<PY > "$OUT"
+python3 - <<PY > "$TMP_OUT"
 from datetime import datetime
 now = datetime.now().strftime('%Y-%m-%d %H:%M')
 print(f"# DDS Morning Roll-up — {now}")
@@ -102,64 +106,55 @@ print("""${BEST}""")
 print()
 PY
 
-python3 - >> "$OUT" <<'PY2'
-import json
-from pathlib import Path
-from datetime import datetime
+node - <<'NODE' >> "$TMP_OUT"
+const fs = require('fs');
+const path = require('path');
 
-today = datetime.now().strftime('%Y-%m-%d')
-cities = [
-    ('nightly-tucson', 'Tucson'),
-    ('nightly-sierra-vista', 'Sierra Vista'),
-    ('nightly-benson', 'Benson'),
-    ('nightly-tombstone', 'Tombstone'),
-    ('nightly-willcox', 'Willcox'),
-    ('nightly-vail', 'Vail'),
-]
-cats = ['restaurants','cafes','salons','barbers','home-services','auto-repair','dental','gyms','retail','tattoo-shops']
-base_root = Path.home() / 'Desktop' / 'Audit reports'
+const crmPath = path.join('/Users/gabrielmaciel/.openclaw/workspace', 'dashboard', 'data', 'crm-data.json');
+const data = JSON.parse(fs.readFileSync(crmPath, 'utf8'));
+const leads = Array.isArray(data) ? data : (data.leads || []);
+const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Phoenix' });
+const tierOrder = { prime: 0, pursue: 1, watch: 2 };
 
-all_leads = []
-for dirn, city in cities:
-    for cat in cats:
-        rp = base_root / dirn / today / cat / 'report.json'
-        if not rp.exists(): continue
-        try:
-            data = json.loads(rp.read_text())
-        except: continue
-        for b in data.get('businesses', []):
-            if b.get('outreachTier') in ['prime', 'pursue']:
-                emails = [e for e in (b.get('publicEmails') or []) if e and 'user@domain' not in e]
-                all_leads.append({
-                    'name': b['name'], 'city': city, 'cat': cat,
-                    'tier': b.get('outreachTier'), 'score': b.get('outreachScore', 0),
-                    'email': emails[0] if emails else None,
-                    'issues': (b.get('topIssues') or [])[:3],
-                    'pitch': b.get('quickPitch', '')
-                })
+const importedToday = leads.filter((lead) => {
+  const imported = (lead.importedAt || '').slice(0, 10);
+  return imported === today;
+});
 
-tier_order = {'prime': 0, 'pursue': 1}
-all_leads.sort(key=lambda l: (tier_order.get(l['tier'], 2), -l['score']))
+importedToday.sort((a, b) => (tierOrder[a.outreachTier] ?? 9) - (tierOrder[b.outreachTier] ?? 9) || (b.outreachScore || 0) - (a.outreachScore || 0));
 
-print(f"## Full scan summary — {today}")
-print(f"Found {len(all_leads)} prime/pursue leads across all cities")
-print()
+const lines = [];
+lines.push(`## Full scan summary — ${today}`);
+lines.push(`Found ${importedToday.length} leads imported into the CRM today`);
+lines.push('');
 
-by_city = {}
-for l in all_leads:
-    by_city.setdefault(l['city'], []).append(l)
+const byCity = new Map();
+for (const lead of importedToday) {
+  if (!byCity.has(lead.city)) byCity.set(lead.city, []);
+  byCity.get(lead.city).push(lead);
+}
 
-for city, leads in sorted(by_city.items()):
-    print(f"### {city} ({len(leads)} leads)")
-    for l in leads[:5]:
-        email_str = l['email'] or 'no clean email'
-        print(f"  - {l.get('tier','?').upper()} {l.get('score',0)} | {l['name']} | {email_str}")
-    print()
-PY2
+for (const city of Array.from(byCity.keys()).sort()) {
+  const cityLeads = byCity.get(city);
+  const withEmail = cityLeads.filter((lead) => lead.publicEmail || (lead.publicEmails || []).length).length;
+  lines.push(`### ${city} (${cityLeads.length} leads, ${withEmail} with email)`);
+  for (const lead of cityLeads.slice(0, 5)) {
+    lines.push(`  - ${(lead.outreachTier || '?').toUpperCase()} ${lead.outreachScore || 0} | ${lead.businessName} | ${lead.publicEmail || (lead.publicEmails || [])[0] || 'no clean email'}`);
+  }
+  lines.push('');
+}
+
+if (!importedToday.length) {
+  lines.push('No new CRM imports were recorded today yet.');
+  lines.push('');
+}
+
+console.log(lines.join('\n'));
+NODE
 
 # --- Qwen outreach draft generation for top 3 new leads ---
 echo "Generating outreach drafts for top leads..." | tee -a "$LOGDIR/nightly.log"
-python3 - <<PYDRAFT >> "$OUT"
+python3 - <<PYDRAFT >> "$TMP_OUT"
 import json, urllib.request, re
 
 leads_json = '''${BEST_JSON}'''
@@ -201,7 +196,16 @@ PYDRAFT
 
 echo "Outreach drafts generated." | tee -a "$LOGDIR/nightly.log"
 
-# Alert via heartbeat
-openclaw system event --mode next-heartbeat --text "Morning rollup complete: ${IMPORTED} new leads imported (${WITH_EMAIL} with email). Brief: ${QWEN_BRIEF}" >/dev/null 2>&1 || true
+# Alert via heartbeat when available
+if command -v openclaw >/dev/null 2>&1; then
+  openclaw system event --mode next-heartbeat --text "Morning rollup complete: ${IMPORTED} new leads imported (${WITH_EMAIL} with email). Brief: ${QWEN_BRIEF}" >/dev/null 2>&1 || true
+else
+  echo "openclaw CLI not available in PATH, skipping heartbeat event." | tee -a "$LOGDIR/nightly.log"
+fi
+
+cat "$TMP_OUT" > "$OUT"
+
+rm -f "$TMP_OUT"
 
 echo "Morning combined rollup written: $OUT" | tee -a "$LOGDIR/nightly.log"
+echo "Wrote $OUT"
