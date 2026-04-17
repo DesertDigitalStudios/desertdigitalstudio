@@ -82,6 +82,130 @@ function blankOnboardingState() {
   };
 }
 
+function normalizeList(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.filter(Boolean);
+  return [value].filter(Boolean);
+}
+
+function contactInfoForLead(lead) {
+  const emails = [...new Set(normalizeList(lead.publicEmail).concat(normalizeList(lead.publicEmails)))].filter(Boolean);
+  const phones = [...new Set(normalizeList(lead.phone).concat(normalizeList(lead.phones)))].filter(Boolean);
+  const notes = `${lead.notes || ''} ${lead.nextAction || ''}`.toLowerCase();
+  const hasSocialTrail = /instagram|facebook|tiktok|linkedin|dm|message/.test(notes);
+  return {
+    emails,
+    phones,
+    hasSocialTrail,
+    hasWebsite: Boolean(lead.hasWebsite !== false && lead.website),
+    noWebsite: lead.hasWebsite === false || !lead.website
+  };
+}
+
+function enrichmentRouteForLead(lead) {
+  const contact = contactInfoForLead(lead);
+  if (contact.emails.length) {
+    return {
+      label: 'Email first',
+      tone: 'ready',
+      reason: 'A clean public email already exists, so this lead is ready for direct outreach.'
+    };
+  }
+
+  if (contact.phones.length && contact.hasSocialTrail) {
+    return {
+      label: 'Call or DM follow-up',
+      tone: 'mixed',
+      reason: 'No clean email yet, but you do have a phone number and signs of a social path.'
+    };
+  }
+
+  if (contact.phones.length) {
+    return {
+      label: 'Phone first',
+      tone: 'phone',
+      reason: 'Phone is the best direct path right now, especially if email is missing.'
+    };
+  }
+
+  if (contact.hasSocialTrail) {
+    return {
+      label: 'Social DM follow-up',
+      tone: 'social',
+      reason: 'The notes suggest an Instagram or social trail, so DM is the best next path.'
+    };
+  }
+
+  if (contact.noWebsite) {
+    return {
+      label: 'Research + walk-in candidate',
+      tone: 'manual',
+      reason: 'No website and no direct contact means this one needs research, social lookup, or in-person outreach.'
+    };
+  }
+
+  return {
+    label: 'Manual enrichment sweep',
+    tone: 'manual',
+    reason: 'There is enough promise here to keep it alive, but the contact path still needs work.'
+  };
+}
+
+function suggestedEnrichmentAction(lead) {
+  const route = enrichmentRouteForLead(lead).label;
+  if (route === 'Email first') return 'Draft a short email that references the top 2 issues and offers a free audit summary.';
+  if (route === 'Phone first') return 'Call the business, confirm the decision-maker, and ask for the best email for a quick website audit summary.';
+  if (route === 'Call or DM follow-up') return 'Use the phone number first, then fall back to social DM if nobody picks up or you need the owner contact.';
+  if (route === 'Social DM follow-up') return 'Send a short DM, ask for the best email to send a quick audit summary, and note the profile used.';
+  if (route === 'Research + walk-in candidate') return 'Search Google Maps, Facebook, and Instagram for a usable contact path. If nothing turns up, treat it as a walk-in or phone-first lead.';
+  return 'Do a quick manual research sweep, capture the best contact path, and set a concrete follow-up date.';
+}
+
+function enrichmentChecklist(lead) {
+  const contact = contactInfoForLead(lead);
+  return [
+    { label: 'Clean email captured', done: contact.emails.length > 0 },
+    { label: 'Phone captured', done: contact.phones.length > 0 },
+    { label: 'Website status verified', done: lead.hasWebsite === false || Boolean(lead.website) },
+    { label: 'Next action set', done: Boolean((lead.nextAction || '').trim()) },
+    { label: 'Follow-up date set', done: Boolean(lead.followUpOn) },
+    { label: 'Last touch logged', done: Boolean(lead.lastTouch) }
+  ];
+}
+
+function enrichmentCompleteness(lead) {
+  const checklist = enrichmentChecklist(lead);
+  const done = checklist.filter(item => item.done).length;
+  return Math.round((done / checklist.length) * 100);
+}
+
+function enrichmentPriorityScore(lead) {
+  const contact = contactInfoForLead(lead);
+  let score = Number(lead.outreachScore || 0);
+  if (['prime', 'pursue'].includes(lead.outreachTier)) score += 25;
+  if (!contact.emails.length) score += 22;
+  if (!contact.phones.length) score += 8;
+  if (!lead.nextAction) score += 10;
+  if (!lead.followUpOn && lead.stage === 'Contacted') score += 14;
+  if (contact.noWebsite) score += 8;
+  if (lead.stage === 'Research') score += 6;
+  if (lead.stage === 'Scored') score += 4;
+  return score;
+}
+
+function enrichmentQueue() {
+  return sortedLeads()
+    .filter(lead => !['Won', 'Parked'].includes(lead.stage))
+    .filter(lead => ['prime', 'pursue', 'watch'].includes(lead.outreachTier))
+    .map(lead => ({
+      ...lead,
+      enrichmentPriority: enrichmentPriorityScore(lead),
+      enrichmentCompleteness: enrichmentCompleteness(lead)
+    }))
+    .sort((a, b) => b.enrichmentPriority - a.enrichmentPriority || a.enrichmentCompleteness - b.enrichmentCompleteness)
+    .slice(0, 12);
+}
+
 function leadById(id) {
   return (state.crm?.leads || []).find(lead => lead.id === id);
 }
@@ -166,6 +290,133 @@ function isDueSoon(lead) {
   const today = new Date();
   const diff = (due - today) / (1000 * 60 * 60 * 24);
   return diff >= 0 && diff <= 3;
+}
+
+function renderEnrichmentWorkbench() {
+  const root = $('enrichment-workbench');
+  if (!root || !state.crm) return;
+
+  const queue = enrichmentQueue();
+  const selected = leadById(state.selectedLeadId) || queue[0];
+  const route = selected ? enrichmentRouteForLead(selected) : null;
+  const checklist = selected ? enrichmentChecklist(selected) : [];
+  const reachableNow = sortedLeads().filter(lead => ['prime', 'pursue'].includes(lead.outreachTier) && contactInfoForLead(lead).emails.length).length;
+  const noWebsiteOpps = sortedLeads().filter(lead => contactInfoForLead(lead).noWebsite).length;
+
+  if (!selected) {
+    root.innerHTML = '<div class="empty-state">No leads available for enrichment yet.</div>';
+    return;
+  }
+
+  root.innerHTML = `
+    <div class="enrichment-grid">
+      <div class="enrichment-queue">
+        <div class="enrichment-stats">
+          <div class="enrichment-stat"><span>Queue</span><strong>${queue.length}</strong></div>
+          <div class="enrichment-stat"><span>Reachable now</span><strong>${reachableNow}</strong></div>
+          <div class="enrichment-stat"><span>No-website opps</span><strong>${noWebsiteOpps}</strong></div>
+        </div>
+        <div class="enrichment-list">
+          ${queue.map(lead => `
+            <button class="enrichment-item ${lead.id === selected.id ? 'selected' : ''}" data-enrichment-lead="${esc(lead.id)}">
+              <div class="enrichment-item-top">
+                <strong>${esc(lead.businessName)}</strong>
+                ${tierBadge(lead.outreachTier, lead.outreachScore)}
+              </div>
+              <div class="enrichment-item-meta">${esc(lead.city || '—')} · ${esc(lead.stage || 'Scored')}</div>
+              <div class="enrichment-item-route">${esc(enrichmentRouteForLead(lead).label)}</div>
+              <div class="enrichment-item-bar">
+                <span style="width:${Math.max(8, lead.enrichmentCompleteness)}%"></span>
+              </div>
+              <div class="enrichment-item-note">Completeness ${lead.enrichmentCompleteness}% · Priority ${lead.enrichmentPriority}</div>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="enrichment-detail">
+        <div class="enrichment-detail-top">
+          <div>
+            <div class="panel-title">Selected lead</div>
+            <h3>${esc(selected.businessName)}</h3>
+            <p class="panel-subtitle">${esc(selected.city || '—')} · ${esc(selected.stage || 'Scored')} · ${esc(selected.recommendedPackage || 'refresh')}</p>
+          </div>
+          <div class="enrichment-route tone-${esc(route.tone)}">
+            <span>Best route</span>
+            <strong>${esc(route.label)}</strong>
+          </div>
+        </div>
+
+        <div class="enrichment-two-col">
+          <div class="enrichment-card">
+            <div class="panel-title">Why this route</div>
+            <p>${esc(route.reason)}</p>
+            <div class="contact-stack">
+              <div><span>Email</span><strong>${esc(contactInfoForLead(selected).emails[0] || 'None yet')}</strong></div>
+              <div><span>Phone</span><strong>${esc(contactInfoForLead(selected).phones[0] || 'None yet')}</strong></div>
+              <div><span>Website</span><strong>${contactInfoForLead(selected).noWebsite ? 'No website' : esc(selected.website || 'Has website')}</strong></div>
+            </div>
+          </div>
+
+          <div class="enrichment-card">
+            <div class="panel-title">Suggested next move</div>
+            <p>${esc(suggestedEnrichmentAction(selected))}</p>
+            <div class="form-actions">
+              <button type="button" class="btn" id="apply-enrichment-suggestion">Use suggested next action</button>
+              <button type="button" class="btn btn-ghost" id="jump-to-lead-editor">Open lead editor</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="enrichment-two-col">
+          <div class="enrichment-card">
+            <div class="panel-title">Checklist</div>
+            <div class="enrichment-checklist">
+              ${checklist.map(item => `
+                <div class="check-row ${item.done ? 'done' : 'missing'}">
+                  <span>${item.done ? '✓' : '•'}</span>
+                  <strong>${esc(item.label)}</strong>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="enrichment-card">
+            <div class="panel-title">Context</div>
+            <div class="context-list">
+              <div><span>Quick pitch</span><strong>${esc(selected.quickPitch || 'None yet')}</strong></div>
+              <div><span>Top issues</span><strong>${esc((selected.topIssues || []).slice(0, 3).join(', ') || 'None logged')}</strong></div>
+              <div><span>Next action</span><strong>${esc(selected.nextAction || 'Not set')}</strong></div>
+              <div><span>Notes</span><strong>${esc((selected.notes || 'No notes yet').slice(0, 180))}</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  root.querySelectorAll('[data-enrichment-lead]').forEach(button => {
+    button.addEventListener('click', () => {
+      state.selectedLeadId = button.dataset.enrichmentLead;
+      renderAll();
+    });
+  });
+
+  $('apply-enrichment-suggestion')?.addEventListener('click', async () => {
+    const lead = leadById(state.selectedLeadId);
+    if (!lead) return;
+    lead.nextAction = suggestedEnrichmentAction(lead);
+    if (!lead.followUpOn && lead.stage === 'Contacted') {
+      const follow = new Date();
+      follow.setDate(follow.getDate() + 3);
+      lead.followUpOn = follow.toISOString().slice(0, 10);
+    }
+    await saveCRM('Applied enrichment suggestion');
+  });
+
+  $('jump-to-lead-editor')?.addEventListener('click', () => {
+    $('lead-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
 
 function renderTodaysFocus() {
@@ -611,6 +862,7 @@ function renderAll() {
   fillStageOptions();
   renderSummary();
   renderTodaysFocus();
+  renderEnrichmentWorkbench();
   renderLeadTable();
   renderPipeline();
   renderLeadForm();
