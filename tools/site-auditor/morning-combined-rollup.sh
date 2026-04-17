@@ -81,7 +81,6 @@ Leads:
         resp = urllib.request.urlopen(req, timeout=90)
         result = json.loads(resp.read())
         text = result.get("response", "").strip()
-        # Strip <think>...</think> if qwen3 adds it
         import re
         text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
         print(text)
@@ -114,39 +113,67 @@ const crmPath = path.join('/Users/gabrielmaciel/.openclaw/workspace', 'dashboard
 const data = JSON.parse(fs.readFileSync(crmPath, 'utf8'));
 const leads = Array.isArray(data) ? data : (data.leads || []);
 const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Phoenix' });
+const todayMs = new Date(`${today}T12:00:00-07:00`).getTime();
 const tierOrder = { prime: 0, pursue: 1, watch: 2 };
+const trackedCities = ['Tucson', 'Sierra Vista', 'Benson', 'Tombstone', 'Willcox', 'Vail'];
 
-const importedToday = leads.filter((lead) => {
-  const imported = (lead.importedAt || '').slice(0, 10);
-  return imported === today;
-});
-
-importedToday.sort((a, b) => (tierOrder[a.outreachTier] ?? 9) - (tierOrder[b.outreachTier] ?? 9) || (b.outreachScore || 0) - (a.outreachScore || 0));
+const importedToday = leads.filter((lead) => (lead.importedAt || '').slice(0, 10) === today);
+const actionable = leads
+  .filter((lead) => trackedCities.includes(lead.city) && ['prime', 'pursue'].includes(lead.outreachTier))
+  .sort((a, b) => (tierOrder[a.outreachTier] ?? 9) - (tierOrder[b.outreachTier] ?? 9) || (b.outreachScore || 0) - (a.outreachScore || 0));
+const reachable = actionable.filter((lead) => lead.publicEmail || (lead.publicEmails || []).length);
+const noWebsite = leads.filter((lead) => trackedCities.includes(lead.city) && (lead.hasWebsite === false || !lead.website));
+const followups = leads
+  .filter((lead) => trackedCities.includes(lead.city) && lead.stage === 'Contacted' && lead.lastTouch)
+  .map((lead) => ({
+    ...lead,
+    days: Math.floor((todayMs - new Date(`${lead.lastTouch}T12:00:00-07:00`).getTime()) / 86400000)
+  }))
+  .filter((lead) => lead.days >= 3)
+  .sort((a, b) => b.days - a.days || (b.outreachScore || 0) - (a.outreachScore || 0));
 
 const lines = [];
-lines.push(`## Full scan summary — ${today}`);
-lines.push(`Found ${importedToday.length} leads imported into the CRM today`);
+lines.push(`## Full pipeline summary — ${today}`);
+lines.push(`Tracked leads in CRM: ${leads.filter((lead) => trackedCities.includes(lead.city)).length}`);
+lines.push(`Imported today: ${importedToday.length}`);
+lines.push(`Reachable prime/pursue leads: ${reachable.length}`);
+lines.push(`No-website opportunities: ${noWebsite.length}`);
+lines.push(`Overdue follow-ups: ${followups.length}`);
 lines.push('');
 
-const byCity = new Map();
-for (const lead of importedToday) {
-  if (!byCity.has(lead.city)) byCity.set(lead.city, []);
-  byCity.get(lead.city).push(lead);
-}
-
-for (const city of Array.from(byCity.keys()).sort()) {
-  const cityLeads = byCity.get(city);
-  const withEmail = cityLeads.filter((lead) => lead.publicEmail || (lead.publicEmails || []).length).length;
-  lines.push(`### ${city} (${cityLeads.length} leads, ${withEmail} with email)`);
-  for (const lead of cityLeads.slice(0, 5)) {
-    lines.push(`  - ${(lead.outreachTier || '?').toUpperCase()} ${lead.outreachScore || 0} | ${lead.businessName} | ${lead.publicEmail || (lead.publicEmails || [])[0] || 'no clean email'}`);
+for (const city of trackedCities) {
+  const cityLeads = actionable.filter((lead) => lead.city === city);
+  const cityReachable = cityLeads.filter((lead) => lead.publicEmail || (lead.publicEmails || []).length).length;
+  if (!cityLeads.length && !leads.some((lead) => lead.city === city)) continue;
+  lines.push(`### ${city}`);
+  lines.push(`- Actionable leads: ${cityLeads.length}`);
+  lines.push(`- Reachable now: ${cityReachable}`);
+  lines.push(`- No-website opportunities: ${noWebsite.filter((lead) => lead.city === city).length}`);
+  const top = cityLeads.slice(0, 3);
+  if (top.length) {
+    for (const lead of top) {
+      lines.push(`  - ${(lead.outreachTier || '?').toUpperCase()} ${lead.outreachScore || 0} | ${lead.businessName} | ${lead.publicEmail || (lead.publicEmails || [])[0] || 'no clean email'}`);
+    }
   }
   lines.push('');
 }
 
-if (!importedToday.length) {
-  lines.push('No new CRM imports were recorded today yet.');
-  lines.push('');
+lines.push('## Best current reachable leads', '');
+if (!reachable.length) {
+  lines.push('- No prime/pursue leads with clean email right now.');
+} else {
+  for (const lead of reachable.slice(0, 8)) {
+    lines.push(`- **${lead.businessName}** (${lead.city}) — ${lead.publicEmail || (lead.publicEmails || [])[0]}`);
+  }
+}
+
+lines.push('', '## Overdue follow-ups', '');
+if (!followups.length) {
+  lines.push('- No overdue follow-ups right now.');
+} else {
+  for (const lead of followups.slice(0, 8)) {
+    lines.push(`- **${lead.businessName}** (${lead.city}) — last touch ${lead.lastTouch} (${lead.days} days ago)`);
+  }
 }
 
 console.log(lines.join('\n'));
@@ -196,7 +223,6 @@ PYDRAFT
 
 echo "Outreach drafts generated." | tee -a "$LOGDIR/nightly.log"
 
-# Alert via heartbeat when available
 if command -v openclaw >/dev/null 2>&1; then
   openclaw system event --mode next-heartbeat --text "Morning rollup complete: ${IMPORTED} new leads imported (${WITH_EMAIL} with email). Brief: ${QWEN_BRIEF}" >/dev/null 2>&1 || true
 else
@@ -204,7 +230,6 @@ else
 fi
 
 cat "$TMP_OUT" > "$OUT"
-
 rm -f "$TMP_OUT"
 
 echo "Morning combined rollup written: $OUT" | tee -a "$LOGDIR/nightly.log"
