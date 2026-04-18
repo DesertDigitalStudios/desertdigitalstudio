@@ -119,12 +119,46 @@
             <input id="lead-phone" type="text" />
           </label>
           <label>
+            <span>Contact / owner name</span>
+            <input id="lead-contact-name" type="text" />
+          </label>
+          <label>
             <span>Website</span>
             <input id="lead-website" type="text" />
           </label>
           <label>
+            <span>Best contact method</span>
+            <select id="lead-best-contact-method">
+              <option value="">Not set</option>
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+              <option value="instagram">Instagram DM</option>
+              <option value="facebook">Facebook DM</option>
+              <option value="walk-in">Walk-in</option>
+              <option value="research">Needs research</option>
+            </select>
+          </label>
+          <label>
+            <span>Instagram handle</span>
+            <input id="lead-instagram" type="text" placeholder="@businessname" />
+          </label>
+          <label>
+            <span>Facebook page</span>
+            <input id="lead-facebook" type="text" placeholder="facebook.com/... or page name" />
+          </label>
+          <label>
             <span>Estimated deal value</span>
             <input id="lead-value" type="number" min="0" />
+          </label>
+          <label>
+            <span>Research status</span>
+            <select id="lead-research-status">
+              <option value="Not started">Not started</option>
+              <option value="Finding contact path">Finding contact path</option>
+              <option value="Ready for outreach">Ready for outreach</option>
+              <option value="Waiting on reply">Waiting on reply</option>
+              <option value="Low priority">Low priority</option>
+            </select>
           </label>
           <label>
             <span>Follow up on</span>
@@ -137,6 +171,10 @@
           <label class="full-span">
             <span>Next action</span>
             <input id="lead-nextaction" type="text" />
+          </label>
+          <label class="full-span">
+            <span>Enrichment notes</span>
+            <textarea id="lead-enrichment-notes" rows="4" placeholder="What you found during research, missing contact paths, owner clues, best outreach angle..."></textarea>
           </label>
           <label class="full-span">
             <span>Notes</span>

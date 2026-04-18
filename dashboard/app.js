@@ -91,11 +91,15 @@ function normalizeList(value) {
 function contactInfoForLead(lead) {
   const emails = [...new Set(normalizeList(lead.publicEmail).concat(normalizeList(lead.publicEmails)))].filter(Boolean);
   const phones = [...new Set(normalizeList(lead.phone).concat(normalizeList(lead.phones)))].filter(Boolean);
-  const notes = `${lead.notes || ''} ${lead.nextAction || ''}`.toLowerCase();
-  const hasSocialTrail = /instagram|facebook|tiktok|linkedin|dm|message/.test(notes);
+  const instagram = (lead.instagramHandle || '').trim();
+  const facebook = (lead.facebookPage || '').trim();
+  const notes = `${lead.notes || ''} ${lead.enrichmentNotes || ''} ${lead.nextAction || ''}`.toLowerCase();
+  const hasSocialTrail = Boolean(instagram || facebook) || /instagram|facebook|tiktok|linkedin|dm|message/.test(notes);
   return {
     emails,
     phones,
+    instagram,
+    facebook,
     hasSocialTrail,
     hasWebsite: Boolean(lead.hasWebsite !== false && lead.website),
     noWebsite: lead.hasWebsite === false || !lead.website
@@ -153,12 +157,13 @@ function enrichmentRouteForLead(lead) {
 
 function suggestedEnrichmentAction(lead) {
   const route = enrichmentRouteForLead(lead).label;
-  if (route === 'Email first') return 'Draft a short email that references the top 2 issues and offers a free audit summary.';
-  if (route === 'Phone first') return 'Call the business, confirm the decision-maker, and ask for the best email for a quick website audit summary.';
-  if (route === 'Call or DM follow-up') return 'Use the phone number first, then fall back to social DM if nobody picks up or you need the owner contact.';
-  if (route === 'Social DM follow-up') return 'Send a short DM, ask for the best email to send a quick audit summary, and note the profile used.';
-  if (route === 'Research + walk-in candidate') return 'Search Google Maps, Facebook, and Instagram for a usable contact path. If nothing turns up, treat it as a walk-in or phone-first lead.';
-  return 'Do a quick manual research sweep, capture the best contact path, and set a concrete follow-up date.';
+  const bestMethod = lead.bestContactMethod ? `Best current method is ${lead.bestContactMethod}. ` : '';
+  if (route === 'Email first') return `${bestMethod}Draft a short email that references the top 2 issues and offers a free audit summary.`;
+  if (route === 'Phone first') return `${bestMethod}Call the business, confirm the decision-maker, and ask for the best email for a quick website audit summary.`;
+  if (route === 'Call or DM follow-up') return `${bestMethod}Use the phone number first, then fall back to social DM if nobody picks up or you need the owner contact.`;
+  if (route === 'Social DM follow-up') return `${bestMethod}Send a short DM, ask for the best email to send a quick audit summary, and note the profile used.`;
+  if (route === 'Research + walk-in candidate') return `${bestMethod}Search Google Maps, Facebook, and Instagram for a usable contact path. If nothing turns up, treat it as a walk-in or phone-first lead.`;
+  return `${bestMethod}Do a quick manual research sweep, capture the best contact path, and set a concrete follow-up date.`;
 }
 
 function enrichmentChecklist(lead) {
@@ -166,6 +171,9 @@ function enrichmentChecklist(lead) {
   return [
     { label: 'Clean email captured', done: contact.emails.length > 0 },
     { label: 'Phone captured', done: contact.phones.length > 0 },
+    { label: 'Owner / contact named', done: Boolean((lead.contactName || '').trim()) },
+    { label: 'Social path captured', done: Boolean(contact.instagram || contact.facebook) },
+    { label: 'Best contact method chosen', done: Boolean((lead.bestContactMethod || '').trim()) },
     { label: 'Website status verified', done: lead.hasWebsite === false || Boolean(lead.website) },
     { label: 'Next action set', done: Boolean((lead.nextAction || '').trim()) },
     { label: 'Follow-up date set', done: Boolean(lead.followUpOn) },
@@ -185,6 +193,9 @@ function enrichmentPriorityScore(lead) {
   if (['prime', 'pursue'].includes(lead.outreachTier)) score += 25;
   if (!contact.emails.length) score += 22;
   if (!contact.phones.length) score += 8;
+  if (!contact.instagram && !contact.facebook) score += 8;
+  if (!lead.contactName) score += 6;
+  if (!lead.bestContactMethod) score += 8;
   if (!lead.nextAction) score += 10;
   if (!lead.followUpOn && lead.stage === 'Contacted') score += 14;
   if (contact.noWebsite) score += 8;
@@ -354,6 +365,8 @@ function renderEnrichmentWorkbench() {
             <div class="contact-stack">
               <div><span>Email</span><strong>${esc(contactInfoForLead(selected).emails[0] || 'None yet')}</strong></div>
               <div><span>Phone</span><strong>${esc(contactInfoForLead(selected).phones[0] || 'None yet')}</strong></div>
+              <div><span>Instagram</span><strong>${esc(contactInfoForLead(selected).instagram || 'None yet')}</strong></div>
+              <div><span>Facebook</span><strong>${esc(contactInfoForLead(selected).facebook || 'None yet')}</strong></div>
               <div><span>Website</span><strong>${contactInfoForLead(selected).noWebsite ? 'No website' : esc(selected.website || 'Has website')}</strong></div>
             </div>
           </div>
@@ -384,9 +397,13 @@ function renderEnrichmentWorkbench() {
           <div class="enrichment-card">
             <div class="panel-title">Context</div>
             <div class="context-list">
+              <div><span>Owner / contact</span><strong>${esc(selected.contactName || 'Not captured')}</strong></div>
+              <div><span>Best contact method</span><strong>${esc(selected.bestContactMethod || 'Not chosen')}</strong></div>
+              <div><span>Research status</span><strong>${esc(selected.researchStatus || 'Not started')}</strong></div>
               <div><span>Quick pitch</span><strong>${esc(selected.quickPitch || 'None yet')}</strong></div>
               <div><span>Top issues</span><strong>${esc((selected.topIssues || []).slice(0, 3).join(', ') || 'None logged')}</strong></div>
               <div><span>Next action</span><strong>${esc(selected.nextAction || 'Not set')}</strong></div>
+              <div><span>Enrichment notes</span><strong>${esc((selected.enrichmentNotes || 'No enrichment notes yet').slice(0, 180))}</strong></div>
               <div><span>Notes</span><strong>${esc((selected.notes || 'No notes yet').slice(0, 180))}</strong></div>
             </div>
           </div>
@@ -405,7 +422,17 @@ function renderEnrichmentWorkbench() {
   $('apply-enrichment-suggestion')?.addEventListener('click', async () => {
     const lead = leadById(state.selectedLeadId);
     if (!lead) return;
+    const route = enrichmentRouteForLead(lead).label;
     lead.nextAction = suggestedEnrichmentAction(lead);
+    if (!lead.bestContactMethod) {
+      if (route === 'Email first') lead.bestContactMethod = 'email';
+      else if (route === 'Phone first' || route === 'Call or DM follow-up') lead.bestContactMethod = 'phone';
+      else if (route === 'Social DM follow-up') lead.bestContactMethod = lead.instagramHandle ? 'instagram' : 'facebook';
+      else if (route === 'Research + walk-in candidate') lead.bestContactMethod = 'research';
+    }
+    if (!lead.researchStatus) {
+      lead.researchStatus = route === 'Email first' ? 'Ready for outreach' : 'Finding contact path';
+    }
     if (!lead.followUpOn && lead.stage === 'Contacted') {
       const follow = new Date();
       follow.setDate(follow.getDate() + 3);
@@ -684,11 +711,17 @@ function renderLeadForm() {
   $('lead-tier').value = `${lead.outreachTier || 'skip'} · ${lead.outreachScore || 0}`;
   $('lead-email').value = lead.publicEmail || '';
   $('lead-phone').value = lead.phone || '';
+  $('lead-contact-name').value = lead.contactName || '';
   $('lead-website').value = lead.website || '';
+  $('lead-best-contact-method').value = lead.bestContactMethod || '';
+  $('lead-instagram').value = lead.instagramHandle || '';
+  $('lead-facebook').value = lead.facebookPage || '';
   $('lead-value').value = lead.estimatedValue || '';
+  $('lead-research-status').value = lead.researchStatus || 'Not started';
   $('lead-followup').value = lead.followUpOn ? String(lead.followUpOn).slice(0, 10) : '';
   $('lead-lasttouch').value = lead.lastTouch ? String(lead.lastTouch).slice(0, 10) : '';
   $('lead-nextaction').value = lead.nextAction || '';
+  $('lead-enrichment-notes').value = lead.enrichmentNotes || '';
   $('lead-notes').value = lead.notes || '';
 }
 
@@ -702,11 +735,17 @@ function collectLeadForm() {
     publicEmails: $('lead-email').value.trim() ? [$('lead-email').value.trim()] : [],
     phone: $('lead-phone').value.trim() || null,
     phones: $('lead-phone').value.trim() ? [$('lead-phone').value.trim()] : [],
+    contactName: $('lead-contact-name').value.trim(),
     website: $('lead-website').value.trim() || null,
+    bestContactMethod: $('lead-best-contact-method').value || null,
+    instagramHandle: $('lead-instagram').value.trim(),
+    facebookPage: $('lead-facebook').value.trim(),
     estimatedValue: Number($('lead-value').value || 0),
+    researchStatus: $('lead-research-status').value,
     followUpOn: $('lead-followup').value || null,
     lastTouch: $('lead-lasttouch').value || null,
     nextAction: $('lead-nextaction').value.trim(),
+    enrichmentNotes: $('lead-enrichment-notes').value,
     notes: $('lead-notes').value
   };
 }
