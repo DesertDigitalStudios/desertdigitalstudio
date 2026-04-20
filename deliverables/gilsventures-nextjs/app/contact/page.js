@@ -27,29 +27,32 @@ export default function ContactPage() {
       </section>
       <section className="section">
         <div className="container contact-grid">
-          <form className="estimate-form service-card" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+          <div className="estimate-form service-card">
             <div className="form-intro-box">
-              <strong>Free estimate request</strong>
-              <span>Share the project basics below. Once the real form endpoint is connected, this will become the main intake path.</span>
+              <strong>Request a free estimate</strong>
+              <span>For launch, Gil&apos;s Ventures is taking estimate requests directly by phone and email so every inquiry reaches a real person without a broken web form in the middle.</span>
             </div>
             <div className="form-grid">
-              <label>Name<input type="text" name="name" required /></label>
-              <label>Phone<input type="tel" name="phone" required /></label>
-              <label>Email<input type="email" name="email" required /></label>
-              <label>Property Address<input type="text" name="address" /></label>
+              <label>Name<input type="text" value="Call or email to share your name" readOnly /></label>
+              <label>Phone<input type="text" value="Best to call Gilbert directly" readOnly /></label>
+              <label>Email<input type="text" value="gilbertgil@gmail.com" readOnly /></label>
+              <label>Property Address<input type="text" value="Include the project address in your message" readOnly /></label>
             </div>
             <div className="form-grid">
-              <label>City / Area<input type="text" name="city" placeholder="El Paso, Sunland Park, Las Cruces, etc." /></label>
-              <label>Best Time to Reach You<input type="text" name="bestTime" placeholder="Morning, afternoon, anytime" /></label>
+              <label>City / Area<input type="text" value="El Paso, Sunland Park, Las Cruces, and nearby areas" readOnly /></label>
+              <label>Best Time to Reach You<input type="text" value="Mention the best callback window when you contact them" readOnly /></label>
             </div>
-            <label>Project Type<select name="projectType" defaultValue=""><option value="" disabled>Select project type</option><option>Residential Roofing</option><option>Commercial Roofing</option><option>Federal Project</option><option>Sheet Metal</option><option>Repair / Restoration</option></select></label>
-            <label>Project Details<textarea name="message" required placeholder="Tell us what kind of roof or scope you have, what problem you&apos;re dealing with, and any timing details that matter." /></label>
+            <label>Project Type<select defaultValue="Residential Roofing" disabled><option>Residential Roofing</option><option>Commercial Roofing</option><option>Federal Project</option><option>Sheet Metal</option><option>Repair / Restoration</option></select></label>
+            <label>Project Details<textarea value="When you call or email, include the roof type, the issue you&apos;re dealing with, the property address, and any timing details that matter." readOnly /></label>
             <div className="form-reassurance">
-              <span>Prefer to talk first? Call <a href="tel:+19152743835">(915) 274-3835</a>.</span>
-              <span>Projects are reviewed for homes, commercial buildings, and more complex scopes.</span>
+              <span>Fastest path: call <a href="tel:+19152743835">(915) 274-3835</a>.</span>
+              <span>Prefer email? Send project details to <a href="mailto:gilbertgil@gmail.com">gilbertgil@gmail.com</a>.</span>
             </div>
-            <button type="submit" className="btn btn-primary">Send Estimate Request</button>
-          </form>
+            <div className="contact-hero-actions">
+              <a href="tel:+19152743835" className="btn btn-primary">Call for an Estimate</a>
+              <a href="mailto:gilbertgil@gmail.com?subject=Roofing%20Estimate%20Request" className="btn btn-outline">Email Project Details</a>
+            </div>
+          </div>
           <div className="info-grid">
             <article className="contact-card">
               <h3>Contact Details</h3>
