@@ -12,14 +12,19 @@ const fs = require('fs');
 const path = require('path');
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────
-const IMAP_CONFIG = {
+const IMAP_BASE_CONFIG = {
   user: 'gabriel@desertdigitalstudio.com',
   password: 'arP6jSWisQ2H',
-  host: 'imap.zoho.com',
   port: 993,
   tls: true,
+  connTimeout: 10000,
+  authTimeout: 10000,
+  socketTimeout: 15000,
+  keepalive: false,
   tlsOptions: { rejectUnauthorized: false }
 };
+
+const IMAP_HOSTS = ['imappro.zoho.com', 'imap.zoho.com'];
 
 const DISCORD_CHANNEL = 'channel:1487016164931539024';
 const CHECK_INTERVAL_MS = 2 * 60 * 1000; // every 2 minutes
@@ -208,48 +213,108 @@ function processEmail(parsed) {
 }
 
 // ─── IMAP CHECK ────────────────────────────────────────────────────────────
-function checkMail() {
-  const imap = new Imap(IMAP_CONFIG);
-  const seenUIDs = getSeenUIDs();
-  const newUIDs = new Set(seenUIDs);
+function connectAndCheck(host, seenUIDs, newUIDs) {
+  return new Promise((resolve) => {
+    const imap = new Imap({ ...IMAP_BASE_CONFIG, host });
+    let settled = false;
+    let connected = false;
+    let sawNewMail = false;
 
-  imap.once('ready', () => {
-    imap.openBox('INBOX', false, (err) => {
-      if (err) { console.error('Inbox error:', err.message); imap.end(); return; }
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      resolve({ connected, sawNewMail });
+    };
 
-      imap.search(['UNSEEN'], (err, uids) => {
-        if (err || !uids || uids.length === 0) {
-          imap.end(); return;
+    const hardTimeout = setTimeout(() => {
+      console.error(`IMAP(${host}): hard timeout`);
+      try { imap.end(); } catch {}
+      finish();
+    }, 25000);
+
+    imap.once('ready', () => {
+      connected = true;
+      console.log(`IMAP connected via ${host}`);
+      imap.openBox('INBOX', false, (err) => {
+        if (err) {
+          console.error(`Inbox error (${host}):`, err.message);
+          clearTimeout(hardTimeout);
+          try { imap.end(); } catch {}
+          return finish();
         }
 
-        const fresh = uids.filter(uid => !seenUIDs.has(uid));
-        if (fresh.length === 0) { imap.end(); return; }
+        imap.search(['UNSEEN'], (err, uids) => {
+          if (err || !uids || uids.length === 0) {
+            clearTimeout(hardTimeout);
+            try { imap.end(); } catch {}
+            return finish();
+          }
 
-        console.log(`${fresh.length} new message(s)`);
-        const fetch = imap.fetch(fresh, { bodies: '', markSeen: false });
+          const fresh = uids.filter(uid => !seenUIDs.has(uid));
+          if (fresh.length === 0) {
+            sawNewMail = false;
+            clearTimeout(hardTimeout);
+            try { imap.end(); } catch {}
+            return finish();
+          }
 
-        fetch.on('message', (msg) => {
-          let uid;
-          msg.on('attributes', attrs => { uid = attrs.uid; });
-          msg.on('body', stream => {
-            simpleParser(stream, (err, parsed) => {
-              if (!err) processEmail(parsed);
-              if (uid) newUIDs.add(uid);
+          sawNewMail = true;
+          console.log(`${fresh.length} new message(s) via ${host}`);
+          const fetch = imap.fetch(fresh, { bodies: '', markSeen: false });
+
+          fetch.on('message', (msg) => {
+            let uid;
+            msg.on('attributes', attrs => { uid = attrs.uid; });
+            msg.on('body', stream => {
+              simpleParser(stream, (err, parsed) => {
+                if (!err) processEmail(parsed);
+                if (uid) newUIDs.add(uid);
+              });
             });
           });
-        });
 
-        fetch.once('end', () => {
-          saveSeenUIDs(newUIDs);
-          imap.end();
+          fetch.once('error', (fetchErr) => {
+            console.error(`Fetch error (${host}):`, fetchErr.message);
+            clearTimeout(hardTimeout);
+            try { imap.end(); } catch {}
+            finish();
+          });
+
+          fetch.once('end', () => {
+            saveSeenUIDs(newUIDs);
+            clearTimeout(hardTimeout);
+            try { imap.end(); } catch {}
+            finish();
+          });
         });
       });
     });
-  });
 
-  imap.once('error', err => console.error('IMAP:', err.message));
-  imap.once('end', () => console.log(`[${new Date().toLocaleTimeString()}] Check complete`));
-  imap.connect();
+    imap.once('error', err => {
+      clearTimeout(hardTimeout);
+      console.error(`IMAP(${host}):`, err.message);
+      finish();
+    });
+
+    imap.once('end', () => {
+      clearTimeout(hardTimeout);
+      console.log(`[${new Date().toLocaleTimeString()}] Check complete (${host})`);
+      finish();
+    });
+
+    imap.connect();
+  });
+}
+
+async function checkMail() {
+  const seenUIDs = getSeenUIDs();
+  const newUIDs = new Set(seenUIDs);
+
+  for (const host of IMAP_HOSTS) {
+    const result = await connectAndCheck(host, seenUIDs, newUIDs);
+    if (result.connected) return;
+    if (result.sawNewMail || newUIDs.size > seenUIDs.size) return;
+  }
 }
 
 // ─── START ─────────────────────────────────────────────────────────────────
