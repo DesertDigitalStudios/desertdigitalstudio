@@ -37,7 +37,7 @@ const QUIET_START = 22; // 10pm
 const QUIET_END = 7;    // 7am
 
 // Keywords that flag a client inquiry
-const INQUIRY_KEYWORDS = ['website', 'quote', 'price', 'cost', 'interested', 'design', 'help', 'build', 'seo', 'hire', 'contact', 'inquiry', 'services'];
+const INQUIRY_KEYWORDS = ['website', 'quote', 'price', 'cost', 'interested', 'design', 'help', 'build', 'seo', 'hire', 'contact', 'inquiry', 'services', 'estimate', 'project'];
 
 // Vendor / platform outreach that is not a real lead
 const VENDOR_PATTERNS = [
@@ -49,6 +49,20 @@ const VENDOR_PATTERNS = [
   'provide guidance',
   'schedule a short google meet'
 ];
+
+const SPAM_PATTERNS = [
+  'tranny69.com',
+  'ligma@balls.com',
+  'test test',
+  'asdf',
+  'qwerty',
+  'free money',
+  'crypto',
+  'casino',
+  'viagra'
+];
+
+const LOW_SIGNAL_SUBJECTS = ['test', 'hello', 'hi'];
 
 // Senders/domains to ignore (spam/marketing)
 const IGNORE_PATTERNS = ['noreply@', 'no-reply@', 'donotreply@', 'newsletter@', 'marketing@', 'notifications@', 'hello@squarespace', 'mail@waveapps', 'zoho.com'];
@@ -120,13 +134,42 @@ function shouldIgnore(from) {
   return IGNORE_PATTERNS.some(p => f.includes(p));
 }
 
+function extractField(text, field) {
+  const match = String(text || '').match(new RegExp(`${field}:\\s*([^\\n]+)`, 'i'));
+  return match ? match[1].trim() : '';
+}
+
+function isClearlySpam(subject, body, from) {
+  const text = `${subject || ''} ${body || ''} ${from || ''}`.toLowerCase();
+  if (SPAM_PATTERNS.some(pattern => text.includes(pattern))) return true;
+
+  const extractedEmail = extractField(body, 'Email').toLowerCase();
+  const extractedName = extractField(body, 'Name').toLowerCase();
+  const lowSignalSubject = LOW_SIGNAL_SUBJECTS.includes(String(subject || '').trim().toLowerCase());
+  const fakeEmail = /@(balls\.com|example\.com|test\.com)$/i.test(extractedEmail);
+  const suspiciousName = ['test', 'asdf', 'qwerty', 'g feria'].includes(extractedName);
+
+  if (lowSignalSubject && !String(body || '').toLowerCase().includes('project')) return true;
+  if (fakeEmail) return true;
+  if (suspiciousName && lowSignalSubject) return true;
+  return false;
+}
+
 function classifyEmail(subject, body, from) {
   const text = ((subject || '') + ' ' + (body || '')).toLowerCase();
   const fromText = String(from || '').toLowerCase();
   const isVendor = VENDOR_PATTERNS.some(pattern => text.includes(pattern) || fromText.includes(pattern));
-  const isInquiry = INQUIRY_KEYWORDS.some(kw => text.includes(kw));
   const isReply = (subject || '').toLowerCase().startsWith('re:');
-  
+  const isAuditLead = String(subject || '').toLowerCase().includes('[free audit lead]') || text.includes('crm-friendly json');
+  const spam = isClearlySpam(subject, body, from);
+  const hasInquiryKeywords = INQUIRY_KEYWORDS.some(kw => text.includes(kw));
+  const extractedEmail = extractField(body, 'Email').toLowerCase();
+  const hasRealContact = /@/.test(extractedEmail) && !/(balls\.com|example\.com|test\.com)$/i.test(extractedEmail);
+  const hasBusinessName = Boolean(extractField(body, 'Business'));
+  const likelyLegitAuditLead = isAuditLead && hasRealContact && hasBusinessName && !spam;
+  const isInquiry = likelyLegitAuditLead || (hasInquiryKeywords && !spam);
+
+  if (spam) return { type: 'spam', emoji: '🚫', label: 'SPAM / LOW-QUALITY SUBMISSION' };
   if (isVendor) return { type: 'vendor', emoji: '🛠️', label: 'VENDOR / PLATFORM EMAIL' };
   if (isInquiry) return { type: 'inquiry', emoji: '🔥', label: 'CLIENT INQUIRY' };
   if (isReply) return { type: 'reply', emoji: '💬', label: 'REPLY' };
@@ -185,6 +228,11 @@ function processEmail(parsed) {
   }
 
   const { type, emoji, label } = classifyEmail(subject, body, from);
+  if (type === 'spam') {
+    logEmail({ from, subject, type, body: truncate(body, 1000) });
+    console.log('Ignored (spam/low-quality):', subject);
+    return;
+  }
   const quiet = isQuietHours();
   const draft = draftReply(subject, body, from);
 
