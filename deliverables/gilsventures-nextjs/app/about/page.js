@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow">About</span>
-          <h1>About Gil&apos;s Ventures, 40+ Years in El Paso Roofing</h1>
+          <h1>40+ Years of El Paso Roofing Experience</h1>
           <p className="section-intro">Gil&apos;s Ventures is a family-owned roofing and sheet metal contractor built on decades of hands-on experience, long-standing client trust, and practical jobsite leadership across the Borderland.</p>
         </div>
       </section>
