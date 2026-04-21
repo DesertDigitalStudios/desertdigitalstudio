@@ -72,7 +72,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="content-block">
-            <span className="eyebrow">About Gil&apos;s Ventures</span>
+            <span className="eyebrow">Our Story</span>
             <h2 className="section-title">A family roofing company shaped by real field experience</h2>
             <p>Carlos began working in roofing in 1981 and built his reputation through consistent, hands-on work across El Paso and the surrounding region. Gil&apos;s Ventures grew from that foundation into a contractor trusted for residential reroofs, commercial systems, sheet metal packages, and federal scopes that demand coordination and reliability.</p>
             <p>From neighborhood homes to Fort Bliss and CBP-related work, the company brings the same mindset to every project: install the right system, communicate clearly, and leave the roof better than expected.</p>
