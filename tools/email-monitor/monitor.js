@@ -171,8 +171,8 @@ function classifyEmail(subject, body, from) {
 
   if (spam) return { type: 'spam', emoji: '🚫', label: 'SPAM / LOW-QUALITY SUBMISSION' };
   if (isVendor) return { type: 'vendor', emoji: '🛠️', label: 'VENDOR / PLATFORM EMAIL' };
-  if (isInquiry) return { type: 'inquiry', emoji: '🔥', label: 'CLIENT INQUIRY' };
   if (isReply) return { type: 'reply', emoji: '💬', label: 'REPLY' };
+  if (isInquiry) return { type: 'inquiry', emoji: '🔥', label: 'CLIENT INQUIRY' };
   return { type: 'general', emoji: '📬', label: 'NEW EMAIL' };
 }
 
