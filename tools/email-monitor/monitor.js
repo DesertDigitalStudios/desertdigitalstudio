@@ -47,7 +47,13 @@ const VENDOR_PATTERNS = [
   'api trial',
   'share how you\'re using',
   'provide guidance',
-  'schedule a short google meet'
+  'schedule a short google meet',
+  'white-label',
+  'white label',
+  'partnership opportunity',
+  'agency for seo fulfillment',
+  'seo fulfillment',
+  'partner with your agency'
 ];
 
 const SPAM_PATTERNS = [
@@ -145,11 +151,13 @@ function isClearlySpam(subject, body, from) {
 
   const extractedEmail = extractField(body, 'Email').toLowerCase();
   const extractedName = extractField(body, 'Name').toLowerCase();
+  const lowerBody = String(body || '').toLowerCase();
   const lowSignalSubject = LOW_SIGNAL_SUBJECTS.includes(String(subject || '').trim().toLowerCase());
   const fakeEmail = /@(balls\.com|example\.com|test\.com)$/i.test(extractedEmail);
   const suspiciousName = ['test', 'asdf', 'qwerty', 'g feria'].includes(extractedName);
+  const clearBusinessIntent = /(quote|pricing|website|seo|redesign|project|business|company|restaurant|salon|contractor)/i.test(lowerBody);
 
-  if (lowSignalSubject && !String(body || '').toLowerCase().includes('project')) return true;
+  if (lowSignalSubject && !clearBusinessIntent) return true;
   if (fakeEmail) return true;
   if (suspiciousName && lowSignalSubject) return true;
   return false;
