@@ -1,0 +1,22 @@
+[
+  {
+    "name": "El Charro Cafe Tucson",
+    "aliases": [
+      "El Charro Cafe",
+      "El Charro Café",
+      "El Charro"
+    ],
+    "city": "Tucson, AZ",
+    "website": "https://www.elcharrocafe.com/"
+  },
+  {
+    "name": "Charro Steak & Del Rey",
+    "aliases": [
+      "Charro Steak Del Rey",
+      "Charro Steak and Del Rey",
+      "Charro Steak"
+    ],
+    "city": "Tucson, AZ",
+    "website": "https://www.charrosteak.com/"
+  }
+]

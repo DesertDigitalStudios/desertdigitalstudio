@@ -19,6 +19,8 @@ const { scoreWebsite } = require('./scorer');
 const { generateMarkdownReport, generateJSONReport } = require('./reporter');
 const { buildLeadProfile } = require('./lead-intelligence');
 
+const CONFIRMED_WEBSITES_PATH = path.resolve(__dirname, 'input/confirmed-websites.json');
+
 // --- CLI Args ---
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -253,6 +255,36 @@ function normalizeSearchText(value) {
     .trim();
 }
 
+function loadConfirmedWebsites() {
+  try {
+    const items = JSON.parse(fs.readFileSync(CONFIRMED_WEBSITES_PATH, 'utf8'));
+    return Array.isArray(items) ? items : [];
+  } catch {
+    return [];
+  }
+}
+
+function confirmedWebsiteForBusiness(businessName, city) {
+  const normalizedName = normalizeSearchText(businessName);
+  const normalizedCity = normalizeSearchText(city).replace(/ arizona$/, '').trim();
+  const confirmed = loadConfirmedWebsites();
+
+  for (const item of confirmed) {
+    const itemCity = normalizeSearchText(item.city || '').replace(/ arizona$/, '').trim();
+    if (itemCity && normalizedCity && itemCity !== normalizedCity) continue;
+
+    const names = [item.name, ...(item.aliases || [])]
+      .map(normalizeSearchText)
+      .filter(Boolean);
+
+    if (names.some(name => name === normalizedName || name.includes(normalizedName) || normalizedName.includes(name))) {
+      return item.website || null;
+    }
+  }
+
+  return null;
+}
+
 function candidateScore(url, businessName, city) {
   try {
     const parsed = new URL(url);
@@ -282,6 +314,12 @@ function candidateScore(url, businessName, city) {
 }
 
 async function findBusinessWebsite(browser, businessName, city, timeout, verbose) {
+  const confirmedWebsite = confirmedWebsiteForBusiness(businessName, city);
+  if (confirmedWebsite) {
+    if (verbose) console.log(`    Using confirmed website cache for ${businessName}: ${confirmedWebsite}`);
+    return confirmedWebsite;
+  }
+
   const context = await browser.newContext({
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
   });
