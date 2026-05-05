@@ -165,7 +165,7 @@ function computeOutreachScore({
   const reasons = [];
   const cautions = [];
 
-  const unresolvedWebsite = /website not resolved automatically/i.test(error || '');
+  const unresolvedWebsite = /website not resolved automatically/i.test(error || '') || (!!website && !!error);
   const realWebsite = !!website && !error;
   const hasPublicEmail = emails.length > 0;
   const hasPhone = phones.length > 0;

@@ -706,10 +706,11 @@ async function main() {
     console.log('═'.repeat(50));
     
     auditedBusinesses.forEach((b, i) => {
-      const score = b.website && !b.result.error ? `${b.result.percentage}%` : 'NO SITE';
+      const needsVerification = /website not resolved automatically/i.test(b.result?.error || '') || (!!b.website && !!b.result?.error);
+      const score = b.website && !b.result.error ? `${b.result.percentage}%` : (needsVerification ? 'VERIFY' : 'NO SITE');
       const grade = b.result.grade || '?';
-      const heat = b.result.percentage < 30 || !b.website ? '🔥' : 
-                   b.result.percentage < 50 ? '⚠️ ' : '  ';
+      const heat = needsVerification ? '🤔' : (b.result.percentage < 30 || !b.website ? '🔥' : 
+                   b.result.percentage < 50 ? '⚠️ ' : '  ');
       console.log(`${heat} #${i+1} ${b.name.padEnd(35)} ${score.padStart(6)}  Grade: ${grade}`);
     });
     

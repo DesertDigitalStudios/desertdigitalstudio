@@ -2,6 +2,11 @@
  * reporter.js - Generates markdown and JSON reports from audit results
  */
 
+function needsWebsiteVerification(business = {}) {
+  const error = business?.result?.error || '';
+  return /website not resolved automatically/i.test(error) || (!!business?.website && !!error);
+}
+
 function getLeadTemperature(percentage) {
   if (percentage < 30) return '🔥🔥🔥 HOT LEAD';
   if (percentage < 50) return '🔥🔥 Warm Lead';
@@ -34,7 +39,7 @@ function formatSocialHandles(leadProfile = {}) {
 function generateBusinessSection(business, index) {
   const { name, website, city, phone, result, leadProfile = {} } = business;
   const rank = index + 1;
-  const unresolvedWebsite = /website not resolved automatically/i.test(result?.error || '');
+  const unresolvedWebsite = needsWebsiteVerification(business);
   
   if (!website || result.error) {
     return `
@@ -91,8 +96,8 @@ function generateMarkdownReport(businesses, meta) {
   const { city, category, auditDate, totalFound } = meta;
   
   const withSites = businesses.filter(b => b.website && !b.result.error);
-  const unresolved = businesses.filter(b => /website not resolved automatically/i.test(b.result?.error || ''));
-  const withoutSites = businesses.filter(b => (!b.website || b.result.error) && !/website not resolved automatically/i.test(b.result?.error || ''));
+  const unresolved = businesses.filter(needsWebsiteVerification);
+  const withoutSites = businesses.filter(b => (!b.website || b.result.error) && !needsWebsiteVerification(b));
   const avgScore = withSites.length > 0
     ? Math.round(withSites.reduce((s, b) => s + b.result.percentage, 0) / withSites.length)
     : 0;
@@ -173,8 +178,8 @@ function generateJSONReport(businesses, meta) {
       totalFound: meta.totalFound,
       audited: businesses.length,
       withWebsites: businesses.filter(b => b.website && !b.result.error).length,
-      withoutWebsites: businesses.filter(b => (!b.website || b.result.error) && !/website not resolved automatically/i.test(b.result?.error || '')).length,
-      unresolvedWebsites: businesses.filter(b => /website not resolved automatically/i.test(b.result?.error || '')).length,
+      withoutWebsites: businesses.filter(b => (!b.website || b.result.error) && !needsWebsiteVerification(b)).length,
+      unresolvedWebsites: businesses.filter(needsWebsiteVerification).length,
       averageScore: businesses.filter(b => b.result.percentage > 0).length > 0
         ? Math.round(businesses.filter(b => b.result.percentage > 0)
             .reduce((s, b) => s + b.result.percentage, 0) /
@@ -187,7 +192,7 @@ function generateJSONReport(businesses, meta) {
       website: b.website,
       phone: b.phone,
       city: b.city,
-      leadTemperature: b.website && !b.result.error ? getLeadTemperature(b.result.percentage) : (/website not resolved automatically/i.test(b.result?.error || '') ? '🤔 Needs website verification' : '🔥🔥🔥 HOT LEAD (no site)'),
+      leadTemperature: b.website && !b.result.error ? getLeadTemperature(b.result.percentage) : (needsWebsiteVerification(b) ? '🤔 Needs website verification' : '🔥🔥🔥 HOT LEAD (no site)'),
       score: b.result.percentage,
       grade: b.result.grade,
       error: b.result.error || null,
