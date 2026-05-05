@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-05T02:54:42.003035Z",
+  "updatedAt": "2026-05-05T04:00:01.706067Z",
   "packages": [
     {
       "id": "launch-pad",
@@ -655,7 +655,7 @@
       "businessName": "Claudia's Hair Salon",
       "city": "Sierra Vista",
       "stage": "Contacted",
-      "notes": "Sent outreach email after audit; public email found and used. Wait for reply before next move.",
+      "notes": "Sent outreach email after audit; public email found and used. Wait for reply before next move.\nOutreach draft batch generated 2026-05-04 for info@claudiashairsalon.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -745,7 +745,7 @@
       "businessName": "Nirvana's Cup of Joe",
       "city": "Sierra Vista",
       "stage": "Contacted",
-      "notes": "Sent outreach email after audit; public email found and used. Wait for reply before next move.",
+      "notes": "Sent outreach email after audit; public email found and used. Wait for reply before next move.\nOutreach draft batch generated 2026-05-04 for black9@qq.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -1259,7 +1259,7 @@
       "nextAction": "Draft a short audit-based email with 2\u20133 specific issues and a simple offer.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: restaurants.",
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: restaurants.\nOutreach draft batch generated 2026-05-04 for reservations@arizonainn.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -1309,7 +1309,7 @@
       "nextAction": "Draft a short audit-based email with 2\u20133 specific issues and a simple offer.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: restaurants.",
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: restaurants.\nOutreach draft batch generated 2026-05-04 for eatfish@kingfishertucson.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -1358,7 +1358,7 @@
       "nextAction": "Draft a short audit-based email with 2\u20133 specific issues and a simple offer.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: cafes.",
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: cafes.\nOutreach draft batch generated 2026-05-04 for cxcowner@aol.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -1409,7 +1409,7 @@
       "nextAction": "Draft a short audit-based email with 2\u20133 specific issues and a simple offer.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: salons.",
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: salons.\nOutreach draft batch generated 2026-05-04 for info@circa79salon.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -1465,7 +1465,7 @@
       "nextAction": "Draft a short audit-based email with 2\u20133 specific issues and a simple offer.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Sierra Vista scan 2026-04-05. Category: restaurants.",
+      "notes": "Imported from nightly Sierra Vista scan 2026-04-05. Category: restaurants.\nOutreach draft batch generated 2026-05-04 for mandalebarandgrill@gmail.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -1518,7 +1518,7 @@
       "nextAction": "Draft a short audit-based email with 2\u20133 specific issues and a simple offer.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Sierra Vista scan 2026-04-05. Category: barbers.",
+      "notes": "Imported from nightly Sierra Vista scan 2026-04-05. Category: barbers.\nOutreach draft batch generated 2026-05-04 for luqabarbershopusa@gmail.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -3535,7 +3535,7 @@
       "nextAction": "Call or walk in with the audit and ask who handles the website.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: cafes.",
+      "notes": "Imported from nightly Tucson scan 2026-04-05. Category: cafes.\nOutreach draft batch generated 2026-05-04 for passeon4th@gmail.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -21178,7 +21178,7 @@
       "nextAction": "Call or walk in with the audit and ask who handles the website.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Tucson scan 2026-04-10. Category: restaurants.",
+      "notes": "Imported from nightly Tucson scan 2026-04-10. Category: restaurants.\nOutreach draft batch generated 2026-05-04 for info@coronettucson.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -52310,7 +52310,7 @@
       "nextAction": "Research contact details before spending more time here.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Sierra Vista scan 2026-04-28. Category: home-services.",
+      "notes": "Imported from nightly Sierra Vista scan 2026-04-28. Category: home-services.\nOutreach draft batch generated 2026-05-04 for jason@temp-con.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
@@ -54044,7 +54044,7 @@
       "nextAction": "Call or walk in with the audit and ask who handles the website.",
       "lastTouch": null,
       "followUpOn": null,
-      "notes": "Imported from nightly Sierra Vista scan 2026-05-04. Category: salons.",
+      "notes": "Imported from nightly Sierra Vista scan 2026-05-04. Category: salons.\nOutreach draft batch generated 2026-05-04 for info@executivebarberclub.com.",
       "proposal": {
         "status": "Not started",
         "lastGeneratedAt": null,
