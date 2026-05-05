@@ -21,6 +21,7 @@ const fs = require('fs');
 const path = require('path');
 
 const CONFIG_PATH = path.resolve(__dirname, '../../.yelp-config.json');
+const INPUT_DIR = path.resolve(__dirname, 'input');
 
 const CITY_CONFIG = {
   'Tucson, AZ': {
@@ -152,8 +153,32 @@ function isLocalResult(business, city) {
   return config.aliases.some(alias => haystack.includes(String(alias).toLowerCase()));
 }
 
+function normalizeName(value) {
+  return String(value || '').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function loadStaticWebsiteMap(city, category) {
+  const citySlug = city.split(',')[0].trim().toLowerCase().replace(/\s+/g, '-');
+  const inputPath = path.join(INPUT_DIR, `${citySlug}-${category}.json`);
+  if (!fs.existsSync(inputPath)) return new Map();
+
+  try {
+    const items = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
+    const map = new Map();
+    for (const item of items || []) {
+      if (item?.name && item?.website) {
+        map.set(normalizeName(item.name), item.website);
+      }
+    }
+    return map;
+  } catch {
+    return new Map();
+  }
+}
+
 function yelpToInputFormat(businesses, city, category) {
   const seen = new Set();
+  const staticWebsiteMap = loadStaticWebsiteMap(city, category);
 
   return businesses
     .filter(b => b.name && !b.is_closed)
@@ -166,7 +191,7 @@ function yelpToInputFormat(businesses, city, category) {
     })
     .map(b => ({
       name: b.name,
-      website: undefined,
+      website: staticWebsiteMap.get(normalizeName(b.name)) || undefined,
       city: city.split(',')[0].trim(),
       category,
       yelpId: b.id,

@@ -249,33 +249,65 @@ async function findBusinessWebsite(browser, businessName, city, timeout, verbose
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
   });
   const page = await context.newPage();
-  
+
+  const searchStrategies = [
+    {
+      name: 'Bing',
+      url: (query) => `https://www.bing.com/search?q=${encodeURIComponent(query)}`,
+      extract: () => page.evaluate(() => {
+        const skipDomains = ['bing.com', 'yelp.com', 'facebook.com/pages', 'yellowpages.com', 'whitepages.com', 'mapquest.com', 'tripadvisor.com', 'bbb.org', 'foursquare.com', 'angieslist.com', 'houzz.com'];
+        const links = Array.from(document.querySelectorAll('li.b_algo h2 a, h2 a'));
+        for (const link of links) {
+          const href = link.href;
+          if (!href) continue;
+          if (skipDomains.some(domain => href.includes(domain))) continue;
+          if (href.startsWith('http://') || href.startsWith('https://')) return href;
+        }
+        return null;
+      })
+    },
+    {
+      name: 'DuckDuckGo',
+      url: (query) => `https://duckduckgo.com/?q=${encodeURIComponent(query)}`,
+      extract: async () => {
+        const bodyText = await page.evaluate(() => document.body?.innerText || '');
+        if (/bots use duckduckgo too|select all squares containing a duck/i.test(bodyText)) {
+          return null;
+        }
+        return page.evaluate(() => {
+          const skipDomains = ['duckduckgo.com', 'yelp.com', 'facebook.com/pages', 'yellowpages.com', 'whitepages.com', 'mapquest.com', 'tripadvisor.com', 'bbb.org', 'foursquare.com', 'angieslist.com', 'houzz.com'];
+          const links = Array.from(document.querySelectorAll('.result__a, a[data-testid="result-title-a"], article[data-testid="result"] h2 a'));
+          for (const link of links) {
+            const href = link.href;
+            if (!href) continue;
+            if (skipDomains.some(domain => href.includes(domain))) continue;
+            if (href.startsWith('http://') || href.startsWith('https://')) return href;
+          }
+          return null;
+        });
+      }
+    }
+  ];
+
   try {
     const query = `${businessName} ${city} official website`;
-    await page.goto(`https://duckduckgo.com/?q=${encodeURIComponent(query)}`, {
-      waitUntil: 'domcontentloaded',
-      timeout: 15000
-    });
-    await page.waitForTimeout(1500);
-    
-    const result = await page.evaluate(() => {
-      const links = document.querySelectorAll('.result__a, a[data-testid="result-title-a"]');
-      const skipDomains = ['duckduckgo.com', 'yelp.com', 'facebook.com/pages', 
-        'yellowpages.com', 'whitepages.com', 'mapquest.com', 'tripadvisor.com',
-        'bbb.org', 'foursquare.com', 'angieslist.com', 'houzz.com'];
-      
-      for (const link of links) {
-        const href = link.href;
-        if (!href) continue;
-        const skip = skipDomains.some(d => href.includes(d));
-        if (!skip && (href.startsWith('http://') || href.startsWith('https://'))) {
-          return href;
-        }
+
+    for (const strategy of searchStrategies) {
+      try {
+        await page.goto(strategy.url(query), {
+          waitUntil: 'domcontentloaded',
+          timeout: Math.min(timeout, 15000)
+        });
+        await page.waitForTimeout(1500);
+        const result = await strategy.extract();
+        if (result) return result;
+        if (verbose) console.log(`    ${strategy.name} search returned no usable website for ${businessName}`);
+      } catch (err) {
+        if (verbose) console.log(`    ${strategy.name} search failed: ${err.message}`);
       }
-      return null;
-    });
-    
-    return result;
+    }
+
+    return null;
   } catch (err) {
     if (verbose) console.log(`    Website search failed: ${err.message}`);
     return null;
