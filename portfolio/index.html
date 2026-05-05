@@ -778,11 +778,46 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
 
-      section { padding: 72px 20px; }
+      section { padding: 64px 20px; }
+
+      #home {
+        min-height: auto;
+        padding-top: 28px;
+      }
 
       .hero-content {
-        padding: 54px 22px;
+        padding: 46px 20px;
         border-radius: 22px;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .section-header {
+        margin-bottom: 40px;
+      }
+
+      .section-sub {
+        font-size: 1rem;
+      }
+
+      .services-grid,
+      .benefits-grid,
+      .process-steps {
+        gap: 18px;
+      }
+
+      .service-card,
+      .benefit-card,
+      .step {
+        padding: 24px 20px;
+        border-radius: 16px;
       }
 
       .contact-wrapper {
@@ -790,14 +825,42 @@
         gap: 40px;
       }
 
+      .contact-info h2 {
+        margin-bottom: 12px;
+      }
+
+      .contact-detail {
+        align-items: flex-start;
+      }
+
+      .contact-detail span,
+      .contact-detail a {
+        overflow-wrap: anywhere;
+      }
+
+      .social-links {
+        flex-wrap: wrap;
+      }
+
       .form-row { grid-template-columns: 1fr; }
-      .contact-form { padding: 28px 20px; }
+      .contact-form { padding: 28px 20px; border-radius: 18px; }
 
       .footer-inner { flex-direction: column; text-align: center; }
-      .footer-nav { justify-content: center; }
+      .footer-nav { justify-content: center; flex-wrap: wrap; gap: 16px; }
     }
 
     @media (max-width: 480px) {
+      header nav {
+        padding: 0 16px;
+      }
+
+      section { padding: 56px 16px; }
+
+      .hero-content {
+        padding: 38px 16px;
+        border-radius: 18px;
+      }
+
       .hero-points {
         flex-direction: column;
         align-items: stretch;
@@ -807,8 +870,16 @@
         justify-content: center;
       }
 
-      .btn-group { flex-direction: column; align-items: center; }
-      .btn { width: 100%; max-width: 280px; text-align: center; }
+      .btn-group { flex-direction: column; align-items: center; width: 100%; }
+      .btn { width: 100%; max-width: 100%; text-align: center; }
+
+      .service-card,
+      .benefit-card,
+      .step,
+      .contact-form {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
     }
   </style>
 </head>
