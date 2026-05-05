@@ -106,6 +106,14 @@ function contactInfoForLead(lead) {
   };
 }
 
+function leadNeedsWebsiteVerification(lead) {
+  const contact = contactInfoForLead(lead);
+  const cautionText = `${(lead.cautions || []).join(' ')} ${lead.quickPitch || ''} ${lead.nextAction || ''} ${lead.notes || ''}`.toLowerCase();
+  if (lead.websiteStatus === 'needs-verification') return true;
+  if (/website not resolved automatically|website needs verification|resolver could not confirm/.test(cautionText)) return true;
+  return !contact.hasWebsite && (contact.phones.length > 0 || contact.hasSocialTrail) && ['Scored', 'Research'].includes(lead.stage);
+}
+
 function enrichmentRouteForLead(lead) {
   const contact = contactInfoForLead(lead);
   if (contact.emails.length) {
@@ -497,6 +505,104 @@ function renderTodaysFocus() {
       state.selectedLeadId = card.dataset.focusLead;
       renderAll();
       document.getElementById('lead-score-body')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+function renderFieldOpsPanel() {
+  const root = $('field-ops-panel');
+  if (!root || !state.crm) return;
+
+  const leads = sortedLeads().filter(lead => !['Won', 'Parked', 'Closed Lost'].includes(lead.stage));
+  const reachableNow = leads.filter(lead => ['prime', 'pursue'].includes(lead.outreachTier) && contactInfoForLead(lead).emails.length).slice(0, 4);
+  const phoneFirst = leads.filter(lead => !contactInfoForLead(lead).emails.length && contactInfoForLead(lead).phones.length).slice(0, 4);
+  const verification = leads.filter(leadNeedsWebsiteVerification).slice(0, 6);
+
+  root.innerHTML = `
+    <div class="panel field-ops-panel-inner">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">Field triage</div>
+          <p class="panel-subtitle">Quick lead actions for when you’re out, plus a clean queue for businesses whose website status still needs verification.</p>
+        </div>
+      </div>
+
+      <div class="field-ops-stats">
+        <div class="summary-card compact"><div class="summary-label">Reachable now</div><div class="summary-value">${reachableNow.length}</div><div class="summary-note">Best leads to email from your phone</div></div>
+        <div class="summary-card compact"><div class="summary-label">Phone first</div><div class="summary-value">${phoneFirst.length}</div><div class="summary-note">Call or text path exists, email does not</div></div>
+        <div class="summary-card compact"><div class="summary-label">Verify websites</div><div class="summary-value">${verification.length}</div><div class="summary-note">Needs a manual website check before outreach</div></div>
+      </div>
+
+      <div class="field-ops-grid">
+        <div class="field-ops-card">
+          <div class="panel-title">Reachable now</div>
+          <div class="field-ops-list">
+            ${reachableNow.length ? reachableNow.map(lead => `
+              <div class="field-lead-card" data-field-lead="${esc(lead.id)}">
+                <div class="field-lead-top"><strong>${esc(lead.businessName)}</strong>${tierBadge(lead.outreachTier, lead.outreachScore)}</div>
+                <div class="field-lead-meta">${esc(lead.city || '—')} · ${esc(lead.publicEmail || '')}</div>
+                <div class="field-lead-note">${esc(lead.nextAction || 'Draft outreach')}</div>
+                <div class="field-lead-actions">
+                  <a class="btn btn-ghost btn-inline" href="mailto:${esc(lead.publicEmail)}">Email</a>
+                  <button type="button" class="btn btn-inline" data-open-lead="${esc(lead.id)}">Open</button>
+                </div>
+              </div>
+            `).join('') : '<div class="empty-state">No high-priority email-ready leads right now.</div>'}
+          </div>
+        </div>
+
+        <div class="field-ops-card">
+          <div class="panel-title">Phone first</div>
+          <div class="field-ops-list">
+            ${phoneFirst.length ? phoneFirst.map(lead => `
+              <div class="field-lead-card" data-field-lead="${esc(lead.id)}">
+                <div class="field-lead-top"><strong>${esc(lead.businessName)}</strong>${tierBadge(lead.outreachTier, lead.outreachScore)}</div>
+                <div class="field-lead-meta">${esc(lead.city || '—')} · ${esc(contactInfoForLead(lead).phones[0] || '')}</div>
+                <div class="field-lead-note">${esc(suggestedEnrichmentAction(lead))}</div>
+                <div class="field-lead-actions">
+                  <a class="btn btn-ghost btn-inline" href="tel:${esc((contactInfoForLead(lead).phones[0] || '').replace(/[^\d+]/g, ''))}">Call</a>
+                  <button type="button" class="btn btn-inline" data-open-lead="${esc(lead.id)}">Open</button>
+                </div>
+              </div>
+            `).join('') : '<div class="empty-state">No phone-first leads right now.</div>'}
+          </div>
+        </div>
+      </div>
+
+      <div class="field-ops-card verification-card">
+        <div class="panel-head compact-head">
+          <div>
+            <div class="panel-title">Website verification queue</div>
+            <p class="panel-subtitle">These are not safe to treat as “no website” leads yet.</p>
+          </div>
+        </div>
+        <div class="verification-list">
+          ${verification.length ? verification.map(lead => `
+            <div class="verification-item" data-open-lead="${esc(lead.id)}">
+              <div>
+                <strong>${esc(lead.businessName)}</strong>
+                <div class="verification-meta">${esc(lead.city || '—')} · ${esc(contactInfoForLead(lead).phones[0] || 'No phone')} · ${esc(lead.stage || 'Scored')}</div>
+              </div>
+              <div class="verification-side">
+                <span class="mini-chip">Verify site</span>
+                <span class="muted">${esc(lead.nextAction || 'Manual website check needed')}</span>
+              </div>
+            </div>
+          `).join('') : '<div class="empty-state">No website verification leads right now.</div>'}
+        </div>
+      </div>
+    </div>
+  `;
+
+  root.querySelectorAll('[data-open-lead], [data-field-lead]').forEach(element => {
+    element.addEventListener('click', (event) => {
+      const leadId = element.dataset.openLead || element.dataset.fieldLead;
+      if (!leadId) return;
+      if (event.target.tagName === 'A') return;
+      state.selectedLeadId = leadId;
+      state.selectedOnboardingLeadId = leadId;
+      renderAll();
+      $('lead-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
@@ -901,6 +1007,7 @@ function renderAll() {
   fillStageOptions();
   renderSummary();
   renderTodaysFocus();
+  renderFieldOpsPanel();
   renderEnrichmentWorkbench();
   renderLeadTable();
   renderPipeline();
