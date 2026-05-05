@@ -542,19 +542,19 @@ function renderLeadTable() {
 
     return `
       <tr class="score-row ${selected}" data-lead-id="${esc(lead.id)}">
-        <td>${tierBadge(lead.outreachTier, lead.outreachScore)}</td>
-        <td>
+        <td data-label="Worth">${tierBadge(lead.outreachTier, lead.outreachScore)}</td>
+        <td data-label="Business">
           <strong>${esc(lead.businessName)}</strong><br>
           <span class="muted">${esc(lead.city || '—')}</span>
         </td>
-        <td><span class="badge stage">${esc(lead.stage || 'Scored')}</span></td>
-        <td>${contact}</td>
-        <td>
+        <td data-label="Stage"><span class="badge stage">${esc(lead.stage || 'Scored')}</span></td>
+        <td data-label="Reachability">${contact}</td>
+        <td data-label="Website Need">
           <div>${lead.hasWebsite ? `${esc(lead.auditScore || 0)}/100 audit` : 'No website'}</div>
           <div class="muted">${esc(lead.topIssues?.slice(0, 2).join(' · ') || 'No issues logged yet')}</div>
         </td>
-        <td>${esc(lead.recommendedPackage || 'refresh')}</td>
-        <td>
+        <td data-label="Recommended package">${esc(lead.recommendedPackage || 'refresh')}</td>
+        <td data-label="Why now">
           <div class="reasons">
             ${(lead.priorityReasons || []).slice(0, 2).map(reason => `<span class="reason-chip">${esc(reason)}</span>`).join('') || '<span class="muted">No reasons captured yet</span>'}
           </div>

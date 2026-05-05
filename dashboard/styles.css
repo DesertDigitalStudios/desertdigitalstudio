@@ -19,6 +19,7 @@ body {
   background: radial-gradient(circle at top, #172339 0%, var(--bg) 38%);
   color: var(--text);
   font-family: 'Inter', sans-serif;
+  -webkit-text-size-adjust: 100%;
 }
 
 .shell {
@@ -275,6 +276,7 @@ textarea:focus {
   grid-template-columns: repeat(7, minmax(220px, 1fr));
   gap: 12px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .pipeline-col {
@@ -758,11 +760,131 @@ code {
 }
 
 @media (max-width: 760px) {
+  .shell {
+    padding: 18px 12px 32px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
   .topbar,
   .panel-head,
-  .enrichment-detail-top { flex-direction: column; }
+  .enrichment-detail-top,
+  .topbar-actions,
+  .toolbar,
+  .form-actions,
+  .import-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .panel,
+  .summary-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
   .summary-grid,
   .form-grid,
   .checklist-grid,
-  .enrichment-stats { grid-template-columns: 1fr; }
+  .enrichment-stats,
+  .mini-stat-grid,
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn,
+  .btn-ghost {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .pipeline-board {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(84vw, 1fr);
+    grid-template-columns: unset;
+    scroll-snap-type: x proximity;
+    padding-bottom: 6px;
+  }
+
+  .pipeline-col {
+    scroll-snap-align: start;
+    min-height: unset;
+  }
+
+  .enrichment-list {
+    max-height: none;
+    padding-right: 0;
+  }
+
+  .enrichment-detail-top h3 {
+    font-size: 22px;
+  }
+
+  .enrichment-route {
+    min-width: 0;
+  }
+
+  .table-wrap {
+    overflow: visible;
+  }
+
+  .score-table,
+  .score-table thead,
+  .score-table tbody,
+  .score-table tr,
+  .score-table th,
+  .score-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .score-table thead {
+    display: none;
+  }
+
+  .score-row {
+    border: 1px solid rgba(38, 50, 70, 0.8);
+    border-radius: 14px;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    background: rgba(12, 20, 36, 0.88);
+  }
+
+  .score-table td {
+    border: 0;
+    padding: 8px 0;
+  }
+
+  .score-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+  }
+
+  .meta-chip,
+  .badge,
+  .reason-chip,
+  .mini-chip {
+    white-space: normal;
+  }
+
+  .toast {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
 }
