@@ -287,9 +287,30 @@
     .hero-sub {
       font-size: 1.15rem;
       color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto 40px;
+      max-width: 640px;
+      margin: 0 auto 28px;
       line-height: 1.7;
+    }
+
+    .hero-points {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 34px;
+    }
+
+    .hero-point {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
     }
 
     .btn-group {
@@ -738,6 +759,15 @@
     }
 
     @media (max-width: 480px) {
+      .hero-points {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-point {
+        justify-content: center;
+      }
+
       .btn-group { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 280px; text-align: center; }
     }
@@ -793,16 +823,20 @@
   <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-badge">🌵 Southern Arizona Web Design</div>
-    <h1>Web design for small businesses in <span>Southern Arizona.</span></h1>
-    <p class="hero-sub">Desert Digital Studio builds professional websites for small businesses in Benson, Sierra Vista, Tombstone, Tucson, and Phoenix. We help you get found online, look great, and grow.</p>
+    <h1>Professional websites that make local businesses look <span>more trustworthy.</span></h1>
+    <p class="hero-sub">Desert Digital Studio helps Southern Arizona businesses clean up weak websites, improve local visibility, and make it easier for customers to call, message, and buy with confidence.</p>
+    <div class="hero-points">
+      <div class="hero-point">Fast, mobile-friendly builds</div>
+      <div class="hero-point">Clear pricing and practical scope</div>
+      <div class="hero-point">Built for real local businesses</div>
+    </div>
     <div class="btn-group">
-      <a href="#services" class="btn btn-primary">See Our Services</a>
-      <a href="/free-audit/" class="btn btn-outline">Get a Free Website Audit</a>
-      <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
+      <a href="/free-audit/" class="btn btn-primary">Get a Free Website Audit</a>
+      <a href="#contact" class="btn btn-outline">Request a Quote</a>
     </div>
 
     <div style="margin-top:20px; color:var(--muted); font-size:0.98rem;">
-      Based in <strong style="color:var(--text);">Benson</strong>. Built for Southern Arizona businesses that want a site that actually helps them grow.
+      Based in <strong style="color:var(--text);">Benson</strong>. Best fit for small businesses that need a site that feels credible, clear, and easy to act on.
     </div>
   </div>
 </section>
@@ -812,8 +846,8 @@
   <div class="container">
     <div class="section-header">
       <span class="section-label">What We Do</span>
-      <h2 class="section-title">Services built for small businesses</h2>
-      <p class="section-sub">Everything you need to establish a strong online presence in Southern Arizona — without the big agency price tag.</p>
+      <h2 class="section-title">Clear website help for businesses that need to look more legit online</h2>
+      <p class="section-sub">Simple, practical services for owners who need a better web presence without getting trapped in agency jargon or bloated scope.</p>
     </div>
     <div class="services-grid">
 
@@ -824,7 +858,7 @@
           </svg>
         </div>
         <h3>Website Design</h3>
-        <p>Custom websites built to represent your business and convert visitors into customers. Mobile-friendly, fast, and built to last.</p>
+        <p>Custom websites built to make your business look current, trustworthy, and easy to contact, especially from a phone.</p>
         <span class="service-price">Starting at $500</span>
       </div>
 
@@ -834,8 +868,8 @@
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
           </svg>
         </div>
-        <h3>Search Engine Optimization (SEO)</h3>
-        <p>Get found on Google. We optimize your site so local customers can find you when they search for businesses like yours.</p>
+        <h3>Local SEO</h3>
+        <p>Stronger local search foundations so nearby customers have a better chance of finding you when they’re ready to book, call, or visit.</p>
         <span class="service-price">Starting at $200/mo</span>
       </div>
 
@@ -846,7 +880,7 @@
           </svg>
         </div>
         <h3>Monthly Maintenance</h3>
-        <p>We keep your site updated, secure, and running smoothly — so you can focus on running your business.</p>
+        <p>Ongoing updates, fixes, and support so your website doesn’t slowly get outdated the second it goes live.</p>
         <span class="service-price">Starting at $75/mo</span>
       </div>
 
@@ -858,34 +892,34 @@
 <section id="about">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Why Us</span>
-      <h2 class="section-title">Why Desert Digital Studio?</h2>
-      <p class="section-sub">We're not a faceless agency. We're your Arizona web design partner — and we're invested in your success.</p>
+      <span class="section-label">Why Work With Us</span>
+      <h2 class="section-title">A more practical option than a bloated agency or a flaky freelancer</h2>
+      <p class="section-sub">We keep the process direct, the recommendations practical, and the end result focused on helping a local business look more credible online.</p>
     </div>
     <div class="benefits-grid">
 
       <div class="benefit-card">
         <div class="benefit-icon">📍</div>
-        <h3>Local &amp; Personal</h3>
-        <p>We're based in Southern Arizona. We meet in person, understand your market, and are just a call away.</p>
+        <h3>Local context matters</h3>
+        <p>We’re building for real Southern Arizona businesses, not generic internet theory. Local trust, visibility, and easy customer action come first.</p>
       </div>
 
       <div class="benefit-card">
         <div class="benefit-icon">💰</div>
-        <h3>Affordable</h3>
-        <p>Big agency quality at small business prices. No hidden fees, no surprises.</p>
+        <h3>Clear scope, no nonsense</h3>
+        <p>You get a practical recommendation, a defined package, and straightforward pricing instead of a confusing pile of upsells.</p>
       </div>
 
       <div class="benefit-card">
         <div class="benefit-icon">⚡</div>
-        <h3>Fast Turnaround</h3>
-        <p>Most sites delivered in 1–2 weeks. We move fast so you don't wait.</p>
+        <h3>Fast enough to matter</h3>
+        <p>Most projects move quickly once we have the basics. That means less waiting and a faster path from weak website to usable one.</p>
       </div>
 
       <div class="benefit-card">
         <div class="benefit-icon">🤝</div>
-        <h3>Ongoing Support</h3>
-        <p>We don't disappear after launch. Monthly retainers keep your site fresh and supported.</p>
+        <h3>Direct communication</h3>
+        <p>You work directly with the person doing the work, which means faster decisions, less confusion, and less getting bounced around.</p>
       </div>
 
     </div>
@@ -897,33 +931,33 @@
   <div class="container">
     <div class="section-header">
       <span class="section-label">How It Works</span>
-      <h2 class="section-title">Simple. Transparent. Fast.</h2>
-      <p class="section-sub">From first conversation to launch day — here's exactly what to expect.</p>
+      <h2 class="section-title">A simple process business owners can actually say yes to</h2>
+      <p class="section-sub">No complicated discovery marathon. Just enough structure to move quickly and get the site in a better place.</p>
     </div>
     <div class="process-steps">
 
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Discovery</h3>
-        <p>We learn about your business, goals, and customers.</p>
+        <h3>Quick audit</h3>
+        <p>We look at what’s weak now, what customers are seeing, and where the easiest improvements are.</p>
       </div>
 
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Design</h3>
-        <p>We build a custom site tailored to your brand.</p>
+        <h3>Clear recommendation</h3>
+        <p>We recommend the right level of work, whether that means quick fixes, a refresh, or a stronger first site.</p>
       </div>
 
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Review</h3>
-        <p>You review, request changes, and approve.</p>
+        <h3>Build and review</h3>
+        <p>We put the work together, you review it, and we tighten anything that needs adjustment.</p>
       </div>
 
       <div class="step">
         <div class="step-number">4</div>
-        <h3>Launch</h3>
-        <p>We go live and start getting you found online.</p>
+        <h3>Launch and support</h3>
+        <p>Once it’s ready, we launch it cleanly and can keep it updated if you want ongoing help.</p>
       </div>
 
     </div>
@@ -968,8 +1002,8 @@
   <div class="container">
     <div class="section-header">
       <span class="section-label">Who We Help</span>
-      <h2 class="section-title">Built for Arizona small businesses</h2>
-      <p class="section-sub">We work with local business owners who need a professional online presence without the big agency price tag.</p>
+      <h2 class="section-title">Best fit for owners who know their online presence needs work</h2>
+      <p class="section-sub">We’re a strong fit for local businesses that need a cleaner, more trustworthy site without turning a simple project into a giant production.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
@@ -1011,24 +1045,24 @@
   <div class="container">
     <div class="section-header">
       <span class="section-label">What You Actually Get</span>
-      <h2 class="section-title">A simple offer businesses can say yes to</h2>
-      <p class="section-sub">Clear scope, fast turnaround, and no big-agency nonsense. The goal is to make it easy for local businesses to improve their online presence without getting overwhelmed.</p>
+      <h2 class="section-title">A tighter online presence, not just a prettier homepage</h2>
+      <p class="section-sub">Even without case studies on the site yet, the promise is simple: make the business look more current, easier to trust, and easier to contact.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">⚡</div>
-        <h3>Fast first version</h3>
-        <p>Most projects move quickly once we have the basic assets. That means less waiting around and a faster path to launch.</p>
+        <div class="service-icon">📱</div>
+        <h3>Mobile-first credibility</h3>
+        <p>Most customers will check you on a phone first. We build around that reality instead of treating mobile like an afterthought.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🧭</div>
-        <h3>Local-first strategy</h3>
-        <p>We build for real Southern Arizona businesses — not generic internet theory. Local visibility, trust, and easy customer action matter most.</p>
+        <h3>Clear next step for customers</h3>
+        <p>Calls, forms, messages, directions, menus, and service details should be easy to find instead of buried or confusing.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🛠️</div>
-        <h3>Design + SEO + maintenance</h3>
-        <p>You’re not just getting a homepage. You’re getting a cleaner web presence, stronger search foundations, and optional ongoing support.</p>
+        <h3>Practical scope</h3>
+        <p>Quick wins stay quick wins. Bigger rebuilds stay focused. The goal is to solve the real problem without overbuilding for the sake of it.</p>
       </div>
     </div>
   </div>
@@ -1038,9 +1072,9 @@
 <section id="proof" style="background:var(--card);">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Trust &amp; Proof</span>
-      <h2 class="section-title">How we make it easier to say yes</h2>
-      <p class="section-sub">No fake testimonials. No giant-agency song and dance. Just a cleaner, more trustworthy process for local business owners who want to know what happens next.</p>
+      <span class="section-label">Trust &amp; Process</span>
+      <h2 class="section-title">What we can show clearly, even before the proof section gets deeper</h2>
+      <p class="section-sub">We’re not going to fake testimonials or pretend to be a giant agency. What we can do is make the process, scope, and next step feel clear and low-risk.</p>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card">
@@ -1056,7 +1090,7 @@
       <div class="benefit-card">
         <div class="benefit-icon">📱</div>
         <h3>Built for real customers</h3>
-        <p>The goal is not just “pretty.” It’s making the business easier to trust, easier to contact, and easier to find from a phone.</p>
+        <p>The goal is not just “pretty.” It’s making the business easier to trust, easier to contact, and easier to choose when someone lands on the site.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">🤝</div>
@@ -1071,9 +1105,9 @@
 <section id="trust-strip" style="background:var(--bg); padding-top:50px; padding-bottom:50px;">
   <div class="container">
     <div class="section-header" style="margin-bottom:0;">
-      <span class="section-label">Why Desert Digital Studio</span>
-      <h2 class="section-title">Local, practical, and built for small business owners</h2>
-      <p class="section-sub">If you want a huge agency experience, we’re probably not it. If you want something clean, fast, and genuinely helpful, that’s our lane.</p>
+      <span class="section-label">Best Fit</span>
+      <h2 class="section-title">We’re a strong fit when the business is solid, but the website is dragging it down</h2>
+      <p class="section-sub">That usually means outdated design, weak mobile experience, unclear contact flow, thin local visibility, or a site that just doesn’t reflect the quality of the business behind it.</p>
     </div>
   </div>
 </section>
@@ -1085,8 +1119,8 @@
 
       <div class="contact-info">
         <span class="section-label">Get In Touch</span>
-        <h2>Ready to get started?</h2>
-        <p>Start with a free website audit. If it looks like a fit, we’ll show you the cleanest next step.</p>
+        <h2>Start with a clear next step</h2>
+        <p>The easiest way to see if we’re a fit is to start with a free website audit. If the opportunity is real, we’ll show you the cleanest path forward.</p>
 
         <div class="contact-detail">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
