@@ -154,26 +154,41 @@ function isLocalResult(business, city) {
 }
 
 function normalizeName(value) {
-  return String(value || '').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return String(value || '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/\b(az|arizona|tucson|sierra vista|benson|tombstone|willcox|vail)\b/g, ' ')
+    .replace(/\b(cafe|cafes|restaurant|restaurants|barber|barbershop|barbers|salon|gym|tattoo|shop)\b/g, match => match)
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function loadStaticWebsiteMap(city, category) {
   const citySlug = city.split(',')[0].trim().toLowerCase().replace(/\s+/g, '-');
   const inputPath = path.join(INPUT_DIR, `${citySlug}-${category}.json`);
-  if (!fs.existsSync(inputPath)) return new Map();
+  if (!fs.existsSync(inputPath)) return [];
 
   try {
     const items = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
-    const map = new Map();
-    for (const item of items || []) {
-      if (item?.name && item?.website) {
-        map.set(normalizeName(item.name), item.website);
-      }
-    }
-    return map;
+    return (items || [])
+      .filter(item => item?.name && item?.website)
+      .map(item => ({ name: item.name, normalized: normalizeName(item.name), website: item.website }));
   } catch {
-    return new Map();
+    return [];
   }
+}
+
+function websiteFromStaticSeed(staticWebsiteMap, businessName) {
+  const normalized = normalizeName(businessName);
+  const exact = staticWebsiteMap.find(item => item.normalized === normalized);
+  if (exact) return exact.website;
+
+  const broad = staticWebsiteMap.find(item => {
+    if (!item.normalized || !normalized) return false;
+    return item.normalized.includes(normalized) || normalized.includes(item.normalized);
+  });
+  return broad?.website;
 }
 
 function yelpToInputFormat(businesses, city, category) {
@@ -191,7 +206,7 @@ function yelpToInputFormat(businesses, city, category) {
     })
     .map(b => ({
       name: b.name,
-      website: staticWebsiteMap.get(normalizeName(b.name)) || undefined,
+      website: websiteFromStaticSeed(staticWebsiteMap, b.name) || undefined,
       city: city.split(',')[0].trim(),
       category,
       yelpId: b.id,

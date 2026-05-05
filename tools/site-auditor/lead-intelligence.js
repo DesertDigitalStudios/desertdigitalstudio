@@ -165,6 +165,7 @@ function computeOutreachScore({
   const reasons = [];
   const cautions = [];
 
+  const unresolvedWebsite = /website not resolved automatically/i.test(error || '');
   const realWebsite = !!website && !error;
   const hasPublicEmail = emails.length > 0;
   const hasPhone = phones.length > 0;
@@ -175,8 +176,13 @@ function computeOutreachScore({
   );
 
   if (!realWebsite) {
-    outreachScore += 48;  // bumped: no-website is always worth pursuing
-    reasons.push('No usable website — easiest value conversation');
+    if (unresolvedWebsite) {
+      outreachScore += 24;
+      cautions.push('Website may exist, but the resolver could not confirm it automatically');
+    } else {
+      outreachScore += 48;  // bumped: no-website is always worth pursuing
+      reasons.push('No usable website — easiest value conversation');
+    }
   } else {
     const needScore = clamp(100 - (Number(siteScore) || 0), 0, 100);
     outreachScore += Math.round(needScore * 0.42);
@@ -193,8 +199,12 @@ function computeOutreachScore({
     outreachScore += 20;
     reasons.push(`Public email found: ${emails[0]}`);
   } else if (!realWebsite) {
-    // No-website leads: don't punish for missing email, phone is the contact path
-    cautions.push('No public email — call or walk in');
+    if (unresolvedWebsite) {
+      cautions.push('No public email found yet — website resolution needs verification');
+    } else {
+      // No-website leads: don't punish for missing email, phone is the contact path
+      cautions.push('No public email — call or walk in');
+    }
   } else {
     outreachScore -= 6;
     cautions.push('No public email found');
@@ -202,11 +212,11 @@ function computeOutreachScore({
 
   if (hasPhone) {
     // Phone counts more for no-website leads (it's the primary contact path)
-    outreachScore += !realWebsite ? 12 : 6;
-    if (!realWebsite) reasons.push(`Reachable by phone: ${phones[0]}`);
+    outreachScore += !realWebsite ? (unresolvedWebsite ? 8 : 12) : 6;
+    if (!realWebsite && !unresolvedWebsite) reasons.push(`Reachable by phone: ${phones[0]}`);
   } else if (!realWebsite) {
     outreachScore -= 2; // softer penalty for no-website leads
-    cautions.push('No phone captured — walk-in only');
+    cautions.push(unresolvedWebsite ? 'No phone captured while website status is unresolved' : 'No phone captured — walk-in only');
   } else {
     outreachScore -= 4;
     cautions.push('No phone captured');
@@ -246,7 +256,7 @@ function computeOutreachScore({
 
   // No-website leads should always be at least WATCH regardless of final score
   let finalScore = clamp(Math.round(outreachScore), 0, 100);
-  if (!realWebsite) finalScore = Math.max(finalScore, 40);
+  if (!realWebsite) finalScore = Math.max(finalScore, unresolvedWebsite ? 28 : 40);
   const outreachTier = determineTier(finalScore);
   const recommendedPackage = inferPackage({
     website: realWebsite ? website : null,
@@ -257,7 +267,9 @@ function computeOutreachScore({
 
   const topIssues = failedChecks.slice(0, 3);
   const quickPitch = !realWebsite
-    ? 'You have no real website, so customers are forced to rely on Facebook, listings, or word of mouth.'
+    ? unresolvedWebsite
+      ? 'Your website status still needs verification, but your online contact path looks weak enough that a quick manual review could uncover an easy win.'
+      : 'You have no real website, so customers are forced to rely on Facebook, listings, or word of mouth.'
     : topIssues.length
       ? `I spotted ${topIssues.join(', ').toLowerCase()} issues that make the site harder to trust and use.`
       : 'There are a few easy wins here, but this one is lower urgency.';

@@ -575,6 +575,7 @@ async function main() {
       
       let result;
       let pageData = null;
+      const websiteLookupFailed = !website;
       if (website) {
         // Normalize URL
         if (!website.startsWith('http')) {
@@ -594,7 +595,8 @@ async function main() {
         result = scoreWebsite(pageData);
         website = pageData.url; // use final URL after redirects
       } else {
-        result = scoreWebsite({ url: null, html: null, error: 'No website found' });
+        const unresolvedMessage = biz.yelpUrl || biz.phone ? 'Website not resolved automatically' : 'No website found';
+        result = scoreWebsite({ url: null, html: null, error: unresolvedMessage });
       }
       
       const leadProfile = buildLeadProfile({
@@ -604,7 +606,9 @@ async function main() {
           website,
           phone: biz.phone || null,
           score: result.percentage,
-          error: result.error || null
+          error: result.error || null,
+          yelpUrl: biz.yelpUrl || null,
+          websiteLookupFailed
         },
         result,
         pageData

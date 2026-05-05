@@ -34,17 +34,18 @@ function formatSocialHandles(leadProfile = {}) {
 function generateBusinessSection(business, index) {
   const { name, website, city, phone, result, leadProfile = {} } = business;
   const rank = index + 1;
+  const unresolvedWebsite = /website not resolved automatically/i.test(result?.error || '');
   
   if (!website || result.error) {
     return `
 ## #${rank} — ${name}
-**No Website / Unreachable** ${result.error ? `(${result.error})` : ''}
+**${unresolvedWebsite ? 'Website Needs Verification' : 'No Website / Unreachable'}** ${result.error ? `(${result.error})` : ''}
 - 📍 ${city || 'Unknown location'}
 ${phone ? `- 📞 ${phone}` : ''}
 ${leadProfile.publicEmail ? `- 📧 ${leadProfile.publicEmail}` : ''}
 ${formatSocialHandles(leadProfile)}
 ${leadProfile.outreachScore ? `- 🎯 Outreach Worthiness: ${leadProfile.outreachScore}/100 (${leadProfile.outreachTier})` : ''}
-> **This is a PERFECT lead** — they have no web presence at all!
+> ${unresolvedWebsite ? '**This one needs a manual website check** — the resolver could not confirm the official site automatically.' : '**This is a PERFECT lead** — they have no web presence at all!'}
 
 ---`;
   }
@@ -90,7 +91,8 @@ function generateMarkdownReport(businesses, meta) {
   const { city, category, auditDate, totalFound } = meta;
   
   const withSites = businesses.filter(b => b.website && !b.result.error);
-  const withoutSites = businesses.filter(b => !b.website || b.result.error);
+  const unresolved = businesses.filter(b => /website not resolved automatically/i.test(b.result?.error || ''));
+  const withoutSites = businesses.filter(b => (!b.website || b.result.error) && !/website not resolved automatically/i.test(b.result?.error || ''));
   const avgScore = withSites.length > 0
     ? Math.round(withSites.reduce((s, b) => s + b.result.percentage, 0) / withSites.length)
     : 0;
@@ -102,6 +104,7 @@ function generateMarkdownReport(businesses, meta) {
 **Businesses Audited:** ${businesses.length} of ${totalFound} found  
 **Businesses With Websites:** ${withSites.length}  
 **Businesses Without Websites:** ${withoutSites.length} ← instant leads!  
+**Websites Needing Verification:** ${unresolved.length}  
 **Average Website Score:** ${avgScore}/100  
 
 > **How to read this:** Businesses are ranked **worst first** — these are your hottest leads.
@@ -118,6 +121,11 @@ function generateMarkdownReport(businesses, meta) {
 ${withoutSites.length > 0 ? `### Businesses With No Website (${withoutSites.length})
 These are your easiest pitches. They have zero web presence.
 ${withoutSites.map(b => `- **${b.name}** ${b.phone ? `(${b.phone})` : ''}`).join('\n')}
+` : ''}
+${unresolved.length > 0 ? `
+### Businesses Needing Website Verification (${unresolved.length})
+These likely need a manual website check before treating them like true no-site leads.
+${unresolved.map(b => `- **${b.name}** ${b.phone ? `(${b.phone})` : ''}`).join('\n')}
 ` : ''}
 
 ### Common Issues Found
@@ -165,7 +173,8 @@ function generateJSONReport(businesses, meta) {
       totalFound: meta.totalFound,
       audited: businesses.length,
       withWebsites: businesses.filter(b => b.website && !b.result.error).length,
-      withoutWebsites: businesses.filter(b => !b.website || b.result.error).length,
+      withoutWebsites: businesses.filter(b => (!b.website || b.result.error) && !/website not resolved automatically/i.test(b.result?.error || '')).length,
+      unresolvedWebsites: businesses.filter(b => /website not resolved automatically/i.test(b.result?.error || '')).length,
       averageScore: businesses.filter(b => b.result.percentage > 0).length > 0
         ? Math.round(businesses.filter(b => b.result.percentage > 0)
             .reduce((s, b) => s + b.result.percentage, 0) /
@@ -178,7 +187,7 @@ function generateJSONReport(businesses, meta) {
       website: b.website,
       phone: b.phone,
       city: b.city,
-      leadTemperature: b.website && !b.result.error ? getLeadTemperature(b.result.percentage) : '🔥🔥🔥 HOT LEAD (no site)',
+      leadTemperature: b.website && !b.result.error ? getLeadTemperature(b.result.percentage) : (/website not resolved automatically/i.test(b.result?.error || '') ? '🤔 Needs website verification' : '🔥🔥🔥 HOT LEAD (no site)'),
       score: b.result.percentage,
       grade: b.result.grade,
       error: b.result.error || null,

@@ -315,15 +315,16 @@ function scoreCTA(html, textContent) {
  */
 function scoreWebsite({ url, html, textContent, loadTimeMs, error }) {
   if (error || !html) {
+    const unresolvedWebsite = /website not resolved automatically/i.test(error || '');
     return {
       url,
       error: error || 'No HTML content',
       score: 0,
       maxScore: TOTAL_MAX,
       percentage: 0,
-      grade: 'F',
+      grade: unresolvedWebsite ? '?' : 'F',
       checks: {},
-      summary: 'Site could not be audited'
+      summary: unresolvedWebsite ? 'Website status needs manual verification' : 'Site could not be audited'
     };
   }
 
