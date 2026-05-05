@@ -244,6 +244,43 @@ async function findBusinesses(browser, city, category, limit, verbose) {
 }
 
 // --- Website Discovery for a Business ---
+function normalizeSearchText(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function candidateScore(url, businessName, city) {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.replace(/^www\./, '').toLowerCase();
+    const pathname = parsed.pathname.toLowerCase();
+    const businessTokens = normalizeSearchText(businessName).split(' ').filter(token => token.length >= 3);
+    const cityTokens = normalizeSearchText(city).split(' ').filter(token => token.length >= 3 && token !== 'arizona');
+    const haystack = `${hostname} ${pathname}`;
+
+    let score = 0;
+    for (const token of businessTokens) {
+      if (haystack.includes(token)) score += 4;
+    }
+    for (const token of cityTokens) {
+      if (haystack.includes(token)) score += 1;
+    }
+
+    if (pathname === '/' || pathname === '') score += 2;
+    if (/contact|about|menu|home/.test(pathname)) score += 1;
+    if (/directory|listing|search|maps|reviews|forum|guide|top-10/.test(pathname)) score -= 4;
+    if (/instagram|facebook|yelp|tripadvisor|yellowpages|mapquest|bbb|foursquare|angi|houzz/.test(hostname)) score -= 8;
+
+    return score;
+  } catch {
+    return -999;
+  }
+}
+
 async function findBusinessWebsite(browser, businessName, city, timeout, verbose) {
   const context = await browser.newContext({
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -256,14 +293,10 @@ async function findBusinessWebsite(browser, businessName, city, timeout, verbose
       url: (query) => `https://www.bing.com/search?q=${encodeURIComponent(query)}`,
       extract: () => page.evaluate(() => {
         const skipDomains = ['bing.com', 'yelp.com', 'facebook.com/pages', 'yellowpages.com', 'whitepages.com', 'mapquest.com', 'tripadvisor.com', 'bbb.org', 'foursquare.com', 'angieslist.com', 'houzz.com'];
-        const links = Array.from(document.querySelectorAll('li.b_algo h2 a, h2 a'));
-        for (const link of links) {
-          const href = link.href;
-          if (!href) continue;
-          if (skipDomains.some(domain => href.includes(domain))) continue;
-          if (href.startsWith('http://') || href.startsWith('https://')) return href;
-        }
-        return null;
+        return Array.from(document.querySelectorAll('li.b_algo h2 a, h2 a'))
+          .map(link => link.href)
+          .filter(href => href && (href.startsWith('http://') || href.startsWith('https://')))
+          .filter(href => !skipDomains.some(domain => href.includes(domain)));
       })
     },
     {
@@ -272,38 +305,47 @@ async function findBusinessWebsite(browser, businessName, city, timeout, verbose
       extract: async () => {
         const bodyText = await page.evaluate(() => document.body?.innerText || '');
         if (/bots use duckduckgo too|select all squares containing a duck/i.test(bodyText)) {
-          return null;
+          return [];
         }
         return page.evaluate(() => {
           const skipDomains = ['duckduckgo.com', 'yelp.com', 'facebook.com/pages', 'yellowpages.com', 'whitepages.com', 'mapquest.com', 'tripadvisor.com', 'bbb.org', 'foursquare.com', 'angieslist.com', 'houzz.com'];
-          const links = Array.from(document.querySelectorAll('.result__a, a[data-testid="result-title-a"], article[data-testid="result"] h2 a'));
-          for (const link of links) {
-            const href = link.href;
-            if (!href) continue;
-            if (skipDomains.some(domain => href.includes(domain))) continue;
-            if (href.startsWith('http://') || href.startsWith('https://')) return href;
-          }
-          return null;
+          return Array.from(document.querySelectorAll('.result__a, a[data-testid="result-title-a"], article[data-testid="result"] h2 a'))
+            .map(link => link.href)
+            .filter(href => href && (href.startsWith('http://') || href.startsWith('https://')))
+            .filter(href => !skipDomains.some(domain => href.includes(domain)));
         });
       }
     }
   ];
 
   try {
-    const query = `${businessName} ${city} official website`;
+    const queries = [
+      `${businessName} ${city} official website`,
+      `${businessName} ${city}`,
+      `${businessName} official site`,
+      `${businessName}`
+    ];
 
-    for (const strategy of searchStrategies) {
-      try {
-        await page.goto(strategy.url(query), {
-          waitUntil: 'domcontentloaded',
-          timeout: Math.min(timeout, 15000)
-        });
-        await page.waitForTimeout(1500);
-        const result = await strategy.extract();
-        if (result) return result;
-        if (verbose) console.log(`    ${strategy.name} search returned no usable website for ${businessName}`);
-      } catch (err) {
-        if (verbose) console.log(`    ${strategy.name} search failed: ${err.message}`);
+    for (const query of queries) {
+      for (const strategy of searchStrategies) {
+        try {
+          await page.goto(strategy.url(query), {
+            waitUntil: 'domcontentloaded',
+            timeout: Math.min(timeout, 15000)
+          });
+          await page.waitForTimeout(1500);
+          const results = await strategy.extract();
+          if (results?.length) {
+            const ranked = [...new Set(results)]
+              .map(url => ({ url, score: candidateScore(url, businessName, city) }))
+              .sort((a, b) => b.score - a.score);
+            if (verbose && ranked[0]) console.log(`    ${strategy.name} best candidate for ${businessName}: ${ranked[0].url} (score ${ranked[0].score})`);
+            if (ranked[0]?.score > 0) return ranked[0].url;
+          }
+          if (verbose) console.log(`    ${strategy.name} search returned no usable website for ${businessName} on query: ${query}`);
+        } catch (err) {
+          if (verbose) console.log(`    ${strategy.name} search failed: ${err.message}`);
+        }
       }
     }
 
