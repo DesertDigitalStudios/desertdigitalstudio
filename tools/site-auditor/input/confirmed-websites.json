@@ -18,5 +18,59 @@
     ],
     "city": "Tucson, AZ",
     "website": "https://www.charrosteak.com/"
+  },
+  {
+    "name": "Coronet Cafe",
+    "aliases": [
+      "Coronet",
+      "Coronet Cafe Tucson"
+    ],
+    "city": "Tucson, AZ",
+    "website": "https://coronettucson.com/cafe/"
+  },
+  {
+    "name": "Cafe Passe",
+    "aliases": [
+      "Café Passe",
+      "Cafe Passe Tucson"
+    ],
+    "city": "Tucson, AZ",
+    "website": "https://cafepassetucson.com/"
+  },
+  {
+    "name": "Barista Del Barrio",
+    "aliases": [
+      "Barista Del Barrio Tucson"
+    ],
+    "city": "Tucson, AZ",
+    "website": "https://baristadelbarrio.com/"
+  },
+  {
+    "name": "Cafe A La Cart",
+    "aliases": [
+      "Café à la C'Art",
+      "Cafe a la C'Art",
+      "Cafe A La Cart Tucson"
+    ],
+    "city": "Tucson, AZ",
+    "website": "https://www.cafealacarttucson.com/"
+  },
+  {
+    "name": "81 Barbers",
+    "aliases": [
+      "'81 Barbers",
+      "81 Barbers Tucson"
+    ],
+    "city": "Tucson, AZ",
+    "website": "https://81barbers.com/"
+  },
+  {
+    "name": "1972 Barber & Shave Parlor",
+    "aliases": [
+      "1972 Barber and Shave Parlor",
+      "1972 Barber Shave Parlor"
+    ],
+    "city": "Tucson, AZ",
+    "website": "https://1972barbers.com/"
   }
 ]
