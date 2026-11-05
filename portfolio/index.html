@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.desertdigitalstudio.com/" />
   <meta property="og:title" content="Desert Digital Studio — Local presence. Digital impact." />
-  <meta property="og:description" content="Professional websites for small businesses in Benson, Sierra Vista, Tombstone, Tucson & Phoenix. Affordable, fast, and built to grow your business." />
+  <meta property="og:description" content="Professional websites for small businesses in Benson, Sierra Vista, Tombstone, and Tucson. Affordable, fast, and built to grow your business." />
   <meta property="og:image" content="https://www.desertdigitalstudio.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://www.desertdigitalstudio.com/" />
   <meta name="twitter:title" content="Desert Digital Studio — Local presence. Digital impact." />
-  <meta name="twitter:description" content="Professional websites for small businesses in Benson, Sierra Vista, Tombstone, Tucson & Phoenix." />
+  <meta name="twitter:description" content="Professional websites for small businesses in Benson, Sierra Vista, Tombstone, and Tucson." />
   <meta name="twitter:image" content="https://www.desertdigitalstudio.com/og-image.png" />
 
   <!-- iOS / Apple -->
@@ -45,8 +45,7 @@
       {"@type": "City", "name": "Benson"},
       {"@type": "City", "name": "Sierra Vista"},
       {"@type": "City", "name": "Tombstone"},
-      {"@type": "City", "name": "Tucson"},
-      {"@type": "City", "name": "Phoenix"}
+      {"@type": "City", "name": "Tucson"}
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -487,7 +486,7 @@
     }
 
     /* ─── WHY US ─── */
-    #about .benefits-grid {
+    #benefits .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
@@ -881,7 +880,43 @@
         padding-right: 16px;
       }
     }
-  </style>
+
+    html { overflow-x: clip; }
+    [hidden] { display: none !important; }
+    section[id] { scroll-margin-top: 80px; }
+    .work-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+    .work-card, .quote-card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:28px; }
+    .work-card { display:flex; flex-direction:column; border-top:3px solid var(--accent); }
+    .example-label { color:var(--accent); font-size:.73rem; font-weight:700; letter-spacing:.04em; display:block; margin-bottom:20px; }
+    .work-card h3 { font-size:1.35rem; line-height:1.3; }
+    .work-card p, .quote-card figcaption { color:var(--muted); }
+    .project-city { margin:8px 0 20px; font-size:.85rem; }
+    .project-status { color:var(--muted); font-size:.78rem; margin:24px 0 12px; }
+    .work-link { color:var(--accent); margin-top:auto; font-weight:600; }
+    .testimonial-heading { margin-top:64px; }
+    blockquote { font-size:1.02rem; line-height:1.75; margin-bottom:20px; }
+    figcaption { font-size:.8rem; }
+    .about-person { display:grid; grid-template-columns:120px 1fr; gap:40px; align-items:start; max-width:850px; }
+    .initials-avatar { display:grid; place-items:center; width:120px; height:120px; border:1px solid var(--accent); border-radius:50%; background:var(--card); color:var(--accent); font-weight:800; font-size:2.3rem; }
+    .about-person p { color:var(--muted); margin:20px 0 28px; }
+    #areas .benefits-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
+    .hero-sub { text-wrap:pretty; }
+    .drawer-brand { color:var(--accent); font-weight:700; font-size:1rem; white-space:normal; flex-shrink:0; margin-bottom:12px; }
+    .mobile-menu { overflow-y:auto; height:100dvh; visibility:hidden; transform:translateX(100%); max-width:100vw; }
+    .mobile-menu.open { visibility:visible; }
+    .logo { min-width:0; flex-shrink:0; }
+    .logo svg { flex-shrink:0; }
+    .nav-links { gap:22px; }
+    #formError { color:#fca5a5; margin-top:16px; }
+    button:disabled { opacity:.65; cursor:wait; }
+    a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+    @media (max-width:1000px) { .nav-links { display:none; } .hamburger { display:flex; } #areas .benefits-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:700px) { .work-grid, #areas .benefits-grid { grid-template-columns:1fr; } .about-person { grid-template-columns:1fr; gap:24px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; } }
+.work-thumb { height:140px; border-radius:10px; margin-bottom:20px; background:linear-gradient(145deg,#292524,#1c1917 55%,#78350f33); }
+</style>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
 
@@ -910,6 +945,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="/free-audit/">Free Audit</a></li>
       <li><a href="#areas">Areas</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -918,11 +954,13 @@
     </button>
   </nav>
   <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-hidden="true">
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-hidden="true" inert>
+    <span class="drawer-brand">Desert Digital Studio</span>
     <a href="#home" class="mobile-link">Home</a>
     <a href="#services" class="mobile-link">Services</a>
     <a href="/free-audit/" class="mobile-link">Free Audit</a>
     <a href="#areas" class="mobile-link">Areas</a>
+    <a href="#work" class="mobile-link">Work</a>
     <a href="#about" class="mobile-link">About</a>
     <a href="#contact" class="mobile-link">Contact</a>
   </div>
@@ -934,7 +972,7 @@
   <div class="hero-content">
     <div class="hero-badge">🌵 Southern Arizona Web Design</div>
     <h1>Look <span>the Part.</span></h1>
-    <p class="hero-sub">Your business already does good work. Your website should prove it.</p>
+    <p class="hero-sub">Your business already does good work. Your website should make that obvious — on a phone, in under five seconds.</p>
     <div class="hero-points">
       <div class="hero-point">Fast, mobile-friendly builds</div>
       <div class="hero-point">Clear pricing and practical scope</div>
@@ -946,7 +984,7 @@
     </div>
 
     <div style="margin-top:20px; color:var(--muted); font-size:0.98rem;">
-      Based in <strong style="color:var(--text);">Benson</strong>. Best fit for small businesses that need a site that feels credible, clear, and easy to act on.
+      Based in <strong style="color:var(--text);">Benson</strong>. Websites for small businesses across Southern Arizona.
     </div>
   </div>
 </section>
@@ -999,37 +1037,37 @@
 </section>
 
 <!-- ─── ABOUT / WHY US ─── -->
-<section id="about">
+<section id="benefits">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Why Work With Us</span>
-      <h2 class="section-title">Local. Clear. Fast.</h2>
+      <h2 class="section-title">Built around your business.</h2>
       <p class="section-sub">No layers, no bloated process, just solid work and straight answers.</p>
     </div>
     <div class="benefits-grid">
 
       <div class="benefit-card">
         <div class="benefit-icon">📍</div>
-        <h3>Local context matters</h3>
-        <p>Built for real Southern Arizona businesses, with local trust and visibility in mind.</p>
+        <h3>Local context</h3>
+        <p>Built for Southern Arizona buyers: hours, phone, and service area where people actually look.</p>
       </div>
 
       <div class="benefit-card">
         <div class="benefit-icon">💰</div>
-        <h3>Clear scope, no nonsense</h3>
-        <p>Clear recommendations, defined packages, and pricing that makes sense.</p>
+        <h3>Scoped packages</h3>
+        <p>You see what’s included and what it costs before anything starts. Starting at $750.</p>
       </div>
 
       <div class="benefit-card">
         <div class="benefit-icon">⚡</div>
-        <h3>Fast enough to matter</h3>
-        <p>Once we have the basics, most projects move fast.</p>
+        <h3>Ship without the runaround</h3>
+        <p>Once content and photos are in, most sites move from draft to live in days, not months.</p>
       </div>
 
       <div class="benefit-card">
         <div class="benefit-icon">🤝</div>
-        <h3>Direct communication</h3>
-        <p>You work directly with the person doing the work. Fewer handoffs, faster decisions.</p>
+        <h3>One person, end to end</h3>
+        <p>You talk to the person building the site. Fewer handoffs, faster changes.</p>
       </div>
 
     </div>
@@ -1041,7 +1079,7 @@
   <div class="container">
     <div class="section-header">
       <span class="section-label">How It Works</span>
-      <h2 class="section-title">Simple. Fast. Clear.</h2>
+      <h2 class="section-title">From first look to launch.</h2>
       <p class="section-sub">Audit, plan, build, launch.</p>
     </div>
     <div class="process-steps">
@@ -1049,25 +1087,25 @@
       <div class="step">
         <div class="step-number">1</div>
         <h3>Quick audit</h3>
-        <p>We review what customers see now and where the easiest wins are.</p>
+        <p>We look at what customers see today and list the easiest wins.</p>
       </div>
 
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Clear recommendation</h3>
-        <p>We recommend the right level of work, from quick fixes to a fuller refresh.</p>
+        <h3>Plain recommendation</h3>
+        <p>Fix what you have, or rebuild — with a price either way.</p>
       </div>
 
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Build and review</h3>
-        <p>We build it, you review it, and we tighten what needs tightening.</p>
+        <h3>Build &amp; review</h3>
+        <p>You get a draft to click through. We adjust until it’s right.</p>
       </div>
 
       <div class="step">
         <div class="step-number">4</div>
-        <h3>Launch and support</h3>
-        <p>We launch it cleanly and can keep it updated if you want ongoing help.</p>
+        <h3>Launch &amp; support</h3>
+        <p>We go live cleanly. Maintenance is optional at $100/mo.</p>
       </div>
 
     </div>
@@ -1151,37 +1189,17 @@
 </section>
 
 <!-- ─── TRUST / PROOF ─── -->
-<section id="proof" style="background:var(--card);">
+<section id="work" class="section-work" aria-labelledby="work-heading">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Trust &amp; Process</span>
-      <h2 class="section-title">Easy way to start.</h2>
-      <p class="section-sub">Start with a free audit. If it makes sense, we go from there.</p>
+      <span class="section-label">Work / concepts</span>
+      <h2 class="section-title" id="work-heading">Sites that look like the business behind them.</h2>
+      <p class="section-sub">Three example project briefs for local businesses. These are fictional concepts, not completed client projects.</p>
     </div>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">🔎</div>
-        <h3>Start with a free audit</h3>
-        <p>Start with a free audit so the biggest issues are clear before you commit to more.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">📦</div>
-        <h3>Clear scope</h3>
-        <p>Quick fixes stay small. Bigger projects get a clear package.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">📱</div>
-        <h3>Built to be used</h3>
-        <p>The goal is simple: make the business easier to trust, contact, and choose.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🤝</div>
-        <h3>Direct contact</h3>
-        <p>You work directly with the person doing the work, so changes happen faster.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="work-grid"><article class="work-card"><div class="work-thumb" aria-hidden="true"></div><span class="example-label">Example project · Restaurant</span><h3>Desert Table Café</h3><p class="project-city">Benson</p><p>Mobile menu + click-to-call; clearer hours and directions.</p><span class="project-status">Concept only · not a live client site</span><a class="work-link" href="#contact">Discuss a similar project →</a></article><article class="work-card"><div class="work-thumb" aria-hidden="true"></div><span class="example-label">Example project · Service business</span><h3>Huachuca Home Services</h3><p class="project-city">Sierra Vista</p><p>Quote form above the fold; service areas listed for local search.</p><span class="project-status">Concept only · not a live client site</span><a class="work-link" href="#contact">Discuss a similar project →</a></article><article class="work-card"><div class="work-thumb" aria-hidden="true"></div><span class="example-label">Example project · Tourism</span><h3>Tombstone Trail Outfitters</h3><p class="project-city">Tombstone</p><p>Tour packages and booking CTA front and center on mobile.</p><span class="project-status">Concept only · not a live client site</span><a class="work-link" href="#contact">Discuss a similar project →</a></article></div>
+    <div class="section-header testimonial-heading"><span class="section-label">Future client feedback</span><h3>Room for real stories.</h3><p class="section-sub">Example wording only — these are not customer testimonials.</p></div><div class="work-grid"><figure class="quote-card"><span class="example-label">Example quote · not a real review</span><blockquote>“Finally looks like the shop we run. Customers find the phone number in one tap.”</blockquote><figcaption>Illustrative scenario: Local retail · Sierra Vista</figcaption></figure><figure class="quote-card"><span class="example-label">Example quote · not a real review</span><blockquote>“Clear price and a free audit made it easy to say yes.”</blockquote><figcaption>Illustrative scenario: Service business · Benson</figcaption></figure><figure class="quote-card"><span class="example-label">Example quote · not a real review</span><blockquote>“Tourists can book from their phone now. That was the whole point.”</blockquote><figcaption>Illustrative scenario: Tourism · Tombstone</figcaption></figure></div></div></section>
+<section id="about"><div class="container about-person"><div class="initials-avatar" aria-label="Gabriel Maciel initials">GM</div><div><span class="section-label">Meet your web designer</span><h2 class="section-title">Hi, I’m Gabriel.</h2><p>I’m Gabriel Maciel, based in Benson. I build websites for small businesses across Southern Arizona. You work directly with me, from the first conversation through launch and ongoing updates.</p><a href="/free-audit/" class="btn btn-primary">Start with a free audit →</a></div></div></section>
+<section id="proof"><div class="container"><div class="section-header"><span class="section-label">Your next step</span><h2 class="section-title">Easy way to start.</h2><p class="section-sub">Start with a free audit. You’ll see what’s hurting trust and leads, then decide if a fix or a rebuild is worth it — no pressure either way.</p></div><a href="/free-audit/" class="btn btn-primary">Get my free audit →</a></div></section>
 
 <!-- ─── CONTACT ─── -->
 <section id="contact">
@@ -1204,7 +1222,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
           </svg>
-          <span>Serving Benson, Sierra Vista, Tombstone, Tucson &amp; Phoenix, AZ</span>
+          <span>Serving Benson, Sierra Vista, Tombstone, and Tucson, AZ</span>
         </div>
 
         <div class="contact-detail">
@@ -1214,20 +1232,12 @@
           <span>Web design, local SEO, and website maintenance for Arizona small businesses</span>
         </div>
 
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
-          </a>
-        </div>
+
       </div>
 
       <div class="contact-form" id="contactFormWrapper">
-        <form id="contactForm" novalidate>
+        <form id="contactForm">
+          <div hidden><label for="companyWebsite">Leave blank</label><input id="companyWebsite" name="companyWebsite" tabindex="-1" autocomplete="off"></div>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name *</label>
@@ -1253,10 +1263,11 @@
             <textarea id="message" name="message" placeholder="Tell us about your business and what you're looking for..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Request My Audit →</button>
-          <p class="form-note">Or email us directly at <a href="mailto:gabriel@desertdigitalstudio.com">gabriel@desertdigitalstudio.com</a></p>
+          <p class="form-note">Your message goes directly to Gabriel.</p>
         </form>
 
-        <div class="form-success" id="formSuccess">
+        <p id="formError" role="alert" hidden></p>
+        <div class="form-success" id="formSuccess" role="status" hidden>
           <div class="check">✅</div>
           <h3>Message sent!</h3>
           <p>Thanks! We'll be in touch soon.</p>
@@ -1282,12 +1293,13 @@
       </svg>
       Desert Digital Studio
     </span>
-    <p class="footer-copy">© 2026 Desert Digital Studio. Web design in Benson, Sierra Vista, Tombstone, Tucson &amp; Phoenix, AZ.</p>
+    <p class="footer-copy">© 2026 Desert Digital Studio. Web design in Benson, Sierra Vista, Tombstone, and Tucson, AZ.</p>
     <ul class="footer-nav">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="/free-audit/">Free Audit</a></li>
       <li><a href="#areas">Areas</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1313,6 +1325,7 @@
     document.body.classList.toggle('menu-open', open);
     hamburger.setAttribute('aria-expanded', String(open));
     mobileMenu.setAttribute('aria-hidden', String(!open));
+    mobileMenu.inert = !open;
   }
 
   hamburger.addEventListener('click', () => {
@@ -1333,7 +1346,7 @@
   });
 
   // ─── Contact form
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
     const business = document.getElementById('business').value.trim();
@@ -1345,9 +1358,29 @@
       return;
     }
 
-    // Hide form, show success
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const button = this.querySelector('button[type="submit"]');
+    const error = document.getElementById('formError');
+    error.hidden = true;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, business, email, message, phone: document.getElementById('phone').value.trim(), companyWebsite: document.getElementById('companyWebsite').value }),
+        signal: AbortSignal.timeout(20000)
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error('Delivery not confirmed');
+      this.style.display = 'none';
+      document.getElementById('formSuccess').hidden = false;
+      document.getElementById('formSuccess').style.display = 'block';
+    } catch (_) {
+      error.textContent = 'We couldn’t confirm delivery. Please try again or email Gabriel using the link alongside this form.';
+      error.hidden = false;
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Request My Audit →';
+    }
   });
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
